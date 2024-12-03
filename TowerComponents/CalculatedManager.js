@@ -505,7 +505,7 @@ class CalculatedManager {
                     'MissileCooldown',
                 ],
                 Value: (level) => {
-                    const dps = level.Damage / level.Cooldown;
+                    const dps = (level.Damage * level.Ammo) / (level.ReloadTime + (level.Cooldown * level.Ammo));
                     const missileDPS = level.MissilesEnabled
                         ? (level.ExplosionDamage * level.MissileAmount) /
                           level.MissileCooldown
