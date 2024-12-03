@@ -3710,7 +3710,7 @@ export default {
     },
   },
   Pursuit: {
-    Top: {
+    "Top Path": {
       Upgrades: [
         {
           Image: 3577061449,
@@ -3830,7 +3830,7 @@ export default {
         Damage: 6,
       },
     },
-    Bottom: {
+    "Bottom Path": {
       Upgrades: [
         {
           Image: 3577061449,
