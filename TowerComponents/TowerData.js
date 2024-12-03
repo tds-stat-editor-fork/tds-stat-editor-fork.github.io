@@ -2466,7 +2466,8 @@ export default {
         Range: 18,
         ExplosionRadius: 3.5,
         RocketSpeed: 20,
-        Knockback: 10
+        Knockback: 10,
+        Cost: 300,
       },
       Upgrades: [
         {
@@ -2501,8 +2502,8 @@ export default {
             BurnDamage: 3,
             BurnTick: 0.25,
           },
-          Title: "Bigger Boom",
-          Cost: 2750,
+          Title: "Vengeful Missiles",
+          Cost: 5000,
         },
       ]
     }
