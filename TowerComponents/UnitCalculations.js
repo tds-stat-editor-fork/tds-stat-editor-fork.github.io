@@ -12,7 +12,7 @@ class UnitCalculations {
             },
 
             Rocket: {
-                For: ['Sentry4', 'Tank', 'RailgunTank'],
+                For: ['Sentry4', 'Tank', 'Railgun Tank'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (unit) => {
                     const damage = unit?.Damage ?? 0;

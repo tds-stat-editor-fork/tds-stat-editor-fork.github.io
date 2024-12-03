@@ -413,9 +413,9 @@ class CalculatedManager {
                 Value: (level) => ((level.Damage * level.MaxAmmo) / (level.Cooldown * level.MaxAmmo + level.SpinDuration)), // prettier-ignore
             },
             Slasher: {
-                For: ['Slasher'],
+                For: ['Slasher', 'Warden'],
                 Value: (level) =>
-                    level.Damage / level.Cooldown + level?.KnifeSingleDPS ?? 0,
+                (level.Damage * 2) + (level.Damage * level.CritMultiplier) / (level.Cooldown * 3),
             },
             Ace: {
                 For: ['Ace Pilot'],
@@ -458,7 +458,7 @@ class CalculatedManager {
                 },
             },
             BurnTower: {
-                For: ['Archer, Pyromancer'],
+                For: ['Archer', 'Pyromancer'],
                 Requires: ['Damage', 'Cooldown', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
@@ -482,6 +482,18 @@ class CalculatedManager {
                     const totalTime =
                         level.FireTime + level.ReloadTime + level.WindUpTime;
 
+                    return totalDamage / totalTime;
+                },
+            },
+            Pursuit: {
+                For: ['Pursuit'],
+                Requires: [
+                    'Damage',
+                    'Cooldown',
+                    'MaxAmmo',
+                    'ReloadTime',
+                ],
+                Value: (level) => {
                     return totalDamage / totalTime;
                 },
             },
@@ -516,8 +528,8 @@ class CalculatedManager {
             },
             Swarmer: {
                 For: ['Swarmer'],
-                Requires: ['TotalStingDamage', 'Cooldown'],
-                Value: (level) => level.TotalStingDamage / level.Cooldown,
+                Requires: ['BeeDPS'],
+                Value: (level) => level.BeeDps,
             },
             Burst: {
                 For: ['Freezer'],
