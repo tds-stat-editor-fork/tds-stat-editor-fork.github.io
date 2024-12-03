@@ -458,11 +458,11 @@ class CalculatedManager {
                 },
             },
             BurnTower: {
-                For: ['Archer', 'Pyromancer'],
+                For: ['Archer', 'Pyromancer', 'Hallow Punk'],
                 Requires: ['Damage', 'Cooldown', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const burnDPS = level.BurnDamage / level.BurnTick;
+                    const burnDPS = level.BurnDamage / level.BurnTick == 0 ? level.BurnDamage / level.BurnTick : 0;
 
                     return dps + burnDPS;
                 },
@@ -482,18 +482,6 @@ class CalculatedManager {
                     const totalTime =
                         level.FireTime + level.ReloadTime + level.WindUpTime;
 
-                    return totalDamage / totalTime;
-                },
-            },
-            Pursuit: {
-                For: ['Pursuit'],
-                Requires: [
-                    'Damage',
-                    'Cooldown',
-                    'MaxAmmo',
-                    'ReloadTime',
-                ],
-                Value: (level) => {
                     return totalDamage / totalTime;
                 },
             },
@@ -576,6 +564,12 @@ class CalculatedManager {
                     const poisonDPS = level.PoisonDamage / level.PoisonTick;
 
                     return burstDPS + poisonDPS;
+                },
+            },
+            Commando: { //whoever made this tower so complicated deserves an award
+                For: ['Commando'],
+                Value: (level) => {
+
                 },
             },
             WarMachine: {
