@@ -558,7 +558,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const totalDamage = level.Damage * level.Burst;
                     const totalTime =
-                        level.Cooldown * level.Burst + level.ReloadSpeed * 0.12;
+                        level.Cooldown * level.Burst + level.ReloadSpeed;
 
                     const burstDPS = totalDamage / totalTime;
                     const poisonDPS = level.PoisonDamage / level.PoisonTick;
@@ -569,7 +569,7 @@ class CalculatedManager {
             Commando: { //whoever made this tower so complicated deserves an award
                 For: ['Commando'],
                 Value: (level) => {
-
+                    return (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
                 },
             },
             WarMachine: {
