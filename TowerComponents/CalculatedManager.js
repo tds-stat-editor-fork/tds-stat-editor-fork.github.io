@@ -415,7 +415,7 @@ class CalculatedManager {
             Slasher: {
                 For: ['Slasher', 'Warden'],
                 Value: (level) =>
-                (level.Damage * 2) + (level.Damage * level.CritMultiplier) / (level.Cooldown * 3),
+                ((level.Damage * 2) + (level.Damage * level.CritMultiplier)) / (level.Cooldown * 3),
             },
             Ace: {
                 For: ['Ace Pilot'],
@@ -462,7 +462,7 @@ class CalculatedManager {
                 Requires: ['Damage', 'Cooldown', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const burnDPS = level.BurnDamage / level.BurnTick == 0 ? level.BurnDamage / level.BurnTick : 0;
+                    const burnDPS = level.BurnDamage / level.BurnTick;
 
                     return dps + burnDPS;
                 },
