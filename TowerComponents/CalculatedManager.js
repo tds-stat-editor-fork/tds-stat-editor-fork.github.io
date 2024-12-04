@@ -610,6 +610,13 @@ class CalculatedManager {
                 },
             },
         },
+        ThornsDPS: {
+            Default: {
+                For: ['Harvester'],
+                Requires: ['ThornsDamage', 'ThornsTick'],
+                Value: (level) => level.ThornsDamage / level.ThornsTick,
+            },
+        },
         LimitDPS: {
             Default: {
                 Requires: ['DPS', 'Limit'],
