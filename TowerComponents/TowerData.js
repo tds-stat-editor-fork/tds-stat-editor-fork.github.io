@@ -3930,7 +3930,7 @@ export default {
             Damage: 20,
           },
           Title: "Upgraded Payload",
-          Cost: 13500,
+          Cost: 40000,
         },
       ],
       Defaults: {
