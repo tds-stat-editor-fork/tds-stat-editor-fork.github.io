@@ -745,6 +745,17 @@ class CalculatedManager {
                 },
             },
         },
+        BurstCooldown: {
+            Type: 'Override',
+            Default: {
+                Requires: ['BurstCooldown'],
+                Value: (cooldown) => {
+                    const { extraCooldown, firerateBuff } = window.state.boosts.tower; // prettier-ignore
+
+                    return cooldown / (firerateBuff + 1) + extraCooldown;
+                },
+            },
+        },
         Damage: {
             Type: 'Override',
 

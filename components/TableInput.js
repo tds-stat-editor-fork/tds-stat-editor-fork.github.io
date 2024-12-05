@@ -220,6 +220,18 @@ export default class TableInput {
         'BurstCool',
         'ReloadSpeed',
         'TickRate',
+        'Reposition Cooldown',
+        'Combo Cooldown',
+        'ReloadTime',
+        'Recoil',
+        'SpreadAdd',
+        'Deadzone',
+        'BurnTick',
+        'TickRate',
+        'Spread',
+        'RevTime',
+        'ReloadTime',
+        'BurstCooldown',
     ];
 
     #getDelta(cellData, deltaData, input) {

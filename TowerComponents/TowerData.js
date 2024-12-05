@@ -2439,7 +2439,7 @@ export default {
       },
     },
   },
-  "Harvester": {
+  Harvester: {
     Default: {
       Defaults: {
         Detections: { Flying: true, Hidden: false, Lead: false},
@@ -4788,7 +4788,6 @@ export default {
             Extras: [],
             Attributes: {
               CanFreeze: false,
-              DefenseMelt: 0,
               FreezeBonus: false,
               MaxHits: 2,
               Lead: false,
@@ -4815,7 +4814,6 @@ export default {
             Extras: ["Max Hits: 2 -> 3"],
             Attributes: {
               CanFreeze: false,
-              DefenseMelt: 0,
               FreezeBonus: false,
               MaxHits: 3,
               Lead: true,
@@ -4845,7 +4843,6 @@ export default {
             ],
             Attributes: {
               CanFreeze: true,
-              DefenseMelt: 0,
               FreezeBonus: false,
               MaxHits: 3,
               Lead: true,
@@ -4872,7 +4869,6 @@ export default {
             Extras: ["Frozen enemies take x2 damage.", "Max Hits: 3 -> 4"],
             Attributes: {
               CanFreeze: true,
-              DefenseMelt: 0,
               FreezeBonus: true,
               MaxHits: 4,
               Lead: true,
@@ -4899,7 +4895,6 @@ export default {
             Extras: ["Max Hit: 4 -> 5", "Longer Freeze Time"],
             Attributes: {
               CanFreeze: true,
-              DefenseMelt: 0,
               FreezeBonus: true,
               MaxHits: 5,
               Lead: true,
@@ -4924,7 +4919,6 @@ export default {
       Defaults: {
         Attributes: {
           CanFreeze: false,
-          DefenseMelt: 0,
           FreezeBonus: false,
           MaxHits: 1,
           Lead: false,

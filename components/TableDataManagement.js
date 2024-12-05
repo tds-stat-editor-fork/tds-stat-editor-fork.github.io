@@ -127,6 +127,13 @@ export default class TableDataManagement {
         const lastUpgrade =
             towerVariant.Upgrades[towerVariant.Upgrades.length - 1];
 
+        if (lastUpgrade) {
+            towerVariant.Upgrades.push(lastUpgrade);
+            this.viewer.deltaTower.json[towerName][variant].Upgrades.push(
+                lastUpgrade
+            );
+        }
+
         this.viewer.tower.importJSON(this.viewer.tower.json);
         this.viewer.deltaTower.importJSON(this.viewer.deltaTower.json);
 
