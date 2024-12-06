@@ -300,7 +300,7 @@ export default {
     Sentry1: {
         Range: 18,
         Health: 20,
-        Lifetime: 20,
+        Lifetime: 30,
         Speed: 1.25,
         IgnoreCollisionDamage: true,
         Cooldown: 0.45,
@@ -322,7 +322,7 @@ export default {
         Lifetime: 30,
         Speed: 1.25,
         IgnoreCollisionDamage: true,
-        Cooldown: 0.25,
+        Cooldown: 0.3,
         Damage: 2,
         Detections: {
             Hidden: false,
@@ -359,12 +359,12 @@ export default {
         TimeBetweenMissiles: 4,
         MissileAmount: 2,
         Range: 24,
-        Health: 120,
+        Health: 250,
         Lifetime: 60,
         Speed: 1.5,
         IgnoreCollisionDamage: true,
-        Cooldown: 0.115,
-        Damage: 9,
+        Cooldown: 0.12,
+        Damage: 8,
         Detections: {
             Hidden: true,
             Flying: false,
