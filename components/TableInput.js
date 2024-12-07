@@ -238,6 +238,7 @@ export default class TableInput {
     #getDelta(cellData, deltaData, input) {
         const difference = cellData - deltaData;
         if (difference === 0) return '';
+        if (difference.toFixed(3) == 0) return '';
 
         const sign = Math.sign(difference) > 0 ? '+' : '-';
         const absDifference = Math.abs(difference);
