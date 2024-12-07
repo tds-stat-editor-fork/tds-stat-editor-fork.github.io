@@ -97,6 +97,15 @@ class CalculatedManager {
                 },
             },
         },
+        ThornsDPS: {
+            Default: {
+                Requires: ['ThornsTick', 'ThornsDamage'],
+                For: ['Harvester'],
+                Value: (level) => {
+                    return level.ThornsDamage / level.ThornsTick;
+                },
+            },
+        },
         UnitDPS: {
             Default: {
                 Requires: ['UnitToSend'],
@@ -607,15 +616,6 @@ class CalculatedManager {
                     const bearTrapDPS = level.BearTrapDPS;
 
                     return Math.max(spikeDPS, landmineDPS, bearTrapDPS);
-                },
-            },
-        },
-        ThornsDPS: {
-            Default: {
-                Requires: ['ThornsTick', 'ThornsDamage'],
-                For: ['Harvester'],
-                Value: (level) => {
-                    return level.ThornsDamage / level.ThornsTick;
                 },
             },
         },
