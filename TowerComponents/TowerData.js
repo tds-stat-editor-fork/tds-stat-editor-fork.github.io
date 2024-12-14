@@ -71,7 +71,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 3577061449,
+          Image: 17847640091,
           Stats: {
             Extras: [],
             Attributes: {
@@ -92,7 +92,7 @@ export default {
           Cost: 300,
         },
         {
-          Image: 5525754186,
+          Image: 17847639896,
           Stats: {
             Extras: ["Bomb Dropping", "Figure8"],
             Attributes: {
@@ -113,7 +113,7 @@ export default {
           Cost: 350,
         },
         {
-          Image: 5525748117,
+          Image: 17847640366,
           Stats: {
             Extras: ["Upgraded Bombs"],
             Attributes: {
@@ -134,7 +134,7 @@ export default {
           Cost: 1500,
         },
         {
-          Image: 5525748988,
+          Image: 17847640366,
           Stats: {
             Extras: ["Nearby towers get Hidden Detection", "Upgraded Bombs"],
             Attributes: {
@@ -155,7 +155,7 @@ export default {
           Cost: 3500,
         },
         {
-          Image: 5525749418,
+          Image: 17847640211,
           Stats: {
             Extras: ["Speed increased by 35%", "Upgraded Bombs"],
             Attributes: {
@@ -1005,7 +1005,7 @@ export default {
             Extras: ["Ammo: 40 -> 50", "❄️ Max Slowness: 50% > 65%"],
             Attributes: { MaxSlow: 65 },
           },
-          Image: 3280081327,
+          Image: 15686403377,
           Title: "Frosty Gear",
           Cost: 250,
         },
@@ -1020,7 +1020,7 @@ export default {
             Attributes: { DebuffDamage: 1 },
             Range: 13.5,
           },
-          Image: 3280081327,
+          Image: 15686403176,
           Title: "Freezing Tanks",
           Cost: 935,
         },
@@ -1040,7 +1040,7 @@ export default {
             },
             Damage: 1,
           },
-          Image: 3280081327,
+          Image: 15686403037,
           Title: "Ice Commando",
           Cost: 4000,
         },
@@ -1061,7 +1061,7 @@ export default {
             Range: 15,
             Damage: 2,
           },
-          Image: 3280081327,
+          Image: 15686402849,
           Title: "Winter's Fury",
           Cost: 9500,
         },
@@ -1167,7 +1167,7 @@ export default {
             Range: 15,
             Attributes: { PurpleTrackBuffs: { Range: 12.5 } },
           },
-          Image: 5523221280,
+          Image: 95144637961093,
           Title: "Laptop Studio",
           Cost: 300,
         },
@@ -1180,7 +1180,7 @@ export default {
               PurpleTrackBuffs: { Range: 15},
             },
           },
-          Image: 5523222880,
+          Image: 113548130163293,
           Title: "Party Mode",
           Cost: 1250,
         },
@@ -1195,7 +1195,7 @@ export default {
             Range: 15,
             Extras: ["10% discount buff"],
           },
-          Image: 5523224020,
+          Image: 101877307760287,
           Title: "Thrifty Music",
           Cost: 3000,
         },
@@ -1209,7 +1209,7 @@ export default {
             Range: 16.5,
             Extras: ["25% range buff"],
           },
-          Image: 5523225033,
+          Image: 123117801948681,
           Title: "Audio Visualizer",
           Cost: 8000,
         },
@@ -1226,7 +1226,7 @@ export default {
             Range: 18.5,
             Extras: ["35% range buff", "20% discount buff"],
           },
-          Image: 5523225756,
+          Image: 113854542319656,
           Title: "Apocalypse Rave",
           Cost: 20000,
         },
@@ -1951,7 +1951,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 3354968287,
+          Image: 15686418975,
           Stats: {
             Extras: ["❄Max Slowness: 45% -> 60%", "Chill Slowness: 15% -> 20%"],
             Attributes: {
@@ -1976,7 +1976,7 @@ export default {
           Cost: 150,
         },
         {
-          Image: 3354969462,
+          Image: 15686418835,
           Stats: {
             Extras: ["🧊Freeze Time: 1.5 -> 2", "Defense Melt: 10"],
             Attributes: {
@@ -2001,7 +2001,7 @@ export default {
           Cost: 625,
         },
         {
-          Image: 3354970959,
+          Image: 15686418748,
           Stats: {
             Extras: [
               "Burst: 1 -> 3",
@@ -2031,7 +2031,7 @@ export default {
           Cost: 1650,
         },
         {
-          Image: 3354972102,
+          Image: 15686418571,
           Stats: {
             Extras: [
               "Burst: 3 -> 6",
@@ -2083,7 +2083,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: "3354968287",
+          Image: "15686412605",
           Stats: {
             Extras: [],
             Attributes: {
@@ -2100,7 +2100,7 @@ export default {
           Cost: 300,
         },
         {
-          Image: 3354969462,
+          Image: 15686412501,
           Stats: {
             Extras: ["Max Hits: 3 -> 4"],
             Attributes: {
@@ -2117,7 +2117,7 @@ export default {
           Cost: 950,
         },
         {
-          Image: 3354970959,
+          Image: 15686412400,
           Stats: {
             Extras: ["🧊Freeze Time: 0.5 > 0.75", "Max Hits: 4 -> 5"],
             Attributes: {
@@ -2134,7 +2134,7 @@ export default {
           Cost: 3500,
         },
         {
-          Image: 3354972102,
+          Image: 15686412306,
           Stats: {
             Extras: [
               "🧊Freeze Time: 0.75 > 1.25",
@@ -2451,6 +2451,7 @@ export default {
             ThornsDamage: 4,
           },
           Title: "Thorns",
+          Image: 84794687219284,
           Cost: 650,
         },
         {
@@ -2464,6 +2465,7 @@ export default {
             ThornsSlow: 20,
           },
           Title: "Early Harvest",
+          Image: 128833693887182,
           Cost: 2000,
         },
         {
@@ -2473,6 +2475,7 @@ export default {
             ThornsRange: 16,
           },
           Title: "Nature's Vengence",
+          Image: 140040939003373,
           Cost: 5000,
         },
         {
@@ -2486,6 +2489,7 @@ export default {
             ThornsSlow: 25,
           },
           Title: "Cold-Hearted Scarecrow",
+          Image: 83141210249578,
           Cost: 8500,
         },
         {
@@ -2498,6 +2502,7 @@ export default {
             ThornsSlow: 30,
           },
           Title: "Reaper",
+          Image: 117691212648454,
           Cost: 20000,
         },
       ]
@@ -2638,7 +2643,7 @@ export default {
       Upgrades: [
         {
           Stats: { Cooldown: 1, Range: 12 },
-          Image: 0,
+          Image: 15332518871,
           Title: "Trained Juggling",
           Cost: 100,
         },
@@ -2652,7 +2657,7 @@ export default {
             Attributes: { FireStats: { BurnTime: 4, BurnTick: 1 } },
             Damage: 4,
           },
-          Image: 0,
+          Image: 15332518503,
           Title: "Cold Humor",
           Cost: 550,
         },
@@ -2667,7 +2672,7 @@ export default {
             Detections: { Hidden: true },
             Damage: 12,
           },
-          Image: 0,
+          Image: 15332518237,
           Title: "Potent Bombs",
           Cost: 2250,
         },
@@ -2686,7 +2691,7 @@ export default {
             Range: 14,
             Damage: 22,
           },
-          Image: 0,
+          Image: 15332519184,
           Title: "Harlequin of Doom",
           Cost: 8500,
         },
@@ -2978,8 +2983,8 @@ export default {
               MaxUnits: 6,
             },
           },
-          Image: 0,
-          Title: "Upgraded Barracks",
+          Image: 17196819847,
+          Title: "Explosive Experts",
           Cost: 1000,
         },
         {
@@ -3000,8 +3005,8 @@ export default {
             Range: 8,
             Damage: 0,
           },
-          Image: "0",
-          Title: "Explosive Experts",
+          Image: 17196820389,
+          Title: "Upgraded Barracks",
           Cost: 2000,
         },
         {
@@ -3023,7 +3028,7 @@ export default {
             Range: 10,
             Damage: 0,
           },
-          Image: "0",
+          Image: 17196819964,
           Title: "Improved Training",
           Cost: 7000,
         },
@@ -3046,7 +3051,7 @@ export default {
             Range: 10,
             Damage: 0,
           },
-          Image: "0",
+          Image: 13019520315,
           Title: "Riot Control",
           Cost: 10000,
         },
@@ -3069,7 +3074,7 @@ export default {
             Range: 10,
             Damage: 0,
           },
-          Image: "0",
+          Image: 17196820108,
           Title: "Air Transport",
           Cost: 15000,
         },
@@ -3092,7 +3097,7 @@ export default {
             Range: 10,
             Damage: 0,
           },
-          Image: "0",
+          Image: 17196820275,
           Title: "Enhanced Equipment",
           Cost: 35000,
         },
@@ -3293,7 +3298,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 5523183082,
+          Image: 15184753790,
           Stats: {
             Extras: ["Faster Rev Time (1.4)"],
             Attributes: { RevTime: 1.25 },
@@ -3310,7 +3315,7 @@ export default {
           Cost: 950,
         },
         {
-          Image: 5523183560,
+          Image: 15184753514,
           Stats: {
             Extras: ["Faster Rev Time (1.3)"],
             Attributes: { RevTime: 1.25 },
@@ -3328,7 +3333,7 @@ export default {
           Cost: 2250,
         },
         {
-          Image: 5523183784,
+          Image: 15184753289,
           Stats: {
             Extras: [],
             Attributes: { RevTime: 0.75 },
@@ -3341,7 +3346,7 @@ export default {
           Cost: 6250,
         },
         {
-          Image: 5523184267,
+          Image: 15184752970,
           Stats: {
             Extras: ["Faster Rev Time (1.2)"],
             Attributes: { RevTime: 0.75 },
@@ -3366,7 +3371,7 @@ export default {
     Golden: {
       Upgrades: [
         {
-          Image: 5523183082,
+          Image: 15184753790,
           Stats: {
             Extras: ["Faster Rev Time (1.4)"],
             Attributes: { RevTime: 0.75 },
@@ -3384,7 +3389,7 @@ export default {
           Cost: 800,
         },
         {
-          Image: 5523183560,
+          Image: 15184753514,
           Stats: {
             Extras: ["Faster Rev Time (1.3)"],
             Attributes: { RevTime: 0.75 },
@@ -3402,7 +3407,7 @@ export default {
           Cost: 2400,
         },
         {
-          Image: 5523183784,
+          Image: 15184753289,
           Stats: {
             Extras: [],
             Attributes: { RevTime: 0.75 },
@@ -3416,7 +3421,7 @@ export default {
           Cost: 7750,
         },
         {
-          Image: 5523184267,
+          Image: 15184752970,
           Stats: {
             Extras: [
               "Faster Rev Time (1.2)",
@@ -3764,7 +3769,7 @@ export default {
     "Top Path": {
       Upgrades: [
         {
-          Image: 3577061449,
+          Image: 117186100008439,
           Stats: {
             Extras: [],
             Attributes: {
@@ -3780,7 +3785,7 @@ export default {
           Cost: 1200,
         },
         {
-          Image: 5528331895,
+          Image: 117186100008439,
           Stats: {
             Attributes: {
               MissilesEnabled: false,
@@ -3796,7 +3801,7 @@ export default {
           Cost: 1850,
         },
         {
-          Image: 5528336509,
+          Image: 98101516586169,
           Stats: {
             Attributes: {
               MissileCooldown: 7,
@@ -3818,7 +3823,7 @@ export default {
           Cost: 4750,
         },
         {
-          Image: 5528337682,
+          Image: 110652411715254,
           Stats: {
             Attributes: {
               MissileCooldown: 6,
@@ -3840,7 +3845,7 @@ export default {
           Cost: 17500,
         },
         {
-          Image: 5528341233,
+          Image: 110652411715254,
           Stats: {
             Attributes: {
               MissileCooldown: 6,
@@ -3884,7 +3889,7 @@ export default {
     "Bottom Path": {
       Upgrades: [
         {
-          Image: 3577061449,
+          Image: 117186100008439,
           Stats: {
             Extras: [],
             Attributes: {
@@ -3900,7 +3905,7 @@ export default {
           Cost: 1200,
         },
         {
-          Image: 5528331895,
+          Image: 117186100008439,
           Stats: {
             Attributes: {
               MissilesEnabled: false,
@@ -3916,7 +3921,7 @@ export default {
           Cost: 1850,
         },
         {
-          Image: 5528336509,
+          Image: 98101516586169,
           Stats: {
             Attributes: {
               MissileCooldown: 7,
@@ -3938,7 +3943,7 @@ export default {
           Cost: 4750,
         },
         {
-          Image: 5528337682,
+          Image: 138033956206562,
           Stats: {
             Attributes: {
               MissileCooldown: 5,
@@ -3961,7 +3966,7 @@ export default {
           Cost: 13500,
         },
         {
-          Image: 5528341233,
+          Image: 138033956206562,
           Stats: {
             Attributes: {
               MissileCooldown: 3.5,
