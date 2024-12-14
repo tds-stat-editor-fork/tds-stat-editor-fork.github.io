@@ -4714,7 +4714,7 @@ export default {
           Cost: 3000,
         },
         {
-          Image: 4157647659,
+          Image: 102669883500047,
           Stats: {
             Attributes: {
               CritMultiplier: 3.5,
@@ -5717,7 +5717,7 @@ export default {
           Cost: 650,
         },
         {
-          Image: 3584258139,
+          Image: 4989372868,
           Stats: {
             Extras: ["Nearby troops get 10% DMG buff"],
             Attributes: {
