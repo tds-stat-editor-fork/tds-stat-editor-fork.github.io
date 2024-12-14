@@ -202,13 +202,6 @@ export default {
           Image: 3280081327,
           Stats: {
             Extras: [],
-            Attributes: {
-              BurnDamage: 2,
-              Pierce: 1,
-              ArrowType: "Normal",
-              BurnTick: 1,
-              BurnTime: 3,
-            },
             Detections: {
               Flying: true,
               Hidden: false,
@@ -225,13 +218,6 @@ export default {
           Image: 524302408,
           Stats: {
             Extras: [],
-            Attributes: {
-              BurnDamage: 2,
-              Pierce: 1,
-              ArrowType: "Normal",
-              BurnTick: 1,
-              BurnTime: 3,
-            },
             Detections: { Flying: true, Hidden: true, Lead: false },
             Cooldown: 2.25,
             Range: 22,
@@ -301,7 +287,7 @@ export default {
       Defaults: {
         Detections: { Flying: true, Hidden: false, Lead: false },
         Attributes: {
-          BurnDamage: 2,
+          BurnDamage: 0,
           Pierce: 1,
           ArrowType: "Normal",
           BurnTick: 1,
@@ -2533,6 +2519,7 @@ export default {
       },
       Upgrades: [
         {
+          Image: 87280920444213,
           Stats: {
             Damage: 6,
             Cooldown: 3.75,
@@ -2542,6 +2529,7 @@ export default {
           Cost: 450,
         },
         {
+          Image: 103271630916907,
           Stats: {
             Damage: 25,
             RocketSpeed: 25,
@@ -2553,6 +2541,7 @@ export default {
           Cost: 2750,
         },
         {
+          Image: 98952678277583,
           Stats: {
             Detections: {Flying: true},
             Damage: 60,
@@ -5858,11 +5847,6 @@ export default {
               CanStun: false,
               CritMultiplier: 1.5,
             },
-            Detections: {
-              Flying: false,
-              Hidden: true,
-              Lead: false,
-            },
             Cooldown: 0.75,
             Range: 6,
             Damage: 18,
@@ -5883,7 +5867,7 @@ export default {
               CanStun: true,
               CritMultiplier: 1.5,
             },
-            Detections: { Flying: false, Hidden: true },
+            Detections: { Lead: true},
             Cooldown: 0.75,
             Range: 7,
             Damage: 40,
@@ -5904,7 +5888,6 @@ export default {
               CanStun: true,
               CritMultiplier: 1.5,
             },
-            Detections: { Flying: false, Hidden: true },
             Cooldown: 0.75,
             Range: 7,
             Damage: 115,

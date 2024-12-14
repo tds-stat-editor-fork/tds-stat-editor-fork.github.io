@@ -530,7 +530,7 @@ class CalculatedManager {
             },
             Burst: {
                 For: ['Freezer'],
-                Requires: ['Damage', 'Cooldown', 'Burst', 'ReloadTime'],
+                Requires: ['Damage', 'Cooldown', 'Burst', 'BurstCool'],
                 Value: (level) => {
                     const totalDamage = level.Damage * level.Burst;
                     const totalTime =
