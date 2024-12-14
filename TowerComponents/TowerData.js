@@ -522,7 +522,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 3615110168,
+          Image: 119448063654848,
           Stats: {
             Extras: [],
             Attributes: {},
@@ -544,7 +544,7 @@ export default {
           Cost: 935,
         },
         {
-          Image: 3615110536,
+          Image: 72540829223100,
           Stats: {
             Attributes: {},
             Detections: {
@@ -565,7 +565,7 @@ export default {
           Cost: 3250,
         },
         {
-          Image: 3615110964,
+          Image: 111526844050563,
           Stats: {
             Extras: [],
             Attributes: {},
@@ -592,7 +592,7 @@ export default {
           Cost: 8500,
         },
         {
-          Image: 3615111324,
+          Image: 113494545335861,
           Stats: {
             Attributes: {},
             Detections: {
