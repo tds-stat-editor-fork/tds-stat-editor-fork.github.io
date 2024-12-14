@@ -4674,7 +4674,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 4157646701,
+          Image: 92740435796975,
           Stats: {
             Attributes: {
               CritMultiplier: 3,
@@ -4694,7 +4694,7 @@ export default {
           Cost: 800,
         },
         {
-          Image: 4157647195,
+          Image: 93224058728799,
           Stats: {
             Attributes: {
               CritMultiplier: 3,
@@ -4734,7 +4734,7 @@ export default {
           Cost: 6500,
         },
         {
-          Image: 4157648765,
+          Image: 102686099141752,
           Stats: {
             Attributes: {
               CritMultiplier: 4,
@@ -5688,7 +5688,7 @@ export default {
             },
             Cooldown: 0.1,
             Range: 18,
-            Damage: 1,
+            Damage: 2,
           },
           Title: "IMPROVED HANDLING",
           Cost: 250,
@@ -5711,7 +5711,7 @@ export default {
             },
             Cooldown: 0.1,
             Range: 22,
-            Damage: 2,
+            Damage: 3,
           },
           Title: "STARK MISSILE",
           Cost: 650,
@@ -5734,7 +5734,7 @@ export default {
             },
             Cooldown: 0.1,
             Range: 22,
-            Damage: 4,
+            Damage: 8,
           },
           Title: "EPIC ARMOR PLATING",
           Cost: 5000,
@@ -5748,7 +5748,7 @@ export default {
               DamageBuff: 10,
               ExplosionRadius: 6,
               Spread: 10,
-              ExplosionDamage: 25,
+              ExplosionDamage: 40,
             },
             Detections: {
               Flying: false,
@@ -5757,7 +5757,7 @@ export default {
             },
             Cooldown: 0.1,
             Range: 24,
-            Damage: 10,
+            Damage: 12,
           },
           Title: "ULTRA CHARGED BODY ARMOR",
           Cost: 12500,
@@ -5774,19 +5774,19 @@ export default {
               DamageBuff: 20,
               ExplosionRadius: 6,
               Spread: 10,
-              ExplosionDamage: 25,
+              ExplosionDamage: 80,
             },
             Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
+              Flying: true,
+              Hidden: true,
+              Lead: true,
             },
             Cooldown: 0.1,
             Range: 26,
-            Damage: 18,
+            Damage: 40,
           },
           Title: "To The Void and Back",
-          Cost: 75000,
+          Cost: 50000,
         },
       ],
       Defaults: {
@@ -5802,7 +5802,7 @@ export default {
         Price: 2000,
         Limit: 10,
         Cooldown: 0.1,
-        Damage: 1,
+        Damage: 2,
       },
     },
   },
