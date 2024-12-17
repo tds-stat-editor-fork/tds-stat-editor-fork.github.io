@@ -5011,6 +5011,10 @@ export default {
         CanFreeze: false,
         SlowPercent: 15,
         MaxSlow: 30,
+        ProjectileSpeed: 20,
+        ExplosionRadius: 2,
+        MaxHits: 1,
+        DebuffLength: 3,
       },
       Upgrades: [
         {
@@ -5020,6 +5024,8 @@ export default {
            MaxSlow: 40,        
           },
           Cost: 150,
+          Title: "Snow Day",
+          Image: 15686418975,
         },
         {
           Stats: {
@@ -5029,6 +5035,8 @@ export default {
            MaxSlow: 60,
           },
           Cost: 650,
+          Title: "Frigid Temperatures",
+          Image: 15686418835,
         },
         {
           Stats: { 
@@ -5036,8 +5044,12 @@ export default {
            FreezeTime: 2,
            ExplosionRadius: 4,
            Cooldown: 2,
+           Damage: 15,
+           MaxHits: 4,
           },
           Cost: 2500,
+          Title: "Snowball Cannon",
+          Image: 15686418748,
         },
       ],
     },
