@@ -5000,6 +5000,43 @@ export default {
       },
     },
   },
+  Snowballer: {
+    Default: {
+      Defaults: {
+        Price: 300,
+        Damage: 4,
+        Range: 12,
+        Cooldown: 3,
+        Detections: {Lead: false, Flying: false, Hidden: false},
+        CanFreeze: false,
+        SlowPercent: 15,
+        MaxSlow: 30,
+      },
+      Upgrades: [
+        {
+          Cooldown: 2.5,
+          Cost: 150,
+          SlowPercent: 20,
+          MaxSlow: 40,        
+        },
+        {
+          Damage: 8,
+          Cost: 650,
+          Range: 14,
+          SlowPercent: 30,
+          MaxSlow: 60,
+        },
+        {
+          CanFreeze: true,
+          FreezeTime: 2,
+          ExplosionRadius: 4,
+          Cooldown: 2,
+          Cost: 2500,
+          Damage: 15,
+        },
+      ],
+    },
+  },
   Soldier: {
     Default: {
       Upgrades: [
