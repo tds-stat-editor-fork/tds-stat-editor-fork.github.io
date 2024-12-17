@@ -5046,6 +5046,7 @@ export default {
            Cooldown: 2,
            Damage: 15,
            MaxHits: 4,
+           Range: 18,
           },
           Cost: 2500,
           Title: "Snowball Cannon",
