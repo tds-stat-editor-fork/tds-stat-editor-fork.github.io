@@ -5014,25 +5014,30 @@ export default {
       },
       Upgrades: [
         {
-          Cooldown: 2.5,
+          Stats: {
+           Cooldown: 2.5,
+           SlowPercent: 20,
+           MaxSlow: 40,        
+          },
           Cost: 150,
-          SlowPercent: 20,
-          MaxSlow: 40,        
         },
         {
-          Damage: 8,
+          Stats: {
+           Damage: 8,
+           Range: 14,
+           SlowPercent: 30,
+           MaxSlow: 60,
+          },
           Cost: 650,
-          Range: 14,
-          SlowPercent: 30,
-          MaxSlow: 60,
         },
         {
-          CanFreeze: true,
-          FreezeTime: 2,
-          ExplosionRadius: 4,
-          Cooldown: 2,
+          Stats: { 
+           CanFreeze: true,
+           FreezeTime: 2,
+           ExplosionRadius: 4,
+           Cooldown: 2,
+          },
           Cost: 2500,
-          Damage: 15,
         },
       ],
     },
