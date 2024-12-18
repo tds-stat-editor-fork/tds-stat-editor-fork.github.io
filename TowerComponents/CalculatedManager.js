@@ -97,7 +97,7 @@ class CalculatedManager {
                 },
             },
         },
-        "Thorns DPS": {
+        ThornsDPS: {
             Default: {
                 For: ['Harvester'],
                 Requires: ['ThornsDamage', 'ThornsTick'],
@@ -116,6 +116,19 @@ class CalculatedManager {
                     const unitData = this.unitManager.unitData[unitName];
 
                     return unitData.attributes.DPS;
+                },
+            },
+            Elementalist: {
+                For: ['Elementalist'],
+                Value: (level) => {
+                    this.unitManager.load();
+                    const unitName = level.UnitToSend;
+
+                    if (!this.unitManager.hasUnit(unitName)) return 0;
+
+                    const unitData = this.unitManager.unitData[unitName];
+                    
+                    return (unitData.attributes.DPS) * (unitData.attributes.Lifespan / level.TurretCooldown);
                 },
             },
             Engineer: {
@@ -606,6 +619,16 @@ class CalculatedManager {
                     return unitDPS + towerDPS + ramDPS;
                 },
             },
+            Elementalist: {
+                For: ['Elementalist'],
+                Value: (level) => {
+                    const burnDPS = level.BurnDamage / level.BurnTick ?? 0;
+                    const unitDPS = level.UnitDPS ?? 0;
+                    const towerDPS = (level.Damage * level.BurstSize) / (((level.BurstSize - 1) * level.Cooldown) + level.BurstCooldown);
+                    
+                    return level.UnitDPS + burnDPS + towerDPS;
+                },
+            },
             Trapper: {
                 For: ['Trapper'],
                 Value: (level) => {
@@ -867,6 +890,7 @@ class CalculatedManager {
         this.#add('BearTrapMaxPileDamage', skinData);
         this.#add('TowerDPS', skinData);
         this.#add('UnitDPS', skinData);
+        this.#add('ThornsDPS', skinData);
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
         this.#add('LaserTime', skinData);

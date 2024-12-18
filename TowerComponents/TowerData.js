@@ -1382,6 +1382,75 @@ export default {
       },
     },
   },
+  Elementalist: {
+    "Frost Mode":
+    {
+      Defaults: {
+        Price: 2000,
+        Damage: 3,
+        BurstSize: 3,
+        Cooldown: 0.2,
+        BurstCooldown: 0.4,
+        Range: 12,
+        SlowPercent: 12.5,
+        MaxSlow: 60,
+        DebuffLength: 2,
+        Detections: {Lead: false, Flying: false, Hidden: false},
+      },
+      Upgrades: [
+        {
+          Image: 136223791844063,
+          Stats: {
+            Damage: 5,
+            BurstSize: 4,
+            Range: 15,
+            SlowPercent: 7.5,
+          },
+          Title: "Elemental Armory",
+          Cost: 1500,
+        },
+        {
+          Image: 124219033045691,
+          Stats: {
+            UnitToSend: "IceTurret1",
+            TurretCooldown: 50,
+            Damage: 10,
+            Range: 17,
+            Detections: {Hidden: true},
+            MaxSlow: 50,
+          },
+          Title: "Experimental Tech",
+          Cost: 4000,
+        },
+        {
+          Image: 77890912829468,
+          Stats: {
+            UnitToSend: "IceTurret2",
+            Damage: 12,
+            BurstSize: 5,
+            BurstCooldown: 0.5,
+            SlowPercent: 10,
+          },
+          Cost: 8000,
+          Title: "Improved Exhaust Systems",
+        },
+        {
+          Image: 77890912829468,
+          Stats: {
+            UnitToSend: "IceTurret3",
+            Damage: 15,
+            Cooldown: 0.125,
+            BurstSize: 7,
+            BurstCooldown: 0.4,
+            SlowPercent: 12.5,
+            MaxSlow: 60,
+          },
+          Cost: 15000,
+          Title: "Frost Fire Specialist",
+        },
+      ],
+    },
+  },
   "Elf Camp": {
     Default: {
       Upgrades: [
@@ -2424,6 +2493,89 @@ export default {
         Damage: 2,
       },
     },
+  },
+  Harvester: {
+    Default: {
+      Defaults: {
+        Detections: { Flying: true, Hidden: false, Lead: false},
+        Damage: 6,
+        Cooldown: 1.2,
+        Range: 13,
+        Pierce: 2,
+        ProjectileSpeed: 45,
+        ThornsDamage: 2,
+        ThornsRange: 10,
+        ThornsDuration: 8,
+        ThornsSlow: 15,
+        ThornsTick: 0.5,
+        "Nature's Bond": true,
+        Cost: 1400,
+        Limit: 4,
+      },
+      Upgrades: [
+        {
+          Stats: {
+            Damage: 8,
+            Range: 15,
+            ThornsDamage: 4,
+          },
+          Title: "Thorns",
+          Image: 84794687219284,
+          Cost: 650,
+        },
+        {
+          Stats: {
+            Damage: 10,
+            Cooldown: 0.85,
+            Pierce: 3,
+            ThornsDamage: 6,
+            ThornsRange: 12,
+            ThornsDuration: 10,
+            ThornsSlow: 20,
+          },
+          Title: "Early Harvest",
+          Image: 128833693887182,
+          Cost: 2000,
+        },
+        {
+          Stats: {
+            Damage: 20,
+            ThornsDamage: 12,
+            ThornsRange: 16,
+          },
+          Title: "Nature's Vengence",
+          Image: 140040939003373,
+          Cost: 5000,
+        },
+        {
+          Stats: {
+            Damage: 30,
+            Cooldown: 0.75,
+            Range: 17.5,
+            ThornsDamage: 20,
+            ThornsRange: 18,
+            ThornsDuration: 16,
+            ThornsSlow: 25,
+          },
+          Title: "Cold-Hearted Scarecrow",
+          Image: 83141210249578,
+          Cost: 8500,
+        },
+        {
+          Stats: {
+            Damage: 90,
+            Cooldown: 1.5,
+            Range: 22.5,
+            Pierce: 4,
+            ThornsRange: 20,
+            ThornsSlow: 30,
+          },
+          Title: "Reaper",
+          Image: 117691212648454,
+          Cost: 20000,
+        },
+      ]
+    }
   },
   "Hallow Punk": {
     Default: {
@@ -4917,6 +5069,61 @@ export default {
       },
     },
   },
+  Snowballer: {
+    Default: {
+      Defaults: {
+        Price: 300,
+        Damage: 4,
+        Range: 12,
+        Cooldown: 3,
+        Detections: {Lead: false, Flying: false, Hidden: false},
+        CanFreeze: false,
+        SlowPercent: 15,
+        MaxSlow: 30,
+        ProjectileSpeed: 20,
+        ExplosionRadius: 2,
+        MaxHits: 1,
+        DebuffLength: 3,
+      },
+      Upgrades: [
+        {
+          Stats: {
+           Cooldown: 2.5,
+           SlowPercent: 20,
+           MaxSlow: 40,        
+          },
+          Cost: 150,
+          Title: "Snow Day",
+          Image: 15686418975,
+        },
+        {
+          Stats: {
+           Damage: 8,
+           Range: 14,
+           SlowPercent: 30,
+           MaxSlow: 60,
+          },
+          Cost: 650,
+          Title: "Frigid Temperatures",
+          Image: 15686418835,
+        },
+        {
+          Stats: { 
+           CanFreeze: true,
+           FreezeTime: 2,
+           ExplosionRadius: 4,
+           Cooldown: 2,
+           Damage: 15,
+           MaxHits: 4,
+           Range: 18,
+          },
+          Cost: 2500,
+          Title: "Snowball Cannon",
+          Image: 15686418748,
+        },
+      ],
+    },
+  },
   Soldier: {
     Default: {
       Upgrades: [
@@ -5836,143 +6043,5 @@ export default {
         Damage: 6,
       },
     },
-  },
-  Snowballer: {
-    Default: {
-      Defaults: {
-        Price: 300,
-        Damage: 4,
-        Range: 12,
-        Cooldown: 3,
-        Detections: {Lead: false, Flying: false, Hidden: false},
-        CanFreeze: false,
-        SlowPercent: 15,
-        MaxSlow: 30,
-        ProjectileSpeed: 20,
-        ExplosionRadius: 2,
-        MaxHits: 1,
-        DebuffLength: 3,
-      },
-      Upgrades: [
-        {
-          Stats: {
-           Cooldown: 2.5,
-           SlowPercent: 20,
-           MaxSlow: 40,        
-          },
-          Cost: 150,
-          Title: "Snow Day",
-          Image: 15686418975,
-        },
-        {
-          Stats: {
-           Damage: 8,
-           Range: 14,
-           SlowPercent: 30,
-           MaxSlow: 60,
-          },
-          Cost: 650,
-          Title: "Frigid Temperatures",
-          Image: 15686418835,
-        },
-        {
-          Stats: { 
-           CanFreeze: true,
-           FreezeTime: 2,
-           ExplosionRadius: 4,
-           Cooldown: 2,
-           Damage: 15,
-           MaxHits: 4,
-           Range: 18,
-          },
-          Cost: 2500,
-          Title: "Snowball Cannon",
-          Image: 15686418748,
-        },
-      ],
-    },
-  },
-  Harvester: {
-    Default: {
-      Defaults: {
-        Detections: { Flying: true, Hidden: false, Lead: false},
-        Damage: 6,
-        Cooldown: 1.2,
-        Range: 13,
-        Pierce: 2,
-        ProjectileSpeed: 45,
-        ThornsDamage: 2,
-        ThornsRange: 10,
-        ThornsDuration: 8,
-        ThornsSlow: 15,
-        ThornsTick: 0.5,
-        "Nature's Bond": true,
-        Cost: 1400,
-        Limit: 4,
-      },
-      Upgrades: [
-        {
-          Stats: {
-            Damage: 8,
-            Range: 15,
-            ThornsDamage: 4,
-          },
-          Title: "Thorns",
-          Image: 84794687219284,
-          Cost: 650,
-        },
-        {
-          Stats: {
-            Damage: 10,
-            Cooldown: 0.85,
-            Pierce: 3,
-            ThornsDamage: 6,
-            ThornsRange: 12,
-            ThornsDuration: 10,
-            ThornsSlow: 20,
-          },
-          Title: "Early Harvest",
-          Image: 128833693887182,
-          Cost: 2000,
-        },
-        {
-          Stats: {
-            Damage: 20,
-            ThornsDamage: 12,
-            ThornsRange: 16,
-          },
-          Title: "Nature's Vengence",
-          Image: 140040939003373,
-          Cost: 5000,
-        },
-        {
-          Stats: {
-            Damage: 30,
-            Cooldown: 0.75,
-            Range: 17.5,
-            ThornsDamage: 20,
-            ThornsRange: 18,
-            ThornsDuration: 16,
-            ThornsSlow: 25,
-          },
-          Title: "Cold-Hearted Scarecrow",
-          Image: 83141210249578,
-          Cost: 8500,
-        },
-        {
-          Stats: {
-            Damage: 90,
-            Cooldown: 1.5,
-            Range: 22.5,
-            Pierce: 4,
-            ThornsRange: 20,
-            ThornsSlow: 30,
-          },
-          Title: "Reaper",
-          Image: 117691212648454,
-          Cost: 20000,
-        },
-      ]
-    }
   },
 };
