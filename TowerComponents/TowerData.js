@@ -2569,6 +2569,7 @@ export default {
             Pierce: 4,
             ThornsRange: 20,
             ThornsSlow: 30,
+            ThornsDamage: 30,
           },
           Title: "Reaper",
           Image: 117691212648454,

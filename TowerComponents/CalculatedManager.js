@@ -622,11 +622,11 @@ class CalculatedManager {
             Elementalist: {
                 For: ['Elementalist'],
                 Value: (level) => {
-                    const burnDPS = level.BurnDamage / level.BurnTick ?? 0;
+                    const burnDPS = level.BurnDamage / level.BurnTick == 0 ? 0 : level.BurnDamage / level.BurnTick;
                     const unitDPS = level.UnitDPS ?? 0;
                     const towerDPS = (level.Damage * level.BurstSize) / (((level.BurstSize - 1) * level.Cooldown) + level.BurstCooldown);
                     
-                    return level.UnitDPS + burnDPS + towerDPS;
+                    return unitDPS + burnDPS + towerDPS;
                 },
             },
             Trapper: {
