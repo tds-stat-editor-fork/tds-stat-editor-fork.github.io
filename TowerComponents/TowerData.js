@@ -1388,12 +1388,14 @@ export default {
       Defaults: {
         Price: 2000,
         Damage: 3,
+        BurnDamage: 0,
+        BurnTick: 0.25,
         BurstSize: 3,
         Cooldown: 0.2,
         BurstCooldown: 0.4,
         Range: 12,
-        SlowPercent: 12.5,
-        MaxSlow: 60,
+        SlowPercent: 5,
+        MaxSlow: 45,
         DebuffLength: 2,
         Detections: {Lead: false, Flying: false, Hidden: false},
       },
@@ -5877,6 +5879,7 @@ export default {
               MissileTime: 5,
               DamageBuff: 10,
               ExplosionRadius: 6,
+              MissileCount: 4,
               Spread: 10,
               ExplosionDamage: 40,
             },
@@ -5922,6 +5925,7 @@ export default {
       Defaults: {
         Attributes: {
           MissileTime: 5,
+          MissileCount: 1,
           DamageBuff: 0,
           ExplosionRadius: 5,
           Spread: 10,
