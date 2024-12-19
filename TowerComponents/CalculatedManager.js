@@ -104,6 +104,19 @@ class CalculatedManager {
                 Value: (level) => level.ThornsDamage / level.ThornsTick,
             },
         },
+        HeatwaveDPS: {
+            Default: {
+                For: ['Elementalist'],
+                Requires: ['HeatwaveDamage', 'HeatwaveBurnTick', 'HeatwaveBurnDamage', 'HeatwaveCooldown'],
+                
+                Value: (level) => {
+                    const directDPS = level.HeatwaveDamage / level.HeatwaveCooldown;
+                    const burnDPS = level.HeatwaveBurnDamage / HeatwaveBurnTick;
+
+                    return directDPS + burnDPS;
+                }
+            },
+        },
         UnitDPS: {
             Default: {
                 Requires: ['UnitToSend'],
@@ -622,7 +635,7 @@ class CalculatedManager {
             Elementalist: {
                 For: ['Elementalist'],
                 Value: (level) => {
-                    const burnDPS = level.BurnDamage / level.BurnTick == 0 ? 0 : level.BurnDamage / level.BurnTick;
+                    const burnDPS = level.BurnDamage / level.BurnTick;
                     const unitDPS = level.UnitDPS ?? 0;
                     const towerDPS = (level.Damage * level.BurstSize) / (((level.BurstSize - 1) * level.Cooldown) + level.BurstCooldown);
                     
@@ -891,6 +904,7 @@ class CalculatedManager {
         this.#add('TowerDPS', skinData);
         this.#add('UnitDPS', skinData);
         this.#add('ThornsDPS', skinData);
+        this.#add('HeatwaveDPS', skinData);
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
         this.#add('LaserTime', skinData);
