@@ -450,6 +450,10 @@ class CalculatedManager {
                 Value: (level) =>
                 ((level.Damage * 2) + (level.Damage * level.CritMultiplier)) / (level.Cooldown * 3),
             },
+            Sledger: {
+                For: ['Sledger'],
+                Value: (level) => ((level.Damage * 1.2 / level.Cooldown)),
+            },
             Ace: {
                 For: ['Ace Pilot'],
                 Value: (level) => {

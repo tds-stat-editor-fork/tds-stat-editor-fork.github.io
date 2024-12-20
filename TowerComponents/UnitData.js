@@ -309,7 +309,7 @@ export default {
         Health: 1,
     },
     IceTurret2: {
-        Range: 10,
+        Range: 12.5,
         Damage: 20,
         Cooldown: 0.35,
         FreezeTime: 2,
@@ -320,7 +320,7 @@ export default {
         Health: 1,
     },
     IceTurret3: {
-        Range: 10,
+        Range: 15,
         Damage: 30,
         Cooldown: 0.3,
         FreezeTime: 2,
