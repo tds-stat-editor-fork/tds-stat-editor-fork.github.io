@@ -5059,7 +5059,7 @@ export default {
             Damage: 140,
           },
           Title: "Arctic Aftershocks",
-          Cost: 22500,
+          Cost: 16000,
         },
       ],
       Defaults: {
