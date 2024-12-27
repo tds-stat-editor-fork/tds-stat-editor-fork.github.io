@@ -452,7 +452,12 @@ class CalculatedManager {
             },
             Sledger: {
                 For: ['Sledger'],
-                Value: (level) => ((level.Damage * 1.2 / level.Cooldown)),
+                Value: (level) => {
+                    const dps = level.Damage / level.Cooldown;
+                    const aftershockDPS = level.Aftershock ? level.Damage * level.AftershockMult : 0;
+
+                    return dps + aftershockDPS;
+                },
             },
             Ace: {
                 For: ['Ace Pilot'],

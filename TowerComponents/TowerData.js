@@ -4941,6 +4941,8 @@ export default {
               FreezeTime: 1.5,
               DebuffLength: 3,
               MaxSlow: 45,
+              Aftershock: false,
+              AftershockMult: 0,
             },
             Detections: {
               Flying: false,
@@ -5048,6 +5050,8 @@ export default {
               FreezeTime: 1.75,
               DebuffLength: 3,
               MaxSlow: 80,
+              Aftershock: true,
+              AftershockMult: 0.2,
             },
             Detections: {
               Flying: false,
