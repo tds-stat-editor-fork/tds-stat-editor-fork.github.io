@@ -5076,6 +5076,7 @@ export default {
           FreezeTime: 1.5,
           DebuffLength: 3,
           MaxSlow: 45,
+          Aftershock: false,
         },
         Detections: { Flying: false, Hidden: false, Lead: false },
         Range: 6.5,
