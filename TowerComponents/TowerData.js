@@ -4935,7 +4935,7 @@ export default {
             Attributes: {
               CanFreeze: false,
               FreezeBonus: false,
-              MaxHits: 3,
+              MaxHits: 4,
               Lead: false,
               SlowPercent: 25,
               FreezeTime: 1.5,
@@ -4963,7 +4963,7 @@ export default {
             Attributes: {
               CanFreeze: false,
               FreezeBonus: false,
-              MaxHits: 4,
+              MaxHits: 5,
               Lead: true,
               SlowPercent: 25,
               FreezeTime: 1.5,
@@ -4992,7 +4992,7 @@ export default {
             Attributes: {
               CanFreeze: true,
               FreezeBonus: false,
-              MaxHits: 4,
+              MaxHits: 5,
               Lead: true,
               SlowPercent: 30,
               FreezeTime: 1.5,
@@ -5018,7 +5018,7 @@ export default {
             Attributes: {
               CanFreeze: true,
               FreezeBonus: true,
-              MaxHits: 4,
+              MaxHits: 5,
               Lead: true,
               SlowPercent: 45,
               FreezeTime: 1.5,
@@ -5044,7 +5044,7 @@ export default {
             Attributes: {
               CanFreeze: true,
               FreezeBonus: true,
-              MaxHits: 6,
+              MaxHits: 7,
               Lead: true,
               SlowPercent: 80,
               FreezeTime: 1.75,
@@ -5070,7 +5070,7 @@ export default {
         Attributes: {
           CanFreeze: false,
           FreezeBonus: false,
-          MaxHits: 2,
+          MaxHits: 3,
           Lead: false,
           SlowPercent: 15,
           FreezeTime: 1.5,
