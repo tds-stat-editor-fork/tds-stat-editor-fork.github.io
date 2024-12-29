@@ -4707,7 +4707,7 @@ export default {
               Lead: false,
             },
             Cooldown: 1,
-            Range: 15,
+            Range: 14,
             Damage: 8,
           },
           Title: "Precise Aiming",
