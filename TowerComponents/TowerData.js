@@ -4929,7 +4929,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 3356186535,
+          Image: 127760357589893,
           Stats: {
             Extras: [],
             Attributes: {
@@ -4957,7 +4957,7 @@ export default {
           Cost: 400,
         },
         {
-          Image: 141745478,
+          Image: 127760357589893,
           Stats: {
             Extras: ["Max Hits: 2 -> 3"],
             Attributes: {
@@ -4983,7 +4983,7 @@ export default {
           Cost: 1650,
         },
         {
-          Image: 4118882122,
+          Image: 90580826193030,
           Stats: {
             Extras: [
               "🧊Freeze enemies on max chills",
@@ -5012,7 +5012,7 @@ export default {
           Cost: 3200,
         },
         {
-          Image: 16620737,
+          Image: 87639607914634,
           Stats: {
             Extras: ["Frozen enemies take x2 damage.", "Max Hits: 3 -> 4"],
             Attributes: {
@@ -5038,7 +5038,7 @@ export default {
           Cost: 8250,
         },
         {
-          Image: 16868189,
+          Image: 92990655062231,
           Stats: {
             Extras: ["Max Hit: 4 -> 5", "Longer Freeze Time"],
             Attributes: {
