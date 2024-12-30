@@ -4957,7 +4957,7 @@ export default {
           Cost: 400,
         },
         {
-          Image: 127760357589893,
+          Image: 129569296351035,
           Stats: {
             Extras: ["Max Hits: 2 -> 3"],
             Attributes: {
