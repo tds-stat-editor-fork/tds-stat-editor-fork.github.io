@@ -450,6 +450,15 @@ class CalculatedManager {
                 Value: (level) =>
                 ((level.Damage * 2) + (level.Damage * level.CritMultiplier)) / (level.Cooldown * 3),
             },
+            Mortar: {
+                For: ['Mortar'],
+                Value: (level) => {
+                    const dps = level.Damage / level.Cooldown;
+                    const clusterDPS = level.CanCluster ? ((level.ClusterDamage * 0.4) * level.ClusterCount) / level.Cooldown : 0;
+
+                    return dps + clusterDPS;
+                },
+            },
             Sledger: {
                 For: ['Sledger'],
                 Value: (level) => {
