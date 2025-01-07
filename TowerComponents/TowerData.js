@@ -2578,22 +2578,6 @@ export default {
   },
   Harvester: {
     Default: {
-      Defaults: {
-        Detections: { Flying: true, Hidden: false, Lead: false},
-        Damage: 6,
-        Cooldown: 1.2,
-        Range: 13,
-        Pierce: 2,
-        ProjectileSpeed: 45,
-        ThornsDamage: 2,
-        ThornsRange: 10,
-        ThornsDuration: 8,
-        ThornsSlow: 15,
-        ThornsTick: 0.5,
-        "Nature's Bond": true,
-        Cost: 1400,
-        Limit: 4,
-      },
       Upgrades: [
         {
           Stats: {
@@ -2658,6 +2642,22 @@ export default {
           Cost: 20000,
         },
       ],
+      Defaults: {
+        Detections: { Flying: true, Hidden: false, Lead: false},
+        Damage: 6,
+        Cooldown: 1.2,
+        Range: 13,
+        Pierce: 2,
+        ProjectileSpeed: 45,
+        ThornsDamage: 2,
+        ThornsRange: 10,
+        ThornsDuration: 8,
+        ThornsSlow: 15,
+        ThornsTick: 0.5,
+        "Nature's Bond": true,
+        Cost: 1400,
+        Limit: 4,
+      },
     },
   },
   "Hallow Punk": {
@@ -5159,20 +5159,6 @@ export default {
   },
   Snowballer: {
     Default: {
-      Defaults: {
-        Price: 300,
-        Damage: 4,
-        Range: 12,
-        Cooldown: 3,
-        Detections: {Lead: false, Flying: false, Hidden: false},
-        CanFreeze: false,
-        SlowPercent: 15,
-        MaxSlow: 30,
-        ProjectileSpeed: 20,
-        ExplosionRadius: 2,
-        MaxHits: 1,
-        DebuffLength: 3,
-      },
       Upgrades: [
         {
           Stats: {
@@ -5210,6 +5196,20 @@ export default {
           Image: 15686418748,
         },
       ],
+      Defaults: {
+        Price: 300,
+        Damage: 4,
+        Range: 12,
+        Cooldown: 3,
+        Detections: {Lead: false, Flying: false, Hidden: false},
+        CanFreeze: false,
+        SlowPercent: 15,
+        MaxSlow: 30,
+        ProjectileSpeed: 20,
+        ExplosionRadius: 2,
+        MaxHits: 1,
+        DebuffLength: 3,
+      },
     },
   },
   Soldier: {
