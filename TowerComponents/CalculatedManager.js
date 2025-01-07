@@ -111,7 +111,7 @@ class CalculatedManager {
                 
                 Value: (level) => {
                     const directDPS = level.HeatwaveDamage / level.HeatwaveCooldown;
-                    const burnDPS = level.HeatwaveBurnDamage / HeatwaveBurnTick;
+                    const burnDPS = level.HeatwaveBurnDamage / level.HeatwaveBurnTick;
 
                     return directDPS + burnDPS;
                 }
