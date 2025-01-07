@@ -2657,8 +2657,8 @@ export default {
           Image: 117691212648454,
           Cost: 20000,
         },
-      ]
-    }
+      ],
+    },
   },
   "Hallow Punk": {
     Default: {
