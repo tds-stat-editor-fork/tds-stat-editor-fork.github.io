@@ -570,17 +570,6 @@ class CalculatedManager {
                 Requires: ['BeeDPS'],
                 Value: (level) => level.BeeDps,
             },
-            Burst: {
-                For: ['Freezer'],
-                Requires: ['Damage', 'Cooldown', 'Burst', 'BurstCool'],
-                Value: (level) => {
-                    const totalDamage = level.Damage * level.Burst;
-                    const totalTime =
-                        level.Cooldown * level.Burst + level.BurstCool;
-
-                    return totalDamage / totalTime;
-                },
-            },
             Cryomancer: {
                 For: ['Cryomancer'],
                 Value: (level) => {
@@ -595,7 +584,7 @@ class CalculatedManager {
                 },
             },
             SoldierBurst: {
-                For: ['Soldier'],
+                For: ['Soldier', 'Freezer'],
                 Value: (level) => {
                     const totalDamage = level.Damage * level.Burst;
                     const totalTime =
