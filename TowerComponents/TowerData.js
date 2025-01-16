@@ -5839,6 +5839,7 @@ export default {
               DamageBuff: 0,
               ExplosionRadius: 5,
               Spread: 10,
+              MissileCount: 1,
               ExplosionDamage: 20,
             },
             Detections: {
@@ -5930,7 +5931,7 @@ export default {
       Defaults: {
         Attributes: {
           MissileTime: 5,
-          MissileCount: 1,
+          MissileCount: 0,
           DamageBuff: 0,
           ExplosionRadius: 5,
           Spread: 10,
