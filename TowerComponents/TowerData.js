@@ -5139,7 +5139,7 @@ export default {
           Image: 5523192002,
           Stats: {
             Extras: [],
-            Attributes: { Burst: 3, BurstCool: 1 },
+            Attributes: { Burst: 3, BurstCooldown: 1 },
             Detections: {
               Flying: false,
               Hidden: false,
@@ -5156,7 +5156,7 @@ export default {
           Image: 5523193619,
           Stats: {
             Extras: [],
-            Attributes: { Burst: 4, BurstCool: 1 },
+            Attributes: { Burst: 4, BurstCooldown: 1 },
             Detections: {
               Flying: false,
               Hidden: true,
@@ -5173,7 +5173,7 @@ export default {
           Image: 5523195646,
           Stats: {
             Extras: ["Increased burst (5)"],
-            Attributes: { Burst: 5, BurstCool: 0.8 },
+            Attributes: { Burst: 5, BurstCooldown: 0.8 },
             Detections: {
               Flying: false,
               Hidden: true,
@@ -5190,7 +5190,7 @@ export default {
           Image: 5523196519,
           Stats: {
             Extras: ["Increased burst (7)"],
-            Attributes: { Burst: 7, BurstCool: 0.8 },
+            Attributes: { Burst: 7, BurstCooldown: 0.8 },
             Detections: {
               Flying: false,
               Hidden: true,
@@ -5206,7 +5206,7 @@ export default {
       ],
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
-        Attributes: { Burst: 3, BurstCool: 1 },
+        Attributes: { Burst: 3, BurstCooldown: 1 },
         Price: 350,
         Range: 13,
         Cooldown: 0.15,
@@ -5219,7 +5219,7 @@ export default {
           Image: 5523192002,
           Stats: {
             Extras: ["Shorter Cooldown"],
-            Attributes: { Burst: 4, BurstCool: 0.6 },
+            Attributes: { Burst: 4, BurstCooldown: 0.6 },
             Detections: {
               Flying: true,
               Hidden: false,
@@ -5236,7 +5236,7 @@ export default {
           Image: 5523193619,
           Stats: {
             Extras: [],
-            Attributes: { Burst: 4, BurstCool: 0.6 },
+            Attributes: { Burst: 4, BurstCooldown: 0.6 },
             Detections: { Flying: true, Hidden: true, Lead: false },
             Cooldown: 0.08,
             Range: 17,
@@ -5249,7 +5249,7 @@ export default {
           Image: 5523195646,
           Stats: {
             Extras: ["Increased Burst (20)", "Increased Burst Cooldown"],
-            Attributes: { Burst: 20, BurstCool: 1.2 },
+            Attributes: { Burst: 20, BurstCooldown: 1.2 },
             Detections: { Flying: true, Hidden: true, Lead: false },
             Cooldown: 0.08,
             Range: 17,
@@ -5262,7 +5262,7 @@ export default {
           Image: 5523196519,
           Stats: {
             Extras: ["Increased Burst (30)"],
-            Attributes: { Burst: 30, BurstCool: 1.2 },
+            Attributes: { Burst: 30, BurstCooldown: 1.2 },
             Detections: { Flying: true, Hidden: true, Lead: false },
             Cooldown: 0.06,
             Range: 19,
@@ -5274,7 +5274,7 @@ export default {
       ],
       Defaults: {
         Detections: { Flying: true, Hidden: false, Lead: false },
-        Attributes: { Burst: 4, BurstCool: 0.75 },
+        Attributes: { Burst: 4, BurstCooldown: 0.75 },
         Price: 500,
         Range: 14,
         Cooldown: 0.1,

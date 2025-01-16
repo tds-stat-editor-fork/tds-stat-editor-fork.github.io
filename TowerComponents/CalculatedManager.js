@@ -588,7 +588,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const totalDamage = level.Damage * level.Burst;
                     const totalTime =
-                        level.Cooldown * level.Burst + level.BurstCool;
+                        level.Cooldown * level.Burst + level.BurstCooldown;
 
                     return totalDamage / totalTime;
                 },
