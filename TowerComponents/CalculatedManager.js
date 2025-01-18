@@ -509,13 +509,29 @@ class CalculatedManager {
                 },
             },
             BurnTower: {
-                For: ['Archer', 'Pyromancer', 'Hallow Punk'],
+                For: ['Pyromancer', 'Hallow Punk'],
                 Requires: ['Damage', 'Cooldown', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
 
                     return dps + burnDPS;
+                },
+            },
+            Archer: {
+                For: ['Archer'],
+                Value: (level) => {
+                    switch(level.ArrowType){
+                        case "Flame":
+                         const dps = level.Damage / level.Cooldown;
+                         const burnDPS = level.BurnDamage / level.BurnTick;
+        
+                         return dps + burnDPS; 
+                        case "Explosive":
+                         return (level.Damage + level.ExplosionDamage) / level.Cooldown;
+                        default:
+                         return level.Damage / level.Cooldown;
+                    };
                 },
             },
             AmmoTower: {
