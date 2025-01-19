@@ -1118,7 +1118,7 @@ export default {
               "Gold Tommy Crook Spawn Time: 25 > 20",
             ],
             Cooldown: 0.1,
-            Damage: 30,
+            Damage: 20,
           },
           Image: 3444644903,
           Title: "Lvl. 4 GOD",
