@@ -39,7 +39,7 @@ export default {
         Speed: 1.8,
         Range: 2,
         Detections: {
-            Hidden: true,
+            Hidden: false,
             Flying: false,
             Lead: false,
         },
@@ -53,8 +53,8 @@ export default {
         Damage: 50,
         Detections: {
             Hidden: true,
-            Flying: false,
-            Lead: false,
+            Flying: true,
+            Lead: true,
         },
         Attributes: {},
     },
@@ -306,7 +306,7 @@ export default {
         SlowPercent: 25,
         MaxSlow: 50,
         Lifespan: 45,
-        Health: 1,
+        Health: 1000,
     },
     IceTurret2: {
         Range: 12.5,
@@ -317,7 +317,7 @@ export default {
         SlowPercent: 25,
         MaxSlow: 50,
         Lifespan: 45,
-        Health: 1,
+        Health: 1000,
     },
     IceTurret3: {
         Range: 15,
@@ -328,7 +328,7 @@ export default {
         SlowPercent: 30,
         MaxSlow: 60,
         Lifespan: 45,
-        Health: 1,
+        Health: 1000,
     },
     Sentry1: {
         Range: 18,
@@ -341,7 +341,7 @@ export default {
         Detections: {
             Hidden: false,
             Flying: false,
-            Lead: false,
+            Lead: true,
         },
         Attributes: {
             SendTime: 1.25,
@@ -360,7 +360,7 @@ export default {
         Detections: {
             Hidden: false,
             Flying: false,
-            Lead: false,
+            Lead: true,
         },
         Attributes: {
             SendTime: 1.5,
@@ -379,7 +379,7 @@ export default {
         Detections: {
             Hidden: true,
             Flying: false,
-            Lead: false,
+            Lead: true,
         },
         Attributes: {
             SendTime: 1.75,
@@ -401,7 +401,7 @@ export default {
         Detections: {
             Hidden: true,
             Flying: false,
-            Lead: false,
+            Lead: true,
         },
         Attributes: {
             SendTime: 1.75,
