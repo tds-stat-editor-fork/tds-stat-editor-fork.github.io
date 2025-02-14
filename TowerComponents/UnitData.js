@@ -1,6 +1,6 @@
 export default {
     Skeleton: {
-        Health: 30,
+        Health: 60,
         Speed: 4,
         Range: 2,
         Detections: {
@@ -9,9 +9,9 @@ export default {
         Attributes: {},
     },
     'Sword Skeleton': {
-        Health: 30,
-        Speed: 4,
-        Range: 6,
+        Health: 90,
+        Speed: 3.5,
+        Range: 7.5,
         Cooldown: 0.8,
         Damage: 15,
         Detections: {
@@ -22,11 +22,11 @@ export default {
         Attributes: {},
     },
     'Skeleton Knight': {
-        Health: 100,
+        Health: 250,
         Speed: 3.5,
-        Range: 7,
+        Range: 7.5,
         Cooldown: 0.65,
-        Damage: 35,
+        Damage: 90,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -35,9 +35,10 @@ export default {
         Attributes: {},
     },
     'Hallow Guard': {
-        Health: 1250,
+        Health: 1500,
         Speed: 1.8,
         Range: 2,
+        Defense: 20,
         Detections: {
             Hidden: false,
             Flying: false,
@@ -47,14 +48,15 @@ export default {
     },
     'Executioner Skeleton': {
         Health: 3500,
-        Speed: 1.8,
-        Cooldown: 4,
+        Speed: 1.2,
+        Cooldown: 3,
+        Tick: 0.1,
         Range: 30,
         Damage: 50,
         Detections: {
             Hidden: true,
             Flying: true,
-            Lead: true,
+            Lead: false,
         },
         Attributes: {},
     },

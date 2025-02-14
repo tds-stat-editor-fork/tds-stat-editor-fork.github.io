@@ -585,6 +585,11 @@ class CalculatedManager {
                 Requires: ['BeeDPS'],
                 Value: (level) => level.BeeDps,
             },
+            Rocketeer: {
+                For: ['Rocketeer'],
+                Requires: ['Damage', 'RocketCount', 'Cooldown'],
+                Value: (level) => (level.Damage * level.RocketCount) / level.Cooldown,
+            },
             Cryomancer: {
                 For: ['Cryomancer'],
                 Value: (level) => {

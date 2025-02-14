@@ -10,7 +10,11 @@ class UnitCalculations {
                 Exclude: [],
                 Value: (level) => level.Damage / level.Cooldown,
             },
-
+            ExecutionerSkeleton: {
+                Requires: ['Damage', 'Cooldown', 'Tick'],
+                Exclude: [],
+                Value: (level) => (level.Damage / level.Tick) / level.Cooldown,
+            },
             Rocket: {
                 For: ['Sentry4', 'Tank', 'Railgun Tank'],
                 Requires: ['Damage', 'Cooldown'],
