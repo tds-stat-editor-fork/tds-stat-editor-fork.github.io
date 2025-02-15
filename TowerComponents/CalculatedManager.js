@@ -407,22 +407,6 @@ class CalculatedManager {
                     (level.StingTime * level.BeeDamage) / level.TickRate,
             },
         },
-        KnifeSingleDPS: {
-            Default: {
-                For: ['Slasher'],
-                Requires: ['KnifeCooldown', 'Damage'],
-                Value: (level) => {
-                    const knifeMultiplier = level?.KnifeMultiplier ?? 1;
-                    const knives = level?.Knives ?? 1;
-
-                    return (
-                        knives *
-                        knifeMultiplier *
-                        (level.Damage / level.KnifeCooldown)
-                    );
-                },
-            },
-        },
         DPS: {
             Default: {
                 Requires: ['Damage', 'Cooldown'],
@@ -432,6 +416,7 @@ class CalculatedManager {
                     'Elf Camp',
                     'Military Base',
                     'Mecha Base',
+                    'Firework Technician',
                 ],
                 Value: (level) => level.Damage / level.Cooldown,
             },
@@ -481,9 +466,9 @@ class CalculatedManager {
             },
             Accel: {
                 For: ['Accelerator'],
-                Requires: ['MaxAmmo', 'ChargeTime', 'Cooldown', 'LaserTime'],
+                Requires: ['Overcharge', 'ChargeTime', 'Cooldown', 'LaserTime'],
                 Value: (level) => {
-                    const totalDamage = level.MaxAmmo;
+                    const totalDamage = level.Overcharge;
 
                     const burstCooldown =
                         level.ChargeTime + level.LaserCooldown;
@@ -920,7 +905,6 @@ class CalculatedManager {
         this.#add('Cost', skinData);
         this.#add('SpawnTime', skinData);
         this.#add('LaserDPS', skinData);
-        this.#add('KnifeSingleDPS', skinData);
         this.#add('SpikeDPS', skinData);
         this.#add('LandmineDPS', skinData);
         this.#add('BearTrapDPS', skinData);
