@@ -380,8 +380,8 @@ class CalculatedManager {
         LaserTime: {
             Default: {
                 For: ['Accelerator'],
-                Requires: ['MaxAmmo', 'LaserDPS'],
-                Value: (level) => level.MaxAmmo / level.LaserDPS,
+                Requires: ['Overcharge', 'LaserDPS'],
+                Value: (level) => level.Overcharge / level.LaserDPS,
             },
         },
         FireTime: {
