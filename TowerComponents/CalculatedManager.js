@@ -423,7 +423,7 @@ class CalculatedManager {
             Ranger: {
                 For: ['Ranger'],
                 Value: (level) =>
-                    (level.Damage + level.ExplosionDamage * level.MaxHits) /
+                    (level.Damage + level.ExplosionDamage) /
                     level.Cooldown,
             },
             Cowboy: {
