@@ -12,8 +12,12 @@ class CalculatedManager {
             Default: {
                 For: ['Accelerator'],
                 Requires: ['Damage', 'Cooldown'],
-                Value: (level) => level.Damage / level.Cooldown,
-            },
+                Value: (level) => {
+                  const { maxHits } = window.state.boosts.tower;
+                  
+                  return (level.Damage * maxHits)
+                },
+            }
         },
         TowerDPS: {
             Default: {
@@ -535,15 +539,6 @@ class CalculatedManager {
                         level.FireTime + level.ReloadTime + level.WindUpTime;
 
                     return totalDamage / totalTime;
-                },
-            },
-            MultiHit: {
-                For: ['Electroshocker'],
-                Requires: ['Damage', 'Cooldown', 'MaxHits'],
-                Value: (level) => {
-                    const dps = level.Damage / level.Cooldown;
-
-                    return dps * level.MaxHits;
                 },
             },
             Missiles: {
