@@ -89,8 +89,6 @@ export default class BoostPanel {
         switch (attribute) {
             case 'extraCooldown':
                 return this.#formatNumber(value);
-            case 'maxHits':
-                return this.#formatNumber(value);
             default:
                 return this.#formatPercent(value);
         }
@@ -121,12 +119,7 @@ export default class BoostPanel {
         const boosts = this.#getBoosts();
 
         for (const [boostName, boostValue] of Object.entries(boosts)) {
-            if (boostName == "maxHits"){
-                this.#createInput(boostName, 1);
-            }
-            else {
-                this.#createInput(boostName, boostValue);
-            }
+            this.#createInput(boostName, boostValue);
         }
     }
 }

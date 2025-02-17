@@ -13,9 +13,7 @@ class CalculatedManager {
                 For: ['Accelerator'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (level) => {
-                  const { maxHits } = window.state.boosts.tower;
-                  
-                  return (level.Damage * maxHits)
+                  return level.Damage / level.Cooldown;
                 },
             }
         },
