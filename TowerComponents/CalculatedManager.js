@@ -262,18 +262,7 @@ class CalculatedManager {
                 For: ['Trapper'],
 
                 Value: (level) => {
-                    const damage =
-                        level.levels.getCell(
-                            level.Level,
-                            'Traps.Spike.Damage'
-                        ) ?? 0;
-
-                    const cooldown = level.levels.getCell(
-                        level.Level,
-                        'Traps.Spike.Cooldown'
-                    );
-
-                    return damage / cooldown;
+                    return level.SpikeDamage / level.SpikeCooldown;
                 },
             },
         },
@@ -282,12 +271,7 @@ class CalculatedManager {
                 For: ['Trapper'],
 
                 Value: (level) => {
-                    const damage = level.levels.getCell(
-                        level.Level,
-                        'Traps.Spike.Damage'
-                    );
-
-                    return damage * level.MaxTraps;
+                    return level.SpikeDamage * level.MaxTraps;
                 },
             },
         },
@@ -297,28 +281,23 @@ class CalculatedManager {
 
                 Value: (level) => {
                     const damage = level.levels.getCell(
-                        level.Level,
-                        'Traps.Landmine.Damage'
+                        level.LandmineDamage
                     );
 
                     const burnDamage = level.levels.getCell(
-                        level.Level,
-                        'Traps.Landmine.BurnDamage'
+                        level.BurnDamage
                     );
 
                     const burnTime = level.levels.getCell(
-                        level.Level,
-                        'Traps.Landmine.BurnTime'
+                        level.BurnTime
                     );
 
                     const burnTick = level.levels.getCell(
-                        level.Level,
-                        'Traps.Landmine.BurnTick'
+                        level.BurnTick
                     );
 
                     const cooldown = level.levels.getCell(
-                        level.Level,
-                        'Traps.Landmine.Cooldown'
+                        level.LandmineCooldown
                     );
 
                     const burnDPS = (burnTick * burnDamage) / burnTime;
@@ -337,8 +316,7 @@ class CalculatedManager {
 
                 Value: (level) => {
                     const damage = level.levels.getCell(
-                        level.Level,
-                        'Traps.Landmine.Damage'
+                        level.LandmineDamage
                     );
 
                     return damage * level.MaxTraps;
@@ -351,13 +329,11 @@ class CalculatedManager {
 
                 Value: (level) => {
                     const damage = level.levels.getCell(
-                        level.Level,
-                        'Traps.BearTrap.Damage'
+                        level.BearTrapDamage
                     );
 
                     const cooldown = level.levels.getCell(
-                        level.Level,
-                        'Traps.BearTrap.Cooldown'
+                        level.BearTrapCooldown
                     );
 
                     const dps = damage / cooldown;
@@ -371,8 +347,7 @@ class CalculatedManager {
 
                 Value: (level) => {
                     const damage = level.levels.getCell(
-                        level.Level,
-                        'Traps.BearTrap.Damage'
+                        level.BearTrapDamage
                     );
 
                     return damage * level.MaxTraps;
