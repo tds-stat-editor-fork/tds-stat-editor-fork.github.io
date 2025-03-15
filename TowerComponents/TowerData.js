@@ -5562,6 +5562,8 @@ export default {
         "Landmine Trap": false,
         "Bear Trap": false,
         Limit: 7,
+        Cooldown: 5.25,
+        Damage: 0,
         Price: 500,
         Range: 7,
       },
