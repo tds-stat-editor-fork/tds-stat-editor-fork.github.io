@@ -5465,6 +5465,22 @@ export default {
   },
   Trapper: {
     Default: {
+      Defaults: {
+        MaxTraps: 4,
+        TrapPlacementTime: 0.5,
+        SpikeDamage: 10,
+        SpikeHealth: 25,
+        SpikeCooldown: 5.25,
+        TrapToPlace: "Spike",
+        "Spike Trap": true,
+        "Landmine Trap": false,
+        "Bear Trap": false,
+        Limit: 7,
+        Cooldown: 5.25,
+        Damage: 0,
+        Price: 500,
+        Range: 7,
+      },
       Upgrades: [
         {
           Stats: {
@@ -5475,6 +5491,7 @@ export default {
             "Spike Trap": true,
             "Landmine Trap": false,
             "Bear Trap": false,
+            Cooldown: 5,
             Extras: ["Upgrade Spikes", "Max Traps: 5"],
           },
           Image: 16493201931,
@@ -5551,22 +5568,6 @@ export default {
           Cost: 13500,
         },
       ],
-      Defaults: {
-        MaxTraps: 4,
-        TrapPlacementTime: 0.5,
-        SpikeDamage: 10,
-        SpikeHealth: 25,
-        SpikeCooldown: 5.25,
-        TrapToPlace: "Spike",
-        "Spike Trap": true,
-        "Landmine Trap": false,
-        "Bear Trap": false,
-        Limit: 7,
-        Cooldown: 5.25,
-        Damage: 0,
-        Price: 500,
-        Range: 7,
-      },
     },
   },
   Turret: {
