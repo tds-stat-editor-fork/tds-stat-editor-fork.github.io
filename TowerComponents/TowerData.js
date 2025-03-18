@@ -1557,7 +1557,7 @@ export default {
             BurstSize: 7,
             BurstCooldown: 0.4,
             BurnTime: 4,
-            HeatwaveDamage: 40,
+            HeatwaveDamage: 400,
             HeatwaveRange: 15,
             HeatwaveBurnDamage: 20,
             "Knockback Force": 25,
