@@ -823,6 +823,12 @@ class CalculatedManager {
         this.#add('BeeDps', skinData);
         this.#add('TotalStingDamage', skinData);
         this.#add('DPS', skinData);
+        this.#add('SpikeDPS', skinData);
+        this.#add('LandmineDPS', skinData);
+        this.#add('BearTrapDPS', skinData);
+        this.#add('SpikePileDamage', skinData);
+        this.#add('LandminePileDamage', skinData);
+        this.#add('BearTrapPileDamage', skinData);
         this.#add('LimitDPS', skinData);
         this.#add('NetCost', skinData);
         this.#add('LimitNetCost', skinData);
