@@ -5471,7 +5471,6 @@ export default {
         SpikeDamage: 10,
         SpikeHealth: 25,
         SpikeCooldown: 5.25,
-        TrapToPlace: "Spike",
         "Spike Trap": true,
         "Landmine Trap": false,
         "Bear Trap": false,

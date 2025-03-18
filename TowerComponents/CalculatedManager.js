@@ -521,7 +521,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const burnDPS = level.BurnDamage / level.BurnTick;
                     const unitDPS = level.UnitDPS ?? 0;
-                    const towerDPS = (level.Damage * level.BurstSize) / (((level.BurstSize - 1) * level.Cooldown) + level.BurstCooldown);
+                    const towerDPS = (level.Damage * level.BurstSize) / (((level.BurstSize) * level.Cooldown) + level.BurstCooldown);
                     
                     return unitDPS + burnDPS + towerDPS;
                 },
@@ -641,6 +641,51 @@ class CalculatedManager {
                             : level.levels.levels[level.Level - 1].Income;
                     return level.Cost / (level.Income - lastLevelIncome);
                 },
+            },
+        },
+        SpikeDPS: {
+            Default: {
+                For: ['Trapper'],
+                Value: (level) => level.SpikeDamage / level.SpikeCooldown,
+            },
+        },
+        SpikePileDamage: {
+            Default: {
+                For: ['Trapper'],
+                Value: (level) => level.SpikeDamage * level.MaxTraps,
+            },
+        },
+        LandmineDPS: {
+            Default: {
+                For: ['Trapper'],
+                Value: (level) => {
+                    const dps = level.LandmineDamage / level.LandmineCooldown;
+                    const burnDPS = level.BurnDamage / level.BurnTick;
+                    if (burnDPS.isFinite()){ 
+                        return dps + burnDPS;
+                    }else{
+                        return dps;
+                    }
+
+                },
+            },
+        },
+        LandminePileDamage: {
+            Default: {
+                For: ['Trapper'],
+                Value: (level) => level.LandmineDamage * level.MaxTraps,
+            },
+        },
+        BearTrapDPS: {
+            Default: {
+                For: ['Trapper'],
+                Value: (level) => level.BearTrapDamage / level.BearTrapCooldown,
+            },
+        },
+        BearTrapPileDamage: {
+            Default: {
+                For: ['Trapper'],
+                Value: (level) => level.BearTrapDamage * level.MaxTraps,
             },
         },
         Cooldown: {
