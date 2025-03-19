@@ -645,18 +645,21 @@ class CalculatedManager {
         },
         SpikeDPS: {
             Default: {
+                Requires: ['SpikeDamage', 'SpikeCooldown'],
                 For: ['Trapper'],
                 Value: (level) => level.SpikeDamage / level.SpikeCooldown,
             },
         },
         SpikePileDamage: {
             Default: {
+                Requires: ['SpikeDamage', 'MaxTraps'],
                 For: ['Trapper'],
                 Value: (level) => level.SpikeDamage * level.MaxTraps,
             },
         },
         LandmineDPS: {
             Default: {
+                Requires: ['LandmineDamage', 'LandmineCooldown', 'BurnDamage', 'BurnTick'],
                 For: ['Trapper'],
                 Value: (level) => {
                     const dps = level.LandmineDamage / level.LandmineCooldown;
@@ -672,18 +675,21 @@ class CalculatedManager {
         },
         LandminePileDamage: {
             Default: {
+                Requires: ['LandmineDamage', 'MaxTraps'],
                 For: ['Trapper'],
                 Value: (level) => level.LandmineDamage * level.MaxTraps,
             },
         },
         BearTrapDPS: {
             Default: {
+                Requires: ['BearTrapDamage', 'BearTrapCooldown'],
                 For: ['Trapper'],
                 Value: (level) => level.BearTrapDamage / level.BearTrapCooldown,
             },
         },
         BearTrapPileDamage: {
             Default: {
+                Requires: ['BearTrapDamage', 'MaxTraps'],
                 For: ['Trapper'],
                 Value: (level) => level.BearTrapDamage * level.MaxTraps,
             },
