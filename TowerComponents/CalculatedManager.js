@@ -665,7 +665,7 @@ class CalculatedManager {
                     const dps = level.LandmineDamage / level.LandmineCooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
                     
-                    return dps;
+                    return dps + burnDPS;
                 },
             },
         },
