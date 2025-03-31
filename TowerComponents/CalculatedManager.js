@@ -271,14 +271,6 @@ class CalculatedManager {
                 Value: (level) => level.Ammo * level.Cooldown,
             },
         },
-
-        BeeDps: {
-            Default: {
-                For: ['Swarmer'],
-                Requires: ['StingTime', 'BeeDamage', 'TickRate'],
-                Value: (level) => level.BeeDamage / level.TickRate,
-            },
-        },
         TotalStingDamage: {
             Default: {
                 For: ['Swarmer'],
@@ -400,7 +392,7 @@ class CalculatedManager {
                     };
                 },
             },
-            AmmoTower: {
+            Gatling: {
                 For: ['Gatling Gun'],
                 Requires: [
                     'Damage',
@@ -418,7 +410,7 @@ class CalculatedManager {
                     return totalDamage / totalTime;
                 },
             },
-            Missiles: {
+            Pursuit: {
                 For: ['Pursuit'],
                 Requires: [
                     'Damage',
@@ -439,8 +431,8 @@ class CalculatedManager {
             },
             Swarmer: {
                 For: ['Swarmer'],
-                Requires: ['BeeDPS'],
-                Value: (level) => level.BeeDps,
+                Requires: ['StingTime', 'BeeDamage', 'TickRate'],
+                Value: (level) => level.BeeDamage / level.TickRate,
             },
             Rocketeer: {
                 For: ['Rocketeer'],
@@ -475,7 +467,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const totalDamage = level.Damage * level.Burst;
                     const totalTime =
-                        level.Cooldown * level.Burst + level.ReloadSpeed;
+                        level.Cooldown * level.Burst + level.BurstCooldown;
 
                     const burstDPS = totalDamage / totalTime;
                     const poisonDPS = level.PoisonDamage / level.PoisonTick;
