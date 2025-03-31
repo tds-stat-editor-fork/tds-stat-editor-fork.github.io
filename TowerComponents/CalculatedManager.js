@@ -539,6 +539,22 @@ class CalculatedManager {
                 Value: (level) => (level.levels.levels.reduce(
 					(total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0)), // prettier-ignore
             },
+            Pursuit: {
+                For: ['Pursuit'],
+                Requires: ['NetCost', 'DPS'],
+                Value: (level) => {
+                    const skin = level.levels.skinData.name;
+                    const addThisToTheNetCostAndCostEfficiencyPleaseAndThanks = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
+                    
+                    if (addThisToTheNetCostAndCostEfficiencyPleaseAndThanks){
+                        return ((level.levels.levels.reduce(
+                            (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0)) + 11050);
+                    }else{
+                        return (level.levels.levels.reduce(
+                            (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0))
+                    }
+                },
+            }
         },
         LimitNetCost: {
             Default: {
@@ -551,6 +567,20 @@ class CalculatedManager {
                 Requires: ['NetCost', 'DPS'],
                 Value: (level) => level.NetCost / level.DPS,
             },
+            Pursuit: {
+                For: ['Pursuit'],
+                Requires: ['NetCost', 'DPS'],
+                Value: (level) => {
+                    const skin = level.levels.skinData.name;
+                    const addThisToTheNetCostAndCostEfficiencyPleaseAndThanks = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
+                    
+                    if (addThisToTheNetCostAndCostEfficiencyPleaseAndThanks){
+                        return (level.NetCost + 11050) / level.DPS;
+                    }else{
+                        return level.NetCost / level.DPS;
+                    }
+                },
+            }
         },
         Coverage: {
             Default: {
