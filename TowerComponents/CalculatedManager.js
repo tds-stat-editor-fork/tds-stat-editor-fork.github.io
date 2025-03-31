@@ -541,7 +541,6 @@ class CalculatedManager {
             },
             Pursuit: {
                 For: ['Pursuit'],
-                Requires: ['NetCost', 'DPS'],
                 Value: (level) => {
                     const skin = level.levels.skinData.name;
                     const addThisToTheNetCostAndCostEfficiencyPleaseAndThanks = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
