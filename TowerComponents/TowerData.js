@@ -3954,7 +3954,7 @@ export default {
             Damage: 26,
           },
           Title: "Sky Shredder",
-          Cost: 45000,
+          Cost: 42500,
         },
       ],
     },
