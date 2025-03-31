@@ -843,7 +843,6 @@ class CalculatedManager {
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
         this.#add('LaserTime', skinData);
-        this.#add('BeeDps', skinData);
         this.#add('TotalStingDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('SpikeDPS', skinData);
