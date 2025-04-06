@@ -189,6 +189,7 @@ class CalculatedManager {
         },
         AggregateUnitDPS: {
             Default: {
+                Exclude: ['Engineer'],
                 Requires: ['UnitDPS', 'SpawnTime'],
                 Value: (level) => {
                     let damage = 0;
@@ -301,7 +302,7 @@ class CalculatedManager {
             },
             Cowboy: {
                 For: ['Cowboy'],
-                Value: (level) => ((level.Damage * level.MaxAmmo) / (level.Cooldown * level.MaxAmmo + level.SpinDuration)), // prettier-ignore
+                Value: (level) => ((level.Damage * level.CashShot) / (level.Cooldown * level.CashShot + level.SpinDuration)), // prettier-ignore
             },
             Slasher: {
                 For: ['Slasher', 'Warden'],
@@ -399,13 +400,12 @@ class CalculatedManager {
                     'Cooldown',
                     'FireTime',
                     'ReloadTime',
-                    'WindUpTime',
                 ],
                 Value: (level) => {
                     const totalDamage =
                         (level.Damage / level.Cooldown) * level.FireTime;
                     const totalTime =
-                        level.FireTime + level.ReloadTime + level.WindUpTime;
+                        level.FireTime + level.ReloadTime;
 
                     return totalDamage / totalTime;
                 },
@@ -621,7 +621,7 @@ class CalculatedManager {
                 Requires: ['NetCost', 'DPS'],
                 For: ['Cowboy'],
                 Value: (level) => {
-                    const damagePerCylinder = level.Damage * level.MaxAmmo;
+                    const damagePerCylinder = level.Damage * level.CashShot;
                     return (
                         (level.Income + damagePerCylinder) / damagePerCylinder
                     );
@@ -630,18 +630,11 @@ class CalculatedManager {
         },
         IncomePerSecond: {
             Default: {
-                Requires: ['Income', 'MaxAmmo', 'SpinDuration'],
+                Requires: ['Income', 'CashShot', 'SpinDuration'],
                 For: ['Cowboy'],
                 Value: (level) =>
                     level.Income /
-                    (level.Cooldown * level.MaxAmmo + level.SpinDuration),
-            },
-        },
-        TotalIncomePerSecond: {
-            Default: {
-                Requires: ['IncomePerSecond', 'DPS'],
-                For: ['Cowboy'],
-                Value: (level) => level.IncomePerSecond + level.DPS,
+                    (level.Cooldown * level.CashShot + level.SpinDuration),
             },
         },
         WavesUntilNetProfit: {
@@ -862,7 +855,6 @@ class CalculatedManager {
         this.#add('Value', skinData);
         this.#add('IncomeFactor', skinData);
         this.#add('IncomePerSecond', skinData);
-        this.#add('TotalIncomePerSecond', skinData);
         this.#add('WavesUntilNetProfit', skinData);
         this.#add('WavesUntilUpgradeProfit', skinData);
     }

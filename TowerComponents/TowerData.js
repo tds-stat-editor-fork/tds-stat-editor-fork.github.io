@@ -427,8 +427,8 @@ export default {
               FinalHitDamage: 24,
               ComboCooldown: 0.75,
               ComboLength: 3,
-              "Knockback Force": 17.5,
-              "Knockback Cooldown": 2.5,
+              KnockbackForce: 17.5,
+              KnockbackCooldown: 2.5,
             },
             Cooldown: 0.6,
             Damage: 12,
@@ -446,7 +446,7 @@ export default {
               RepositionCooldown: 20,
               FinalHitDamage: 40,
               ComboCooldown: 0.65,
-              "Knockback Force": 20,
+              KnockbackForce: 20,
             },
             Damage: 20,
           },
@@ -460,7 +460,7 @@ export default {
             Attributes: {
               FinalHitDamage: 80,
               RepositionDamage: 80,
-              "Knockback Force": 24,
+              KnockbackForce: 24,
               ComboCooldown: 0.5,
             },
             Cooldown: 0.5,
@@ -477,7 +477,7 @@ export default {
             Attributes: {
               FinalHitDamage: 170,
               RepositionDamage: 200,
-              "Knockback Force": 30,
+              KnockbackForce: 30,
             },
             Damage: 85,
             Range: 7,
@@ -494,8 +494,8 @@ export default {
           RepositionDamage: 0,
           ComboCooldown: 0,
           ComboLength: 1,
-          "Knockback Force": 0,
-          "Knockback Cooldown": 0,
+          KnockbackForce: 0,
+          KnockbackCooldown: 0,
           RepositionCooldown: 0,
         },
         Limit: 6,
@@ -664,7 +664,7 @@ export default {
         {
           Image: 4999425200,
           Stats: {
-            Attributes: { MaxAmmo: 6, SpinDuration: 1.7 },
+            Attributes: { CashShot: 6, SpinDuration: 1.7 },
             Extras: [],
             Income: 25,
             Detections: {
@@ -683,7 +683,7 @@ export default {
         {
           Image: 5523233366,
           Stats: {
-            Attributes: { MaxAmmo: 6, SpinDuration: 1.7 },
+            Attributes: { CashShot: 6, SpinDuration: 1.7 },
             Extras: [],
             Income: 40,
             Detections: {
@@ -702,7 +702,7 @@ export default {
         {
           Image: 5523231844,
           Stats: {
-            Attributes: { MaxAmmo: 6, SpinDuration: 1.2 },
+            Attributes: { CashShot: 6, SpinDuration: 1.2 },
             Extras: ["Spin: 1.7 > 1.3 secs"],
             Income: 40,
             Detections: {
@@ -721,7 +721,7 @@ export default {
         {
           Image: 5523234030,
           Stats: {
-            Attributes: { MaxAmmo: 12, SpinDuration: 1.2 },
+            Attributes: { CashShot: 12, SpinDuration: 1.2 },
             Extras: [],
             Income: 120,
             Detections: {
@@ -740,7 +740,7 @@ export default {
         {
           Image: 5523234990,
           Stats: {
-            Attributes: { MaxAmmo: 12, SpinDuration: 0.85 },
+            Attributes: { CashShot: 12, SpinDuration: 0.85 },
             Extras: ["Spin: 1.3 → 1 secs"],
             Income: 180,
             Detections: {
@@ -762,7 +762,7 @@ export default {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Range: 11,
         Price: 450,
-        Attributes: { MaxAmmo: 6, SpinDuration: 1.7 },
+        Attributes: { CashShot: 6, SpinDuration: 1.7 },
         Cooldown: 1,
         Damage: 2,
         Limit: 12,
@@ -773,7 +773,7 @@ export default {
         {
           Image: 5523231844,
           Stats: {
-            Attributes: { MaxAmmo: 6, SpinDuration: 1.35 },
+            Attributes: { CashShot: 6, SpinDuration: 1.35 },
             Extras: [],
             Income: 30,
             Detections: {
@@ -791,7 +791,7 @@ export default {
         {
           Image: 4999425200,
           Stats: {
-            Attributes: { MaxAmmo: 6, SpinDuration: 1.35 },
+            Attributes: { CashShot: 6, SpinDuration: 1.35 },
             Extras: [],
             Income: 50,
             Detections: {
@@ -809,7 +809,7 @@ export default {
         {
           Image: 5523233366,
           Stats: {
-            Attributes: { MaxAmmo: 6, SpinDuration: 1 },
+            Attributes: { CashShot: 6, SpinDuration: 1 },
             Extras: ["Spin: 1.7 → 1.3 secs"],
             Income: 50,
             Detections: {
@@ -827,7 +827,7 @@ export default {
         {
           Image: 5523234030,
           Stats: {
-            Attributes: { MaxAmmo: 12, SpinDuration: 1 },
+            Attributes: { CashShot: 12, SpinDuration: 1 },
             Extras: ["Longer Burst (12)"],
             Income: 150,
             Detections: {
@@ -845,7 +845,7 @@ export default {
         {
           Image: 5523234990,
           Stats: {
-            Attributes: { MaxAmmo: 12, SpinDuration: 0.75 },
+            Attributes: { CashShot: 12, SpinDuration: 0.75 },
             Extras: ["Spin: 1.3 → 1 secs"],
             Income: 250,
             Detections: {
@@ -867,7 +867,7 @@ export default {
         Range: 14,
         Limit: 12,
         Price: 600,
-        Attributes: { MaxAmmo: 6, SpinDuration: 1.75 },
+        Attributes: { CashShot: 6, SpinDuration: 1.75 },
         Cooldown: 1,
         Damage: 3,
       },
@@ -1162,6 +1162,7 @@ export default {
               Velocity: 20,
               MustAim: false,
               ExplosionRadius: 4,
+              AimTime: 0,
             },
             Extras: ["Faster Projectile", "No Aim Time"],
             Range: 14,
@@ -1781,7 +1782,6 @@ export default {
               BuildTime: 2,
               MaxUnits: 1,
               UnitToSend: "Sentry1",
-              SpawnTime: 1,
               SentryShield: false,
               Buildzone: 4,
               Deadzone: 1,
@@ -2470,7 +2470,6 @@ export default {
           Stats: {
             Attributes: {
               SpreadAdd: 6.5,
-              WindUpTime: 0,
               WindDownTime: 2,
               Angle: 55,
               DeadZone: 1.25,
@@ -2515,7 +2514,6 @@ export default {
               Angle: 70,
               SpreadAdd: 6.5,
               Recoil: 0.03,
-              WindUpTime: 0,
               WindDownTime: 2,
             },
             Cooldown: 0.09,
@@ -3753,7 +3751,7 @@ export default {
           ExplosionRadius: 4,
           Buildzone: 6.5,
           BuildDelay: 0.4,
-          BookAim: 0.4,
+          AimTime: 0.4,
           Summon_Debounce: 0.1,
           SlowTime: 1,
           ProjectileSpeed: 50,
