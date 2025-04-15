@@ -459,7 +459,7 @@ export default {
             Extras: [],
             Attributes: {
               FinalHitDamage: 80,
-              RepositionDamage: 80,
+              RepositionDamage: 100,
               KnockbackForce: 24,
               ComboCooldown: 0.5,
             },
