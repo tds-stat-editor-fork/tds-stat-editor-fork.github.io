@@ -412,17 +412,20 @@ export default {
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Limit: 8,
-        Price: 750,
         Range: 4,
-        Damage: 1,
+        Damage: 0,
         Cooldown: 1,
         UnitQueues: 1,
+        Deadzone: 1.5,
         ProjectileSpeed: 5,
-        Lifespan: 20,
+        Price: 750,
       },
       Upgrades: [
         {
           Image: 0,
+          Stats: {
+            ProjectileSpeed: 5,
+          },
           Title: "Bio Chemistry",
           Cost: 600,
         },
@@ -436,6 +439,9 @@ export default {
         },
         {
           Image: 0,
+          Stats: {
+            ProjectileSpeed: 5,
+          },
           Title: "Flower Power",
           Cost: 4500,
         },
@@ -446,7 +452,7 @@ export default {
           },
           Title: "Botanical Berserker!",
           Cost: 20000,
-        }
+        },
       ],
     },
   },
