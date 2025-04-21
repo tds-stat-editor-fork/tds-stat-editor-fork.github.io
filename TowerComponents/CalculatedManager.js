@@ -548,7 +548,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const skin = level.levels.skinData.name;
                     const isNotDefault = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
-                    const defaultEarlyPrice = 0;
+                    var defaultEarlyPrice = 0;
                     
                     if (isNotDefault){
                         return ((level.levels.levels.reduce(

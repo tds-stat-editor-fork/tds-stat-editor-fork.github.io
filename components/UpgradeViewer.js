@@ -160,7 +160,7 @@ export default class UpgradeViewer {
 
     async #fetchImage(imageId) {
         const protocol = 'https://';
-        const baseUrl = 'assetdelivery.roblox.com/v1/asset?id=';
+        const baseUrl = 'assetdelivery.roproxy.com/v2/asset?id=';
 
         var url = `${protocol}${baseUrl}${imageId}`;
 
