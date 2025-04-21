@@ -160,10 +160,9 @@ export default class UpgradeViewer {
 
     async #fetchImage(imageId) {
         const protocol = 'https://';
-        const baseUrl = 'assetdelivery.RoProxy.com';
-        const path = '/v2/assetId/';
+        const baseUrl = 'assetdelivery.roblox.com/v1/asset?id=';
 
-        var url = `${protocol}${baseUrl}${path}${imageId}`;
+        var url = `${protocol}${baseUrl}${imageId}`;
 
         const response = await fetch(url, {
             method: 'GET',

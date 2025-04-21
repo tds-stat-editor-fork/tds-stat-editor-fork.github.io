@@ -407,6 +407,49 @@ export default {
       },
     },
   },
+  Biologist: {
+    Default: {
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Limit: 8,
+        Price: 750,
+        Range: 4,
+        Damage: 1,
+        Cooldown: 1,
+        UnitQueues: 1,
+        ProjectileSpeed: 5,
+        Lifespan: 20,
+      },
+      Upgrades: [
+        {
+          Image: 0,
+          Title: "Bio Chemistry",
+          Cost: 600,
+        },
+        {
+          Image: 0,
+          Stats: {
+            UnitQueues: 2,
+          },
+          Title: "Scientific Breakthrough",
+          Cost: 1850,
+        },
+        {
+          Image: 0,
+          Title: "Flower Power",
+          Cost: 4500,
+        },
+        {
+          Image: 0,
+          Stats: {
+            UnitQueues: 3,
+          },
+          Title: "Botanical Berserker!",
+          Cost: 20000,
+        }
+      ],
+    },
+  },
   Brawler: {
     Default: {
       Upgrades: [
@@ -2399,6 +2442,7 @@ export default {
         Price: 5750,
         Ammo: 50,
         Range: 25,
+        Pierce: 2.5,
         Attributes: {
           ReloadTime: 2.5,
           Angle: 40,
@@ -4493,7 +4537,7 @@ export default {
             Range: 9,
             Damage: 4,
           },
-          Title: "Slug Madness",
+          Title: "O'Block Training",
           Cost: 3000,
         },
         {
@@ -4506,7 +4550,7 @@ export default {
             Range: 11,
             Damage: 6,
           },
-          Title: "Tactical Blowback",
+          Title: "Tactical Blowshank",
           Cost: 6000,
         },
       ],
@@ -4517,6 +4561,7 @@ export default {
         Range: 7.5,
         Cooldown: 1.5,
         Damage: 1,
+        Pierce: 2.5,
       },
     },
   },

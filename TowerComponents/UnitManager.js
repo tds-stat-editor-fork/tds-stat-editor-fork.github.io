@@ -76,6 +76,22 @@ const register = {
             'FieldMedic2',
         ],
     },
+    'Biologist':
+    {
+        Default: [
+            'Sunflower0',
+            'Sunflower1',
+            'Sunflower2',
+            'Sunflower3',
+            'Sunflower4',
+            'Ivy1',
+            'Ivy2',
+            'Ivy3',
+            'Ivy4',
+            'Nightshade3',
+            'Nightshade4',
+        ],
+    },
 };
 
 export default class UnitManager {

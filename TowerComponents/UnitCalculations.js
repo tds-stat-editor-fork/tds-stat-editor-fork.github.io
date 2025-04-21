@@ -50,6 +50,15 @@ class UnitCalculations {
                     return totalDamage / totalTime;
                 },
             },
+            Ivy: {
+                For: ['Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
+                Value: (unit) => {
+                    const DPSecond = unit.Damage / unit.Cooldown;
+                    const poisonDPS = unit.PoisonDamage / unit.PoisonTick;
+
+                    return DPSecond + poisonDPS;
+                },
+            },
         },
         AggregateDPS: {
             Default: {

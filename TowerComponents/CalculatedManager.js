@@ -55,7 +55,7 @@ class CalculatedManager {
         },
         RamDPS: {
             Default: {
-                Exclude: ['Engineer'],
+                Exclude: ['Engineer', 'Biologist'],
                 Requires: ['UnitToSend', 'SpawnTime'],
                 Value: (level) => {
                     this.unitManager.load();
@@ -189,7 +189,7 @@ class CalculatedManager {
         },
         AggregateUnitDPS: {
             Default: {
-                Exclude: ['Engineer'],
+                Exclude: ['Engineer', 'Biologist'],
                 Requires: ['UnitDPS', 'SpawnTime'],
                 Value: (level) => {
                     let damage = 0;
@@ -291,6 +291,8 @@ class CalculatedManager {
                     'Mecha Base',
                     'Firework Technician',
                     'Trapper',
+                    'Biologist',
+                    'Mercenary Base',
                 ],
                 Value: (level) => level.Damage / level.Cooldown,
             },
@@ -475,7 +477,7 @@ class CalculatedManager {
                     return burstDPS + poisonDPS;
                 },
             },
-            Commando: { //whoever made this tower so complicated deserves an award
+            Commando: {
                 For: ['Commando'],
                 Value: (level) => {
                     return (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
@@ -525,6 +527,16 @@ class CalculatedManager {
 
                 Value: (level) => level.DPS * level.Limit,
             },
+            Burn: {
+                Requires: ['DPS', 'Limit'],
+                For: ['Pyromancer', 'Hallow Punk'],
+                Value: (level) => {
+                    const DPSecond = level.DPS * level.Limit;
+                    const burnDPS = level.BurnDamage / level.BurnTick ?? 0;
+
+                    return DPSecond + burnDPS;
+                }
+            }
         },
         NetCost: {
             Default: {
@@ -535,14 +547,16 @@ class CalculatedManager {
                 For: ['Pursuit'],
                 Value: (level) => {
                     const skin = level.levels.skinData.name;
-                    const addThisToTheNetCostAndCostEfficiencyPleaseAndThanks = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
+                    const isNotDefault = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
+                    const defaultEarlyPrice = 0;
                     
-                    if (addThisToTheNetCostAndCostEfficiencyPleaseAndThanks){
+                    if (isNotDefault){
                         return ((level.levels.levels.reduce(
-                            (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0)) + 11050);
+                            (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0)) + defaultEarlyPrice);
                     }else{
+                        defaultEarlyPrice = (level.levels.levels.reduce((total, nextLevel) => nextLevel.Level > 3 ? total : total + nextLevel.Cost, 0));;
                         return (level.levels.levels.reduce(
-                            (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0))
+                            (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0));
                     }
                 },
             }
