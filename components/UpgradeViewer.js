@@ -159,10 +159,9 @@ export default class UpgradeViewer {
     }
 
     async #fetchImage(imageId) {
-        const protocol = 'https://';
-        const baseUrl = 'assetdelivery.roproxy.com/v2/asset?id=';
+        const baseUrl = 'https://assetdelivery.roproxy.com/v2/assetId/';
 
-        var url = `${protocol}${baseUrl}${imageId}`;
+        var url = `${baseUrl}${imageId}`;
 
         const response = await fetch(url, {
             method: 'GET',

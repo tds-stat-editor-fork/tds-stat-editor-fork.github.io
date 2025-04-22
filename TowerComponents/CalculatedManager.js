@@ -1,6 +1,8 @@
 import SkinData from './SkinData.js';
 import UnitManager from './UnitManager.js';
 
+var defaultEarlyPrice = 0;
+
 class CalculatedManager {
     constructor(unitKey) {
         this.unitManager = new UnitManager(unitKey);
@@ -548,7 +550,6 @@ class CalculatedManager {
                 Value: (level) => {
                     const skin = level.levels.skinData.name;
                     const isNotDefault = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
-                    var defaultEarlyPrice = 0;
                     
                     if (isNotDefault){
                         return ((level.levels.levels.reduce(
