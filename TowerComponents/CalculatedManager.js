@@ -482,7 +482,10 @@ class CalculatedManager {
             Commando: {
                 For: ['Commando'],
                 Value: (level) => {
-                    return (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
+                    var dps = (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
+                    var missileDPS = level.MissileDamage / level.MissileCooldown;
+
+                    return dps + missileDPS;
                 },
             },
             WarMachine: {
@@ -531,12 +534,12 @@ class CalculatedManager {
             },
             Burn: {
                 Requires: ['DPS', 'Limit'],
-                For: ['Pyromancer', 'Hallow Punk'],
+                For: ['Hallow Punk'],
                 Value: (level) => {
-                    const DPSecond = level.DPS * level.Limit;
+                    const dps = level.DPS * level.Limit;
                     const burnDPS = level.BurnDamage / level.BurnTick ?? 0;
 
-                    return DPSecond + burnDPS;
+                    return dps + burnDPS;
                 }
             }
         },
@@ -548,14 +551,14 @@ class CalculatedManager {
             Pursuit: {
                 For: ['Pursuit'],
                 Value: (level) => {
-                    const skin = level.levels.skinData.name;
-                    const isNotDefault = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
+                    var skin = level.levels.skinData.name;
+                    var isNotDefault = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
                     
                     if (isNotDefault){
                         return ((level.levels.levels.reduce(
                             (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0)) + defaultEarlyPrice);
                     }else{
-                        defaultEarlyPrice = (level.levels.levels.reduce((total, nextLevel) => nextLevel.Level > 3 ? total : total + nextLevel.Cost, 0));;
+                        defaultEarlyPrice = (level.levels.levels.reduce((total, nextLevel) => nextLevel.Level > 3 ? total : total + nextLevel.Cost, 0));
                         return (level.levels.levels.reduce(
                             (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0));
                     }
