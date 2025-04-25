@@ -483,7 +483,9 @@ class CalculatedManager {
                 For: ['Commando'],
                 Value: (level) => {
                     var dps = (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
-                    var missileDPS = level.MissileDamage / level.MissileCooldown ?? 0;
+                    var missileDPS = level.MissileDamage / level.MissileCooldown;
+
+                    missileDPS = missileDPS ?? 0;
 
                     return dps + missileDPS;
                 },
