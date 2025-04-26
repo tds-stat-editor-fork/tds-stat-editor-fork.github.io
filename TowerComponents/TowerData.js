@@ -422,7 +422,7 @@ export default {
       },
       Upgrades: [
         {
-          Image: 0,
+          Image: 95317340543936,
           Stats: {
             ProjectileSpeed: 5,
           },
@@ -430,7 +430,7 @@ export default {
           Cost: 600,
         },
         {
-          Image: 0,
+          Image: 91087216328467,
           Stats: {
             UnitQueues: 2,
           },
@@ -438,7 +438,7 @@ export default {
           Cost: 1850,
         },
         {
-          Image: 0,
+          Image: 101480107243808,
           Stats: {
             ProjectileSpeed: 5,
           },
@@ -446,7 +446,7 @@ export default {
           Cost: 4500,
         },
         {
-          Image: 0,
+          Image: 121014188542772,
           Stats: {
             UnitQueues: 3,
           },
@@ -460,7 +460,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: "0",
+          Image: 0,
           Stats: {
             Damage: 9,
           },
@@ -468,7 +468,7 @@ export default {
           Cost: 300,
         },
         {
-          Image: "0",
+          Image: 17522564142,
           Stats: {
             Extras: [],
             Detections: {Hidden: true},
@@ -486,7 +486,7 @@ export default {
           Cost: 850,
         },
         {
-          Image: "0",
+          Image: 17522564023,
           Stats: {
             Extras: [],
             Attributes: {
@@ -503,7 +503,7 @@ export default {
           Cost: 2000,
         },
         {
-          Image: "0",
+          Image: 17522564307,
           Stats: {
             Extras: [],
             Attributes: {
@@ -520,7 +520,7 @@ export default {
           Cost: 5000,
         },
         {
-          Image: "0",
+          Image: 17522563932,
           Stats: {
             Extras: [],
             Attributes: {
@@ -3894,7 +3894,7 @@ export default {
     },
   },
   Pursuit: {
-    Default: {
+    "Top Path": {
       Defaults: {
         Limit: 5,
         Detections: { Flying: true, Hidden: false, Lead: false },
@@ -3965,60 +3965,127 @@ export default {
           Title: "Air to Ground Missiles",
           Cost: 5000,
         },
+        {
+          Attributes: {
+            MissileCooldown: 6,
+            Ammo: 150,
+            ReloadTime: 3,
+            PatrolRange: 18.5,
+            RevTime: 1.5,
+            TimeBetweenMissiles: 0.5,
+            Speed: 25,
+            MissileAmount: 4,
+            MissilesEnabled: true,
+            ExplosionRadius: 3,
+            ExplosionDamage: 35,
+          },
+          Limit: 5,
+          Cost: 16000,
+          Detections: { Flying: true, Lead: true },
+          Cooldown: 0.1,
+          Range: 11,
+          Damage: 12,       
+        },
+        {
+            Image: 110652411715254,
+            Stats: {
+              Attributes: {
+                MissileCooldown: 6,
+                MissileAmount: 6,
+                MissilesEnabled: true,
+                TimeBetweenMissiles: 0.25,
+                ExplosionRadius: 5,
+                Spread: 10,
+                ExplosionDamage: 30,
+                PatrolRange: 21,
+                Ammo: 200,
+                ReloadTime: 2.5,
+                ExplosionRadius: 4,
+                TimeBetweenMissiles: 0.25,
+              },
+              Cooldown: 0.085,
+              Range: 12,
+              Damage: 26,
+            },
+            Title: "Sky Shredder",
+            Cost: 42500,
+          },
       ],
     },
-    "Top Path (4A & 5A)": {
+    "Bottom Path": {
       Defaults: {
-        Attributes: {
-          MissileCooldown: 6,
-          Ammo: 150,
-          ReloadTime: 3,
-          PatrolRange: 18.5,
-          RevTime: 1.5,
-          TimeBetweenMissiles: 0.5,
-          Speed: 25,
-          MissileAmount: 4,
-          MissilesEnabled: true,
-          ExplosionRadius: 3,
-          ExplosionDamage: 35,
-        },
         Limit: 5,
-        Price: 16000,
-        Detections: { Flying: true, Lead: true },
-        Cooldown: 0.1,
-        Range: 11,
-        Damage: 12,
+        Detections: { Flying: true, Hidden: false, Lead: false },
+        Range: 8,
+        Price: 3000,
+        Attributes: {
+          MissilesEnabled: false,
+          Speed: 25,
+          ReloadTime: 4,
+          PatrolRange: 14,
+          Ammo: 35,
+        },
+        Cooldown: 0.25,
+        Damage: 6,
       },
       Upgrades: [
         {
-          Image: 110652411715254,
+          Image: 117186100008439,
+          Stats: {
+            Extras: [],
+            Attributes: {
+              MissilesEnabled: false,
+              Speed: 16,
+            },
+            Detections: { Flying: true, Hidden: false, Lead: true },
+            Cooldown: 0.25,
+            Range: 8,
+            Damage: 8,
+          },
+          Title: ".50 Caliber",
+          Cost: 1200,
+        },
+        {
+          Image: 117186100008439,
           Stats: {
             Attributes: {
-              MissileCooldown: 6,
-              MissileAmount: 6,
-              MissilesEnabled: true,
-              TimeBetweenMissiles: 0.25,
-              ExplosionRadius: 5,
-              Spread: 10,
-              ExplosionDamage: 30,
-              PatrolRange: 21,
-              Ammo: 200,
-              ReloadTime: 2.5,
-              ExplosionRadius: 4,
-              TimeBetweenMissiles: 0.25,
+              MissilesEnabled: false,
+              Speed: 25,
+              PatrolRange: 16,
             },
-            Detections: { Flying: true, Lead: true, Hidden: true},
-            Cooldown: 0.085,
-            Range: 12,
-            Damage: 26,
+            Detections: { Flying: true, Hidden: false, Lead: true },
+            Cooldown: 0.25,
+            Range: 9.5,
+            Damage: 10,
           },
-          Title: "Sky Shredder",
-          Cost: 42500,
+          Title: "Enhanced Radar",
+          Cost: 1850,
         },
-      ],
-    },
-    "Bottom Path (4B & 5B)": {
-      Defaults: {
+        {
+          Image: 98101516586169,
+          Stats: {
+            Attributes: {
+              MissileCooldown: 7,
+              MissileAmount: 2,
+              MissilesEnabled: true,
+              TimeBetweenMissiles: 0.5,
+              ExplosionRadius: 3,
+              ExplosionDamage: 35,
+              MissileSpeed: 20,
+              Ammo: 75,
+              ReloadTime: 3.5,
+            },
+            Detections: { Flying: true, Lead: true },
+            Cooldown: 0.2,
+            Range: 10.5,
+            Damage: 10,
+          },
+          Title: "Air to Ground Missiles",
+          Cost: 5000,
+        },
+        {
+        Image: 138033956206562,
+        Stats: {
           Attributes: {
             MissileCooldown: 3,
             Ammo: 75,
@@ -4036,9 +4103,10 @@ export default {
           Cooldown: 0.2,
           Range: 11,
           Damage: 10,
-          Price: 10000,
         },
-     Upgrades: [
+        Cost: 10000,
+        Title: "Upgraded Payload",
+      },
       {
           Image: 138033956206562,
           Stats: {
@@ -4338,7 +4406,7 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 5523197925,
+          Image: 84475876520565,
           Stats: {
             Extras: [],
             Cooldown: 3,
@@ -4347,7 +4415,7 @@ export default {
           Cost: 250,
         },
         {
-          Image: 5523199083,
+          Image: 76900038470572,
           Stats: {
             Extras: [],
             Detections: {Hidden: true},
@@ -4358,7 +4426,7 @@ export default {
           Cost: 1600,
         },
         {
-          Image: 5523200004,
+          Image: 103303357353083,
           Stats: {
             Extras: ["Explosion Radius: 2.3 -> 3.5", "Deadzone: 12 -> 10"],
             Attributes: { ExplosionRadius: 4 },
@@ -4368,7 +4436,7 @@ export default {
           Cost: 7500,
         },
         {
-          Image: 5523202707,
+          Image: 133610100963797,
           Stats: {
             Extras: ["Explosion Radius: 3.5 -> 4.5", "Deadzone: 12 > 10"],
             Range: 28,
@@ -5115,63 +5183,27 @@ export default {
           Stats: {
             Extras: [],
             Attributes: {
-              StingTime: 4,
-              ExplosionRadius: 8,
-              BeeDamage: 1,
               TickRate: 0.75,
             },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 2,
-            Range: 12,
-            Damage: 1,
           },
           Title: "Aggressive Bees",
-          Cost: 250,
+          Cost: 300,
         },
         {
           Image: 4865025274,
           Stats: {
             Extras: [],
-            Attributes: {
-              StingTime: 4,
-              ExplosionRadius: 8,
-              BeeDamage: 1,
-              TickRate: 0.75,
-            },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 2,
+            Cooldown: 1.5,
             Range: 16,
-            Damage: 1,
           },
           Title: "Improve Handling",
-          Cost: 300,
+          Cost: 350,
         },
         {
           Image: 4865025421,
           Stats: {
-            Extras: [],
-            Attributes: {
-              StingTime: 4,
-              ExplosionRadius: 8,
-              BeeDamage: 1,
-              TickRate: 0.75,
-            },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
             Cooldown: 1,
             Range: 18,
-            Damage: 1,
           },
           Title: "Bee Gun",
           Cost: 500,
@@ -5187,21 +5219,12 @@ export default {
             ],
             Attributes: {
               StingTime: 6,
-              ExplosionRadius: 8,
-              BeeDamage: 2,
+              BeeDamage: 4,
               TickRate: 0.5,
             },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 1,
-            Range: 18,
-            Damage: 1,
           },
           Title: "Beehive of Madness",
-          Cost: 1200,
+          Cost: 1400,
         },
         {
           Image: 4865025676,
@@ -5209,18 +5232,11 @@ export default {
             Extras: ["More bee damage", "Faster tick", "Longer strings"],
             Attributes: {
               StingTime: 8,
-              ExplosionRadius: 8,
-              BeeDamage: 4,
+              BeeDamage: 6,
               TickRate: 0.25,
-            },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
             },
             Cooldown: 0.5,
             Range: 20,
-            Damage: 1,
           },
           Title: "Beekeeper of Death",
           Cost: 4000,
@@ -5229,15 +5245,14 @@ export default {
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Attributes: {
-          StingTime: 3,
+          StingTime: 4,
           ExplosionRadius: 8,
-          BeeDamage: 1,
+          BeeDamage: 2,
           TickRate: 1,
         },
         Price: 300,
         Range: 12,
         Cooldown: 2,
-        Damage: 1,
       },
     },
   },

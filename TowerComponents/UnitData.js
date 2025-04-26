@@ -385,7 +385,7 @@ export default {
         },
         Attributes: {
             SendTime: 1.75,
-            ScrapCost: 140,
+            ScrapCost: 120,
             Lifetime: 45,
         },
     },
@@ -407,7 +407,7 @@ export default {
         },
         Attributes: {
             SendTime: 1.75,
-            ScrapCost: 300,
+            ScrapCost: 250,
             Lifetime: 60,
         },
     },

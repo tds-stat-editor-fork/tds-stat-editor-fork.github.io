@@ -274,12 +274,36 @@ class CalculatedManager {
                 Value: (level) => level.Ammo * level.Cooldown,
             },
         },
-        TotalStingDamage: {
-            Default: {
+        TotalElapsedDamage: {
+            Swarmer: {
                 For: ['Swarmer'],
                 Requires: ['StingTime', 'BeeDamage', 'TickRate'],
                 Value: (level) =>
                     (level.StingTime * level.BeeDamage) / level.TickRate,
+            },
+            Burn: {
+                For: ['Archer', 'Pyromancer', 'Elementalist', 'Jester'],
+                Requires: ['BurnTime', 'BurnDamage', 'BurnTick'],
+                Value: (level) =>
+                    (level.BurnTime * level.BurnDamage) / level.BurnTick,
+            },
+            Cryo: {
+                For: ['Cryomancer'],
+                Requires: ['TickRate', 'DebuffDamage', 'DebuffLength'],
+                Value: (level) =>
+                    (level.DebuffLength * level.DebuffDamage) / level.TickRate,
+            },
+            Harv: {
+                For: ['Harvester'],
+                Requires: ['ThornsDamage', 'ThornsTick', 'ThornsDuration'],
+                Value: (level) =>
+                    (level.ThornsDuration * level.ThornsDamage) / level.ThornsTick,
+            },
+            Poison: {
+                For: ['Toxic Gunner'],
+                Requires: ['PoisonTick', 'PoisonDamage', 'PoisonLength'],
+                Value: (level) =>
+                    (level.PoisonLength * level.PoisonDamage) / level.PoisonTick,
             },
         },
         DPS: {
@@ -377,6 +401,8 @@ class CalculatedManager {
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
+
+                    burnDPS ??= 0;
 
                     return dps + burnDPS;
                 },
@@ -485,7 +511,7 @@ class CalculatedManager {
                     var dps = (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
                     var missileDPS = level.MissileDamage / level.MissileCooldown;
 
-                    missileDPS = missileDPS ?? 0;
+                    missileDPS ??= 0;
 
                     return dps + missileDPS;
                 },
@@ -539,7 +565,9 @@ class CalculatedManager {
                 For: ['Hallow Punk'],
                 Value: (level) => {
                     const dps = level.DPS * level.Limit;
-                    const burnDPS = level.BurnDamage / level.BurnTick ?? 0;
+                    const burnDPS = level.BurnDamage / level.BurnTick;
+
+                    burnDPS ??= 0;
 
                     return dps + burnDPS;
                 }
@@ -550,22 +578,6 @@ class CalculatedManager {
                 Value: (level) => (level.levels.levels.reduce(
 					(total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0)), // prettier-ignore
             },
-            Pursuit: {
-                For: ['Pursuit'],
-                Value: (level) => {
-                    var skin = level.levels.skinData.name;
-                    var isNotDefault = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
-                    
-                    if (isNotDefault){
-                        return ((level.levels.levels.reduce(
-                            (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0)) + defaultEarlyPrice);
-                    }else{
-                        defaultEarlyPrice = (level.levels.levels.reduce((total, nextLevel) => nextLevel.Level > 3 ? total : total + nextLevel.Cost, 0));
-                        return (level.levels.levels.reduce(
-                            (total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0));
-                    }
-                },
-            }
         },
         LimitNetCost: {
             Default: {
@@ -855,7 +867,7 @@ class CalculatedManager {
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
         this.#add('LaserTime', skinData);
-        this.#add('TotalStingDamage', skinData);
+        this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('SpikeDPS', skinData);
         this.#add('LandmineDPS', skinData);
