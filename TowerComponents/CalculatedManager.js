@@ -570,8 +570,8 @@ class CalculatedManager {
                     burnDPS ??= 0;
 
                     return dps + burnDPS;
-                }
-            }
+                },
+            },
         },
         NetCost: {
             Default: {
