@@ -275,7 +275,7 @@ class CalculatedManager {
             },
         },
         TotalElapsedDamage: {
-            Swarmer: {
+            Default: {
                 For: ['Swarmer'],
                 Requires: ['StingTime', 'BeeDamage', 'TickRate'],
                 Value: (level) =>
