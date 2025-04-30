@@ -248,6 +248,7 @@ export default class TableInput {
         'BackupCallTime',
         'LimitNetCost',
         'ComboCooldown',
+        'Velocity',
         'ReloadTime',
         'Recoil',
         'SpreadAdd',

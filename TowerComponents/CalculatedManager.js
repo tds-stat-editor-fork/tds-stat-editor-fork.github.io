@@ -282,7 +282,7 @@ class CalculatedManager {
                     (level.StingTime * level.BeeDamage) / level.TickRate,
             },
             Burn: {
-                For: ['Archer', 'Pyromancer', 'Elementalist', 'Jester'],
+                For: ['Archer', 'Pyromancer', 'Elementalist'],
                 Requires: ['BurnTime', 'BurnDamage', 'BurnTick'],
                 Value: (level) =>
                     (level.BurnTime * level.BurnDamage) / level.BurnTick,
@@ -304,6 +304,22 @@ class CalculatedManager {
                 Requires: ['PoisonTick', 'PoisonDamage', 'PoisonLength'],
                 Value: (level) =>
                     (level.PoisonLength * level.PoisonDamage) / level.PoisonTick,
+            },
+        },
+        TotalFireDamage: {
+            Default: {
+                For: ['Jester'],
+                Requires: ['BurnTime', 'Damage', 'BurnTick'],
+                Value: (level) =>
+                    (level.BurnTime * (level.Damage * level.BurnDamageMult)) / level.BurnTick,
+            },
+        },
+        TotalPoisonDamage: {
+            Default: {
+                For: ['Jester'],
+                Requires: ['PoisonLength', 'Damage', 'PoisonTick'],
+                Value: (level) =>
+                    (level.BurnTime * (level.Damage * level.BurnDamageMult)) / level.BurnTick,
             },
         },
         DPS: {
@@ -509,9 +525,7 @@ class CalculatedManager {
                 For: ['Commando'],
                 Value: (level) => {
                     var dps = (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
-                    var missileDPS = level.MissileDamage / level.MissileCooldown;
-
-                    missileDPS ??= 0;
+                    var missileDPS = level.Missiles ? (level.MissileDamage / level.MissileCooldown) : 0;
 
                     return dps + missileDPS;
                 },
@@ -564,10 +578,9 @@ class CalculatedManager {
                 Requires: ['DPS', 'Limit'],
                 For: ['Hallow Punk'],
                 Value: (level) => {
-                    const dps = level.DPS * level.Limit;
+                    const dps = level.Damage / level.Cooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
 
-                    burnDPS ??= 0;
 
                     return dps + burnDPS;
                 },
