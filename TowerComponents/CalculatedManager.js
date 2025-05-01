@@ -578,9 +578,7 @@ class CalculatedManager {
                     const dps = level.Damage / level.Cooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
 
-                    dps = dps * level.Limit;
-
-                    return dps + burnDPS;
+                    return (dps * level.Limit) + burnDPS;
                 },
             },
         },
