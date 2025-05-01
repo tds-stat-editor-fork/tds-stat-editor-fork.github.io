@@ -137,6 +137,7 @@ class CalculatedManager {
             },
             Elementalist: {
                 For: ['Elementalist'],
+                Requires: ['UnitToSend', 'TurretCooldown'],
                 Value: (level) => {
                     this.unitManager.load();
                     const unitName = level.UnitToSend;
@@ -475,11 +476,6 @@ class CalculatedManager {
                     return dps + missileDPS;
                 },
             },
-            Swarmer: {
-                For: ['Swarmer'],
-                Requires: ['StingTime', 'BeeDamage', 'TickRate'],
-                Value: (level) => level.BeeDamage / level.TickRate,
-            },
             Rocketeer: {
                 For: ['Rocketeer'],
                 Requires: ['Damage', 'RocketCount', 'Cooldown'],
@@ -562,9 +558,10 @@ class CalculatedManager {
                 Value: (level) => {
                     const burnDPS = level.BurnDamage / level.BurnTick;
                     const unitDPS = level.UnitDPS ?? 0;
+                    const skin = level.levels.skinData.name;
                     const towerDPS = (level.Damage * level.BurstSize) / (((level.BurstSize) * level.Cooldown) + level.BurstCooldown);
                     
-                    return unitDPS + burnDPS + towerDPS;
+                    if(skin == 'Fire Mode') return burnDPS + towerDPS; else return towerDPS + unitDPS;
                 },
             },
         },
@@ -581,6 +578,7 @@ class CalculatedManager {
                     const dps = level.Damage / level.Cooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
 
+                    dps = dps * level.Limit;
 
                     return dps + burnDPS;
                 },
@@ -603,20 +601,14 @@ class CalculatedManager {
                 Requires: ['NetCost', 'DPS'],
                 Value: (level) => level.NetCost / level.DPS,
             },
-            Pursuit: {
-                For: ['Pursuit'],
-                Requires: ['NetCost', 'DPS'],
+            Swarmer: {
+                For: ['Swarmer'],
                 Value: (level) => {
-                    const skin = level.levels.skinData.name;
-                    const addThisToTheNetCostAndCostEfficiencyPleaseAndThanks = skin == "Top Path (4A & 5A)" || skin == "Bottom Path (4B & 5B)";
-                    
-                    if (addThisToTheNetCostAndCostEfficiencyPleaseAndThanks){
-                        return (level.NetCost + 11050) / level.DPS;
-                    }else{
-                        return level.NetCost / level.DPS;
-                    }
+                    var dps = level.Damage / level.Cooldown;
+
+                    return level.NetCost / (dps + level.BeeDPS);
                 },
-            }
+            },
         },
         Coverage: {
             Default: {
@@ -725,6 +717,13 @@ class CalculatedManager {
                     const burnDPS = level.BurnDamage / level.BurnTick;
                     if(burnDPS > 0) return dps + burnDPS; else return dps;
                 },
+            },
+        },
+        BeeDPS: {
+            Default: {
+                For: ['Swarmer'],
+                Requires: ['StingTime', 'BeeDamage', 'TickRate'],
+                Value: (level) => (level.BeeDamage / level.TickRate) * level.BeeStacks,
             },
         },
         LandminePileDamage: {
@@ -891,6 +890,7 @@ class CalculatedManager {
         this.#add('LimitDPS', skinData);
         this.#add('NetCost', skinData);
         this.#add('LimitNetCost', skinData);
+        this.#add('BeeDPS', skinData);
         this.#add('CostEfficiency', skinData);
         this.#add('Coverage', skinData);
         this.#add('BossPotential', skinData);
