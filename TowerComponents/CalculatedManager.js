@@ -607,6 +607,14 @@ class CalculatedManager {
                     return level.NetCost / (dps + level.BeeDPS);
                 },
             },
+            Necromancer: {
+                For: ['Necromancer'],
+                Value: (level) => {
+                    var maxLevel = level.Level == 4;
+
+                    if (maxLevel) return level.NetCost / level.MaxDPS; else return level.NetCost / level.DPS;
+                },
+            }
         },
         Coverage: {
             Default: {
@@ -636,6 +644,18 @@ class CalculatedManager {
             Default: {
                 Requires: ['BossPotential', 'Limit'],
                 Value: (level) => level.BossPotential * level.Limit,
+            },
+        },
+        MaxDPS: {
+            Default: {
+                Requires: ['DPS', 'MaxHits'],
+                Value: (level) => level.DPS * level.MaxHits,
+            },
+            Archer: {
+                Requires: ['DPS', 'MaxHits', !'ExplosionDamage'],
+                Value: (level) => {
+                        return level.DPS * level.MaxHits;
+                },
             },
         },
         BossValue: {

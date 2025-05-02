@@ -661,6 +661,7 @@ export default {
             ReloadTime: 1.5,
             BurstSize: 6,
             Ammo: 60,
+            MaxHits: 4,
             Missiles: true,
             MissileStun: 1.5,
             MissileDamage: 150,
@@ -1980,7 +1981,6 @@ export default {
           Stats: {
             Extras: [],
             Attributes: {
-              MaxHits: 3,
               MaxBounce: 3,
               TickRate: 0.15,
             },
@@ -2001,7 +2001,6 @@ export default {
           Stats: {
             Extras: [],
             Attributes: {
-              MaxHits: 3,
               MaxBounce: 3,
               TickRate: 0.15,
             },
@@ -2022,7 +2021,6 @@ export default {
           Stats: {
             Extras: ["Bounces: 5"],
             Attributes: {
-              MaxHits: 3,
               MaxBounce: 5,
               TickRate: 0.15,
             },
@@ -2043,7 +2041,6 @@ export default {
           Stats: {
             Extras: [],
             Attributes: {
-              MaxHits: 3,
               MaxBounce: 5,
               TickRate: 0.15,
             },
@@ -2060,7 +2057,6 @@ export default {
           Stats: {
             Extras: ["Bounces: 7"],
             Attributes: {
-              MaxHits: 3,
               MaxBounce: 7,
               TickRate: 0.15,
             },
@@ -2078,7 +2074,7 @@ export default {
         Detections: { Flying: true, Hidden: false, Lead: false },
         Range: 14,
         Price: 800,
-        Attributes: { MaxHits: 3, MaxBounce: 3, TickRate: 0.15 },
+        Attributes: { MaxBounce: 3, TickRate: 0.15 },
         Cooldown: 3,
         Damage: 4,
       },
