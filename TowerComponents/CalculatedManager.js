@@ -899,6 +899,7 @@ class CalculatedManager {
         this.#add('LaserTime', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
+        this.#add('MaxDPS', skinData);
         this.#add('SpikeDPS', skinData);
         this.#add('LandmineDPS', skinData);
         this.#add('BearTrapDPS', skinData);
