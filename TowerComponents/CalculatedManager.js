@@ -651,6 +651,20 @@ class CalculatedManager {
                 Requires: ['DPS', 'MaxHits'],
                 Value: (level) => level.DPS * level.MaxHits,
             },
+            Mando: {
+                //I HAVE TO APSTE THE DPS CALCUALT ION CUZ OF HT E MISSIELS OIN TEHGB DFPS N OOOOO
+                For: ['Commando'],
+                Value: (level) => {
+                    var dps = (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
+
+                    return dps * level.MaxHits;
+                },
+            },
+            Pierce: {
+                Requires: ['DPS', 'Pierce'],
+                For: ['Shotgunner', 'Gatling Gun'],
+                Value: (level) => level.DPS * level.Pierce,
+            },
         },
         BossValue: {
             Default: {

@@ -4445,7 +4445,7 @@ export default {
           Image: 133610100963797,
           Stats: {
             Extras: ["Explosion Radius: 3.5 -> 4.5", "Deadzone: 12 > 10"],
-            Range: 28,
+            Range: 30,
             Damage: 90,
             RocketCount: 4,
             Attributes: { ExplosionRadius: 5 },       
