@@ -651,12 +651,6 @@ class CalculatedManager {
                 Requires: ['DPS', 'MaxHits'],
                 Value: (level) => level.DPS * level.MaxHits,
             },
-            Archer: {
-                Requires: ['DPS', 'MaxHits', !'ExplosionDamage'],
-                Value: (level) => {
-                        return level.DPS * level.MaxHits;
-                },
-            },
         },
         BossValue: {
             Default: {
