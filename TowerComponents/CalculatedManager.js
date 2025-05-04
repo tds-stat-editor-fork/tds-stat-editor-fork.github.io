@@ -352,7 +352,7 @@ class CalculatedManager {
             Slasher: {
                 For: ['Slasher', 'Warden'],
                 Value: (level) =>
-                ((level.Damage * 2) + (level.Damage * level.CritMultiplier)) / (level.Cooldown * 3),
+                ((level.Damage * (level.CritSwing - 1)) + (level.Damage * level.CritMultiplier)) / (level.Cooldown * level.CritSwing),
             },
             Mortar: {
                 For: ['Mortar'],
@@ -398,18 +398,18 @@ class CalculatedManager {
             Brawler: {
                 For: ['Brawler'],
                 Value: (level) => {
-                    if (level.ComboLength == 1) {
+                    if (level.level.CritSwing == 1) {
                         return level.Damage / level.Cooldown;
                     }
 
-                    const totalNormalHits = level.ComboLength - 1;
+                    const totalNormalHits = level.level.CritSwing - 1;
                     const totalDamage =
                         totalNormalHits * level.Damage + level.FinalHitDamage;
 
                     const comboLength =
                         totalNormalHits * level.Cooldown + level.ComboCooldown;
 
-                    return totalDamage / comboLength;
+                    return totalDamage / level.CritSwing;
                 },
             },
             BurnTower: {
@@ -417,9 +417,7 @@ class CalculatedManager {
                 Requires: ['Damage', 'Cooldown', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const burnDPS = level.BurnDamage / level.BurnTick;
-
-                    burnDPS ??= 0;
+                    const burnDPS = (level.BurnDamage / level.BurnTick) ?? 0;
 
                     return dps + burnDPS;
                 },
