@@ -2819,6 +2819,7 @@ export default {
         Attributes: {
           MaxHits: 3,
           ProjectileSpeed: 45,
+          ThornsCooldown: 40,
           ThornsDamage: 2,
           ThornsRange: 10,
           ThornsDuration: 8,
@@ -3888,6 +3889,7 @@ export default {
         Range: 8,
         Price: 3000,
         Attributes: {
+          PatrolCooldown: 20,
           MissilesEnabled: false,
           Speed: 25,
           ReloadTime: 4,
@@ -4010,6 +4012,7 @@ export default {
         Range: 8,
         Price: 3000,
         Attributes: {
+          PatrolCooldown: 20,
           MissilesEnabled: false,
           Speed: 25,
           ReloadTime: 4,

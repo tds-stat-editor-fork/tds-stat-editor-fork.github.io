@@ -25,6 +25,11 @@ class CalculatedManager {
                 Requires: ['Damage', 'Cooldown'],
                 Value: (level) => level.Damage / level.Cooldown,
             },
+            Frostburner: {
+                For: ['Elementalist'],
+                Requires: ['Damage', 'Cooldown'],
+                Value: (level) => (level.Damage * level.BurstSize) / (((level.BurstSize) * level.Cooldown) + level.BurstCooldown),
+            },
             Crook: {
                 For: ['Crook Boss'],
                 Requires: [
@@ -398,18 +403,18 @@ class CalculatedManager {
             Brawler: {
                 For: ['Brawler'],
                 Value: (level) => {
-                    if (level.level.CritSwing == 1) {
+                    if (level.CritSwing == 1) {
                         return level.Damage / level.Cooldown;
                     }
 
-                    const totalNormalHits = level.level.CritSwing - 1;
+                    const totalNormalHits = level.CritSwing - 1;
                     const totalDamage =
                         totalNormalHits * level.Damage + level.FinalHitDamage;
 
                     const comboLength =
                         totalNormalHits * level.Cooldown + level.ComboCooldown;
 
-                    return totalDamage / level.CritSwing;
+                    return totalDamage / comboLength;
                 },
             },
             BurnTower: {
@@ -517,12 +522,7 @@ class CalculatedManager {
             },
             Commando: {
                 For: ['Commando'],
-                Value: (level) => {
-                    var dps = (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
-                    var missileDPS = level.Missiles ? (level.MissileDamage / level.MissileCooldown) : 0;
-
-                    return dps + missileDPS;
-                },
+                Value: (level) => (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime),
             },
             WarMachine: {
                 For: ['War Machine'],
@@ -614,6 +614,12 @@ class CalculatedManager {
                 },
             }
         },
+        MaxCostEfficiency: {
+            Default: {
+                Requires: ['NetCost', 'MaxDPS'],
+                Value: (level) => level.NetCost / level.MaxDPS,
+            },
+        },
         Coverage: {
             Default: {
                 Requires: ['Range'],
@@ -636,6 +642,10 @@ class CalculatedManager {
             Default: {
                 Requires: ['Coverage', 'DPS'],
                 Value: (level) => level.Coverage * level.DPS,
+            },
+            Necromancer: {
+                Requires: ['Coverage', 'MaxDPS'],
+                Value: (level) => level.Coverage * level.MaxDPS,
             },
         },
         LimitBossPotential: {
@@ -748,6 +758,20 @@ class CalculatedManager {
                 For: ['Swarmer'],
                 Requires: ['StingTime', 'BeeDamage', 'TickRate'],
                 Value: (level) => (level.BeeDamage / level.TickRate) * level.BeeStacks,
+            },
+        },
+        MissileDPS: {
+            Default: {
+                For: ['Commando'],
+                Requires: ['MissileCooldown', 'MissileDamage'],
+                Value: (level) => level.MissileDamage / Level.MissileCooldown,
+            },
+        },
+        ThornsUptimePercent: {
+            Default: {
+                For: ['Commando'],
+                Requires: ['ThornsDuration', 'ThornsCooldown'],
+                Value: (level) => level.ThornsDuration / Level.ThornsCooldown,
             },
         },
         LandminePileDamage: {
@@ -913,10 +937,13 @@ class CalculatedManager {
         this.#add('LandminePileDamage', skinData);
         this.#add('BearTrapPileDamage', skinData);
         this.#add('LimitDPS', skinData);
+        this.#add('BeeDPS', skinData);
+        this.#add('MissileDPS', skinData);
+        this.#add('ThornsUptimePercent', skinData);
         this.#add('NetCost', skinData);
         this.#add('LimitNetCost', skinData);
-        this.#add('BeeDPS', skinData);
         this.#add('CostEfficiency', skinData);
+        this.#add('MaxCostEfficiency', skinData);
         this.#add('Coverage', skinData);
         this.#add('BossPotential', skinData);
         this.#add('LimitBossPotential', skinData);
