@@ -113,6 +113,13 @@ class CalculatedManager {
                 Value: (level) => level.ThornsDamage / level.ThornsTick,
             },
         },
+        RepositionDPS: {
+            Default: {
+                For: ['Brawler'],
+                Requires: ['RepositionDamage', 'RepositionCooldown'],
+                Value: (level) => level.RepositionDamage / level.RepositionCooldown,
+            },
+        },
         HeatwaveDPS: {
             Default: {
                 For: ['Elementalist'],
@@ -645,7 +652,12 @@ class CalculatedManager {
             },
             Necromancer: {
                 Requires: ['Coverage', 'MaxDPS'],
-                Value: (level) => level.Coverage * level.MaxDPS,
+                For: ['Necromancer'],
+                Value: (level) => {
+                    var maxLevel = level.Level == 4;
+
+                    if (maxLevel) return level.Coverage * level.MaxDPS; else return level.Coverage * level.DPS;
+                },
             },
         },
         LimitBossPotential: {
@@ -658,15 +670,6 @@ class CalculatedManager {
             Default: {
                 Requires: ['DPS', 'MaxHits'],
                 Value: (level) => level.DPS * level.MaxHits,
-            },
-            Mando: {
-                //I HAVE TO APSTE THE DPS CALCUALT ION CUZ OF HT E MISSIELS OIN TEHGB DFPS N OOOOO
-                For: ['Commando'],
-                Value: (level) => {
-                    var dps = (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime);
-
-                    return dps * level.MaxHits;
-                },
             },
             Pierce: {
                 Requires: ['DPS', 'Pierce'],
@@ -793,6 +796,46 @@ class CalculatedManager {
                 Requires: ['BearTrapDamage', 'MaxTraps'],
                 For: ['Trapper'],
                 Value: (level) => level.BearTrapDamage * level.MaxTraps,
+            },
+        },
+        SunflowerMaxDPS: {
+            Default: {
+                For: ['Biologist'],
+                Value: (level) => {
+                    this.unitManager.load();
+                    var unit = "Sunflower" + level.Level;
+
+                    const unitData = this.unitManager.unitData[unit];
+
+                    return unitData.attributes.DPS * level.UnitQueues;
+                },
+            },
+        },
+        IvyMaxDPS: {
+            Default: {
+                For: ['Biologist'],
+                Value: (level) => {
+                    this.unitManager.load();
+                    var unit = "Ivy" + level.Level;
+
+                    const unitData = this.unitManager.unitData[unit];
+                    var unitDPS = unitData.attributes.Damage / unitData.attributes.Cooldown;
+
+                    return (unitDPS * level.UnitQueues) + (unitData.PoisonDamage / unitData.PoisonTick);
+                },
+            },
+        },
+        NightshadeMaxDPS: {
+            Default: {
+                For: ['Biologist'],
+                Value: (level) => {
+                    this.unitManager.load();
+                    var unit = "Nightshade" + level.Level;
+
+                    const unitData = this.unitManager.unitData[unit];
+
+                    return unitData.attributes.DPS * level.UnitQueues;
+                },
             },
         },
         Cooldown: {
@@ -923,6 +966,7 @@ class CalculatedManager {
         this.#add('TowerDPS', skinData);
         this.#add('UnitDPS', skinData);
         this.#add('ThornsDPS', skinData);
+        this.#add('RepositionDPS', skinData);
         this.#add('HeatwaveDPS', skinData);
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
@@ -940,6 +984,9 @@ class CalculatedManager {
         this.#add('BeeDPS', skinData);
         this.#add('MissileDPS', skinData);
         this.#add('ThornsUptimePercent', skinData);
+        this.#add('SunflowerMaxDPS', skinData);
+        this.#add('IvyMaxDPS', skinData);
+        this.#add('NightshadeMaxDPS', skinData);
         this.#add('NetCost', skinData);
         this.#add('LimitNetCost', skinData);
         this.#add('CostEfficiency', skinData);

@@ -37,7 +37,7 @@ class UnitCalculations {
             },
             Burst: {
                 For: ['Rifleman1', 'Rifleman2', 'Rifleman3'],
-                Requires: ['Damage', 'Cooldown', 'BurstAmount'],
+                Requires: ['Damage', 'Cooldown', 'BurstAmount', 'AimTime'],
                 Value: (unit) => {
                     const damage = unit.Damage;
                     const burstAmount = unit.BurstAmount;
@@ -46,17 +46,17 @@ class UnitCalculations {
                     const burstCooldown = unit.BurstCooldown;
 
                     const totalDamage = damage * burstAmount;
-                    const totalTime = cooldown * burstAmount + burstCooldown;
+                    const totalTime = cooldown * burstAmount + burstCooldown + unit.AimTime;
                     return totalDamage / totalTime;
                 },
             },
             Ivy: {
                 For: ['Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
                 Value: (unit) => {
-                    const DPSecond = unit.Damage / unit.Cooldown;
+                    const dps = unit.Damage / unit.Cooldown;
                     const poisonDPS = unit.PoisonDamage / unit.PoisonTick;
 
-                    return DPSecond + poisonDPS;
+                    return dps + poisonDPS;
                 },
             },
         },

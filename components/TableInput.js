@@ -260,6 +260,7 @@ export default class TableInput {
         'ReloadTime',
         'BurstCooldown',
         'ThornsTick',
+        'MaxCostEfficiency',
     ];
 
     #getDelta(cellData, deltaData, input) {
