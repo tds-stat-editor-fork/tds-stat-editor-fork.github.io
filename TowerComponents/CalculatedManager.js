@@ -764,12 +764,12 @@ class CalculatedManager {
             Default: {
                 For: ['Commando'],
                 Requires: ['MissileCooldown', 'MissileDamage'],
-                Value: (level) => level.MissileDamage / Level.MissileCooldown,
+                Value: (level) => level.MissileDamage / level.MissileCooldown,
             },
         },
         ThornsUptimePercent: {
             Default: {
-                For: ['Commando'],
+                For: ['Harvester'],
                 Requires: ['ThornsDuration', 'ThornsCooldown'],
                 Value: (level) => level.ThornsDuration / Level.ThornsCooldown,
             },
