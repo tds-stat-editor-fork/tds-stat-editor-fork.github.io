@@ -774,7 +774,7 @@ class CalculatedManager {
             Default: {
                 For: ['Harvester'],
                 Requires: ['ThornsDuration', 'ThornsCooldown'],
-                Value: (level) => level.ThornsDuration / level.ThornsCooldown,
+                Value: (level) => (level.ThornsDuration / level.ThornsCooldown) * 100,
             },
         },
         LandminePileDamage: {
@@ -821,7 +821,7 @@ class CalculatedManager {
                     const unitData = this.unitManager.unitData[unit];
                     var unitDPS = unitData.Damage / unitData.Cooldown;
 
-                    return (unitDPS * level.UnitQueues) + (unitData.PoisonDamage / unitData.PoisonTick);
+                    return ((unitDPS * level.UnitQueues) + (unitData.PoisonDamage / unitData.PoisonTick)) ?? 0;
                 },
             },
         },
