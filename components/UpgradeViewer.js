@@ -160,7 +160,7 @@ export default class UpgradeViewer {
 
     async #fetchImage(imageId) {
         //idk if anyone has noticed but i like barely have any js knowledge so bear with me here
-        const url = `https://assetdelivery.roproxy.com/v2/assetId/${imageId}`;
+        const url = `https://assetdelivery.RoProxy.com/v2/assetId/${imageId}`;
 
         const response = await fetch(url, {
             method: 'GET',
@@ -176,7 +176,7 @@ export default class UpgradeViewer {
 
         const data = await response.json();
         const imageLocation = data?.locations?.[0]?.location;
-        imageCache[imageId] = response;
+        imageCache[imageId] = imageLocation;
         return imageLocation;
     }
 
