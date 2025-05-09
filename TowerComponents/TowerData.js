@@ -579,7 +579,7 @@ export default {
               "Call to Arms (40s Cooldown)",
               "Give surrounding towers +15% Firerate for 10s",
             ],
-            Attributes: { "CTA Buff": 15},
+            Attributes: { "CTA Buff": 15, "CTA Cooldown": 30},
             Detections: { Lead: true },
             Cooldown: 0.6,
             Range: 11,
@@ -2467,7 +2467,7 @@ export default {
       ],
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: true },
-        Attributes: { DefenseMelt: 0, MaxDefenseMelt: 33, FreezeTime: 0.5, MaxHits: 3 },
+        Attributes: { DefenseMelt: 0, MaxDefenseMelt: 33, FreezeTime: 0.5, MaxHits: 3, SlowPercent: 30, MaxSlow: 30, SlowDuration: 2},
         Price: 850,
         Limit: 10,
         Range: 12,
@@ -3440,7 +3440,7 @@ export default {
               "Airstrike ability",
               "Airstrike damage: 450",
             ],
-            Attributes: { SpawnTime: 35, UnitToSend: "Tank" },
+            Attributes: { SpawnTime: 35, UnitToSend: "Tank", AirstrikeDamage: 75, AirstrikeBombs: 6, AirstrikeExplosionRange: 8, AirstrikeCooldown: 45, AirstrikeCost: 500},
             Detections: {
               Flying: false,
               Hidden: false,
@@ -3465,6 +3465,8 @@ export default {
             Attributes: {
               SpawnTime: 35,
               UnitToSend: "Railgun Tank",
+              AirstrikeDamage: 125,
+              AirstrikeExplosionRange: 12,
             },
             Detections: {
               Flying: false,
@@ -3480,7 +3482,7 @@ export default {
         },
       ],
       Defaults: {
-        Attributes: { SpawnTime: 50, UnitToSend: "Humvee" },
+        Attributes: { SpawnTime: 50, UnitToSend: "Humvee"},
         Detections: { Flying: false, Hidden: false, Lead: false },
         Range: 0,
         Price: 400,

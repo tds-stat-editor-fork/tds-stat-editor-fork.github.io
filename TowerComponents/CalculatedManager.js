@@ -819,9 +819,9 @@ class CalculatedManager {
                     var unit = "Ivy" + level.Level;
 
                     const unitData = this.unitManager.unitData[unit];
-                    var unitDPS = unitData.Damage / unitData.Cooldown;
+                    var unitDPS = unitData.Damage / unitData.Cooldown ?? 0;
 
-                    return ((unitDPS * level.UnitQueues) + (unitData.PoisonDamage / unitData.PoisonTick)) ?? 0;
+                    return (unitDPS * level.UnitQueues) + (unitData.PoisonDamage / unitData.PoisonTick);
                 },
             },
         },
