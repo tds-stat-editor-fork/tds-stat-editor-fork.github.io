@@ -160,7 +160,7 @@ export default class UpgradeViewer {
 
     async #fetchImage(imageId) {
         //idk if anyone has noticed but i like barely have any js knowledge so bear with me here
-        const url = `https://assetdelivery.RoProxy.com/v2/assetId/${imageId}`;
+        const url = `https://apis.roblox.com/asset-delivery-api/v1/assetId/${imageId}`;
 
         const response = await fetch(url, {
             method: 'GET',
@@ -169,6 +169,7 @@ export default class UpgradeViewer {
             credentials: 'same-origin',
             headers: {
                 'Content-Type': 'application/json',
+                'x-api-key': 'tgdEdccdLkmsC+Gv+uYnF8xIeVMWWJCDUghhCFZae+uTudBjZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkluTnBaeTB5TURJeExUQTNMVEV6VkRFNE9qVXhPalE1V2lJc0luUjVjQ0k2SWtwWFZDSjkuZXlKaVlYTmxRWEJwUzJWNUlqb2lkR2RrUldSalkyUk1hMjF6UXl0SGRpdDFXVzVHT0hoSlpWWk5WMWRLUTBSVloyaG9RMFphWVdVcmRWUjFaRUpxSWl3aWIzZHVaWEpKWkNJNklqRTNPVEkwTmpjeE9Ea2lMQ0poZFdRaU9pSlNiMkpzYjNoSmJuUmxjbTVoYkNJc0ltbHpjeUk2SWtOc2IzVmtRWFYwYUdWdWRHbGpZWFJwYjI1VFpYSjJhV05sSWl3aVpYaHdJam94TnpRMk9ESXpNVFF4TENKcFlYUWlPakUzTkRZNE1UazFOREVzSW01aVppSTZNVGMwTmpneE9UVTBNWDAuVjNxNTBZOHZSUWVBZDRpWlgtUzZ1MzBWcnhUNVA5YzBvNzRmWGRFdzlmNXJRVElzQWhyalRrRmVJS3hDb3plOVMtMjV6R1E2X1o1Q0pfUm5jd2RnTG9zSUNkSWFzYnZjNmJ2UGJIVUhiTWRYVlpJb0FqQW9xcTlwR1BpNjBMMVJOd0s2aWxPN0FXdUJLaUZ6X2tfQ1U0dXQ0NFBFcG43cUdmakdIMjdlb3hKQmZETFhJN3IwTjEzX2d1VUIxZ3EyQkVnMXlVNFBLWThjOXQ5VU90cUwxT2hyVF9UUkh3MTFKWXdjeVYzU0F2czNPT09qZjZZbHYxNXhwUkFia2RjLTc4ZnNqR1JDYkx1VWltaTdzdWU3NTFCMlhvcVZHUzg0RzVyLW5CVkxnaFpFcEE1dUUwZTFWWGkxZGw4T1pYWURwMGV4bzNLZnpKTnRrQXE5ZURxMk5B',
             },
             redirect: 'follow',
             referrerPolicy: 'no-referrer',
