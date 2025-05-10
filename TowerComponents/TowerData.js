@@ -1108,7 +1108,7 @@ export default {
               "Chilled Enemies take tick-based damage",
               "❄️ Tick Damage: (1)",
             ],
-            Attributes: { DebuffDamage: 1, MaxAmmo: 80,},
+            Attributes: { ChillDamage: 1, MaxAmmo: 80,},
             Range: 13.5,
           },
           Image: 15686403176,
@@ -1146,7 +1146,7 @@ export default {
             Attributes: {
               CanFreeze: true,
               MaxHits: 6,
-              DebuffDamage: 3,
+              ChillDamage: 3,
               HitboxWidth: 2,
             },
             Range: 15,
@@ -1165,7 +1165,7 @@ export default {
           ChillPercent: 5,
           HitboxWidth: 1.25,
           MaxHits: 3,
-          DebuffDamage: 0,
+          ChillDamage: 0,
           FreezeTime: 2,
           DefenseMelt: 10,
           MaxDefenseMelt: 33,
@@ -3713,7 +3713,7 @@ export default {
         {
           Stats: {
             Extras: ["Magic pierces (2)", "Max Graves: 4 -> 6"],
-            Attributes: { Max_Graves: 4, MaxHits: 2, SoulMeter: 60 },
+            Attributes: { MaxGraves: 4, MaxHits: 2, SoulMeter: 60 },
             Damage: 12,
             Cooldown: 1.2
           },
@@ -3728,7 +3728,7 @@ export default {
               "Spawn Count: 2 -> 3",
               "Spawns 'Sword Skeletons'",
             ],
-            Attributes: { SpawnCount: 3, Max_Graves: 6, SoulMeter: 96},
+            Attributes: { SpawnCount: 3, MaxGraves: 6, SoulMeter: 96},
             Range: 24,
             Detections: { Hidden: true },
           },
@@ -3746,7 +3746,7 @@ export default {
               "Spawns 'Skeleton Knights'",
             ],
             Attributes: {
-              Max_Grave_Level: 2,
+              MaxGraveLevel: 2,
               SoulMeter: 450,
             },
             Range: 26,
@@ -3760,7 +3760,7 @@ export default {
         {
           Stats: {
             Attributes: {
-              Max_Grave_Level: 3,
+              MaxGraveLevel: 3,
               MaxHits: 3,
               MaxGraves: 9,
               SoulMeter: 1440,
@@ -3788,21 +3788,21 @@ export default {
         Limit: 3,
         Price: 1650,
         Attributes: {
-          Max_Graves: 2,
+          MaxGraves: 2,
           SpawnCount: 2,
           MaxHits: 1,
-          Summon_Delay: 0.4,
+          SummonDelay: 0.4,
           BuildTime: 0.8,
           ExplosionRadius: 4,
           Buildzone: 6.5,
           BuildDelay: 0.4,
           AimTime: 0.4,
-          Summon_Debounce: 0.1,
+          SummonDebounce: 0.1,
           SlowTime: 1,
           ProjectileSpeed: 50,
           BookDebounce: 0.76,
           SoulMeter: 50,
-          Max_Grave_Level: 1,
+          MaxGraveLevel: 1,
           Grave_Cooldown: 2,
           ExplosionDamage: 500,
         },
@@ -4788,6 +4788,7 @@ export default {
             Extras: ["Frozen enemies take x2 damage.", "Max Hits: 3 -> 4"],
             Attributes: {
               FreezeBonus: true,
+              FreezeBonusMult: 2,
               MaxHits: 4,
               ChillPercent: 45,
               ChillLength: 5,
@@ -4822,6 +4823,7 @@ export default {
         Attributes: {
           CanFreeze: false,
           FreezeBonus: false,
+          FreezeBonusMult: 1,
           MaxHits: 2,
           ChillPercent: 15,
           FreezeTime: 1.5,

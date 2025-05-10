@@ -302,9 +302,9 @@ class CalculatedManager {
             },
             Cryo: {
                 For: ['Cryomancer'],
-                Requires: ['TickRate', 'DebuffDamage', 'DebuffLength'],
+                Requires: ['TickRate', 'DebuffDamage', 'ChillLength'],
                 Value: (level) =>
-                    (level.DebuffLength * level.DebuffDamage) / level.TickRate,
+                    (level.ChillLength * level.DebuffDamage) / level.TickRate,
             },
             Harv: {
                 For: ['Harvester'],
@@ -675,6 +675,10 @@ class CalculatedManager {
                 Requires: ['DPS', 'Pierce'],
                 For: ['Shotgunner', 'Gatling Gun'],
                 Value: (level) => level.DPS * level.Pierce,
+            },
+            Sledger: {
+                Requires: ['DPS', 'MaxHits'],
+                Value: (level) => (level.DPS * level.MaxHits) * level.FreezeBonusMult,
             },
         },
         BossValue: {
