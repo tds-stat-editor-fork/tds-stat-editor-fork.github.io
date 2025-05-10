@@ -87,7 +87,7 @@ class UnitCalculations {
                 Value: (level) => {
                     const defense = level.Defense ?? 0;
 
-                    return (level.Health + (1 + defense)) / level.Spawnrate;
+                    return (level.Health * (1 + defense)) / level.Spawnrate;
                 },
             },
         },

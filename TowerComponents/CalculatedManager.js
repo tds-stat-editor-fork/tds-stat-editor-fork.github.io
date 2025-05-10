@@ -777,8 +777,8 @@ class CalculatedManager {
             },
             Jetser: {
                 For: ['Jester'],
-                Requires: ['BurnDamage', 'BurnTick', 'BurnDamageMult'],
-                Value: (level) => (level.BurnDamage * level.BurnDamageMult) / level.BurnTick,
+                Requires: ['BurnTick', 'BurnDamageMult'],
+                Value: (level) => (level.Damage * level.BurnDamageMult) / level.BurnTick,
             }
         },
         PoisonDPS: {
@@ -788,8 +788,8 @@ class CalculatedManager {
             },
             Jetser: {
                 For: ['Jester'],
-                Requires: ['PoisonDamage', 'PoisonTick', 'PoisonDamageMult'],
-                Value: (level) => (level.PoisonDamage * level.PoisonDamageMult) / level.PoisonTick,
+                Requires: ['PoisonTick', 'PoisonDamageMult'],
+                Value: (level) => (level.Damage * level.PoisonDamageMult) / level.PoisonTick,
             }
         },
         MissileDPS: {
