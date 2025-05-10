@@ -16,7 +16,7 @@ class UnitCalculations {
                 Value: (level) => (level.Damage / level.Tick) / level.Cooldown,
             },
             Rocket: {
-                For: ['Sentry4', 'Tank', 'Railgun Tank'],
+                For: ['Sentry4', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (unit) => {
                     const damage = unit?.Damage ?? 0;
@@ -85,9 +85,20 @@ class UnitCalculations {
             Default: {
                 Requires: ['Health', 'Spawnrate'],
                 Value: (level) => {
-                    return level.Health / level.Spawnrate;
+                    const defense = level.Defense ?? 0;
+
+                    return (level.Health + (1 + defense)) / level.Spawnrate;
                 },
             },
+        },
+        HealPerSecond: {
+            Default: {
+                For: ['FieldMedic1', 'FieldMedic2'],
+                Requires: ['Heal', 'Cooldown'],
+                Value: (level) => {
+                    return level.Heal / level.Cooldown;
+                },
+            } 
         },
         Cooldown: {
             Type: 'Override',

@@ -813,8 +813,8 @@ class CalculatedManager {
             },
             Mando: {
                 For: ['Commando'],
-                Requires: ['MissileStun', 'Cooldown'],
-                Value: (level) => (level.MissileStun / level.Cooldown) * 100,            
+                Requires: ['MissileStun', 'MissileCooldown'],
+                Value: (level) => (level.MissileStun / level.MissileCooldown) * 100,            
             }
         },
         LandminePileDamage: {
