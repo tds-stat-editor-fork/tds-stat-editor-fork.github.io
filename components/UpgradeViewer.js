@@ -174,6 +174,7 @@ export default class UpgradeViewer {
         const data = await response.json();
         const imageLocation = data?.location;
 
+        console.log(data);
         imageCache[imageId] = imageLocation;
         return imageLocation;
     }

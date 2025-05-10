@@ -763,6 +763,35 @@ class CalculatedManager {
                 Value: (level) => (level.BeeDamage / level.TickRate) * level.BeeStacks,
             },
         },
+        GrenadeDPS: {
+            Default: {
+                For: ['Swarmer'],
+                Requires: ['GrenadeDamage', 'GrenadeCooldown'],
+                Value: (level) => level.GrenadeDamage / level.GrenadeCooldown,
+            },
+        },
+        BurnDPS: {
+            Default: {
+                Requires: ['BurnDamage', 'BurnTick'],
+                Value: (level) => level.BurnDamage / level.BurnTick,
+            },
+            Jetser: {
+                For: ['Jester'],
+                Requires: ['BurnDamage', 'BurnTick', 'BurnDamageMult'],
+                Value: (level) => (level.BurnDamage * level.BurnDamageMult) / level.BurnTick,
+            }
+        },
+        PoisonDPS: {
+            Default: {
+                Requires: ['PoisonDamage', 'PoisonTick'],
+                Value: (level) => level.PoisonDamage / level.PoisonTick,
+            },
+            Jetser: {
+                For: ['Jester'],
+                Requires: ['PoisonDamage', 'PoisonTick', 'PoisonDamageMult'],
+                Value: (level) => (level.PoisonDamage * level.PoisonDamageMult) / level.PoisonTick,
+            }
+        },
         MissileDPS: {
             Default: {
                 For: ['Commando'],
@@ -776,6 +805,17 @@ class CalculatedManager {
                 Requires: ['ThornsDuration', 'ThornsCooldown'],
                 Value: (level) => (level.ThornsDuration / level.ThornsCooldown) * 100,
             },
+        },
+        StunUptimePercent: {
+            Default: {
+                Requires: ['StunLength', 'Cooldown'],
+                Value: (level) => (level.StunLength / level.Cooldown) * 100,
+            },
+            Mando: {
+                For: ['Commando'],
+                Requires: ['MissileStun', 'Cooldown'],
+                Value: (level) => (level.MissileStun / level.Cooldown) * 100,            
+            }
         },
         LandminePileDamage: {
             Default: {
@@ -974,6 +1014,8 @@ class CalculatedManager {
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
+        this.#add('BurnDPS', skinData);
+        this.#add('PoisonDPS', skinData);
         this.#add('SpikeDPS', skinData);
         this.#add('LandmineDPS', skinData);
         this.#add('BearTrapDPS', skinData);
@@ -982,7 +1024,9 @@ class CalculatedManager {
         this.#add('BearTrapPileDamage', skinData);
         this.#add('LimitDPS', skinData);
         this.#add('BeeDPS', skinData);
+        this.#add('GrenadeDPS', skinData);
         this.#add('MissileDPS', skinData);
+        this.#add('StunUptimePercent', skinData);
         this.#add('ThornsUptimePercent', skinData);
         this.#add('SunflowerMaxDPS', skinData);
         this.#add('IvyMaxDPS', skinData);
