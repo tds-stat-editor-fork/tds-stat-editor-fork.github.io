@@ -15,7 +15,29 @@ const calculated = {
     DPS: (unit) => {
         switch (unit.Name) {
             case 'Rifleman1':
+                return (() => {
+                    const damage = unit.Damage;
+                    const burstAmount = unit.BurstAmount;
+
+                    const cooldown = unit.Cooldown;
+                    const burstCooldown = unit.BurstCooldown;
+
+                    const totalDamage = damage * burstAmount;
+                    const totalTime = cooldown * burstAmount + burstCooldown;
+                    return totalDamage / totalTime;
+                })();
             case 'Rifleman2':
+                return (() => {
+                    const damage = unit.Damage;
+                    const burstAmount = unit.BurstAmount;
+
+                    const cooldown = unit.Cooldown;
+                    const burstCooldown = unit.BurstCooldown;
+
+                    const totalDamage = damage * burstAmount;
+                    const totalTime = cooldown * burstAmount + burstCooldown;
+                    return totalDamage / totalTime;
+                })();
             case 'Rifleman3':
                 return (() => {
                     const damage = unit.Damage;

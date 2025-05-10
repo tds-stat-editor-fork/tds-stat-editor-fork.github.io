@@ -4623,7 +4623,7 @@ export default {
             Range: 11,
             Damage: 6,
           },
-          Title: "Tactical Blowshank",
+          Title: "Tactical Blowback",
           Cost: 6000,
         },
       ],

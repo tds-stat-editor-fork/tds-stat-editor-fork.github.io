@@ -844,6 +844,7 @@ class CalculatedManager {
                 Value: (level) => {
                     this.unitManager.load();
                     var unit = "Sunflower" + level.Level;
+                    if (!this.unitManager.hasUnit(unit)) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
 
@@ -857,11 +858,12 @@ class CalculatedManager {
                 Value: (level) => {
                     this.unitManager.load();
                     var unit = "Ivy" + level.Level;
+                    if (!this.unitManager.hasUnit(unit)) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
                     var unitDPS = unitData.attributes.Damage / unitData.attributes.Cooldown;
 
-                    return (unitDPS * level.UnitQueues) + (unitData.PoisonDamage / unitData.PoisonTick);
+                    return (unitDPS * level.UnitQueues) + (unitData.attributes.PoisonDPS);
                 },
             },
         },
@@ -871,6 +873,7 @@ class CalculatedManager {
                 Value: (level) => {
                     this.unitManager.load();
                     var unit = "Nightshade" + level.Level;
+                    if (!this.unitManager.hasUnit(unit)) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
 

@@ -100,6 +100,42 @@ class UnitCalculations {
                 },
             } 
         },
+        BaseDPS: {
+            Default: {
+                For: ['Sentry4', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5', 'Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
+                Requires: ['Damage', 'Cooldown'],
+                Value: (level) => {
+                    return level.Heal / level.Cooldown;
+                },
+            } 
+        },
+        MissileDPS: {
+            Default: {
+                For: ['Sentry4', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5'],
+                Requires: ['Damage', 'Cooldown'],
+                Value: (unit) => {
+                    const missileAmount = unit?.MissileAmount ?? 1;
+                    const missileCooldown = unit?.TimeBetweenMissiles ?? 0;
+                    const missileDamage = unit?.ExplosionDamage ?? 0;
+
+                    const missileDPS =
+                        missileCooldown > 0
+                            ? (missileAmount * missileDamage) / missileCooldown
+                            : 0;
+
+                    return missileDPS;
+                },
+            }, 
+        },
+        PoisonDPS: {
+            Default: {
+                For: ['Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
+                Value: (unit) => {
+                    return unit.PoisonDamage / unit.PoisonTick;
+                },
+            }, 
+        },
+        
         Cooldown: {
             Type: 'Override',
 
@@ -195,6 +231,10 @@ class UnitCalculations {
 
     addCalculate(unitData) {
         this.#add('DPS', unitData);
+        this.#add('HealPerSecond', unitData);
+        this.#add('BaseDPS', unitData);
+        this.#add('MissileDPS', unitData);
+        this.#add('PoisonDPS', unitData);
         this.#add('AggregateDPS', unitData);
         this.#add('RamDPS', unitData);
 
