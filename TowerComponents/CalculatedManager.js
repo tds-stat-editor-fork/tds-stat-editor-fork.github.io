@@ -820,7 +820,12 @@ class CalculatedManager {
                 For: ['Commando'],
                 Requires: ['MissileStun', 'MissileCooldown'],
                 Value: (level) => (level.MissileStun / level.MissileCooldown) * 100,            
-            }
+            },
+            Crapper: {
+                For: ['Trapper'],
+                Requires: ['BearTrapCooldown', 'StunLength'],
+                Value: (level) => (level.StunLength / level.BearTrapCooldown) * 100,      
+            },
         },
         LandminePileDamage: {
             Default: {
