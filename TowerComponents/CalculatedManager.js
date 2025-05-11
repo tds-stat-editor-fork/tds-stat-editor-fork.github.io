@@ -302,7 +302,7 @@ class CalculatedManager {
             },
             Cryo: {
                 For: ['Cryomancer'],
-                Requires: ['TickRate', 'DebuffDamage', 'ChillLength'],
+                Requires: ['TickRate', 'ChillDamage', 'ChillLength'],
                 Value: (level) =>
                     (level.ChillLength * level.DebuffDamage) / level.TickRate,
             },
@@ -499,7 +499,7 @@ class CalculatedManager {
                         level.Cooldown * level.MaxAmmo + level.ReloadTime;
 
                     const gunDPS = magDamage / magTime;
-                    const dotDPS = level.DebuffDamage / level.TickRate;
+                    const dotDPS = level.ChillDamage / level.TickRate;
 
                     return gunDPS + dotDPS;
                 },
