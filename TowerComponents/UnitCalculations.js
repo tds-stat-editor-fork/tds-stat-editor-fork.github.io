@@ -105,7 +105,7 @@ class UnitCalculations {
                 For: ['Sentry4', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5', 'Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (level) => {
-                    return level.Heal / level.Cooldown;
+                    return level.Damage / level.Cooldown;
                 },
             } 
         },

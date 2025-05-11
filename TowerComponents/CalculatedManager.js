@@ -678,6 +678,7 @@ class CalculatedManager {
             },
             Sledger: {
                 Requires: ['DPS', 'MaxHits'],
+                For: ['Sledger'],
                 Value: (level) => (level.DPS * level.MaxHits) * level.FreezeBonusMult,
             },
         },
