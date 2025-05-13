@@ -4061,7 +4061,7 @@ export default {
             PatrolRange: 19.5,
             MissileCount: 8,
             ExplosionDamage: 60,
-            TimeBetweenMisBurstTimesiles: 0.15,
+            BurstTime: 0.15,
           },
           Range: 12,
           Damage: 12,
