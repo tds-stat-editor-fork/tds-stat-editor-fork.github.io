@@ -472,15 +472,15 @@ class CalculatedManager {
                 Requires: [
                     'Damage',
                     'Cooldown',
-                    'MissilesEnabled',
+                    'Missiles',
                     'ExplosionDamage',
-                    'MissileAmount',
+                    'MissileCount',
                     'MissileCooldown',
                 ],
                 Value: (level) => {
                     const dps = (level.Damage * level.Ammo) / (level.ReloadTime + (level.Cooldown * level.Ammo));
-                    const missileDPS = level.MissilesEnabled
-                        ? (level.ExplosionDamage * level.MissileAmount) / (level.MissileCooldown + (level.TimeBetweenMissiles * level.MissileAmount))
+                    const missileDPS = level.Missiles
+                        ? (level.ExplosionDamage * level.MissileCount) / (level.MissileCooldown + (level.BurstTime * level.MissileCount))
                         : 0;
 
                     return dps + missileDPS;
@@ -536,7 +536,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
                     const missileDPS =
-                        (level.ExplosionDamage * level.MissileCount) / level.MissileTime;
+                        (level.ExplosionDamage * level.MissileCount) / level.MissileCooldown;
 
                     return dps + missileDPS;
                 },
@@ -826,6 +826,15 @@ class CalculatedManager {
                 Requires: ['BearTrapCooldown', 'StunLength'],
                 Value: (level) => (level.StunLength / level.BearTrapCooldown) * 100,      
             },
+            Minecraft: {
+                For: ['Warden'],
+                Requires: ['BearTrapCoStunLengtholdown', 'Cooldown', 'StunEveryHit'],
+                Value: (level) => {
+                    const critSwing = level.StunEveryHit ? 1 : level.CritSwing;
+
+                    return (level.StunLength / (level.Cooldown * critSwing)) * 100;
+                }
+            },
         },
         LandminePileDamage: {
             Default: {
@@ -854,7 +863,7 @@ class CalculatedManager {
                 Value: (level) => {
                     this.unitManager.load();
                     var unit = "Sunflower" + level.Level;
-                    if (!this.unitManager.hasUnit(unit)) return 0;
+                    if (!this.unitManager.hasUnit(unit) || level.Sunflower == false) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
 
@@ -868,12 +877,13 @@ class CalculatedManager {
                 Value: (level) => {
                     this.unitManager.load();
                     var unit = "Ivy" + level.Level;
-                    if (!this.unitManager.hasUnit(unit)) return 0;
+                    if (!this.unitManager.hasUnit(unit) || level.Ivy == false) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
-                    var unitDPS = unitData.attributes.Damage / unitData.attributes.Cooldown;
+                    var unitDPS = this.unitManager.hasUnit(unit) ? unitData.attributes.Damage / unitData.attributes.Cooldown : 0;
+                    var poisonDPS = this.unitManager.hasUnit(unit) ? unitData.attributes.PoisonDPS : 0;
 
-                    return (unitDPS * level.UnitQueues) + (unitData.attributes.PoisonDPS);
+                    return (unitDPS * level.UnitQueues) + poisonDPS;
                 },
             },
         },
@@ -883,7 +893,7 @@ class CalculatedManager {
                 Value: (level) => {
                     this.unitManager.load();
                     var unit = "Nightshade" + level.Level;
-                    if (!this.unitManager.hasUnit(unit)) return 0;
+                    if (!this.unitManager.hasUnit(unit) || level.Nightshade == false) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
 
