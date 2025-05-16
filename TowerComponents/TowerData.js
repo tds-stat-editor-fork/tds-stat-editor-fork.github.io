@@ -5067,11 +5067,12 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 4865025162,
+          Image: 125107182964673,
           Stats: {
             Extras: [],
             Attributes: {
               BeeDamage: 2,
+              MaxBeeStacks: 10,
             },
             Damage: 2,
           },
@@ -5079,38 +5080,41 @@ export default {
           Cost: 300,
         },
         {
-          Image: 4865025274,
+          Image: 119703739718324,
           Stats: {
             Extras: [],
             Attributes: {
               StingTime: 4.5,
               TickRate: 0.75,
+              MaxBeeStacks: 15,
             },
             Cooldown: 1.5,
             Range: 15,
             Damage: 4,
           },
-          Title: "Agressive Bees",
-          Cost: 500,
+          Title: "Aggressive Bees",
+          Cost: 600,
         },
         {
-          Image: 4865025421,
+          Image: 111277904554322,
           Stats: {
             Attributes: {
               StingTime: 5.25,
               GrenadeCooldown: 15,
+              MaxBeeStacks: 20,
               GrenadeDamage: 10,
               GrenadeRadius: 6,
+              MaxBeeStacks: 20,
             },
             Cooldown: 1.25,
             Range: 18,
             Damage: 10,
           },
           Title: "Bee Certified Weapons",
-          Cost: 1500,
+          Cost: 2000,
         },
         {
-          Image: 4865025564,
+          Image: 115125540733937,
           Stats: {
             Attributes: {
               StingTime: 5.5,
@@ -5118,30 +5122,32 @@ export default {
               TickRate: 0.75,
               GrenadeDamage: 30,
               GrenadeRadius: 7,
+              MaxBeeStacks: 25,
             },
             Damage: 15,
             Range: 20,
             Cooldown: 1,
           },
           Title: "Beehive of Madness",
-          Cost: 3000,
+          Cost: 5000,
         },
         {
-          Image: 4865025676,
+          Image: 115125540733937,
           Stats: {
             Extras: ["More bee damage", "Faster tick", "Longer strings"],
             Attributes: {
               StingTime: 8,
-              BeeDamage: 4,
+              BeeDamage: 3,
               TickRate: 0.5,
               GrenadeDamage: 50,
               GrenadeRadius: 8,
+              MaxBeeStacks: 30,
             },
-            Cooldown: 0.75,
+            Cooldown: 0.5,
             Damage: 25,
           },
           Title: "Beekeeper of Death",
-          Cost: 6000,
+          Cost: 9500,
         },
       ],
       Defaults: {
@@ -5151,6 +5157,8 @@ export default {
           BeeDamage: 1,
           TickRate: 1,
           BeeStacks: 1,
+          MaxBeeStacks: 5,
+          GlobalMaxStacks: 1500,
           GrenadeRadius: 0,
           GrenadeCooldown: 0,
           GrenadeDamage: 0,

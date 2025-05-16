@@ -681,6 +681,35 @@ class CalculatedManager {
                 For: ['Sledger'],
                 Value: (level) => (level.DPS * level.MaxHits) * level.FreezeBonusMult,
             },
+            Swarmer: {
+                Requires: ['DPS', 'MaxBeeStacks', 'BeeDPS'],
+                For: ['Swarmer'],
+                Value: (level) => {
+                    const dps = level.Damage / level.Cooldown;
+                    const beeDPS = level.BeeDPS * level.MaxBeeStacks;
+
+                    return dps + beeDPS;
+                },
+            },
+        },
+        GlobalMaxDPS: {
+            Default: {
+                Requires: ['BeeDPS', 'DPS', 'GlobalMaxStacks'],
+                For: ['Swarmer'],
+                Value: (level) => {
+                    const dps = level.Damage / level.Cooldown;
+                    const beeDPS = level.BeeDPS * level.GlobalMaxStacks;
+
+                    return dps + beeDPS;
+                },
+            },
+        },
+        DPSRate: {
+            Default: {
+                Requires: ['Cooldown', 'BeeDPS'],
+                For: ['Swarmer'],
+                Value: (level) => level.BeeDPS / level.Cooldown,
+            },
         },
         BossValue: {
             Default: {
@@ -1037,6 +1066,8 @@ class CalculatedManager {
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
+        this.#add('GlobalMaxDPS', skinData);
+        this.#add('DPSRate', skinData);
         this.#add('BurnDPS', skinData);
         this.#add('PoisonDPS', skinData);
         this.#add('SpikeDPS', skinData);
