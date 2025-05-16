@@ -644,6 +644,23 @@ class CalculatedManager {
                     return a * x ** 3 + b * x ** 2 + c * x + d;
                 },
             },
+            Pursuit: {
+                For: ['Pursuit'],
+                Requires: ['PatrolRange'],
+                Value: (level) => {
+                    let x = level.PatrolRange;
+                    const a = -0.00229008361916565;
+                    const b = 0.165383660474954;
+                    const c = 0.234910819904625;
+                    const d = 2.62040766713282;
+
+                    if (x > 45) {
+                        x = 45;
+                    }
+
+                    return a * x ** 3 + b * x ** 2 + c * x + d;
+                },
+            },
         },
         BossPotential: {
             Default: {
@@ -682,11 +699,11 @@ class CalculatedManager {
                 Value: (level) => (level.DPS * level.MaxHits) * level.FreezeBonusMult,
             },
             Swarmer: {
-                Requires: ['DPS', 'MaxBeeStacks', 'BeeDPS'],
+                Requires: ['Damage', 'Cooldown', 'MaxBeeStacks'],
                 For: ['Swarmer'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const beeDPS = level.BeeDPS * level.MaxBeeStacks;
+                    const beeDPS = (level.BeeDamage / level.MaxBeeStacks) * level.MaxBeeStacks;
 
                     return dps + beeDPS;
                 },
@@ -694,11 +711,11 @@ class CalculatedManager {
         },
         GlobalMaxDPS: {
             Default: {
-                Requires: ['BeeDPS', 'DPS', 'GlobalMaxStacks'],
+                Requires: ['BeeDPS', 'GlobalMaxStacks'],
                 For: ['Swarmer'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const beeDPS = level.BeeDPS * level.GlobalMaxStacks;
+                    const beeDPS = (level.BeeDamage / level.MaxBeeStacks) * level.GlobalMaxStacks;
 
                     return dps + beeDPS;
                 },
@@ -706,9 +723,9 @@ class CalculatedManager {
         },
         DPSRate: {
             Default: {
-                Requires: ['Cooldown', 'BeeDPS'],
+                Requires: ['Cooldown'],
                 For: ['Swarmer'],
-                Value: (level) => level.BeeDPS / level.Cooldown,
+                Value: (level) => (level.BeeDamage / level.MaxBeeStacks) / level.Cooldown,
             },
         },
         BossValue: {
@@ -857,7 +874,7 @@ class CalculatedManager {
             },
             Minecraft: {
                 For: ['Warden'],
-                Requires: ['BearTrapCoStunLengtholdown', 'Cooldown', 'StunEveryHit'],
+                Requires: ['StunLength', 'Cooldown', 'StunEveryHit'],
                 Value: (level) => {
                     const critSwing = level.StunEveryHit ? 1 : level.CritSwing;
 
