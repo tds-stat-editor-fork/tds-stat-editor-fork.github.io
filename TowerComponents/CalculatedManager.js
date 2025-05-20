@@ -283,8 +283,8 @@ class CalculatedManager {
         FireTime: {
             Default: {
                 For: ['Gatling Gun'],
-                Requires: ['Ammo', 'Cooldown'],
-                Value: (level) => level.Ammo * level.Cooldown,
+                Requires: ['MaxAmmo', 'Cooldown'],
+                Value: (level) => level.MaxAmmo * level.Cooldown,
             },
         },
         TotalElapsedDamage: {
@@ -711,7 +711,7 @@ class CalculatedManager {
         },
         GlobalMaxDPS: {
             Default: {
-                Requires: ['BeeDPS', 'GlobalMaxStacks'],
+                Requires: ['GlobalMaxStacks'],
                 For: ['Swarmer'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;

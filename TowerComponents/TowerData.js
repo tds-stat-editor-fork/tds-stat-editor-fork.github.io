@@ -5100,6 +5100,7 @@ export default {
           Stats: {
             Attributes: {
               StingTime: 5.25,
+              BeeGrenade: true,
               GrenadeCooldown: 15,
               GrenadeDamage: 10,
               GrenadeRadius: 6,
@@ -5158,6 +5159,7 @@ export default {
           BeeStacks: 1,
           MaxBeeStacks: 5,
           GlobalMaxStacks: 1500,
+          BeeGrenade: false,
           GrenadeRadius: 0,
           GrenadeCooldown: 0,
           GrenadeDamage: 0,
