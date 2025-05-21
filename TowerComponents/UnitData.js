@@ -342,7 +342,6 @@ export default {
     Sentry1: {
         Range: 18,
         Health: 20,
-        Lifetime: 30,
         Speed: 1.25,
         IgnoreCollisionDamage: true,
         Cooldown: 0.45,
@@ -350,12 +349,12 @@ export default {
         Detections: {
             Hidden: false,
             Flying: false,
-            Lead: true,
+            Lead: false,
         },
         Attributes: {
             SendTime: 1.25,
             ScrapCost: 16,
-            Lifetime: 20,
+            Lifetime: 30,
         },
     },
     Sentry2: {
@@ -369,7 +368,7 @@ export default {
         Detections: {
             Hidden: false,
             Flying: false,
-            Lead: true,
+            Lead: false,
         },
         Attributes: {
             SendTime: 1.5,
@@ -388,7 +387,7 @@ export default {
         Detections: {
             Hidden: true,
             Flying: false,
-            Lead: true,
+            Lead: false,
         },
         Attributes: {
             SendTime: 1.75,
@@ -410,7 +409,7 @@ export default {
         Detections: {
             Hidden: true,
             Flying: false,
-            Lead: true,
+            Lead: false,
         },
         Attributes: {
             SendTime: 1.75,

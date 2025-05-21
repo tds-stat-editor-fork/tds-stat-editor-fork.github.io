@@ -703,7 +703,7 @@ class CalculatedManager {
                 For: ['Swarmer'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const beeDPS = (level.BeeDamage / level.MaxBeeStacks) * level.MaxBeeStacks;
+                    const beeDPS = (level.BeeDamage / level.TickRate) * level.MaxBeeStacks;
 
                     return dps + beeDPS;
                 },
@@ -715,13 +715,13 @@ class CalculatedManager {
                 For: ['Swarmer'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const beeDPS = (level.BeeDamage / level.MaxBeeStacks) * level.GlobalMaxStacks;
+                    const beeDPS = (level.BeeDamage / level.TickRate) * level.GlobalMaxStacks;
 
                     return dps + beeDPS;
                 },
             },
         },
-        DPSRate: {
+        "DPS Rate": {
             Default: {
                 Requires: ['Cooldown'],
                 For: ['Swarmer'],
@@ -1084,7 +1084,7 @@ class CalculatedManager {
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
         this.#add('GlobalMaxDPS', skinData);
-        this.#add('DPSRate', skinData);
+        this.#add("DPS Rate", skinData);
         this.#add('BurnDPS', skinData);
         this.#add('PoisonDPS', skinData);
         this.#add('SpikeDPS', skinData);

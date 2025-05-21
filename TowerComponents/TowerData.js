@@ -1421,7 +1421,7 @@ export default {
             Attributes: {
               StunLength: 0.3,
               MaxHits: 4,
-              DefenseMelt: 5,
+              DefenseMelt: 10,
               ChainRange: 7,
             },
             Detections: { Flying: true, Hidden: false, Lead: true },
