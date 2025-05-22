@@ -8,7 +8,7 @@ class UnitCalculations {
             Default: {
                 Requires: ['Damage', 'Cooldown'],
                 Exclude: [],
-                Value: (level) => level.Damage / level.Cooldown,
+                Value: (level) => level.Damage / level.Cooldown ?? 0,
             },
             ExecutionerSkeleton: {
                 Requires: ['Damage', 'Cooldown', 'Tick'],
