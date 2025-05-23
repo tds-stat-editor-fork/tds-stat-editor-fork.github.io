@@ -473,8 +473,8 @@ export default {
     Humvee: {
         Health: 30,
         Damage: 0,
-        ExplosionDamage: 40,
-        TimeBetweenMissiles: 2,
+        ExplosionDamage: 0,
+        TimeBetweenMissiles: 0,
         Cooldown: 0.2,
         Range: 5,
         Detections: {

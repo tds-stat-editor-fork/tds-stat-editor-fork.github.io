@@ -583,7 +583,7 @@ export default {
               "Call to Arms (40s Cooldown)",
               "Give surrounding towers +15% Firerate for 10s",
             ],
-            Attributes: { "Call to Arms": true, "Call to Arms Buff: 0": 15, "Call to Arms Cooldown": 30},
+            Attributes: { "Call to Arms": true, "Call to Arms Buff": 15, "Call to Arms Cooldown": 30},
             Detections: { Lead: true },
             Cooldown: 0.6,
             Range: 11,
@@ -599,7 +599,7 @@ export default {
               "Firerate Buff: 15% > 17.5%",
               "Call to Arms (22.5% Firerate Buff)",
             ],
-            Attributes: { FirerateBuff: 17.5, "Call to Arms Buff": 0},
+            Attributes: { FirerateBuff: 17.5, "Call to Arms Buff": 22.5},
             Range: 12.5,
             Damage: 15,
           },
@@ -614,7 +614,7 @@ export default {
               "Support Caravan (60 Seconds)",
               "Call to Arms (30% Firerate Buff)",
             ],
-            Attributes: { FirerateBuff: 20, "Call to Arms Buff: 0": 30, "Support Caravan": true, "Support Caravan Cooldown": 60},
+            Attributes: { FirerateBuff: 20, "Call to Arms Buff": 30, "Support Caravan": true, "Support Caravan Cooldown": 60},
             Range: 14,
             Damage: 25,
           },
@@ -654,7 +654,7 @@ export default {
             Damage: 12,
             Attributes: {
               ReloadTime: 2,
-              BurstSize: 5,
+              Burst: 5,
               Ammo: 45,
             },
           },
@@ -670,7 +670,7 @@ export default {
             Attributes: {
               BurstCooldown: 0.35,
               ReloadTime: 1.5,
-              BurstSize: 6,
+              Burst: 6,
               Ammo: 60,
               MaxHits: 4,
               Missiles: true,
@@ -694,7 +694,7 @@ export default {
             Attributes: {
               BurstCooldown: 0.3,
               ReloadTime: 1.25,
-              BurstSize: 10,
+              Burst: 10,
               Ammo: 80,
               MissileStun: 2,
               MissileDamage: 200,
@@ -717,7 +717,7 @@ export default {
         Attributes: {
           BurstCooldown: 0.5,
           ReloadTime: 2.5,
-          BurstSize: 3,
+          Burst: 3,
           Ammo: 30,
           MaxHits: 3,
           Missiles: false,
@@ -1501,7 +1501,7 @@ export default {
         Cooldown: 0.2,
         Limit: 5,
         Attributes: {
-          BurstSize: 3,
+          Burst: 3,
           BurstCooldown: 0.6,
           ChillPercent: 5,
           MaxChill: 45,
@@ -1516,7 +1516,7 @@ export default {
             Damage: 5,
             Range: 15,
             Attributes: {
-              BurstSize: 4,
+              Burst: 4,
               ChillPercent: 7.5,
             },
           },
@@ -1543,7 +1543,7 @@ export default {
           Stats: {
             Attributes: {
               UnitToSend: "IceTurret2",
-              BurstSize: 5,
+              Burst: 5,
               BurstCooldown: 0.5,
               ChillPercent: 10,
             },
@@ -1557,7 +1557,7 @@ export default {
           Stats: {
             Attributes: {
               UnitToSend: "IceTurret3",
-              BurstSize: 7,
+              Burst: 7,
               BurstCooldown: 0.4,
               ChillPercent: 12.5,
               MaxChill: 60,
@@ -1581,7 +1581,7 @@ export default {
         Attributes: {
           BurnDamage: 5,
           BurnTick: 0.5,
-          BurstSize: 3,
+          Burst: 3,
           BurstCooldown: 0.6,
           BurnTime: 2,
           HeatwaveBurnTick: 0.5,
@@ -1596,7 +1596,7 @@ export default {
             Damage: 5,
             Range: 15,
             Attributes: {
-              BurstSize: 4,
+              Burst: 4,
               BurnDamage: 8,
               BurnTime: 3,
             },
@@ -1627,7 +1627,7 @@ export default {
           Stats: {
             Damage: 13,
             Attributes: {
-              BurstSize: 5,
+              Burst: 5,
               BurstCooldown: 0.5,
               BurnDamage: 10,
               BurnTick: 0.25,
@@ -1647,7 +1647,7 @@ export default {
             Damage: 18,
             Cooldown: 0.125,
             Attributes: {
-              BurstSize: 7,
+              Burst: 7,
               BurstCooldown: 0.4,
               BurnTime: 4,
               HeatwaveDamage: 400,
@@ -2059,7 +2059,7 @@ export default {
         Detections: { Flying: true, Hidden: false, Lead: false },
         Range: 14,
         Price: 800,
-        Attributes: { MaxBounce: 3, TickRate: 0.15 },
+        Attributes: { MaxBounce: 3, MaxHits: 3, TickRate: 0.15 },
         Cooldown: 3,
         Damage: 4,
       },

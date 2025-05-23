@@ -273,12 +273,27 @@ class CalculatedManager {
                 },
             },
         },
-        LaserTime: {
-            Default: {
+        BurstTime: {
+            Accelerator: {
                 For: ['Accelerator'],
                 Requires: ['Overcharge', 'LaserDPS'],
                 Value: (level) => level.Overcharge / level.LaserDPS,
             },
+            Burst: {
+                For: ['Soldier', 'Freezer', 'Commando', 'Elementalist', 'Toxic Gunner'],
+                Requires: ['BurstCooldown', 'Cooldown', 'Burst'],
+                Value: (level) => (level.Cooldown * level.Burst) + level.BurstCooldown,
+            },
+            CriticalShit: {
+                For: ['Warden', 'Slasher'],
+                Requires: ['CritSwing', 'Cooldown'],
+                Value: (level) => level.Cooldown * level.CritSwing,
+            },
+            Brawler: {
+                For: ['Brawler'],
+                Requires: ['CritSwing', 'Cooldown', 'ComboCooldown'],
+                Value: (level) => (level.Cooldown * (level.CritSwing - 1)) + level.ComboCooldown,         
+            }
         },
         FireTime: {
             Default: {
@@ -304,7 +319,7 @@ class CalculatedManager {
                 For: ['Cryomancer'],
                 Requires: ['TickRate', 'ChillDamage', 'ChillLength'],
                 Value: (level) =>
-                    (level.ChillLength * level.DebuffDamage) / level.TickRate,
+                    (level.ChillLength * level.ChillDamage) / level.TickRate,
             },
             Harv: {
                 For: ['Harvester'],
@@ -397,14 +412,14 @@ class CalculatedManager {
             },
             Accel: {
                 For: ['Accelerator'],
-                Requires: ['Overcharge', 'ChargeTime', 'Cooldown', 'LaserTime'],
+                Requires: ['Overcharge', 'ChargeTime', 'Cooldown', 'BurstTime'],
                 Value: (level) => {
                     const totalDamage = level.Overcharge;
 
                     const burstCooldown =
                         level.ChargeTime + level.LaserCooldown;
 
-                    return totalDamage / (level.LaserTime + burstCooldown);
+                    return totalDamage / (level.BurstTime + burstCooldown);
                 },
             },
             Brawler: {
@@ -686,6 +701,7 @@ class CalculatedManager {
         MaxDPS: {
             Default: {
                 Requires: ['DPS', 'MaxHits'],
+                Exclude: ['Executioner'],
                 Value: (level) => level.DPS * level.MaxHits,
             },
             Pierce: {
@@ -857,7 +873,7 @@ class CalculatedManager {
                 Value: (level) => (level.ThornsDuration / level.ThornsCooldown) * 100,
             },
         },
-        StunUptimePercent: {
+        StallUptimePercent: {
             Default: {
                 Requires: ['StunLength', 'Cooldown'],
                 Value: (level) => (level.StunLength / level.Cooldown) * 100,
@@ -881,6 +897,21 @@ class CalculatedManager {
                     return (level.StunLength / (level.Cooldown * critSwing)) * 100;
                 }
             },
+            FrostBlaster: {
+                For: ['Frost Blaster'],
+                Requires: ['FreezeTime', 'Cooldown'],
+                Value: (level) => {
+                    const freezeCooldown = level.Cooldown < 1;
+                    const freezeEveryHit = Math.ceil(level.Cooldown / 1);
+
+                    if (freezeCooldown){
+                        return ((level.FreezeTime / level.Cooldown) / level.freezeEveryHit) * 100;
+                    }
+                    else{
+                        return (level.FreezeTime / level.Cooldown) * 100;
+                    }
+                }
+            }
         },
         LandminePileDamage: {
             Default: {
@@ -1079,7 +1110,7 @@ class CalculatedManager {
         this.#add('HeatwaveDPS', skinData);
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
-        this.#add('LaserTime', skinData);
+        this.#add('BurstTime', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
@@ -1097,7 +1128,7 @@ class CalculatedManager {
         this.#add('BeeDPS', skinData);
         this.#add('GrenadeDPS', skinData);
         this.#add('MissileDPS', skinData);
-        this.#add('StunUptimePercent', skinData);
+        this.#add('StallUptimePercent', skinData);
         this.#add('ThornsUptimePercent', skinData);
         this.#add('SunflowerMaxDPS', skinData);
         this.#add('IvyMaxDPS', skinData);
