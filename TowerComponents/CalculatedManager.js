@@ -725,7 +725,7 @@ class CalculatedManager {
             Default: {
                 Requires: ['Cooldown'],
                 For: ['Swarmer'],
-                Value: (level) => (level.BeeDamage / level.MaxBeeStacks) / level.Cooldown,
+                Value: (level) => (level.BeeDamage / level.TickRate) / level.Cooldown,
             },
         },
         BossValue: {

@@ -9,6 +9,8 @@ export default {
         Range: 2,
         Detections: {
             Hidden: false,
+            Flying: true,
+            Lead: false,
         },
         Attributes: {},
     },
@@ -326,6 +328,7 @@ export default {
         Unlocks: 5,
         Health: 300,
         Speed: 2.5,
+        Defense: 0,
         Spawnrate: 35,
         Heal: 5,
         MaxHits: 4,
@@ -343,6 +346,7 @@ export default {
         Unlocks: 6,
         Health: 600,
         Speed: 2.5,
+        Defense: 0,
         Spawnrate: 30,
         Heal: 10,
         MaxHits: 8,
@@ -389,12 +393,15 @@ export default {
         Lifespan: 45,
         Health: 1000,
     },
-    Sentry1: {
+    Sentry: {
         Range: 18,
         Health: 20,
         IgnoreCollisionDamage: true,
         Cooldown: 0.45,
         Damage: 1,
+        ExplosionDamage: 35,
+        TimeBetweenMissiles: 4,
+        MissileAmount: 2,
         Detections: {
             Hidden: false,
             Flying: false,
@@ -406,7 +413,7 @@ export default {
             Lifetime: 30,
         },
     },
-    Sentry2: {
+    RifleSentry: {
         Range: 20,
         Health: 40,
         Lifetime: 30,
@@ -424,7 +431,7 @@ export default {
             Lifetime: 30,
         },
     },
-    Sentry3: {
+    MinigunSentry: {
         Range: 20,
         Health: 60,
         Lifetime: 45,
@@ -442,7 +449,7 @@ export default {
             Lifetime: 45,
         },
     },
-    Sentry4: {
+    WarMachineSentry: {
         ExplosionDamage: 35,
         TimeBetweenMissiles: 4,
         MissileAmount: 2,
@@ -466,6 +473,8 @@ export default {
     Humvee: {
         Health: 30,
         Damage: 0,
+        ExplosionDamage: 40,
+        TimeBetweenMissiles: 2,
         Cooldown: 0.2,
         Range: 5,
         Detections: {
@@ -605,6 +614,14 @@ export default {
         Health: 50,
         Damage: 6,
         Cooldown: 1.1,
+        PoisonDamage: 0,
+        PoisonTick: 0,
+        ExplosionRange: 0,
+        PoisonTime: 0,
+        Slowdown: 0,
+        ProjectileSpeed: 0,
+        ConfusionTime: 0,
+        ConfusionCooldown: 0,
         Lifespan: 20,
         Range: 15,
         Detections: {
