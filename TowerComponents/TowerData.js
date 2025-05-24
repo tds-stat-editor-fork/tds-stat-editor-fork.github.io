@@ -2305,6 +2305,7 @@ export default {
           CanFreeze: false,
           ChillPercent: 10,
           MaxChill: 50,
+          FrostGrenade: false,
           ChillLength: 5,
         },
         Price: 425,
