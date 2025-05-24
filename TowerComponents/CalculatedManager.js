@@ -701,7 +701,6 @@ class CalculatedManager {
         MaxDPS: {
             Default: {
                 Requires: ['DPS', 'MaxHits'],
-                Exclude: ['Executioner'],
                 Value: (level) => level.DPS * level.MaxHits,
             },
             Pierce: {

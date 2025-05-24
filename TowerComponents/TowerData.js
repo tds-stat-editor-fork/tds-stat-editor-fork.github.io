@@ -1964,19 +1964,7 @@ export default {
         {
           Image: 129697807,
           Stats: {
-            Extras: [],
-            Attributes: {
-              MaxBounce: 3,
-              TickRate: 0.15,
-            },
-            Detections: {
-              Flying: true,
-              Hidden: false,
-              Lead: false,
-            },
             Cooldown: 2,
-            Range: 14,
-            Damage: 4,
           },
           Title: "Improved Throwing",
           Cost: 250,
@@ -1984,18 +1972,6 @@ export default {
         {
           Image: 542098553,
           Stats: {
-            Extras: [],
-            Attributes: {
-              MaxBounce: 3,
-              TickRate: 0.15,
-            },
-            Detections: {
-              Flying: true,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 2,
-            Range: 14,
             Damage: 8,
           },
           Title: "Double Head Axe",
@@ -2007,14 +1983,7 @@ export default {
             Extras: ["Bounces: 5"],
             Attributes: {
               MaxBounce: 5,
-              TickRate: 0.15,
             },
-            Detections: {
-              Flying: true,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 2,
             Range: 18,
             Damage: 15,
           },
@@ -2027,9 +1996,8 @@ export default {
             Extras: [],
             Attributes: {
               MaxBounce: 5,
-              TickRate: 0.15,
             },
-            Detections: { Flying: true, Hidden: true, Lead: false },
+            Detections: { Hidden: true },
             Cooldown: 2,
             Range: 18,
             Damage: 30,
@@ -2043,11 +2011,7 @@ export default {
             Extras: ["Bounces: 7"],
             Attributes: {
               MaxBounce: 7,
-              TickRate: 0.15,
             },
-            Detections: { Flying: true, Hidden: true, Lead: false },
-            Cooldown: 2,
-            Range: 18,
             Damage: 80,
           },
           Title: "Head Chopping",
@@ -2059,7 +2023,7 @@ export default {
         Detections: { Flying: true, Hidden: false, Lead: false },
         Range: 14,
         Price: 800,
-        Attributes: { MaxBounce: 3, MaxHits: 3, TickRate: 0.15 },
+        Attributes: { MaxBounce: 3, MaxHitsPerBounce: 3, TickRate: 0.15 },
         Cooldown: 3,
         Damage: 4,
       },
@@ -4739,15 +4703,7 @@ export default {
         {
           Image: 3280081327,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: {
-              Flying: true,
-              Hidden: false,
-              Lead: false,
-            },
             Cooldown: 3.5,
-            Range: 27.5,
             Damage: 6,
           },
           Title: "Faster Reloading",
@@ -4756,10 +4712,7 @@ export default {
         {
           Image: 3280367022,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: true, Hidden: true, Lead: false },
-            Cooldown: 3.5,
+            Detections: { Hidden: true },
             Range: 32.5,
             Damage: 12,
           },
@@ -4769,10 +4722,7 @@ export default {
         {
           Image: 3280367963,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: true, Hidden: true, Lead: true },
-            Cooldown: 3.5,
+            Detections: { Lead: true },
             Range: 35,
             Damage: 30,
           },
@@ -4782,9 +4732,6 @@ export default {
         {
           Image: 3280368786,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: true, Hidden: true, Lead: true },
             Cooldown: 2,
             Range: 45,
             Damage: 40,
@@ -4794,7 +4741,7 @@ export default {
         },
       ],
       Defaults: {
-        Detections: { Flying: false, Hidden: false, Lead: false },
+        Detections: { Flying: true, Hidden: false, Lead: false },
         Price: 300,
         Range: 27.5,
         Cooldown: 4,
