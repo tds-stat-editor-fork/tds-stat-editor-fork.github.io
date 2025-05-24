@@ -116,6 +116,12 @@ const register = {
             'Nightshade4',
         ],
     },
+    'Commander': {
+        Default: [
+            'GunnerAPC',
+            'MissileAPC'
+        ],
+    },
 };
 
 export default class UnitManager {

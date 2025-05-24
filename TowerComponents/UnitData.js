@@ -786,4 +786,23 @@ export default {
             Lead: false,
         },
     },
+    //commander
+    GunnerAPC: {
+        Health: 250,
+        Damage: 10,
+        Burst: 0,
+        Cooldown: 0.2,
+        Range: 30,
+        ExplosionRange: 0,
+        SpawnCount: 2,
+    },
+    MissileAPC: {
+        Health: 400,
+        Damage: 50,
+        Burst: 4,
+        Cooldown: 2,
+        Range: 25,
+        ExplosionRange: 5,
+        SpawnCount: 1,
+    }
 };

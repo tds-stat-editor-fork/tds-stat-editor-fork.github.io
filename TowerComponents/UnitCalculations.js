@@ -50,6 +50,19 @@ class UnitCalculations {
                     return totalDamage / totalTime;
                 },
             },
+            MissileAPC: {
+                For: ['MissileAPC'],
+                Requires: ['Damage', 'Cooldown', 'Burst'],
+                Value: (unit) => {
+                    const damage = unit.Damage;
+                    const burst = unit.Burst;
+
+                    const cooldown = unit.Cooldown;
+
+                    const totalDamage = damage * burst;
+                    return totalDamage / cooldown;
+                },
+            },
             Ivy: {
                 For: ['Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
                 Value: (unit) => {

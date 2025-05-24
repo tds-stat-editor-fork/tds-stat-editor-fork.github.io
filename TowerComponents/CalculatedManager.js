@@ -902,10 +902,10 @@ class CalculatedManager {
                 Requires: ['FreezeTime', 'Cooldown'],
                 Value: (level) => {
                     const freezeCooldown = level.Cooldown < 1;
-                    const freezeEveryHit = Math.ceil(level.Cooldown / 1);
+                    const freezeEveryHit = Math.ceil(1 / level.Cooldown);
 
                     if (freezeCooldown){
-                        return ((level.FreezeTime / level.Cooldown) / level.freezeEveryHit) * 100;
+                        return ((level.FreezeTime / level.Cooldown) / freezeEveryHit) * 100;
                     }
                     else{
                         return (level.FreezeTime / level.Cooldown) * 100;
