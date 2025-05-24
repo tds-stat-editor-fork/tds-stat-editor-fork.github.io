@@ -77,6 +77,7 @@ const register = {
             'Skeleton',
             'Sword Skeleton',
             'Skeleton Knight',
+            'Giant Skeleton',
             'Hallow Guard',
             'Executioner Skeleton',
         ],

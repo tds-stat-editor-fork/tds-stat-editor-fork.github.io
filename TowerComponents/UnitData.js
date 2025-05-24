@@ -9,7 +9,7 @@ export default {
         Range: 2,
         Detections: {
             Hidden: false,
-            Flying: true,
+            Flying: false,
             Lead: false,
         },
         Attributes: {},
@@ -24,6 +24,8 @@ export default {
         Range: 7.5,
         Detections: {
             Hidden: true,
+            Flying: false,
+            Lead: false,
         },
         Attributes: {},
     },
@@ -37,6 +39,8 @@ export default {
         Range: 2,
         Detections: {
             Hidden: true,
+            Flying: false,
+            Lead: false,
         },
         Attributes: {},
     },
@@ -50,6 +54,8 @@ export default {
         Range: 7.5,
         Detections: {
             Hidden: true,
+            Flying: false,
+            Lead: false,
         },
         Attributes: {},
     },
@@ -63,6 +69,8 @@ export default {
         Range: 2,
         Detections: {
             Hidden: true,
+            Flying: false,
+            Lead: false,
         },
         Attributes: {},
     },
