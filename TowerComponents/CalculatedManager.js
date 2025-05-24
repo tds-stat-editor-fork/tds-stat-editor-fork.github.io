@@ -274,7 +274,7 @@ class CalculatedManager {
             },
         },
         BurstTime: {
-            Accelerator: {
+            Default: {
                 For: ['Accelerator'],
                 Requires: ['Overcharge', 'LaserDPS'],
                 Value: (level) => level.Overcharge / level.LaserDPS,
@@ -701,6 +701,7 @@ class CalculatedManager {
         MaxDPS: {
             Default: {
                 Requires: ['DPS', 'MaxHits'],
+                Exclude: ['Executioner'],
                 Value: (level) => level.DPS * level.MaxHits,
             },
             Pierce: {
