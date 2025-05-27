@@ -28,7 +28,7 @@ class CalculatedManager {
             Frostburner: {
                 For: ['Elementalist'],
                 Requires: ['Damage', 'Cooldown'],
-                Value: (level) => (level.Damage * level.BurstSize) / (((level.BurstSize) * level.Cooldown) + level.BurstCooldown),
+                Value: (level) => (level.Damage * level.Burst) / (((level.Burst) * level.Cooldown) + level.BurstCooldown),
             },
             Crook: {
                 For: ['Crook Boss'],
@@ -544,7 +544,7 @@ class CalculatedManager {
             },
             Commando: {
                 For: ['Commando'],
-                Value: (level) => (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.BurstSize - 1) * level.BurstCooldown + level.ReloadTime),
+                Value: (level) => (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.Burst - 1) * level.BurstCooldown + level.ReloadTime),
             },
             WarMachine: {
                 For: ['War Machine'],
@@ -579,7 +579,7 @@ class CalculatedManager {
                     const burnDPS = level.BurnDamage / level.BurnTick;
                     const unitDPS = level.UnitDPS ?? 0;
                     const skin = level.levels.skinData.name;
-                    const towerDPS = (level.Damage * level.BurstSize) / (((level.BurstSize) * level.Cooldown) + level.BurstCooldown);
+                    const towerDPS = (level.Damage * level.Burst) / (((level.Burst) * level.Cooldown) + level.BurstCooldown);
                     
                     if(skin == 'Fire Mode') return burnDPS + towerDPS; else return towerDPS + unitDPS;
                 },
