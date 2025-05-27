@@ -282,7 +282,7 @@ class CalculatedManager {
             Burst: {
                 For: ['Soldier', 'Freezer', 'Commando', 'Elementalist', 'Toxic Gunner'],
                 Requires: ['BurstCooldown', 'Cooldown', 'Burst'],
-                Value: (level) => (level.Cooldown * level.Burst) + level.BurstCooldown,
+                Value: (level) => (level.Cooldown * level.Burst),
             },
             CriticalShit: {
                 For: ['Warden', 'Slasher'],
@@ -295,11 +295,36 @@ class CalculatedManager {
                 Value: (level) => (level.Cooldown * (level.CritSwing - 1)) + level.ComboCooldown,         
             }
         },
+        BurstDowntimePercent: {
+            Default: {
+                For: ['Accelerator'],
+                Requires: ['BurstTime', 'LaserCooldown', 'ChargeTime'],
+                Value: (level) => {
+                    const downtime = level.LaserCooldown + level.ChargeTime;
+
+                    return (level.BurstTime / (level.BurstTime + downtime)) * 100;
+                },
+            },
+            Burst: {
+                For: ['Soldier', 'Freezer', 'Commando', 'Elementalist', 'Toxic Gunner'],
+                Requires: ['BurstCooldown', 'Cooldown', 'Burst'],
+                Value: (level) => (level.BurstTime / (level.BurstTime + level.BurstCooldown)) * 100,
+            },
+        },
         FireTime: {
             Default: {
                 For: ['Gatling Gun'],
                 Requires: ['MaxAmmo', 'Cooldown'],
                 Value: (level) => level.MaxAmmo * level.Cooldown,
+            },
+            Mando: {
+                For: ['Commando'],
+                Requires: ['FireTime', 'Ammo'],
+                Value: (level) => {
+                    var burstCount = level.Ammo / level.Burst;
+
+                    return ((level.FireTime + level.BurstCooldown) * burstCount) + level.ReloadTime;
+                },
             },
         },
         TotalElapsedDamage: {
@@ -1116,14 +1141,14 @@ class CalculatedManager {
         this.#add('MaxDPS', skinData);
         this.#add('GlobalMaxDPS', skinData);
         this.#add("DPS Rate", skinData);
-        this.#add('BurnDPS', skinData);
-        this.#add('PoisonDPS', skinData);
         this.#add('SpikeDPS', skinData);
         this.#add('LandmineDPS', skinData);
+        this.#add('BurnDPS', skinData);
         this.#add('BearTrapDPS', skinData);
         this.#add('SpikePileDamage', skinData);
         this.#add('LandminePileDamage', skinData);
         this.#add('BearTrapPileDamage', skinData);
+        this.#add('PoisonDPS', skinData);
         this.#add('LimitDPS', skinData);
         this.#add('BeeDPS', skinData);
         this.#add('GrenadeDPS', skinData);
