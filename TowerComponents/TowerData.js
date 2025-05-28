@@ -1587,7 +1587,7 @@ export default {
           HeatwaveBurnTick: 0.5,
           HeatwaveCooldown: 40,
         },
-        Detections: {Lead: true, Flying: false, Hidden: false},
+        Detections: {Lead: false, Flying: false, Hidden: false},
       },
       Upgrades: [
         {
