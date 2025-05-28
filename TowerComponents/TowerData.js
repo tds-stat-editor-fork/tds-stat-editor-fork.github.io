@@ -2519,19 +2519,6 @@ export default {
         {
           Image: 3356186535,
           Stats: {
-            Extras: [],
-            Attributes: {
-              ParryCooldown: 5,
-              MaxHits: 3,
-              ParryLength: 1.25,
-            },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 1,
-            Range: 5,
             Damage: 3,
           },
           Title: "Warrior Armor",
@@ -2540,19 +2527,9 @@ export default {
         {
           Image: 141745478,
           Stats: {
-            Extras: [],
-            Attributes: {
-              ParryCooldown: 5,
-              MaxHits: 3,
-              ParryLength: 1.25,
-            },
             Detections: {
-              Flying: false,
               Hidden: true,
-              Lead: false,
             },
-            Cooldown: 1,
-            Range: 5,
             Damage: 5,
           },
           Title: "Dangersense",
@@ -2563,17 +2540,11 @@ export default {
           Stats: {
             Extras: ["Warrior's Call"],
             Attributes: {
-              ParryCooldown: 5,
-              MaxHits: 3,
-              ParryLength: 1.25,
+              WarriorsCall: true,
+              WarriorsCallBuff: 35,
+              WarriorsCallCooldown: 30,
+              WarriorsCallLength: 15,
             },
-            Detections: {
-              Flying: false,
-              Hidden: true,
-              Lead: false,
-            },
-            Cooldown: 1,
-            Range: 5,
             Damage: 10,
           },
           Title: "Extra Protection",
@@ -2582,19 +2553,7 @@ export default {
         {
           Image: 16620737,
           Stats: {
-            Extras: [],
-            Attributes: {
-              ParryCooldown: 5,
-              MaxHits: 3,
-              ParryLength: 1.25,
-            },
-            Detections: {
-              Flying: false,
-              Hidden: true,
-              Lead: false,
-            },
             Cooldown: 0.75,
-            Range: 5,
             Damage: 25,
           },
           Title: "Illumina",
@@ -2603,17 +2562,6 @@ export default {
         {
           Image: 16868189,
           Stats: {
-            Extras: [],
-            Attributes: {
-              ParryCooldown: 5,
-              MaxHits: 3,
-              ParryLength: 1.25,
-            },
-            Detections: {
-              Flying: false,
-              Hidden: true,
-              Lead: false,
-            },
             Cooldown: 0.5,
             Range: 6,
             Damage: 40,
@@ -2624,7 +2572,7 @@ export default {
       ],
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
-        Attributes: { ParryCooldown: 5, MaxHits: 3, ParryLength: 1.25 },
+        Attributes: { MaxHits: 3, WarriorsCall: false, WarriorsCallBuff: 0, WarriorsCallCooldown: 0, WarriorsCallLength: 0, ParryCooldown: 5, ParryLength: 1.25 },
         Price: 300,
         Range: 5,
         Cooldown: 1,

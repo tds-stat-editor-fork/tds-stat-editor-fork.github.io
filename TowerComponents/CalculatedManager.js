@@ -306,9 +306,20 @@ class CalculatedManager {
                 },
             },
             Burst: {
-                For: ['Soldier', 'Freezer', 'Commando', 'Elementalist', 'Toxic Gunner'],
+                For: ['Soldier', 'Freezer', 'Elementalist', 'Toxic Gunner'],
                 Requires: ['BurstCooldown', 'Cooldown', 'Burst'],
                 Value: (level) => (level.BurstTime / (level.BurstTime + level.BurstCooldown)) * 100,
+            },
+            Mando: {
+                For: ['Commando'],
+                Requires: ['ReloadTime', 'Ammo', 'BurstCooldown', 'Cooldown', 'Burst'],
+                Value: (level) => {
+                    const burstCount = Math.floor(level.Ammo / level.Burst);
+                    const uptime = level.Ammo * level.Cooldown;
+                    const downtime = (burstCount * level.BurstCooldown) + level.ReloadTime;
+
+                    return (uptime / (uptime + downtime)) * 100;
+                },
             },
         },
         FireTime: {
@@ -321,7 +332,7 @@ class CalculatedManager {
                 For: ['Commando'],
                 Requires: ['FireTime', 'Ammo'],
                 Value: (level) => {
-                    var burstCount = level.Ammo / level.Burst;
+                    const burstCount = Math.floor(level.Ammo / level.Burst);
 
                     return ((level.FireTime + level.BurstCooldown) * burstCount) + level.ReloadTime;
                 },
@@ -959,6 +970,27 @@ class CalculatedManager {
                 Value: (level) => level.BearTrapDamage * level.MaxTraps,
             },
         },
+        SpikeCostEfficiency: {
+            Default: {
+                Requires: ['SpikeDPS', 'NetCost'],
+                For: ['Trapper'],
+                Value: (level) => level.NetCost / level.SpikeDPS,
+            }
+        },
+        LandmineCostEfficiency: {
+            Default: {
+                Requires: ['LandmineDPS', 'NetCost'],
+                For: ['Trapper'],
+                Value: (level) => level.NetCost / level.LandmineDPS,
+            }
+        },
+        BearTrapCostEfficiency: {
+            Default: {
+                Requires: ['BearTrapDPS', 'NetCost'],
+                For: ['Trapper'],
+                Value: (level) => level.NetCost / level.BearTrapDPS,
+            }
+        },
         SunflowerMaxDPS: {
             Default: {
                 For: ['Biologist'],
@@ -1136,6 +1168,7 @@ class CalculatedManager {
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
         this.#add('BurstTime', skinData);
+        this.#add('BurstDowntimePercent', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
