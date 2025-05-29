@@ -295,7 +295,7 @@ class CalculatedManager {
                 Value: (level) => (level.Cooldown * (level.CritSwing - 1)) + level.ComboCooldown,         
             }
         },
-        BurstDowntimePercent: {
+        BurstUptimePercent: {
             Default: {
                 For: ['Accelerator'],
                 Requires: ['BurstTime', 'LaserCooldown', 'ChargeTime'],
@@ -334,7 +334,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const burstCount = Math.floor(level.Ammo / level.Burst);
 
-                    return ((level.FireTime + level.BurstCooldown) * burstCount) + level.ReloadTime;
+                    return ((level.FireTime + level.BurstCooldown) * burstCount);
                 },
             },
         },
@@ -421,7 +421,7 @@ class CalculatedManager {
                 For: ['Mortar'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const clusterDPS = level.CanCluster ? ((level.ClusterDamage * 0.4) * level.ClusterCount) / level.Cooldown : 0;
+                    const clusterDPS = level.CanCluster ? ((level.ClusterDamage * level.ClusterDamageMult) * level.ClusterCount) / level.Cooldown : 0;
 
                     return dps + clusterDPS;
                 },
@@ -618,6 +618,63 @@ class CalculatedManager {
                     const towerDPS = (level.Damage * level.Burst) / (((level.Burst) * level.Cooldown) + level.BurstCooldown);
                     
                     if(skin == 'Fire Mode') return burnDPS + towerDPS; else return towerDPS + unitDPS;
+                },
+            },
+        },
+        BaseDPS: {
+            Default: {
+                For: ['Pyromancer', 'Ace Pilot', 'Mortar', 'Ranger', 'Archer', 'Swarmer', 'Jester', 'Hallow Punk', 'War Machine'],
+                Requires: ['Damage', 'Cooldown'],
+                Value: (level) => level.Damage / level.Cooldown,
+            },
+            Trapper: {
+                For: ['Trapper'],
+                Requires: ['LandmineDamage', 'LandmineCooldown'],
+                Value: (level) => level.LandmineDamage / level.LandmineCooldown,
+            },
+            Pursuit: {
+                For: ['Pursuit'],
+                Requires: ['Damage', 'Ammo', 'ReloadTime', 'Cooldown'],
+                Value: (level) => (level.Damage * level.Ammo) / (level.ReloadTime + (level.Cooldown * level.Ammo)),
+            },
+            Cryomancer: {
+                For: ['Cryomancer'],
+                Requires: ['Damage', 'Cooldown', 'MaxAmmo', 'ReloadTime'],
+                Value: (level) => (level.Damage * level.MaxAmmo) / ((level.Cooldown * level.MaxAmmo) + level.ReloadTime),
+            },
+            PW2: {
+                For: ['Toxic Gunner'],
+                Requires: ['Damage', 'Cooldown', 'BurstCooldown', 'Burst'],
+                Value: (level) => (level.Damage * level.Burst) / ((level.Cooldown * level.Burst) + level.BurstCooldown),
+            },
+            Frostburner: {
+                For: ['Elementalist'],
+                Requires: ['Damage', 'Cooldown', 'BurstCooldown', 'Burst', 'BurnDamage'],
+                Value: (level) => (level.Damage * level.Burst) / ((level.Cooldown * level.Burst) + level.BurstCooldown),
+            },
+        },
+        SplashDPS: {
+            Default: {
+                Requires: ['ExplosionDamage', 'Cooldown'],
+                Value: (level) => level.ExplosionDamage / level.Cooldown,
+            },
+            Missile: {
+                For: ['Pursuit', 'War Machine'],
+                Requires: ['Missiles', 'MissileCooldown', 'BurstTime', 'ExplosionDamage', 'MisileCount'],
+                Value: (level) => level.Missiles ? (level.ExplosionDamage * level.MissileCount) / (level.MissileCooldown + (level.BurstTime * level.MissileCount)) : 0,
+            },
+            Ace: {
+                Requires: ['BombDropping', 'ExplosionDamage', 'BombTime'],
+                Value: (level) => level.BombDropping ? level.ExplosionDamage / level.BombTime : 0,
+            }
+        },
+        ClusterDPS: {
+            Default: {
+                Requires: ['ClusterDamageMult', 'ClusterDamage', 'Cooldown', 'ClusterCount', 'CanCluster'],
+                Value: (level) => {
+                    const clusterDPS = level.CanCluster ? (((level.ClusterDamage * level.ClusterDamageMult) * level.ClusterCount) / level.Cooldown) : 0;
+
+                    return clusterDPS;
                 },
             },
         },
@@ -1168,7 +1225,7 @@ class CalculatedManager {
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
         this.#add('BurstTime', skinData);
-        this.#add('BurstDowntimePercent', skinData);
+        this.#add('BurstUptimePercent', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
@@ -1176,6 +1233,9 @@ class CalculatedManager {
         this.#add("DPS Rate", skinData);
         this.#add('SpikeDPS', skinData);
         this.#add('LandmineDPS', skinData);
+        this.#add('BaseDPS', skinData);
+        this.#add('SplashDPS', skinData);
+        this.#add('ClusterDPS', skinData);
         this.#add('BurnDPS', skinData);
         this.#add('BearTrapDPS', skinData);
         this.#add('SpikePileDamage', skinData);
@@ -1186,6 +1246,9 @@ class CalculatedManager {
         this.#add('BeeDPS', skinData);
         this.#add('GrenadeDPS', skinData);
         this.#add('MissileDPS', skinData);
+        this.#add('SpikeCostEfficiency', skinData);
+        this.#add('LandmineCostEfficiency', skinData);
+        this.#add('BearTrapCostEfficiency', skinData);
         this.#add('StallUptimePercent', skinData);
         this.#add('ThornsUptimePercent', skinData);
         this.#add('SunflowerMaxDPS', skinData);
