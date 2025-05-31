@@ -80,7 +80,7 @@ export default {
           Stats: {
             Extras: ["Bomb Dropping", "Figure8"],
             Attributes: {
-              ExplosionDamage: 10,
+              BombDamage: 10,
               Figure8: true,
               ExplosionRadius: 2.5,
               BombDropping: true,
@@ -96,7 +96,7 @@ export default {
             Extras: ["Upgraded Bombs"],
             Attributes: {
               ExplosionRadius: 2.5,
-              ExplosionDamage: 20,
+              BombDamage: 20,
             },
             Cooldown: 0.1,
             Range: 8,
@@ -110,7 +110,7 @@ export default {
           Stats: {
             Extras: ["Nearby towers get Hidden Detection", "Upgraded Bombs"],
             Attributes: {
-              ExplosionDamage: 30,
+              BombDamage: 30,
               BombTime: 2,
               HiddenDetectionBuff: true,
               BuffRange: 7,
@@ -131,7 +131,7 @@ export default {
               FlightSpeedMult: 1.35,
               BombTime: 1.5,
               ExplosionRadius: 3,
-              ExplosionDamage: 40,
+              BombDamage: 40,
             },
             Cooldown: 0.1,
             Range: 9.5,
@@ -313,7 +313,6 @@ export default {
       Defaults: {
         Detections: { Flying: true, Hidden: false, Lead: false },
         Attributes: {
-          BurnDamage: 0,
           MaxHits: 2,
           ArrowType: "Normal",
         },
@@ -2027,7 +2026,7 @@ export default {
         Detections: { Flying: true, Hidden: false, Lead: false },
         Range: 14,
         Price: 800,
-        Attributes: { MaxBounce: 3, MaxHitsPerBounce: 3, TickRate: 0.15 },
+        Attributes: { MaxBounce: 3, MaxHitsPerTick: 3, TickRate: 0.15 },
         Cooldown: 3,
         Damage: 4,
       },

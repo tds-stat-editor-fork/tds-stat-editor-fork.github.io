@@ -664,8 +664,8 @@ class CalculatedManager {
                 Value: (level) => level.Missiles ? (level.ExplosionDamage * level.MissileCount) / (level.MissileCooldown + (level.BurstTime * level.MissileCount)) : 0,
             },
             Ace: {
-                Requires: ['BombDropping', 'ExplosionDamage', 'BombTime'],
-                Value: (level) => level.BombDropping ? level.ExplosionDamage / level.BombTime : 0,
+                Requires: ['BombDropping', 'BombDamage', 'BombTime'],
+                Value: (level) => level.BombDropping ? level.BombDamage / level.BombTime : 0,
             }
         },
         ClusterDPS: {
@@ -816,6 +816,11 @@ class CalculatedManager {
 
                     return dps + beeDPS;
                 },
+            },
+            Bug: {
+                Requires: ['Damage', 'Cooldown', 'MaxHitsPerTick', 'MaxBounce'],
+                For: ['Executioner'],
+                Value: (level) => (level.Damage * (level.MaxHitsPerTick * level.MaxBounce)) / level.Cooldown,
             },
         },
         GlobalMaxDPS: {
