@@ -16,7 +16,7 @@ class UnitCalculations {
                 Value: (level) => (level.Damage / level.Tick) / level.Cooldown,
             },
             Rocket: {
-                For: ['Sentry4', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5'],
+                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (unit) => {
                     const damage = unit?.Damage ?? 0;
@@ -115,7 +115,7 @@ class UnitCalculations {
         },
         BaseDPS: {
             Default: {
-                For: ['Sentry4', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5', 'Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
+                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5', 'Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (level) => {
                     return level.Damage / level.Cooldown;
@@ -124,7 +124,7 @@ class UnitCalculations {
         },
         MissileDPS: {
             Default: {
-                For: ['Sentry4', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5'],
+                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (unit) => {
                     const missileAmount = unit?.MissileAmount ?? 1;
