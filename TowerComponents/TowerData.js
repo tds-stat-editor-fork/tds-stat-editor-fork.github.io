@@ -3543,7 +3543,7 @@ export default {
           ClusterDamageMult: 0,
           ClusterRadius: 5,
           ExplosionRadius: 6,
-          ClusterCount: 4,
+          ClusterCount: 3,
           ClusterDamage: 40,
         },
         Limit: 5,

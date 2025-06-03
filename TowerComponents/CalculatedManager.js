@@ -410,7 +410,7 @@ class CalculatedManager {
             },
             Cowboy: {
                 For: ['Cowboy'],
-                Value: (level) => ((level.Damage * level.CashShot) / (level.Cooldown * level.CashShot + level.SpinDuration)), // prettier-ignore
+                Value: (level) => ((level.Damage * level.CashShot) / (level.Cooldown * (level.CashShot - 1) + level.SpinDuration)), // prettier-ignore
             },
             Slasher: {
                 For: ['Slasher', 'Warden'],
@@ -440,7 +440,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
                     const bombDps = level.BombDropping
-                        ? level.ExplosionDamage / level.BombTime
+                        ? level.BombDamage / level.BombTime
                         : 0;
 
                     return dps + bombDps;
@@ -745,10 +745,6 @@ class CalculatedManager {
                     const c = 0.234910819904625;
                     const d = 2.62040766713282;
 
-                    if (x > 45) {
-                        x = 45;
-                    }
-
                     return a * x ** 3 + b * x ** 2 + c * x + d;
                 },
             },
@@ -1009,7 +1005,12 @@ class CalculatedManager {
                         return (level.FreezeTime / level.Cooldown) * 100;
                     }
                 }
-            }
+            },
+            Jester: {
+                For: ['Jester'],
+                Requires: ['Confusion', 'ConfusionDuration', 'ConfusionCooldown'],
+                Value: (level) => level.Confusion ? (level.ConfusionDuration / level.ConfusionCooldown) * 100 : 0,
+            },
         },
         LandminePileDamage: {
             Default: {
