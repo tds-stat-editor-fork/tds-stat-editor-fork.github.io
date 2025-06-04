@@ -62,7 +62,7 @@ class CalculatedManager {
         },
         RamDPS: {
             Default: {
-                Exclude: ['Engineer', 'Biologist'],
+                Exclude: ['Engineer', 'Biologist', 'Elementalist'],
                 Requires: ['UnitToSend', 'SpawnTime'],
                 Value: (level) => {
                     this.unitManager.load();
@@ -149,10 +149,10 @@ class CalculatedManager {
             },
             Elementalist: {
                 For: ['Elementalist'],
-                Requires: ['UnitToSend', 'TurretCooldown'],
+                Requires: ['TurretCooldown'],
                 Value: (level) => {
                     this.unitManager.load();
-                    const unitName = level.UnitToSend;
+                    const unitName = "IceTurret" + (level.Level + 1);
 
                     if (!this.unitManager.hasUnit(unitName)) return 0;
 
@@ -580,7 +580,7 @@ class CalculatedManager {
             },
             Commando: {
                 For: ['Commando'],
-                Value: (level) => (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / level.Burst - 1) * level.BurstCooldown + level.ReloadTime),
+                Value: (level) => (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / (level.Burst - 1)) * level.BurstCooldown + level.ReloadTime),
             },
             WarMachine: {
                 For: ['War Machine'],
@@ -615,7 +615,7 @@ class CalculatedManager {
                     const burnDPS = level.BurnDamage / level.BurnTick;
                     const unitDPS = level.UnitDPS ?? 0;
                     const skin = level.levels.skinData.name;
-                    const towerDPS = (level.Damage * level.Burst) / (((level.Burst) * level.Cooldown) + level.BurstCooldown);
+                    const towerDPS = (level.Damage * level.Burst) / (((level.Burst - 1) * level.Cooldown) + level.BurstCooldown);
                     
                     if(skin == 'Fire Mode') return burnDPS + towerDPS; else return towerDPS + unitDPS;
                 },
@@ -659,14 +659,19 @@ class CalculatedManager {
                 Value: (level) => level.ExplosionDamage / level.Cooldown,
             },
             Missile: {
-                For: ['Pursuit', 'War Machine'],
-                Requires: ['Missiles', 'MissileCooldown', 'BurstTime', 'ExplosionDamage', 'MisileCount'],
+                For: ['Pursuit'],
+                Requires: ['Missiles', 'MissileCooldown', 'BurstTime', 'ExplosionDamage', 'MissileCount'],
                 Value: (level) => level.Missiles ? (level.ExplosionDamage * level.MissileCount) / (level.MissileCooldown + (level.BurstTime * level.MissileCount)) : 0,
+            },
+            WM: {
+                For: ['War Machine'],
+                Requires: ['ExplosionDamage', 'MissileCount', 'MissileCooldown'],
+                Value: (level) => (level.ExplosionDamage * level.MissileCount) / level.MissileCooldown,
             },
             Ace: {
                 Requires: ['BombDropping', 'BombDamage', 'BombTime'],
                 Value: (level) => level.BombDropping ? level.BombDamage / level.BombTime : 0,
-            }
+            },
         },
         ClusterDPS: {
             Default: {

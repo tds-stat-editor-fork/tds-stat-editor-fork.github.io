@@ -262,6 +262,8 @@ export default class TableInput {
         'ThornsTick',
         'SoulMeter',
         'MaxCostEfficiency',
+        'BurstTime',
+        
     ];
 
     #getDelta(cellData, deltaData, input) {
