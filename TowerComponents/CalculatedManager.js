@@ -28,7 +28,7 @@ class CalculatedManager {
             Frostburner: {
                 For: ['Elementalist'],
                 Requires: ['Damage', 'Cooldown'],
-                Value: (level) => (level.Damage * level.Burst) / (((level.Burst) * level.Cooldown) + level.BurstCooldown),
+                Value: (level) => (level.Damage * level.Burst) / (((level.Burst - 1) * level.Cooldown) + level.BurstCooldown),
             },
             Crook: {
                 For: ['Crook Boss'],
@@ -152,7 +152,7 @@ class CalculatedManager {
                 Requires: ['TurretCooldown'],
                 Value: (level) => {
                     this.unitManager.load();
-                    const unitName = "IceTurret" + (level.Level + 1);
+                    const unitName = "IceTurret" + (level.Level - 1);
 
                     if (!this.unitManager.hasUnit(unitName)) return 0;
 
@@ -669,6 +669,7 @@ class CalculatedManager {
                 Value: (level) => (level.ExplosionDamage * level.MissileCount) / level.MissileCooldown,
             },
             Ace: {
+                For: ['Ace Pilot'],
                 Requires: ['BombDropping', 'BombDamage', 'BombTime'],
                 Value: (level) => level.BombDropping ? level.BombDamage / level.BombTime : 0,
             },

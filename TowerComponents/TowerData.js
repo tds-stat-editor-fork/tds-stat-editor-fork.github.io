@@ -4445,7 +4445,7 @@ export default {
           Stats: {
             Extras: [],
             Attributes: {
-              MaxHits: 4,
+              MaxHits: 3,
               ChillPercent: 25,
             },
             Damage: 12,
@@ -4458,7 +4458,7 @@ export default {
           Stats: {
             Extras: ["Max Hits: 2 -> 3"],
             Attributes: {
-              MaxHits: 5,
+              MaxHits: 4,
             },
             Range: 7,
             Damage: 25,
@@ -4505,7 +4505,7 @@ export default {
           Stats: {
             Extras: ["Max Hit: 4 -> 5", "Longer Freeze Time"],
             Attributes: {
-              MaxHits: 7,
+              MaxHits: 6,
               ChillPercent: 80,
               FreezeTime: 1.75,
               ChillLength: 6,
@@ -4524,7 +4524,7 @@ export default {
           CanFreeze: false,
           FreezeBonus: false,
           FreezeBonusMult: 1,
-          MaxHits: 3,
+          MaxHits: 2,
           ChillPercent: 15,
           FreezeTime: 1.5,
           ChillLength: 4,
