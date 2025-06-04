@@ -122,6 +122,13 @@ const register = {
             'MissileAPC'
         ],
     },
+    'Elementalist': {
+        "Frost Mode": [
+            "IceTurret1",
+            "IceTurret2",
+            "IceTurret3"
+        ],
+    },
 };
 
 export default class UnitManager {
