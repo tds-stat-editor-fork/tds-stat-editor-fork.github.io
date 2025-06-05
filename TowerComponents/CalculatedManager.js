@@ -338,6 +338,11 @@ class CalculatedManager {
                     return (uptime / (uptime + downtime)) * 100;
                 },
             },
+            Gyat: {
+                For: ['Gatling Gun'],
+                Requires: ['ReloadTime', 'FireTime'],
+                Value: (level) => (level.FireTime / (level.FireTime + level.ReloadTime)) * 100,
+            },
         },
         FireTime: {
             Default: {
