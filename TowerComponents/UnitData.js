@@ -95,6 +95,8 @@ export default {
         Health: 15,
         Cooldown: 1,
         Damage: 3,
+        Lifespan: 150,
+        Limit: 10,
         Detections: {
             Hidden: true,
             Flying: true,
@@ -106,6 +108,8 @@ export default {
         Health: 100,
         Cooldown: 0.2,
         Damage: 4,
+        Lifespan: 200,
+        Limit: 4,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -117,6 +121,8 @@ export default {
         Health: 175,
         Cooldown: 0.12,
         Damage: 10,
+        Lifespan: 200,
+        Limit: 4,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -128,6 +134,8 @@ export default {
         Health: 25,
         Cooldown: 0.6,
         Damage: 3,
+        Lifespan: 150,
+        Limit: 10,
         Detections: {
             Hidden: true,
             Flying: true,
@@ -139,6 +147,8 @@ export default {
         Health: 125,
         Cooldown: 0.18,
         Damage: 5,
+        Lifespan: 200,
+        Limit: 4,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -150,6 +160,8 @@ export default {
         Health: 225,
         Cooldown: 0.1,
         Damage: 12,
+        Lifespan: 200,
+        Limit: 4,
         Detections: {
             Hidden: true,
             Flying: false,

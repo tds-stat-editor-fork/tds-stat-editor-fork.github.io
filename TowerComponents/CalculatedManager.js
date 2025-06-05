@@ -295,7 +295,7 @@ class CalculatedManager {
                 Value: (level) => (level.Cooldown * (level.CritSwing - 1)) + level.ComboCooldown,         
             }
         },
-        BurstUptimePercent: {
+        "Uptime %": {
             Default: {
                 For: ['Accelerator'],
                 Requires: ['BurstTime', 'LaserCooldown', 'ChargeTime'],
@@ -900,9 +900,9 @@ class CalculatedManager {
         },
         SpikeDPS: {
             Default: {
-                Requires: ['SpikeDamage', 'SpikeCooldown'],
+                Requires: ['SpikeHealth', 'SpikeCooldown'],
                 For: ['Trapper'],
-                Value: (level) => level.SpikeDamage / level.SpikeCooldown,
+                Value: (level) => level.SpikeHealth / level.SpikeCooldown,
             },
         },
         SpikePileDamage: {
@@ -919,7 +919,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const dps = level.LandmineDamage / level.LandmineCooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
-                    if(burnDPS > 0) return dps + burnDPS; else return dps;
+                    if(level.LandmineCooldown != 0) return dps + burnDPS; else return dps;
                 },
             },
         },
@@ -966,14 +966,14 @@ class CalculatedManager {
                 Value: (level) => level.MissileDamage / level.MissileCooldown,
             },
         },
-        ThornsUptimePercent: {
+        "Thorns Uptime %": {
             Default: {
                 For: ['Harvester'],
                 Requires: ['ThornsDuration', 'ThornsCooldown'],
                 Value: (level) => (level.ThornsDuration / level.ThornsCooldown) * 100,
             },
         },
-        StallUptimePercent: {
+        "Stall Uptime %": {
             Default: {
                 Requires: ['StunLength', 'Cooldown'],
                 Value: (level) => (level.StunLength / level.Cooldown) * 100,
@@ -1041,23 +1041,23 @@ class CalculatedManager {
         },
         SpikeCostEfficiency: {
             Default: {
-                Requires: ['SpikeDPS', 'NetCost'],
+                Requires: ['SpikeHealth', 'SpikeCooldown', 'NetCost'],
                 For: ['Trapper'],
-                Value: (level) => level.NetCost / level.SpikeDPS,
+                Value: (level) => level.NetCost / (level.SpikeHealth / level.SpikeCooldown),
             }
         },
         LandmineCostEfficiency: {
             Default: {
-                Requires: ['LandmineDPS', 'NetCost'],
+                Requires: ['LandmineDamage', 'LandmineCooldown', 'BurnDamage', 'BurnTick', 'NetCost'],
                 For: ['Trapper'],
-                Value: (level) => level.NetCost / level.LandmineDPS,
+                Value: (level) => level.NetCost / ((level.LandmineDamage / level.LandmineCooldown) + (level.BurnDamage / level.BurnTick)),
             }
         },
         BearTrapCostEfficiency: {
             Default: {
-                Requires: ['BearTrapDPS', 'NetCost'],
+                Requires: ['BearTrapDamage', 'BearTrapCooldown', 'NetCost'],
                 For: ['Trapper'],
-                Value: (level) => level.NetCost / level.BearTrapDPS,
+                Value: (level) => level.NetCost / (level.BearTrapDamage / level.BearTrapCooldown),
             }
         },
         SunflowerMaxDPS: {
@@ -1118,6 +1118,7 @@ class CalculatedManager {
         },
         BurstCooldown: {
             Type: 'Override',
+
             Default: {
                 Requires: ['BurstCooldown'],
                 Value: (cooldown) => {
@@ -1237,7 +1238,7 @@ class CalculatedManager {
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
         this.#add('BurstTime', skinData);
-        this.#add('BurstUptimePercent', skinData);
+        this.#add('Uptime %', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
@@ -1261,8 +1262,8 @@ class CalculatedManager {
         this.#add('SpikeCostEfficiency', skinData);
         this.#add('LandmineCostEfficiency', skinData);
         this.#add('BearTrapCostEfficiency', skinData);
-        this.#add('StallUptimePercent', skinData);
-        this.#add('ThornsUptimePercent', skinData);
+        this.#add('Stall Uptime %', skinData);
+        this.#add('Thorns Uptime %', skinData);
         this.#add('SunflowerMaxDPS', skinData);
         this.#add('IvyMaxDPS', skinData);
         this.#add('NightshadeMaxDPS', skinData);
