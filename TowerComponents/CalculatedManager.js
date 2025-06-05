@@ -273,6 +273,23 @@ class CalculatedManager {
                 },
             },
         },
+        DamagePerBurst: {
+            Default: {
+                For: ['Soldier', 'Freezer', 'Commando', 'Elementalist', 'Toxic Gunner'],
+                Requires: ['BurstCooldown', 'Cooldown', 'Burst'],
+                Value: (level) => (level.Damage * level.Burst),
+            },
+            CriticalShit: {
+                For: ['Warden', 'Slasher'],
+                Requires: ['CritSwing', 'Cooldown'],
+                Value: (level) => ((level.Damage * (level.CritSwing - 1)) + (level.Damage * level.CritMultiplier)),
+            },
+            Brawler: {
+                For: ['Brawler'],
+                Requires: ['CritSwing', 'Cooldown', 'ComboCooldown'],
+                Value: (level) => (level.Damage * (level.CritSwing - 1)) + level.FinalHitDamage,         
+            },
+        },
         BurstTime: {
             Default: {
                 For: ['Accelerator'],
@@ -293,7 +310,7 @@ class CalculatedManager {
                 For: ['Brawler'],
                 Requires: ['CritSwing', 'Cooldown', 'ComboCooldown'],
                 Value: (level) => (level.Cooldown * (level.CritSwing - 1)) + level.ComboCooldown,         
-            }
+            },
         },
         "Uptime %": {
             Default: {
@@ -902,7 +919,11 @@ class CalculatedManager {
             Default: {
                 Requires: ['SpikeHealth', 'SpikeCooldown'],
                 For: ['Trapper'],
-                Value: (level) => level.SpikeHealth / level.SpikeCooldown,
+                Value: (level) => {
+                    const enemiesHit = Math.ceil(level.SpikeHealth / level.SpikeDamage);
+
+                    return ((level.SpikeDamage * enemiesHit) / level.SpikeCooldown);
+                },
             },
         },
         SpikePileDamage: {
@@ -1043,22 +1064,35 @@ class CalculatedManager {
             Default: {
                 Requires: ['SpikeHealth', 'SpikeCooldown', 'NetCost'],
                 For: ['Trapper'],
-                Value: (level) => level.NetCost / (level.SpikeHealth / level.SpikeCooldown),
-            }
+                Value: (level) => {
+                    const dps = level.SpikeHealth / level.SpikeCooldown;
+                    
+                    return level.NetCost / dps;
+                },
+            },
         },
         LandmineCostEfficiency: {
             Default: {
                 Requires: ['LandmineDamage', 'LandmineCooldown', 'BurnDamage', 'BurnTick', 'NetCost'],
                 For: ['Trapper'],
-                Value: (level) => level.NetCost / ((level.LandmineDamage / level.LandmineCooldown) + (level.BurnDamage / level.BurnTick)),
-            }
+                Value: (level) => {
+                    const dps = level.LandmineDamage / level.LandmineCooldown;
+                    const burnDPS = level.BurnDamage / level.BurnTick;
+                    
+                    return level.NetCost / (dps + burnDPS);
+                },
+            },
         },
         BearTrapCostEfficiency: {
             Default: {
                 Requires: ['BearTrapDamage', 'BearTrapCooldown', 'NetCost'],
                 For: ['Trapper'],
-                Value: (level) => level.NetCost / (level.BearTrapDamage / level.BearTrapCooldown),
-            }
+                Value: (level) => {
+                    const dps = level.BearTrapDamage / level.BearTrapCooldown;
+                    
+                    return level.NetCost / dps;
+                },
+            },
         },
         SunflowerMaxDPS: {
             Default: {
@@ -1121,6 +1155,7 @@ class CalculatedManager {
 
             Default: {
                 Requires: ['BurstCooldown'],
+                For: ['Commando', 'Elementalist'],
                 Value: (cooldown) => {
                     const { extraCooldown, firerateBuff } = window.state.boosts.tower; // prettier-ignore
 
@@ -1237,6 +1272,7 @@ class CalculatedManager {
         this.#add('HeatwaveDPS', skinData);
         this.#add('AggregateUnitDPS', skinData);
         this.#add('RamDPS', skinData);
+        this.#add('DamagePerBurst', skinData);
         this.#add('BurstTime', skinData);
         this.#add('Uptime %', skinData);
         this.#add('TotalElapsedDamage', skinData);
