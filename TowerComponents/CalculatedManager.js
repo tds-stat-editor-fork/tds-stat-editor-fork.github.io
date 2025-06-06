@@ -981,7 +981,7 @@ class CalculatedManager {
             Crapper: {
                 For: ['Trapper'],
                 Value: (level) => {
-                    if (level.Landmines == false) return 0;
+                    if (level.Landmines == false || level.BurnTick == 0) return 0;
 
                     return level.BurnDamage / level.BurnTick;
                 },
