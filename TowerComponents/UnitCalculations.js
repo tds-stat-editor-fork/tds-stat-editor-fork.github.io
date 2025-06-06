@@ -197,7 +197,7 @@ class UnitCalculations {
                 Value: (health) => {
                     const { healthBuff } = window?.state?.boosts?.unit ?? 0 // prettier-ignore
 
-                    return health / (healthBuff + 1);
+                    return health * (healthBuff + 1);
                 },
             },
         },
@@ -207,7 +207,7 @@ class UnitCalculations {
             Default: {
                 Requires: ['SpawnTime'],
                 Value: (spawnTime) => {
-                    const { spawnrateBuff } = window.state.boosts.unit; // prettier-ignore
+                    const { spawnrateBuff } = window?.state?.boosts?.unit ?? 0; // prettier-ignore
 
                     return spawnTime / (spawnrateBuff + 1);
                 },

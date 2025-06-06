@@ -55,7 +55,7 @@ class CalculatedManager {
                     const tommyDelayPerMinute =
                         tommyData.attributes.SpawnTime > 0 && level.TommyCrooks == true
                             ? level.BackupCallTime *
-                              (60 / level.UpgradedTommyGoons ? bodyData.attributes.SpawnTime : tommyData.attributes.SpawnTime)
+                              (60 / (level.UpgradedTommyGoons == true ? bodyData.attributes.SpawnTime : tommyData.attributes.SpawnTime))
                             : 0;
 
                     const dpm =
@@ -263,7 +263,7 @@ class CalculatedManager {
                     let damage = 0;
                     let remainingTime = 60;
 
-                    if (goon1.attributes.SpawnTime > 0.1 && level.PistolCrooks == false) {
+                    if (goon1.attributes.SpawnTime > 0.1 && level.PistolCrooks == true) {
                         while (remainingTime > 0) {
                             damage += goon1DPS * remainingTime;
 
@@ -273,7 +273,7 @@ class CalculatedManager {
 
                     remainingTime = 60;
 
-                    if (goon2.attributes.SpawnTime > 0.1 && level.TommyCrooks == false) {
+                    if (goon2.attributes.SpawnTime > 0.1 && level.TommyCrooks == true) {
                         while (remainingTime > 0) {
                             damage += goon2DPS * remainingTime;
 
