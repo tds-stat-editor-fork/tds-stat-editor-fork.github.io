@@ -746,7 +746,11 @@ class CalculatedManager {
         CostEfficiency: {
             Default: {
                 Requires: ['NetCost', 'DPS'],
-                Value: (level) => level.NetCost / level.DPS,
+                Value: (level) => {
+                    if (level.DPS == 0 || isNaN(level.DPS)) return 0;
+
+                    return level.NetCost / level.DPS;
+                },
             },
             Swarmer: {
                 For: ['Swarmer'],
@@ -768,7 +772,11 @@ class CalculatedManager {
         MaxCostEfficiency: {
             Default: {
                 Requires: ['NetCost', 'MaxDPS'],
-                Value: (level) => level.NetCost / level.MaxDPS,
+                Value: (level) => {
+                    if (level.MaxDPS == 0 || isNaN(level.MaxDPS)) return 0;
+
+                    return level.NetCost / level.MaxDPS;
+                },
             },
         },
         Coverage: {
@@ -1348,6 +1356,7 @@ class CalculatedManager {
         this.#add('SplashDPS', skinData);
         this.#add('ClusterDPS', skinData);
         this.#add('BurnDPS', skinData);
+        this.#add('ChillDPS', skinData);
         this.#add('BearTrapDPS', skinData);
         this.#add('SpikePileDamage', skinData);
         this.#add('LandminePileDamage', skinData);
