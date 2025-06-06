@@ -40,7 +40,9 @@ class CalculatedManager {
                 Value: (level) => {
                     this.unitManager.load();
 
+                    const skin = level.levels.skinData.name;
                     const goldText = skin == 'Golden' ? 'Golden' : '';
+
                     const pistolCrook = this.unitManager.unitData[`${goldText}Goon1`];
                     const tommyCrook = this.unitManager.unitData[`${goldText}Goon2`];
                     const bodyGuard = this.unitManager.unitData[`${goldText}Goon3`];

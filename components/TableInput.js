@@ -263,7 +263,9 @@ export default class TableInput {
         'SoulMeter',
         'MaxCostEfficiency',
         'BurstTime',
-        
+        'SpikeCostEfficiency',
+        'LandmineCostEfficiency',
+        'BearTrapCostEfficiency'
     ];
 
     #getDelta(cellData, deltaData, input) {
