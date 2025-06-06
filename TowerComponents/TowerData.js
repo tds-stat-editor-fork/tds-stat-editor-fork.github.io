@@ -883,8 +883,6 @@ export default {
       Upgrades: [
         {
           Stats: {
-            Attributes: { PistolCrookSpawnTime: 50 },
-            Range: 12.5,
             Cooldown: 0.75,
             Damage: 4,
           },
@@ -897,7 +895,6 @@ export default {
             Attributes: { DoublePistolCrooks: true },
             Range: 14,
             Detections: { Hidden: true, Flying: true },
-            Cooldown: 0.75,
             Extras: ["2 Pistol Crooks spawn at a time."],
             Damage: 6,
           },
@@ -907,14 +904,15 @@ export default {
         },
         {
           Stats: {
-            Attributes: { TommyCrookSpawnTime: 50 },
             Range: 15,
+            Attributes: {
+              TommyCrooks: true,
+            },
             Extras: [
               "Tommy Crooks (50s Spawn Time)",
               "4 Damage, 0.2 Firerate",
             ],
             Cooldown: 0.2,
-            Damage: 6,
           },
           Image: 3838914605,
           Title: "Tommy Goons",
@@ -923,8 +921,7 @@ export default {
         {
           Stats: {
             Attributes: {
-              TommyDrum: true,
-              TommyCrookSpawnTime: 50,
+              UpgradedTommyGoons: true,
             },
             Range: 16.5,
             Extras: [
@@ -941,22 +938,22 @@ export default {
       ],
       Defaults: {
         Range: 12.5,
-        Attributes: { PistolCrookSpawnTime: 50, BackupCallTime: 1.5 },
+        Attributes: { BackupCallTime: 1.5 },
         Limit: 5,
         Price: 600,
         Detections: { Flying: false, Hidden: false, Lead: false },
         Cooldown: 0.9,
         Damage: 3,
+        PistolCrooks: true,
         DoublePistolCrooks: false,
-        TommyDrum: false,
+        TommyCrooks: false,
+        UpgradedTommyGoons: false,
       },
     },
     Golden: {
       Upgrades: [
         {
           Stats: {
-            Attributes: { PistolCrookSpawnTime: 50 },
-            Range: 14,
             Cooldown: 0.7,
             Damage: 6,
           },
@@ -969,7 +966,6 @@ export default {
             Attributes: { DoublePistolCrooks: true },
             Range: 15,
             Detections: { Hidden: true, Flying: true},
-            Cooldown: 0.7,
             Extras: ["2 Pistol Crooks spawn at a time."],
             Damage: 10,
           },
@@ -979,14 +975,15 @@ export default {
         },
         {
           Stats: {
-            Attributes: { TommyCrookSpawnTime: 50 },
             Range: 16,
+            Attributes: {
+              TommyCrooks: true,
+            },
             Extras: [
               "Golden Tommy Crooks (50s Spawn Time)",
               "5 Damage, 0.18 Firerate",
             ],
             Cooldown: 0.18,
-            Damage: 10,
           },
           Image: 3838914605,
           Title: "Lvl 3. Gamer",
@@ -995,8 +992,7 @@ export default {
         {
           Stats: {
             Attributes: {
-              TommyDrum: true,
-              TommyCrookSpawnTime: 50,
+              UpgradedTommyGoons: true,
             },
             Range: 17.5,
             Extras: [
@@ -1013,14 +1009,16 @@ export default {
       ],
       Defaults: {
         Range: 14,
-        Attributes: { PistolCrookSpawnTime: 50, BackupCallTime: 1.5 },
+        Attributes: { BackupCallTime: 1.5 },
         Limit: 5,
         Price: 800,
         Detections: { Flying: false, Hidden: false, Lead: false },
         Cooldown: 0.9,
         Damage: 4,
+        PistolCrooks: true,
         DoublePistolCrooks: false,
-        TommyDrum: false,
+        TommyCrooks: false,
+        UpgradedTommyGoons: false,
       },
     },
   },

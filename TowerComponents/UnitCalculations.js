@@ -201,6 +201,18 @@ class UnitCalculations {
                 },
             },
         },
+        SpawnTime: {
+            Type: 'Override',
+
+            Default: {
+                Requires: ['SpawnTime'],
+                Value: (spawnTime) => {
+                    const { spawnrateBuff } = window.state.boosts.unit; // prettier-ignore
+
+                    return spawnTime / (spawnrateBuff + 1);
+                },
+            },
+        },
     };
 
     /**

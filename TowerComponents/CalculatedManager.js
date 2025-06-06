@@ -35,20 +35,29 @@ class CalculatedManager {
                 Requires: [
                     'Damage',
                     'Cooldown',
-                    'PistolCrookSpawnTime',
-                    'TommyCrookSpawnTime',
                     'BackupCallTime',
                 ],
                 Value: (level) => {
+                    this.unitManager.load();
+
+                    const goldText = skin == 'Golden' ? 'Golden' : '';
+                    const pistolCrook = this.unitManager.unitData[`${goldText}Goon1`];
+                    const tommyCrook = this.unitManager.unitData[`${goldText}Goon2`];
+                    const bodyGuard = this.unitManager.unitData[`${goldText}Goon3`];
+
+                    const pistolData = this.unitManager.unitData[pistolCrook];
+                    const tommyData = this.unitManager.unitData[tommyCrook];
+                    const bodyData = this.unitManager.unitData[bodyGuard];
+
                     const pistolDelayPerMinute =
-                        level.PistolCrookSpawnTime > 0
+                        pistolData.attributes.SpawnTime > 0 && level.PistolCrooks == true
                             ? level.BackupCallTime *
-                              (60 / level.PistolCrookSpawnTime)
+                              (60 / pistolData.attributes.SpawnTime)
                             : 0;
                     const tommyDelayPerMinute =
-                        level.TommyCrookSpawnTime > 0
+                        tommyData.attributes.SpawnTime > 0 && level.TommyCrooks == true
                             ? level.BackupCallTime *
-                              (60 / level.TommyCrookSpawnTime)
+                              (60 / level.UpgradedTommyGoons ? bodyData.attributes.SpawnTime : tommyData.attributes.SpawnTime)
                             : 0;
 
                     const dpm =
@@ -76,10 +85,8 @@ class CalculatedManager {
             Crook: {
                 For: ['Crook Boss'],
                 Requires: [
-                    'PistolCrookSpawnTime',
                     'DoublePistolCrooks',
-                    'TommyCrookSpawnTime',
-                    'TommyDrum',
+                    'UpgradedTommyGoons',
                 ],
                 Value: (level) => {
                     const skin = level.levels.skinData.name;
@@ -91,16 +98,20 @@ class CalculatedManager {
                     const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
 
                     let goon1Ram =
-                        level.PistolCrookSpawnTime &&
-                        goon1.attributes.Health / level.PistolCrookSpawnTime;
+                        goon1.attributes.SpawnTime &&
+                        goon1.attributes.Health / goon1.attributes.SpawnTime;
                     if (level.DoublePistolCrooks) goon1Ram *= 2;
 
                     let goon2Ram =
-                        level.TommyCrookSpawnTime &&
-                        goon2.attributes.Health / level.TommyCrookSpawnTime;
-                    if (level.TommyDrum)
+                        goon2.attributes.SpawnTime &&
+                        goon2.attributes.Health / goon2.attributes.SpawnTime;
+                    if (level.UpgradedTommyGoons){
                         goon2Ram =
-                            goon3.attributes.Health / level.TommyCrookSpawnTime;
+                            goon3.attributes.Health / goon3.attributes.SpawnTime;
+                    }
+
+                    if (level.PistolCrooks == false) goon1Ram = 0;
+                    if (level.TommyCrooks == false) goon2Ram = 0;
 
                     return goon1Ram + goon2Ram;
                 },
@@ -117,7 +128,11 @@ class CalculatedManager {
             Default: {
                 For: ['Brawler'],
                 Requires: ['RepositionDamage', 'RepositionCooldown'],
-                Value: (level) => level.RepositionDamage / level.RepositionCooldown,
+                Value: (level) => {
+                    if (level.RepositionCooldown == 0 || isNaN(level.RepositionCooldown)) return 0;
+
+                    return level.RepositionDamage / level.RepositionCooldown;
+                },
             },
         },
         HeatwaveDPS: {
@@ -176,10 +191,8 @@ class CalculatedManager {
             Crook: {
                 For: ['Crook Boss'],
                 Requires: [
-                    'PistolCrookSpawnTime',
                     'DoublePistolCrooks',
-                    'TommyCrookSpawnTime',
-                    'TommyDrum',
+                    'UpgradedTommyGoons',
                 ],
                 Value: (level) => {
                     const skin = level.levels.skinData.name;
@@ -191,12 +204,15 @@ class CalculatedManager {
                     const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
 
                     let goon1DPS =
-                        level.PistolCrookSpawnTime && goon1.attributes.DPS;
+                        goon1.attributes.SpawnTime && goon1.attributes.DPS;
                     if (level.DoublePistolCrooks) goon1DPS *= 2;
 
                     let goon2DPS =
-                        level.TommyCrookSpawnTime && goon2.attributes.DPS;
-                    if (level.TommyDrum) goon2DPS = goon3.attributes.DPS;
+                        goon2.attributes.SpawnTime && goon2.attributes.DPS;
+                    if (level.UpgradedTommyGoons) goon2DPS = goon3.attributes.DPS;
+
+                    if (level.PistolCrooks == false) goon1DPS = 0;
+                    if (level.TommyCrooks == false) goon2DPS = 0;
 
                     return goon1DPS + goon2DPS;
                 },
@@ -226,10 +242,8 @@ class CalculatedManager {
             Crook: {
                 For: ['Crook Boss'],
                 Requires: [
-                    'PistolCrookSpawnTime',
-                    'TommyCrookSpawnTime',
                     'DoublePistolCrooks',
-                    'TommyDrum',
+                    'UpgradedTommyGoons',
                 ],
                 Value: (level) => {
                     const skin = level.levels.skinData.name;
@@ -241,31 +255,31 @@ class CalculatedManager {
                     const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
 
                     let goon1DPS =
-                        level.PistolCrookSpawnTime && goon1.attributes.DPS;
+                        goon1.attributes.SpawnTime && goon1.attributes.DPS;
                     if (level.DoublePistolCrooks) goon1DPS *= 2;
 
                     let goon2DPS =
-                        level.TommyCrookSpawnTime && goon2.attributes.DPS;
-                    if (level.TommyDrum) goon2DPS = goon3.attributes.DPS;
+                        goon2.attributes.SpawnTime && goon2.attributes.DPS;
+                    if (level.UpgradedTommyGoons) goon2DPS = goon3.attributes.DPS;
 
                     let damage = 0;
                     let remainingTime = 60;
 
-                    if (level.PistolCrookSpawnTime > 0.1) {
+                    if (goon1.attributes.SpawnTime > 0.1 && level.PistolCrooks == false) {
                         while (remainingTime > 0) {
                             damage += goon1DPS * remainingTime;
 
-                            remainingTime -= level.PistolCrookSpawnTime;
+                            remainingTime -= goon1.attributes.SpawnTime;
                         }
                     }
 
                     remainingTime = 60;
 
-                    if (level.TommyCrookSpawnTime > 0.1) {
+                    if (goon2.attributes.SpawnTime > 0.1 && level.TommyCrooks == false) {
                         while (remainingTime > 0) {
                             damage += goon2DPS * remainingTime;
 
-                            remainingTime -= level.TommyCrookSpawnTime;
+                            remainingTime -= goon2.attributes.SpawnTime;
                         }
                     }
 
@@ -1144,7 +1158,7 @@ class CalculatedManager {
                     if (level.Landmines == false) return 0;
 
                     const dps = level.LandmineDamage / level.LandmineCooldown;
-                    const burnDPS = level.BurnDamage / level.BurnTick;
+                    let burnDPS = level.BurnDamage / level.BurnTick;
 
                     if (isNaN(burnDPS)) burnDPS = 0; 
                     
