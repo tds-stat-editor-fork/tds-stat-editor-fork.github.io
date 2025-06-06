@@ -2098,8 +2098,6 @@ export default {
         },
       ],
       Defaults: {
-        Damage: 0,
-        Cooldown: 0,
         Limit: 1,
         Price: 1500,
         Range: 8,
