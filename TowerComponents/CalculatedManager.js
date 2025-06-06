@@ -282,7 +282,7 @@ class CalculatedManager {
             CriticalShit: {
                 For: ['Warden', 'Slasher'],
                 Requires: ['CritSwing', 'Cooldown'],
-                Value: (level) => ((level.Damage * (level.CritSwing - 1)) + (level.Damage * level.CritMultiplier)),
+                Value: (level) => Math.ceil(((level.Damage * (level.CritSwing - 1)) + (level.Damage * level.CritMultiplier))),
             },
             Brawler: {
                 For: ['Brawler'],
@@ -652,7 +652,11 @@ class CalculatedManager {
             Trapper: {
                 For: ['Trapper'],
                 Requires: ['LandmineDamage', 'LandmineCooldown'],
-                Value: (level) => level.LandmineDamage / level.LandmineCooldown,
+                Value: (level) => {
+                    if (level.Landmines == false) return 0;
+
+                    return level.LandmineDamage / level.LandmineCooldown;
+                },
             },
             Pursuit: {
                 For: ['Pursuit'],
@@ -925,6 +929,7 @@ class CalculatedManager {
                 Requires: ['SpikeHealth', 'SpikeCooldown'],
                 For: ['Trapper'],
                 Value: (level) => {
+                    if (level.Spikes == false) return 0;
                     const enemiesHit = Math.ceil(level.SpikeHealth / level.SpikeDamage);
 
                     return ((level.SpikeDamage * enemiesHit) / level.SpikeCooldown);
@@ -943,9 +948,10 @@ class CalculatedManager {
                 Requires: ['LandmineDamage', 'LandmineCooldown', 'BurnDamage', 'BurnTick'],
                 For: ['Trapper'],
                 Value: (level) => {
+                    if (level.Landmines == false) return 0;
                     const dps = level.LandmineDamage / level.LandmineCooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
-                    if(level.LandmineCooldown != 0) return dps + burnDPS; else return dps;
+                    if(burnDPS > 0) return dps + burnDPS; else return dps;
                 },
             },
         },
@@ -960,13 +966,25 @@ class CalculatedManager {
             Default: {
                 For: ['Swarmer'],
                 Requires: ['GrenadeDamage', 'GrenadeCooldown'],
-                Value: (level) => level.GrenadeDamage / level.GrenadeCooldown,
+                Value: (level) => {
+                    if (level.BeeGrenade == false) return 0;
+
+                    return level.GrenadeDamage / level.GrenadeCooldown;
+                },
             },
         },
         BurnDPS: {
             Default: {
                 Requires: ['BurnDamage', 'BurnTick'],
                 Value: (level) => level.BurnDamage / level.BurnTick,
+            },
+            Crapper: {
+                For: ['Trapper'],
+                Value: (level) => {
+                    if (level.Landmines == false) return 0;
+
+                    return level.BurnDamage / level.BurnTick;
+                },
             },
             Jetser: {
                 For: ['Jester'],
@@ -1012,7 +1030,11 @@ class CalculatedManager {
             Crapper: {
                 For: ['Trapper'],
                 Requires: ['BearTrapCooldown', 'StunLength'],
-                Value: (level) => (level.StunLength / level.BearTrapCooldown) * 100,      
+                Value: (level) => {
+                    if (level.BearTraps == false) return 0;
+
+                    return (level.StunLength / level.BearTrapCooldown) * 100;    
+                },
             },
             Minecraft: {
                 For: ['Warden'],
@@ -1055,7 +1077,11 @@ class CalculatedManager {
             Default: {
                 Requires: ['BearTrapDamage', 'BearTrapCooldown'],
                 For: ['Trapper'],
-                Value: (level) => level.BearTrapDamage / level.BearTrapCooldown,
+                Value: (level) => {
+                  if (level.BearTraps == false) return 0;
+
+                  return level.BearTrapDamage / level.BearTrapCooldown;
+                },
             },
         },
         BearTrapPileDamage: {
@@ -1067,7 +1093,6 @@ class CalculatedManager {
         },
         SpikeCostEfficiency: {
             Default: {
-                Requires: ['SpikeHealth', 'SpikeCooldown', 'NetCost'],
                 For: ['Trapper'],
                 Value: (level) => {
                     const dps = level.SpikeHealth / level.SpikeCooldown;
@@ -1078,7 +1103,6 @@ class CalculatedManager {
         },
         LandmineCostEfficiency: {
             Default: {
-                Requires: ['LandmineDamage', 'LandmineCooldown', 'BurnDamage', 'BurnTick', 'NetCost'],
                 For: ['Trapper'],
                 Value: (level) => {
                     const dps = level.LandmineDamage / level.LandmineCooldown;
@@ -1090,7 +1114,6 @@ class CalculatedManager {
         },
         BearTrapCostEfficiency: {
             Default: {
-                Requires: ['BearTrapDamage', 'BearTrapCooldown', 'NetCost'],
                 For: ['Trapper'],
                 Value: (level) => {
                     const dps = level.BearTrapDamage / level.BearTrapCooldown;
