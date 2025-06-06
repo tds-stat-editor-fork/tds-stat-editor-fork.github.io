@@ -531,7 +531,7 @@ export default {
         Cooldown: 0.2,
         Range: 30,
         ExplosionDamage: 40,
-        TimeBetweenMissiles: 2,
+        TimeBetweenMissiles: 3,
         Detections: {
             Hidden: true,
             Flying: false,
