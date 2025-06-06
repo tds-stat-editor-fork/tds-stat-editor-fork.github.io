@@ -1146,8 +1146,10 @@ class CalculatedManager {
                 For: ['Trapper'],
                 Value: (level) => {
                     if (level.Spikes == false) return 0;
+                    
+                    const enemiesHit = Math.ceil(level.SpikeHealth / level.SpikeDamage);
 
-                    const dps = level.SpikeHealth / level.SpikeCooldown;
+                    const dps = (level.SpikeDamage * enemiesHit) / level.SpikeCooldown;
                     
                     return level.NetCost / dps;
                 },
