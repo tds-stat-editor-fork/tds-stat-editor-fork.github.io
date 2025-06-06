@@ -422,7 +422,11 @@ class CalculatedManager {
                     'Biologist',
                     'Mercenary Base',
                 ],
-                Value: (level) => level.Damage / level.Cooldown,
+                Value: (level) => {
+                    if (level.Cooldown == 0) return 0; 
+
+                    return level.Damage / level.Cooldown;
+                }
             },
             Ranger: {
                 For: ['Ranger'],
@@ -949,6 +953,7 @@ class CalculatedManager {
                 For: ['Trapper'],
                 Value: (level) => {
                     if (level.Landmines == false) return 0;
+
                     const dps = level.LandmineDamage / level.LandmineCooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
                     if(burnDPS > 0) return dps + burnDPS; else return dps;
@@ -992,6 +997,12 @@ class CalculatedManager {
                 Value: (level) => (level.Damage * level.BurnDamageMult) / level.BurnTick,
             }
         },
+        ChillDPS: {
+            Default: {
+                Requires: ['ChillDamage', 'TickRate'],
+                Value: (level) => level.ChillDamage / level.TickRate,
+            },
+        },
         PoisonDPS: {
             Default: {
                 Requires: ['PoisonDamage', 'PoisonTick'],
@@ -1000,14 +1011,22 @@ class CalculatedManager {
             Jetser: {
                 For: ['Jester'],
                 Requires: ['PoisonTick', 'PoisonDamageMult'],
-                Value: (level) => (level.Damage * level.PoisonDamageMult) / level.PoisonTick,
+                Value: (level) => {
+                    if (level.Poison == false) return 0;
+
+                    return (level.Damage * level.PoisonDamageMult) / level.PoisonTick;
+                }
             }
         },
         MissileDPS: {
             Default: {
                 For: ['Commando'],
                 Requires: ['MissileCooldown', 'MissileDamage'],
-                Value: (level) => level.MissileDamage / level.MissileCooldown,
+                Value: (level) => { 
+                    if (level.Missiles == false) return 0;
+
+                    return level.MissileDamage / level.MissileCooldown;
+                }
             },
         },
         "Thorns Uptime %": {
@@ -1025,7 +1044,11 @@ class CalculatedManager {
             Mando: {
                 For: ['Commando'],
                 Requires: ['MissileStun', 'MissileCooldown'],
-                Value: (level) => (level.MissileStun / level.MissileCooldown) * 100,            
+                Value: (level) => {
+                    if (level.Missiles == false) return 0;
+
+                    return (level.MissileStun / level.MissileCooldown) * 100;
+                },  
             },
             Crapper: {
                 For: ['Trapper'],
@@ -1095,6 +1118,8 @@ class CalculatedManager {
             Default: {
                 For: ['Trapper'],
                 Value: (level) => {
+                    if (level.Spikes == false) return 0;
+
                     const dps = level.SpikeHealth / level.SpikeCooldown;
                     
                     return level.NetCost / dps;
@@ -1105,6 +1130,8 @@ class CalculatedManager {
             Default: {
                 For: ['Trapper'],
                 Value: (level) => {
+                    if (level.Landmines == false) return 0;
+
                     const dps = level.LandmineDamage / level.LandmineCooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
                     
@@ -1116,6 +1143,8 @@ class CalculatedManager {
             Default: {
                 For: ['Trapper'],
                 Value: (level) => {
+                    if (level.BearTraps == false) return 0;
+
                     const dps = level.BearTrapDamage / level.BearTrapCooldown;
                     
                     return level.NetCost / dps;

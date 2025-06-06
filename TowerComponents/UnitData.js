@@ -419,9 +419,9 @@ export default {
         IgnoreCollisionDamage: true,
         Cooldown: 0.45,
         Damage: 1,
-        ExplosionDamage: 35,
-        TimeBetweenMissiles: 4,
-        MissileAmount: 2,
+        ExplosionDamage: 0,
+        TimeBetweenMissiles: 0,
+        MissileAmount: 0,
         Detections: {
             Hidden: false,
             Flying: false,
