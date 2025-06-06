@@ -43,13 +43,9 @@ class CalculatedManager {
                     const skin = level.levels.skinData.name;
                     const goldText = skin == 'Golden' ? 'Golden' : '';
 
-                    const pistolCrook = this.unitManager.unitData[`${goldText}Goon1`];
-                    const tommyCrook = this.unitManager.unitData[`${goldText}Goon2`];
-                    const bodyGuard = this.unitManager.unitData[`${goldText}Goon3`];
-
-                    const pistolData = this.unitManager.unitData[pistolCrook];
-                    const tommyData = this.unitManager.unitData[tommyCrook];
-                    const bodyData = this.unitManager.unitData[bodyGuard];
+                    const pistolData = this.unitManager.unitData[`${goldText}Goon1`];
+                    const tommyData = this.unitManager.unitData[`${goldText}Goon2`];
+                    const bodyData = this.unitManager.unitData[`${goldText}Goon3`];
 
                     const pistolDelayPerMinute =
                         pistolData.attributes.SpawnTime > 0 && level.PistolCrooks == true
@@ -696,7 +692,7 @@ class CalculatedManager {
             Frostburner: {
                 For: ['Elementalist'],
                 Requires: ['Damage', 'Cooldown', 'BurstCooldown', 'Burst', 'BurnDamage'],
-                Value: (level) => (level.Damage * level.Burst) / ((level.Cooldown * level.Burst) + level.BurstCooldown),
+                Value: (level) => (level.Damage * level.Burst) / ((level.Cooldown * (level.Burst - 1)) + level.BurstCooldown),
             },
         },
         SplashDPS: {
