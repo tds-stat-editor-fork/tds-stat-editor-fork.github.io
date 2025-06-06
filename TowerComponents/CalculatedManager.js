@@ -955,8 +955,11 @@ class CalculatedManager {
                     if (level.Landmines == false) return 0;
 
                     const dps = level.LandmineDamage / level.LandmineCooldown;
-                    const burnDPS = level.BurnDamage / level.BurnTick;
-                    if(burnDPS > 0) return dps + burnDPS; else return dps;
+                    var burnDPS = level.BurnDamage / level.BurnTick;
+
+                    if (isNaN(burnDPS)) burnDPS = 0;
+                    
+                    return dps + burnDPS;
                 },
             },
         },
@@ -986,7 +989,7 @@ class CalculatedManager {
             Crapper: {
                 For: ['Trapper'],
                 Value: (level) => {
-                    if (level.Landmines == false || level.BurnTick == 0) return 0;
+                    if (level.Landmines == false || isNaN(level.BurnTick) || level.BurnTick == 0) return 0;
 
                     return level.BurnDamage / level.BurnTick;
                 },
@@ -1134,6 +1137,8 @@ class CalculatedManager {
 
                     const dps = level.LandmineDamage / level.LandmineCooldown;
                     const burnDPS = level.BurnDamage / level.BurnTick;
+
+                    if (isNaN(burnDPS)) burnDPS = 0; 
                     
                     return level.NetCost / (dps + burnDPS);
                 },
