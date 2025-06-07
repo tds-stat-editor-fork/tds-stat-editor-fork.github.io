@@ -1009,7 +1009,7 @@ class CalculatedManager {
             Crapper: {
                 For: ['Trapper'],
                 Value: (level) => {
-                    if (level.Landmines == false || typeof level.BurnTick === 'undefined' || level.BurnTick == 0) return 0;
+                    if (level.Landmines == false || !level.BurnTick == true || level.BurnTick == 0) return 0;
 
                     return level.BurnDamage / level.BurnTick;
                 },
