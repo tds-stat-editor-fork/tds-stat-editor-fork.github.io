@@ -2504,7 +2504,7 @@ export default {
             Damage: 10,
             Cooldown: 0.85,
             Attributes: {
-              MaxHits: 4,
+              MaxHits: 3,
               ThornsDamage: 6,
               ThornsRange: 12,
               ThornsDuration: 10,
@@ -2549,7 +2549,7 @@ export default {
             Cooldown: 1.5,
             Range: 22.5,
             Attributes: {
-              MaxHits: 5,
+              MaxHits: 4,
               ThornsRange: 20,
               ThornsSlow: 30,
               ThornsDamage: 30,
@@ -2567,7 +2567,7 @@ export default {
         Range: 13,
         Limit: 4,
         Attributes: {
-          MaxHits: 3,
+          MaxHits: 2,
           ProjectileSpeed: 45,
           ThornsCooldown: 40,
           ThornsDamage: 2,
