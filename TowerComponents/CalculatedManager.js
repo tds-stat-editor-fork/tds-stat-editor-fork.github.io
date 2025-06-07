@@ -380,7 +380,7 @@ class CalculatedManager {
                     (level.StingTime * level.BeeDamage) / level.TickRate,
             },
             Burn: {
-                For: ['Archer', 'Pyromancer', 'Elementalist'],
+                For: ['Archer', 'Pyromancer', 'Elementalist', 'Trapper'],
                 Requires: ['BurnTime', 'BurnDamage', 'BurnTick'],
                 Value: (level) =>
                     (level.BurnTime * level.BurnDamage) / level.BurnTick,
