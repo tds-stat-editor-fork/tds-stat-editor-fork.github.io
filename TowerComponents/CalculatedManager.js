@@ -376,32 +376,42 @@ class CalculatedManager {
             Default: {
                 For: ['Swarmer'],
                 Requires: ['StingTime', 'BeeDamage', 'TickRate'],
-                Value: (level) =>
-                    (level.StingTime * level.BeeDamage) / level.TickRate,
+                Value: (level) => {
+                    if (level.TickRate == 0) return 0;
+                    return (level.StingTime * level.BeeDamage) / level.TickRate;
+                },
             },
             Burn: {
                 For: ['Archer', 'Pyromancer', 'Elementalist', 'Trapper'],
                 Requires: ['BurnTime', 'BurnDamage', 'BurnTick'],
-                Value: (level) =>
-                    (level.BurnTime * level.BurnDamage) / level.BurnTick,
+                Value: (level) => {
+                    if (level.BurnTick == 0) return 0;
+                    return (level.BurnTime * level.BurnDamage) / level.BurnTick;
+                }
             },
             Cryo: {
                 For: ['Cryomancer'],
                 Requires: ['TickRate', 'ChillDamage', 'ChillLength'],
-                Value: (level) =>
-                    (level.ChillLength * level.ChillDamage) / level.TickRate,
+                Value: (level) => {
+                    if (level.TickRate == 0) return 0;
+                    return (level.ChillLength * level.ChillDamage) / level.TickRate;
+                },
             },
             Harv: {
                 For: ['Harvester'],
                 Requires: ['ThornsDamage', 'ThornsTick', 'ThornsDuration'],
-                Value: (level) =>
-                    (level.ThornsDuration * level.ThornsDamage) / level.ThornsTick,
+                Value: (level) => {
+                    if (level.ThornsTick == 0) return 0;
+                    return (level.ThornsDuration * level.ThornsDamage) / level.ThornsTick;
+                },
             },
             Poison: {
                 For: ['Toxic Gunner'],
                 Requires: ['PoisonTick', 'PoisonDamage', 'PoisonLength'],
-                Value: (level) =>
-                    (level.PoisonLength * level.PoisonDamage) / level.PoisonTick,
+                Value: (level) => {
+                    if (level.PoisonTick == 0) return 0;
+                    return (level.PoisonLength * level.PoisonDamage) / level.PoisonTick;
+                },
             },
         },
         TotalFireDamage: {
@@ -448,7 +458,13 @@ class CalculatedManager {
             },
             Cowboy: {
                 For: ['Cowboy'],
-                Value: (level) => ((level.Damage * level.CashShot) / (level.Cooldown * (level.CashShot - 1) + level.SpinDuration)), // prettier-ignore
+                Value: (level) => {
+                    const damagePerSpin = level.Damage * level.CashShot;
+                    var shotsPerSpin = level.CashShot == 1 ? 1 : (level.CashShot - 1);
+                    const fireratePerSpin = level.Cooldown * shotsPerSpin;
+
+                    return (damagePerSpin / (fireratePerSpin + level.SpinDuration))
+                }
             },
             Slasher: {
                 For: ['Slasher', 'Warden'],
