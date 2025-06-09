@@ -385,7 +385,7 @@ class CalculatedManager {
                 For: ['Archer', 'Pyromancer', 'Elementalist', 'Trapper'],
                 Requires: ['BurnTime', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
-                    if (level.BurnTick == 0) return 0;
+                    if (level.BurnTick == 0 || !level.BurnTick == true) return 0;
                     return (level.BurnTime * level.BurnDamage) / level.BurnTick;
                 }
             },
