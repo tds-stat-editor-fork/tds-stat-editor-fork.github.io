@@ -209,7 +209,7 @@ class UnitCalculations {
                 Value: (spawnTime) => {
                     const { spawnrateBuff } = window?.state?.boosts?.unit ?? 0; // prettier-ignore
 
-                    return spawnTime / (spawnrateBuff + 1);
+                    return spawnTime * (1 - spawnrateBuff);
                 },
             },
         },

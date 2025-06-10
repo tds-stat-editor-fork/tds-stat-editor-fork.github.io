@@ -5360,13 +5360,13 @@ export default {
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Attributes: {
-          CanBlock: false,
-          ParryLength: 1.25,
-          ParryCooldown: 0.25,
           StunLength: 1,
           StunEveryHit: false,
           CritMultiplier: 1.5,
           CritSwing: 3,
+          CanBlock: false,
+          ParryLength: 1.25,
+          ParryCooldown: 0.25,
         },
         Limit: 15,
         Price: 1000,

@@ -1309,7 +1309,7 @@ class CalculatedManager {
                 Value: (spawnTime) => {
                     const { spawnrateBuff } = window.state.boosts.unit; // prettier-ignore
 
-                    return spawnTime / (spawnrateBuff + 1);
+                    return spawnTime * (1 - spawnrateBuff);
                 },
             },
         },
