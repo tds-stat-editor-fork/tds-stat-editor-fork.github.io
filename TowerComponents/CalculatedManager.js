@@ -374,6 +374,7 @@ class CalculatedManager {
                     'Trapper',
                     'Biologist',
                     'Mercenary Base',
+                    'Military Base',
                 ],
                 Value: (level) => {
                     if (level.Cooldown == 0) return 0; 
@@ -1185,6 +1186,18 @@ class CalculatedManager {
             Type: 'Override',
 
             Default: {
+                Exclude: [
+                    'Farm',
+                    'DJ Booth',
+                    'Elf Camp',
+                    'Military Base',
+                    'Mecha Base',
+                    'Firework Technician',
+                    'Trapper',
+                    'Biologist',
+                    'Mercenary Base',
+                    'Military Base',
+                ],
                 Requires: ['Cooldown'],
                 Value: (cooldown) => {
                     const { extraCooldown, firerateBuff } = window.state.boosts.tower; // prettier-ignore
@@ -1211,6 +1224,18 @@ class CalculatedManager {
 
             Default: {
                 Requires: ['Damage'],
+                Exclude: [
+                    'Farm',
+                    'DJ Booth',
+                    'Elf Camp',
+                    'Military Base',
+                    'Mecha Base',
+                    'Firework Technician',
+                    'Trapper',
+                    'Biologist',
+                    'Mercenary Base',
+                    'Military Base',
+                ],
                 Value: (damage) => {
                     const { damageBuff } = window.state.boosts.tower; // prettier-ignore
 
@@ -1223,6 +1248,18 @@ class CalculatedManager {
 
             Default: {
                 Requires: ['Range'],
+                Exclude: [
+                    'Farm',
+                    'DJ Booth',
+                    'Elf Camp',
+                    'Military Base',
+                    'Mecha Base',
+                    'Firework Technician',
+                    'Trapper',
+                    'Biologist',
+                    'Mercenary Base',
+                    'Military Base',
+                ],
                 Value: (range) => {
                     const { rangeBuff } = window.state.boosts.tower; // prettier-ignore
 
@@ -1305,6 +1342,7 @@ class CalculatedManager {
         this.#add('Damage', skinData);
         this.#add('Range', skinData);
         this.#add('Cost', skinData);
+        this.#add('BurstCooldown', skinData);
         this.#add('SpawnTime', skinData);
         this.#add('LaserDPS', skinData);
         this.#add('FireTime', skinData);
