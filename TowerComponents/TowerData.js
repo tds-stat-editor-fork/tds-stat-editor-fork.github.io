@@ -10,7 +10,7 @@ export default {
         },
         {
           Stats: {
-            Extras: ["Overcharge: 240 → 420"],
+            Extras: ["Overcharge: 240 > 420"],
             Range: 19,
             Attributes: {Overcharge: 420},
           },
@@ -21,7 +21,7 @@ export default {
         {
           Stats: {
             Attributes: {Overcharge: 600},
-            Extras: ["Overcharge: 420 → 600"],
+            Extras: ["Overcharge: 420 > 600"],
             Damage: 30,
           },
           Image: 11821093989,
@@ -31,7 +31,7 @@ export default {
         {
           Stats: {
             Cooldown: 0.15,
-            Extras: ["Overcharge: 600 → 1050", "Faster Charge"],
+            Extras: ["Overcharge: 600 > 1050", "Faster Charge"],
             Damage: 30,
             Range: 20.5,
             Attributes: { ChargeTime: 1.5, Overcharge: 1050},
@@ -45,7 +45,7 @@ export default {
             Cooldown: 0.1,
             Attributes: {Overcharge: 4800},
             Range: 22,
-            Extras: ["Overcharge: 1050 → 4800", "Faster Charge"],
+            Extras: ["Overcharge: 1050 > 4800", "Faster Charge"],
             Damage: 40,
           },
           Image: 11821093672,
@@ -174,7 +174,7 @@ export default {
         {
           Image: 524302408,
           Stats: {
-            Extras: ["Max Hits: 2 -> 3"],
+            Extras: ["Max Hits: 2 > 3"],
             Detections: { Hidden: true},
             Cooldown: 1.6,
             Damage: 6,
@@ -202,7 +202,7 @@ export default {
         {
           Image: 456573844,
           Stats: {
-            Extras: ["Max Hits: 3 -> 4", "Stronger Flame Arrows"],
+            Extras: ["Max Hits: 3 > 4", "Stronger Flame Arrows"],
             Attributes: {
               BurnDamage: 2,
               MaxHits: 4,
@@ -217,7 +217,7 @@ export default {
         {
           Image: 106341823,
           Stats: {
-            Extras: ["Max Hits: 4 -> 6", "Stronger Flame Arrows"],
+            Extras: ["Max Hits: 4 > 6", "Stronger Flame Arrows"],
             Attributes: {
               BurnDamage: 4,
               MaxHits: 6,
@@ -260,7 +260,7 @@ export default {
         {
           Image: 524302408,
           Stats: {
-            Extras: ["Max Hits: 2 -> 3"],
+            Extras: ["Max Hits: 2 > 3"],
             Detections: {Hidden: true},
             Cooldown: 1.6,
             Damage: 6,
@@ -297,7 +297,7 @@ export default {
         {
           Image: 106341823,
           Stats: {
-            Extras: ["Max Hits: 3 -> 5", "Stronger Shock Arrows"],
+            Extras: ["Max Hits: 3 > 5", "Stronger Shock Arrows"],
             Attributes: {
               StunLength: 0.3,
               MaxHits: 5,
@@ -337,7 +337,7 @@ export default {
         {
           Image: 524302408,
           Stats: {
-            Extras: ["Max Hits: 2 -> 3"],
+            Extras: ["Max Hits: 2 > 3"],
             Detections: {Hidden: true},
             Cooldown: 1.6,
             Damage: 6,
@@ -425,6 +425,7 @@ export default {
             Attributes: {
               Ivy: true,
             },
+            Extras: ['Upgraded Sunflowers', 'Unlocks Ivy'],
           },
           Title: "Bio Chemistry",
           Cost: 600,
@@ -435,6 +436,7 @@ export default {
             Attributes: {
               UnitQueues: 2,
             },
+            Extras: ['Unit Queues: 1 > 2', 'Upgraded Sunflowers', 'Upgraded Ivy'],
           },
           Title: "Scientific Breakthrough",
           Cost: 1850,
@@ -445,6 +447,7 @@ export default {
             Attributes: {
               Nightshade: true,
             },
+            Extras: ['Upgraded Sunflowers', 'Upgraded Ivy', 'Unlocks Nightshade'], 
           },
           Title: "Flower Power",
           Cost: 4500,
@@ -455,6 +458,7 @@ export default {
             Attributes: {
               UnitQueues: 3,
             },
+            Extras: ['Unit Queues: 2 > 3', 'Upgraded Sunflowers', 'Upgraded Ivy', 'Unlocks Nightshade'], 
           },
           Title: "Botanical Berserker!",
           Cost: 20000,
@@ -494,7 +498,7 @@ export default {
         {
           Image: 17522564023,
           Stats: {
-            Extras: ["Unlocks Reposition (deals no damage)", "Final Hit Damage: 40", "Combo Cooldown: 0.75 -> 0.65"],
+            Extras: ["Unlocks Reposition (deals no damage)", "Final Hit Damage: 40", "Combo Cooldown: 0.75 > 0.65"],
             Attributes: {
               Reposition: true,
               RepositionDamage: 0,
@@ -511,7 +515,7 @@ export default {
         {
           Image: 17522564307,
           Stats: {
-            Extras: ["Final Hit Damage: 80", "Combo Cooldown: 0.65 -> 0.5", "Reposition Damage: 100"],
+            Extras: ["Final Hit Damage: 80", "Combo Cooldown: 0.65 > 0.5", "Reposition Damage: 100"],
             Attributes: {
               FinalHitDamage: 80,
               RepositionDamage: 100,
@@ -648,7 +652,7 @@ export default {
         {
           Image: 72540829223100,
           Stats: {
-            Extras: ["Burst: 3 -> 5", "Ammo: 30 -> 45", "Reload Time: 2.5 -> 2"],
+            Extras: ["Burst: 3 > 5", "Ammo: 30 > 45", "Reload Time: 2.5 > 2"],
             Detections: {
               Hidden: true,
             },
@@ -666,7 +670,7 @@ export default {
         {
           Image: 111526844050563,
           Stats: {
-            Extras: ["Burst Cooldown: 0.5 -> 0.35", "Burst: 5 -> 6", "Pierce: 2 -> 3", "Ammo: 45 -> 60", "Reload Time: 2 -> 1.5", "Unlock Missiles"],
+            Extras: ["Burst Cooldown: 0.5 > 0.35", "Burst: 5 > 6", "Pierce: 2 > 3", "Ammo: 45 > 60", "Reload Time: 2 > 1.5", "Unlock Missiles"],
             Cooldown: 0.15,
             Range: 15,
             Damage: 15,
@@ -691,7 +695,7 @@ export default {
         {
           Image: 113494545335861,
           Stats: {
-            Extras: ["Really Cool Armor", "Burst Cooldown: 0.35 -> 0,3", "Burst: 6 -> 10", "Ammo: 60 -> 80", "Reload Time: 1.5 -> 1.25", "Upgraded Missiles"],
+            Extras: ["Really Cool Armor", "Burst Cooldown: 0.35 > 0,3", "Burst: 6 > 10", "Ammo: 60 > 80", "Reload Time: 1.5 > 1.25", "Upgraded Missiles"],
             Cooldown: 0.125,
             Range: 17,
             Damage: 20,
@@ -785,7 +789,7 @@ export default {
           Image: 5523234990,
           Stats: {
             Attributes: { SpinDuration: 0.85 },
-            Extras: ["Spin: 1.2 -> 0.85 secs"],
+            Extras: ["Spin: 1.2 > 0.85 secs"],
             Income: 180,
             Cooldown: 0.3,
             Damage: 20,
@@ -811,7 +815,7 @@ export default {
           Image: 5523231844,
           Stats: {
             Attributes: { SpinDuration: 1.35 },
-            Extras: ["Spin: 1.75 -> 1.35 secs"],
+            Extras: ["Spin: 1.75 > 1.35 secs"],
             Cooldown: 0.7,
             Range: 16,
           },
@@ -831,7 +835,7 @@ export default {
           Image: 5523233366,
           Stats: {
             Attributes: { SpinDuration: 1 },
-            Extras: ["Spin: 1.35 → 1 secs"],
+            Extras: ["Spin: 1.35 > 1 secs"],
             Detections: {
               Hidden: true,
             },
@@ -845,7 +849,7 @@ export default {
           Image: 5523234030,
           Stats: {
             Attributes: { CashShot: 12 },
-            Extras: ["Cash Shot: 6 -> 12"],
+            Extras: ["Cash Shot: 6 > 12"],
             Income: 150,
             Cooldown: 0.3,
           },
@@ -856,7 +860,7 @@ export default {
           Image: 5523234990,
           Stats: {
             Attributes: { SpinDuration: 0.75 },
-            Extras: ["Spin: 1 → 0.75 secs"],
+            Extras: ["Spin: 1 > 0.75 secs"],
             Income: 250,
             Cooldown: 0.2,
             Range: 20,
@@ -1032,7 +1036,7 @@ export default {
         {
           Stats: {
             Range: 12,
-            Extras: ["Ammo: 40 -> 50", "❄️ Max Slowness: 50% > 65%"],
+            Extras: ["Ammo: 40 > 50", "❄️ Max Slowness: 50% > 65%"],
             Attributes: {MaxChill: 65, MaxAmmo: 50,},
           },
           Image: 15686403377,
@@ -1042,7 +1046,7 @@ export default {
         {
           Stats: {
             Extras: [
-              "Ammo: 50 -> 80",
+              "Ammo: 50 > 80",
               "Chilled Enemies take tick-based damage",
               "❄️ Tick Damage: (1)",
             ],
@@ -1056,9 +1060,9 @@ export default {
         {
           Stats: {
             Extras: [
-              "Chill Slowness: 5% -> 10%",
+              "Chill Slowness: 5% > 10%",
               "Larger Frost Beam",
-              "Debuff Duration: 2 -> 4",
+              "Debuff Duration: 2 > 4",
               "❄️ Max Slowness: 65% > 75%",
             ],
             Attributes: {
@@ -1078,11 +1082,12 @@ export default {
             Extras: [
               "🧊 Enemies now freeze at max 'Chill'",
               "Even Larger Frost Beam",
-              "❄️ Tick Damage: 1 -> 3",
-              "Max Hits: 3 -> 6",
+              "❄️ Tick Damage: 1 > 3",
+              "Max Hits: 3 > 6",
             ],
             Attributes: {
               CanFreeze: true,
+              FreezeTime: 2,
               MaxHits: 6,
               ChillDamage: 3,
               HitboxWidth: 2,
@@ -1104,7 +1109,7 @@ export default {
           HitboxWidth: 1.25,
           MaxHits: 3,
           ChillDamage: 0,
-          FreezeTime: 2,
+          FreezeTime: 0,
           DefenseMelt: 10,
           MaxDefenseMelt: 33,
           ReloadTime: 2,
@@ -1140,8 +1145,6 @@ export default {
           Stats: {
             Range: 11,
             Cooldown: 2.25,
-            Damage: 6,
-            Attributes: { ExplosionRadius: 3.5 },
           },
           Image: 0,
           Title: "Further Throwing",
@@ -1151,8 +1154,6 @@ export default {
           Stats: {
             Attributes: { ExplosionRadius: 4 },
             Damage: 10,
-            Cooldown: 2.25,
-            Range: 11,
           },
           Image: 5523227714,
           Title: "Steil Grenade",
@@ -1164,7 +1165,6 @@ export default {
             Attributes: {
               Velocity: 20,
               MustAim: false,
-              ExplosionRadius: 4,
               AimTime: 0,
             },
             Extras: ["Faster Projectile", "No Aim Time"],
@@ -1349,7 +1349,7 @@ export default {
         {
           Image: 4675504505,
           Stats: {
-            Extras: ["Shock Time: 0.3 -> 1", "More Defense Melting", "6 Max Hits", "Increased Chain Range"],
+            Extras: ["Shock Time: 0.3 > 1", "More Defense Melting", "6 Max Hits", "Increased Chain Range"],
             Attributes: {
               MinStun: 1,
               MaxStun: 1,
@@ -1368,7 +1368,7 @@ export default {
           Image: 4675504640,
           Stats: {
             Extras: [
-              "Shock Time: 1 -> 1.25",
+              "Shock Time: 1 > 1.25",
               "8 Max Hits",
             ],
             Attributes: {
@@ -2124,7 +2124,7 @@ export default {
         {
           Image: 15686418975,
           Stats: {
-            Extras: ["Max Slowness: 50% -> 60%", "Chill Slowness: 10% -> 15%"],
+            Extras: ["Max Slowness: 50% > 60%", "Chill Slowness: 10% > 15%"],
             Attributes: {
               ChillPercent: 15,
               MaxChill: 60,
@@ -2137,7 +2137,7 @@ export default {
         {
           Image: 15686418835,
           Stats: {
-            Extras: ["Freezes enemies on max chill", "🧊Freeze Time: 0 -> 2", "Chill Slowness: 15% -> 20%"],
+            Extras: ["Freezes enemies on max chill", "🧊Freeze Time: 0 > 2", "Chill Slowness: 15% > 20%"],
             Attributes: {
               FreezeTime: 2,
               ChillPercent: 20,
@@ -2155,11 +2155,11 @@ export default {
           Image: 15686418748,
           Stats: {
             Extras: [
-              "Burst: 1 -> 3",
+              "Burst: 1 > 3",
               "Burst Cooldown: 0.75",
-              "Max Slowness: 60% -> 75%",
-              "Chill Slowness: 20% -> 25%",
-              "Freeze Time: 2 -> 2.5",
+              "Max Slowness: 60% > 75%",
+              "Chill Slowness: 20% > 25%",
+              "Freeze Time: 2 > 2.5",
               "Defense Melt: 10",
             ],
             Attributes: {
@@ -2180,7 +2180,7 @@ export default {
           Image: 15686418571,
           Stats: {
             Extras: [
-              "Burst: 3 -> 6",
+              "Burst: 3 > 6",
               "Frost Grenade Ability",
             ],
             Attributes: {
@@ -2245,7 +2245,7 @@ export default {
         {
           Image: 15686412501,
           Stats: {
-            Extras: ["Max Hits: 3 -> 4"],
+            Extras: ["Max Hits: 3 > 4"],
             Attributes: {
               DefenseMelt: 10,
               FreezeTime: 0.5,
@@ -2262,7 +2262,7 @@ export default {
         {
           Image: 15686412400,
           Stats: {
-            Extras: ["Freeze Time: 0.5 -> 0.75", "Max Hits: 4 -> 5"],
+            Extras: ["Freeze Time: 0.5 > 0.75", "Max Hits: 4 > 5"],
             Attributes: {
               DefenseMelt: 10,
               FreezeTime: 0.75,
@@ -2280,8 +2280,8 @@ export default {
           Image: 15686412306,
           Stats: {
             Extras: [
-              "Freeze Time: 0.75 -> 1.25",
-              "Max Hits: 5 -> 7",
+              "Freeze Time: 0.75 > 1.25",
+              "Max Hits: 5 > 7",
               "Faster Projectile Speed",
             ],
             Attributes: {
@@ -2347,7 +2347,7 @@ export default {
             },
             Cooldown: 0.15,
             Damage: 10,
-            Extras: ["Ammo: 50 -> 100", "Faster Reload", "Tighter Spread", "Wider Angle"],
+            Extras: ["Ammo: 50 > 100", "Faster Reload", "Tighter Spread", "Wider Angle"],
           },
           Image: 104227180979769,
           Title: "Bigger Magazine",
@@ -2363,7 +2363,7 @@ export default {
             Range: 35,
             Cooldown: 0.12,
             Damage: 15,
-            Extras: ["Ammo: 100 -> 200", "Wider Angle", "Tighter Spread"],
+            Extras: ["Ammo: 100 > 200", "Wider Angle", "Tighter Spread"],
             Detections: { Hidden: true },
           },
           Image: 71764582498505,
@@ -2398,7 +2398,7 @@ export default {
             },
             Range: 50,
             Damage: 45,
-            Extras: ["Ammo: 200 -> 400", "Wider Angle", "Less Recoil", "Slower Reload Time"],
+            Extras: ["Ammo: 200 > 400", "Wider Angle", "Less Recoil", "Slower Reload Time"],
           },
           Image: 125372339735512,
           Title: "Impenetrable Fortress",
@@ -2411,7 +2411,7 @@ export default {
             },
             Cooldown: 0.09,
             Damage: 75,
-            Extras: ["Ammo: 400 -> 600", "Wider Angle"],
+            Extras: ["Ammo: 400 > 600", "Wider Angle"],
           },
           Image: 139181863986914,
           Title: "Destruction-Oriented Output Machine",
@@ -2728,7 +2728,7 @@ export default {
         {
           Stats: {
             Extras: [
-              "Fire Time: 3 -> 4",
+              "Fire Time: 3 > 4",
               "Ice Bomb",
               "1/2 Base Damage, 30% Chill, 60% Max Chill",
             ],
@@ -2742,7 +2742,7 @@ export default {
         {
           Stats: {
             Extras: [
-              "Fire Time: 4 -> 6",
+              "Fire Time: 4 > 6",
               "Acid Puddle Bomb",
               "3/10 Base Damage, 0.5 Tick, 10s Duration, Defense Melt",
             ],
@@ -3004,7 +3004,6 @@ export default {
           AirDrop: false,
           AirDropCost: 0,
           AirDropCooldown: 0,
-          MaxUnits: 1,
         },
         Price: 2000,
         Cooldown: 0,
@@ -3027,7 +3026,7 @@ export default {
         },
         {
           Stats: {
-            Extras: ["Unit Queues: 1 -> 2"],
+            Extras: ["Unit Queues: 1 > 2"],
             Attributes: {
               UnitQueues: 2,
             },
@@ -3038,9 +3037,9 @@ export default {
         },
         {
           Stats: {
-            Extras: ["Upgraded Units"],
+            Extras: ["Upgraded Units", "10% Damage Buff"],
             Attributes: {
-              DamageBuff: 0.1,
+              DamageBuff: 10,
             },
             Range: 10,
           },
@@ -3050,7 +3049,7 @@ export default {
         },
         {
           Stats: {
-            Extras: ["Unlocks Riot Guards", "Unit Queues: 2 -> 3"],
+            Extras: ["Unlocks Riot Guards", "Unit Queues: 2 > 3"],
             Attributes: {
               UnitQueues: 3,
               RiotGuard: true,
@@ -3076,9 +3075,9 @@ export default {
         },
         {
           Stats: {
-            Extras: ["Upgraded Units"],
+            Extras: ["Upgraded Units", "20% Damage Buff"],
             Attributes: {
-              DamageBuff: 0.2,
+              DamageBuff: 20,
             },
           },
           Image: 17196820275,
@@ -3161,7 +3160,7 @@ export default {
         {
           Image: 3877875003,
           Stats: {
-            Extras: ["Health: 30 -> 60"],
+            Extras: ["Health: 30 > 60"],
             Attributes: { SpawnTime: 35, UnitToSend: "Humvee 2" },
             Detections: {
               Flying: false,
@@ -3178,7 +3177,7 @@ export default {
         {
           Image: 3877873543,
           Stats: {
-            Extras: ["Mounted gunner", "Health: 60 -> 90"],
+            Extras: ["Mounted gunner", "Health: 60 > 90"],
             Attributes: { SpawnTime: 35, UnitToSend: "Humvee 3" },
             Detections: {
               Flying: false,
@@ -3196,12 +3195,12 @@ export default {
           Image: 3444568329,
           Stats: {
             Extras: [
-              "Health: 90 -> 500",
+              "Health: 90 > 500",
               "Explosive Damage: 50",
               "Airstrike ability",
               "Airstrike damage: 450",
             ],
-            Attributes: { SpawnTime: 35, UnitToSend: "Tank", AirstrikeDamage: 75, AirstrikeBombs: 6, AirstrikeExplosionRange: 8, AirstrikeCooldown: 45, AirstrikeCost: 500},
+            Attributes: { SpawnTime: 35, UnitToSend: "Tank", AirstrikeDamage: 75, AirstrikeBombs: 6, AirstrikeRadius: 8, AirstrikeCooldown: 45, AirstrikeCost: 500},
             Detections: {
               Flying: false,
               Hidden: false,
@@ -3218,16 +3217,16 @@ export default {
           Image: 3444568580,
           Stats: {
             Extras: [
-              "Health: 500 -> 1500",
-              "Explosive damage: 50 -> 80",
-              "Airstrike damage: 450 -> 750",
-              "Airstrike explosion range: 8 -> 12",
+              "Health: 500 > 1500",
+              "Explosive damage: 50 > 80",
+              "Airstrike damage: 450 > 750",
+              "Airstrike explosion range: 8 > 12",
             ],
             Attributes: {
               SpawnTime: 35,
               UnitToSend: "Railgun Tank",
               AirstrikeDamage: 125,
-              AirstrikeExplosionRange: 12,
+              AirstrikeRadius: 12,
             },
             Detections: {
               Flying: false,
@@ -3259,7 +3258,7 @@ export default {
         {
           Image: 15184753790,
           Stats: {
-            Extras: ["Rev Time: 1.4 -> 1.2"],
+            Extras: ["Rev Time: 1.4 > 1.2"],
             Attributes: { RevTime: 1.2 },
             Cooldown: 0.12,
           },
@@ -3279,7 +3278,7 @@ export default {
         {
           Image: 15184753289,
           Stats: {
-            Extras: ["Rev Time: 1.2 -> 1"],
+            Extras: ["Rev Time: 1.2 > 1"],
             Attributes: { RevTime: 1 },
             Cooldown: 0.1,
             Damage: 7,
@@ -3312,7 +3311,7 @@ export default {
         {
           Image: 15184753790,
           Stats: {
-            Extras: ["Rev Time: 1.4 -> 1.2"],
+            Extras: ["Rev Time: 1.4 > 1.2"],
             Attributes: { RevTime: 1.2 },
             Damage: 4,
           },
@@ -3335,7 +3334,7 @@ export default {
           Image: 15184753289,
           Stats: {
             Attributes: { RevTime: 1 },
-            Extras: ["Rev Time: 1.2 -> 1"],
+            Extras: ["Rev Time: 1.2 > 1"],
             Cooldown: 0.1,
             Damage: 10,
           },
@@ -3386,7 +3385,7 @@ export default {
               ExplosionRadius: 7.5,
             },
             Range: 24,
-            Extras: ["Explosion Radius: 6 -> 7.5"],
+            Extras: ["Explosion Radius: 6 > 7.5"],
             Damage: 24,
           },
           Image: 4538447347,
@@ -3399,7 +3398,7 @@ export default {
               ExplosionRadius: 8.5,
             },
             Range: 27,
-            Extras: ["Explosion Radius: 7.5 -> 8.5"],
+            Extras: ["Explosion Radius: 7.5 > 8.5"],
             Damage: 60,
           },
           Image: 4538447424,
@@ -3432,7 +3431,7 @@ export default {
             },
             Range: 30,
             Extras: [
-              "Explosion Radius: 8.5 -> 10",
+              "Explosion Radius: 8.5 > 10",
               "Stronger Cluster Bombs (50 Damage)",
               "Mushroom Cloud",
             ],
@@ -3466,7 +3465,7 @@ export default {
       Upgrades: [
         {
           Stats: {
-            Extras: ["Soul Meter: 50 -> 60", "Max Hits: 1 -> 2", "Max Graves: 2 -> 4"],
+            Extras: ["Soul Meter: 50 > 60", "Max Hits: 1 > 2", "Max Graves: 2 > 4"],
             Attributes: { MaxGraves: 4, MaxHits: 2, SoulMeter: 60 },
             Damage: 12,
             Cooldown: 1.2
@@ -3478,9 +3477,9 @@ export default {
         {
           Stats: {
             Extras: [
-              "Soul Meter: 60 -> 96",
-              "Gravestone Spawn Count: 2 -> 3",
-              "Max Graves: 4 -> 6",
+              "Soul Meter: 60 > 96",
+              "Gravestone Spawn Count: 2 > 3",
+              "Max Graves: 4 > 6",
               "Spawns Sword Skeletons",
             ],
             Attributes: { SpawnCount: 3, MaxGraves: 6, SoulMeter: 96},
@@ -3494,8 +3493,8 @@ export default {
         {
           Stats: {
             Extras: [
-              "Soul Meter: 96 -> 450",
-              "Max Graves: 6 -> 7",
+              "Soul Meter: 96 > 450",
+              "Max Graves: 6 > 7",
               "Unlocks lv. 2 gravestone",
               "Spawns Giant Skeletons",
               "Spawns Skeleton Knights",
@@ -3527,8 +3526,8 @@ export default {
             Cooldown: 0.4,
             Range: 32,
             Extras: [
-              "Soul Meter: 450 -> 1440", 
-              "Max Hits: 2 -> 3",
+              "Soul Meter: 450 > 1440", 
+              "Max Hits: 2 > 3",
               "Projectiles replaced with hitscan beam",
               "Beam can stack on enemies if not enough are in range",
               "Unlocks lv. 3 gravestone",
@@ -3559,10 +3558,8 @@ export default {
           AimTime: 0.4,
           SummonDebounce: 0.1,
           ProjectileSpeed: 50,
-          BookDebounce: 0.76,
           SoulMeter: 50,
           MaxGraveLevel: 1,
-          GraveCooldown: 2,
           GraveExplosions: false,
           ExplosionDamage: 0,
           ExplosionRadius: 0,
@@ -3867,7 +3864,7 @@ export default {
         {
           Image: 3304823121,
           Stats: {
-            Extras: ["Max Hits: 3 -> 5", "Morn Burn Damage"],
+            Extras: ["Max Hits: 3 > 5", "Morn Burn Damage"],
             Attributes: {
               BurnDamage: 2,
               MaxHits: 5,
@@ -3911,7 +3908,7 @@ export default {
           Image: 3304825822,
           Stats: {
             Extras: [
-              "Max Hits: 5 -> 8",
+              "Max Hits: 5 > 8",
               "More Burn Damage",
               "Longer Burn Time",
               "Bigger flames",
@@ -3967,7 +3964,7 @@ export default {
         {
           Image: 3304823121,
           Stats: {
-            Extras: ["Max Hits: 4 -> 6", 'More Burn Damage'],
+            Extras: ["Max Hits: 4 > 6", 'More Burn Damage'],
             Attributes: {
               BurnDamage: 2,
               MaxHits: 6,
@@ -4015,7 +4012,7 @@ export default {
         {
           Image: 3304825822,
           Stats: {
-            Extras: ["Max Hits: 6 -> 10", "More Burn Damage", "Longer Burn Time", "Bigger Flames"],
+            Extras: ["Max Hits: 6 > 10", "More Burn Damage", "Longer Burn Time", "Bigger Flames"],
             Attributes: {
               BurnDamage: 8,
               BurnTime: 20,
@@ -4145,7 +4142,7 @@ export default {
         {
           Image: 103303357353083,
           Stats: {
-            Extras: ["Explosion Radius: 3 -> 4"],
+            Extras: ["Explosion Radius: 3 > 4"],
             Attributes: { ExplosionRadius: 4 },
             Damage: 150,
           },
@@ -4155,7 +4152,7 @@ export default {
         {
           Image: 133610100963797,
           Stats: {
-            Extras: ["Explosion Radius: 4 -> 5", "Quad Targeting", "4 Missiles", "60° Spread Angle", "1 -> 0.5 Accuracy"],
+            Extras: ["Explosion Radius: 4 > 5", "Quad Targeting", "4 Missiles", "60° Spread Angle", "1 > 0.5 Accuracy"],
             Range: 30,
             Damage: 90,
             RocketCount: 4,
@@ -4349,7 +4346,7 @@ export default {
               Bleed: false,
               BleedStacks: 0,
             },
-            Extras: ["Crit Multiplier: 2.5 -> 3"],
+            Extras: ["Crit Multiplier: 2.5 > 3"],
             Detections: {
               Flying: false,
               Hidden: true,
@@ -4391,7 +4388,7 @@ export default {
               Bleed: true,
               BleedStacks: 1,
             },
-            Extras: ["Crit Multiplier: 3 -> 3.5"],
+            Extras: ["Crit Multiplier: 3 > 3.5"],
             Detections: {
               Flying: false,
               Hidden: true,
@@ -4412,7 +4409,7 @@ export default {
               Bleed: true,
               BleedStacks: 2,
             },
-            Extras: ["Bleed Stacks: 1 -> 2", "Crit Multiplier: 3.5 -> 4"],
+            Extras: ["Bleed Stacks: 1 > 2", "Crit Multiplier: 3.5 > 4"],
             Detections: {
               Flying: false,
               Hidden: true,
@@ -4460,7 +4457,7 @@ export default {
         {
           Image: 129569296351035,
           Stats: {
-            Extras: ["Max Hits: 2 -> 3"],
+            Extras: ["Max Hits: 2 > 3"],
             Attributes: {
               MaxHits: 4,
             },
@@ -4475,7 +4472,7 @@ export default {
           Stats: {
             Extras: [
               "🧊Freeze enemies on max chills",
-              "Slow Debuff: 30% -> 50%",
+              "Slow Debuff: 30% > 50%",
             ],
             Attributes: {
               CanFreeze: true,
@@ -4490,7 +4487,7 @@ export default {
         {
           Image: 87639607914634,
           Stats: {
-            Extras: ["Frozen enemies take x2 damage.", "Max Hits: 3 -> 4"],
+            Extras: ["Frozen enemies take x2 damage.", "Max Hits: 3 > 4"],
             Attributes: {
               FreezeBonus: true,
               FreezeBonusMult: 2,
@@ -4507,7 +4504,7 @@ export default {
         {
           Image: 92990655062231,
           Stats: {
-            Extras: ["Max Hit: 4 -> 5", "Longer Freeze Time"],
+            Extras: ["Max Hit: 4 > 5", "Longer Freeze Time"],
             Attributes: {
               MaxHits: 6,
               ChillPercent: 80,
@@ -4969,7 +4966,7 @@ export default {
             Extras: [
               "Full Auto Minigun",
               "Poison Duration: 6 > 10",
-              "Poison Damage: 4 -> 10",
+              "Poison Damage: 4 > 10",
             ],
             Attributes: {
               BurstCooldown: 0,
@@ -5236,7 +5233,7 @@ export default {
           Stats: {
             Extras: ["Nearby troops get 10% DMG buff"],
             Attributes: {
-              DamageBuff: 0.1,
+              DamageBuff: 10,
             },
             Damage: 8,
           },
@@ -5267,7 +5264,7 @@ export default {
             ],
             Attributes: {
               MissileCooldown: 4,
-              DamageBuff: 0.2,
+              DamageBuff: 20,
               ExplosionDamage: 80,
             },
             Detections: {
@@ -5319,7 +5316,7 @@ export default {
         {
           Image: 11415012702,
           Stats: {
-            Extras: ["Stun Time: 1 -> 2"],
+            Extras: ["Stun Time: 1 > 2"],
             Attributes: {
               StunLength: 2,
             },
@@ -5346,7 +5343,7 @@ export default {
         {
           Image: 11415015418,
           Stats: {
-            Extras: ["Riot Shield: Block Stuns", "Stun Time: 2 -> 2.5"],
+            Extras: ["Riot Shield: Block Stuns", "Stun Time: 2 > 2.5"],
             Attributes: {
               CanBlock: true,
               StunLength: 2.5,

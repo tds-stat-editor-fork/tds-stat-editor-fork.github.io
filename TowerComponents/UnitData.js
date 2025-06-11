@@ -89,7 +89,6 @@ export default {
         },
         Attributes: {},
     },
-
     Goon1: {
         Range: 20,
         Health: 15,
@@ -568,6 +567,10 @@ export default {
         Damage: 8,
         Cooldown: 0.2,
         Range: 30,
+        SpawnTime: 60,
+        ExplosionDamage: 80,
+        TimeBetweenMissiles: 0,
+        MissileAmount: 0,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -579,8 +582,10 @@ export default {
         Damage: 8,
         Cooldown: 0.2,
         Range: 30,
+        SpawnTime: 40,
         ExplosionDamage: 8,
         TimeBetweenMissiles: 5,
+        MissileAmount: 1,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -592,8 +597,10 @@ export default {
         Damage: 12,
         Cooldown: 0.15,
         Range: 25,
+        SpawnTime: 40,
         ExplosionDamage: 8,
         TimeBetweenMissiles: 5,
+        MissileAmount: 1,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -605,8 +612,10 @@ export default {
         Damage: 10,
         Cooldown: 0.08,
         Range: 25,
+        SpawnTime: 40,
         ExplosionDamage: 8,
         TimeBetweenMissiles: 3,
+        MissileAmount: 1,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -618,6 +627,7 @@ export default {
         Damage: 10,
         Cooldown: 0.05,
         Range: 100,
+        SpawnTime: 40,
         ExplosionDamage: 8,
         TimeBetweenMissiles: 3,
         MissileAmount: 4,
@@ -632,6 +642,7 @@ export default {
         Damage: 20,
         Cooldown: 0.05,
         Range: 100,
+        SpawnTime: 40,
         ExplosionDamage: 8,
         TimeBetweenMissiles: 3,
         MissileAmount: 4,

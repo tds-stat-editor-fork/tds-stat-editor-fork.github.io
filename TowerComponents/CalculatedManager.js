@@ -216,75 +216,6 @@ class CalculatedManager {
                 },
             },
         },
-        AggregateUnitDPS: {
-            Default: {
-                Exclude: ['Engineer', 'Biologist'],
-                Requires: ['UnitDPS', 'SpawnTime'],
-                Value: (level) => {
-                    let damage = 0;
-                    let remainingTime = 60;
-
-                    if (level.SpawnTime <= 0.1) {
-                        return Infinity;
-                    }
-
-                    while (remainingTime > 0) {
-                        damage += level.UnitDPS * remainingTime;
-
-                        remainingTime -= level.SpawnTime;
-                    }
-
-                    return damage / 60;
-                },
-            },
-            Crook: {
-                For: ['Crook Boss'],
-                Requires: [
-                    'DoublePistolCrooks',
-                    'UpgradedTommyGoons',
-                ],
-                Value: (level) => {
-                    const skin = level.levels.skinData.name;
-                    this.unitManager.load();
-
-                    const goldText = skin == 'Golden' ? 'Golden' : '';
-                    const goon1 = this.unitManager.unitData[`${goldText}Goon1`];
-                    const goon2 = this.unitManager.unitData[`${goldText}Goon2`];
-                    const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
-
-                    let goon1DPS =
-                        goon1.attributes.SpawnTime && goon1.attributes.DPS;
-                    if (level.DoublePistolCrooks) goon1DPS *= 2;
-
-                    let goon2DPS =
-                        goon2.attributes.SpawnTime && goon2.attributes.DPS;
-                    if (level.UpgradedTommyGoons) goon2DPS = goon3.attributes.DPS;
-
-                    let damage = 0;
-                    let remainingTime = 60;
-
-                    if (goon1.attributes.SpawnTime > 0.1 && level.PistolCrooks == true) {
-                        while (remainingTime > 0) {
-                            damage += goon1DPS * remainingTime;
-
-                            remainingTime -= goon1.attributes.SpawnTime;
-                        }
-                    }
-
-                    remainingTime = 60;
-
-                    if (goon2.attributes.SpawnTime > 0.1 && level.TommyCrooks == true) {
-                        while (remainingTime > 0) {
-                            damage += goon2DPS * remainingTime;
-
-                            remainingTime -= goon2.attributes.SpawnTime;
-                        }
-                    }
-
-                    return damage / 60;
-                },
-            },
-        },
         DamagePerBurst: {
             Default: {
                 For: ['Soldier', 'Freezer', 'Commando', 'Elementalist', 'Toxic Gunner'],
@@ -910,6 +841,18 @@ class CalculatedManager {
                 Value: (level) => (level.BeeDamage / level.TickRate) / level.Cooldown,
             },
         },
+        TimeForMaxStacks: {
+            Default: {
+                For: ['Swarmer'],
+                Value: (level) => {
+                    if (level.TickRate == 0 || level.Cooldown == 0) return 0;
+                    const maxDPS = level.MaxBeeStacks * (level.BeeDamage / level.TickRate);
+                    const dpsRate = ((level.BeeDamage / level.TickRate) / level.Cooldown);
+
+                    return maxDPS / dpsRate;
+                },
+            },
+        },
         BossValue: {
             Default: {
                 Requires: ['BossPotential', 'NetCost'],
@@ -1366,12 +1309,9 @@ class CalculatedManager {
         this.#add('LaserDPS', skinData);
         this.#add('FireTime', skinData);
         this.#add('TowerDPS', skinData);
-        this.#add('UnitDPS', skinData);
         this.#add('ThornsDPS', skinData);
         this.#add('RepositionDPS', skinData);
         this.#add('HeatwaveDPS', skinData);
-        this.#add('AggregateUnitDPS', skinData);
-        this.#add('RamDPS', skinData);
         this.#add('DamagePerBurst', skinData);
         this.#add('BurstTime', skinData);
         this.#add('Uptime %', skinData);
@@ -1380,6 +1320,7 @@ class CalculatedManager {
         this.#add('MaxDPS', skinData);
         this.#add('GlobalMaxDPS', skinData);
         this.#add("DPS Rate", skinData);
+        this.#add('TimeForMaxStacks', skinData);
         this.#add('SpikeDPS', skinData);
         this.#add('LandmineDPS', skinData);
         this.#add('BaseDPS', skinData);

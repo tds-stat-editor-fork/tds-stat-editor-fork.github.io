@@ -5,7 +5,11 @@ import Unit from './Unit.js';
 
 const calculated = {
     Health: (health) => health * (window.state.boosts.unit.healthBuff + 1),
-    SpawnTime: (spawnTime) => spawnTime / (window.state.boosts.unit.spawnrateBuff + 1),
+    SpawnTime: (spawnTime) => {
+        const { spawnrateBuff } = window.state.boosts.unit;
+
+        return spawnTime * (1 - spawnrateBuff);
+    },
     Damage: (damage) => damage * (window.state.boosts.unit.damageBuff + 1),
     Cooldown: (cooldown) => {
         const { extraCooldown, firerateBuff } = window.state.boosts.unit; // prettier-ignore

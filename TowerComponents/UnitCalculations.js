@@ -100,7 +100,7 @@ class UnitCalculations {
         },
         RamDPS: {
             Default: {
-                Requires: ['Health', 'Spawnrate'],
+                Requires: ['Health', 'SpawnTime'],
                 Value: (level) => {
                     const defense = level.Defense ?? 0;
 
@@ -269,6 +269,7 @@ class UnitCalculations {
 
         this.#add('Health', unitData);
         this.#add('Damage', unitData);
+        this.#add('SpawnTime', unitData);
         this.#add('Cooldown', unitData);
         this.#add('Range', unitData);
     }
