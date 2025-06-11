@@ -79,19 +79,19 @@ class UnitCalculations {
         },
         AggregateDPS: {
             Default: {
-                Requires: ['DPS', 'Spawnrate'],
+                Requires: ['DPS', 'SpawnTime'],
                 Value: (level) => {
                     let damage = 0;
                     let remainingTime = 60;
 
-                    if (level.Spawnrate <= 0.1) {
+                    if (level.SpawnTime <= 0.1) {
                         return Infinity;
                     }
 
                     while (remainingTime > 0) {
                         damage += level.DPS * remainingTime;
 
-                        remainingTime -= level.Spawnrate;
+                        remainingTime -= level.SpawnTime;
                     }
 
                     return damage / 60;
@@ -104,7 +104,7 @@ class UnitCalculations {
                 Value: (level) => {
                     const defense = level.Defense ?? 0;
 
-                    return (level.Health * (1 + defense)) / level.Spawnrate;
+                    return (level.Health * (1 + defense)) / level.SpawnTime;
                 },
             },
         },
