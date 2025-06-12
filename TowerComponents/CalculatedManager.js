@@ -69,7 +69,7 @@ class CalculatedManager {
         },
         RamDPS: {
             Default: {
-                Exclude: ['Engineer', 'Biologist', 'Elementalist'],
+                For: ['Military Base'],
                 Requires: ['UnitToSend', 'SpawnTime'],
                 Value: (level) => {
                     this.unitManager.load();
@@ -212,7 +212,23 @@ class CalculatedManager {
                     if (level.PistolCrooks == false) goon1DPS = 0;
                     if (level.TommyCrooks == false) goon2DPS = 0;
 
-                    return goon1DPS + goon2DPS;
+                    let goon1Ram =
+                        goon1.attributes.SpawnTime &&
+                        goon1.attributes.Health / goon1.attributes.SpawnTime;
+                    if (level.DoublePistolCrooks) goon1Ram *= 2;
+
+                    let goon2Ram =
+                        goon2.attributes.SpawnTime &&
+                        goon2.attributes.Health / goon2.attributes.SpawnTime;
+                    if (level.UpgradedTommyGoons){
+                        goon2Ram =
+                            goon3.attributes.Health / goon3.attributes.SpawnTime;
+                    }
+
+                    if (level.PistolCrooks == false) goon1Ram = 0;
+                    if (level.TommyCrooks == false) goon2Ram = 0;
+
+                    return goon1DPS + goon2DPS + goon1Ram + goon2Ram;
                 },
             },
         },
@@ -590,9 +606,8 @@ class CalculatedManager {
                 Value: (level) => {
                     const unitDPS = level.UnitDPS ?? 0;
                     const towerDPS = level.TowerDPS ?? 0;
-                    const ramDPS = level.RamDPS ?? 0;
 
-                    return unitDPS + towerDPS + ramDPS;
+                    return unitDPS + towerDPS;
                 },
             },
             Elementalist: {
@@ -1356,6 +1371,7 @@ class CalculatedManager {
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
+        this.#add('UnitDPS', skinData);
         this.#add('GlobalMaxDPS', skinData);
         this.#add("DPS Rate", skinData);
         this.#add('TimeForMaxStacks', skinData);
