@@ -427,7 +427,6 @@ export default {
     Sentry: {
         Range: 18,
         Health: 20,
-        IgnoreCollisionDamage: true,
         Cooldown: 0.45,
         Damage: 1,
         ExplosionDamage: 0,
@@ -448,7 +447,6 @@ export default {
         Range: 20,
         Health: 40,
         Lifetime: 30,
-        IgnoreCollisionDamage: true,
         Cooldown: 0.3,
         Damage: 2,
         Detections: {
@@ -466,7 +464,6 @@ export default {
         Range: 20,
         Health: 60,
         Lifetime: 45,
-        IgnoreCollisionDamage: true,
         Cooldown: 0.16,
         Damage: 5,
         Detections: {
@@ -487,7 +484,6 @@ export default {
         Range: 24,
         Health: 250,
         Lifetime: 60,
-        IgnoreCollisionDamage: true,
         Cooldown: 0.12,
         Damage: 8,
         Detections: {
@@ -568,7 +564,7 @@ export default {
         Cooldown: 0.2,
         Range: 30,
         SpawnTime: 60,
-        ExplosionDamage: 80,
+        ExplosionDamage: 0,
         TimeBetweenMissiles: 0,
         MissileAmount: 0,
         Detections: {

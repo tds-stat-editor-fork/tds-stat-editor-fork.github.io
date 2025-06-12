@@ -67,54 +67,6 @@ class CalculatedManager {
                 },
             },
         },
-        RamDPS: {
-            Default: {
-                For: ['Military Base'],
-                Requires: ['UnitToSend', 'SpawnTime'],
-                Value: (level) => {
-                    this.unitManager.load();
-
-                    if (!this.unitManager.hasUnit(level.UnitToSend)) return 0;
-                    const unit = this.unitManager.unitData[level.UnitToSend];
-
-                    return unit.attributes.Health / level.SpawnTime;
-                },
-            },
-            Crook: {
-                For: ['Crook Boss'],
-                Requires: [
-                    'DoublePistolCrooks',
-                    'UpgradedTommyGoons',
-                ],
-                Value: (level) => {
-                    const skin = level.levels.skinData.name;
-                    this.unitManager.load();
-
-                    const goldText = skin == 'Golden' ? 'Golden' : '';
-                    const goon1 = this.unitManager.unitData[`${goldText}Goon1`];
-                    const goon2 = this.unitManager.unitData[`${goldText}Goon2`];
-                    const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
-
-                    let goon1Ram =
-                        goon1.attributes.SpawnTime &&
-                        goon1.attributes.Health / goon1.attributes.SpawnTime;
-                    if (level.DoublePistolCrooks) goon1Ram *= 2;
-
-                    let goon2Ram =
-                        goon2.attributes.SpawnTime &&
-                        goon2.attributes.Health / goon2.attributes.SpawnTime;
-                    if (level.UpgradedTommyGoons){
-                        goon2Ram =
-                            goon3.attributes.Health / goon3.attributes.SpawnTime;
-                    }
-
-                    if (level.PistolCrooks == false) goon1Ram = 0;
-                    if (level.TommyCrooks == false) goon2Ram = 0;
-
-                    return goon1Ram + goon2Ram;
-                },
-            },
-        },
         ThornsDPS: {
             Default: {
                 For: ['Harvester'],
@@ -148,6 +100,22 @@ class CalculatedManager {
         },
         UnitDPS: {
             Default: {
+                Exclude: ['Engineer'],
+                Requires: ['UnitToSend'],
+                Value: (level) => {
+                    this.unitManager.load();
+
+                    const unitName = level.UnitToSend;
+                    if (!this.unitManager.hasUnit(unitName)) return 0;
+
+                    const unitData = this.unitManager.unitData[unitName];
+
+                    const ramDPS = unitData.attributes.Health / level.SpawnTime;
+
+                    return unitData.attributes.DPS + ramDPS;
+                },
+            },
+            Engi: {
                 Requires: ['UnitToSend'],
                 Value: (level) => {
                     this.unitManager.load();
@@ -602,7 +570,7 @@ class CalculatedManager {
                 },
             },
             Spawner: {
-                For: ['Engineer', 'Crook Boss', 'Military Base', 'Mecha Base'],
+                For: ['Engineer', 'Crook Boss'],
                 Value: (level) => {
                     const unitDPS = level.UnitDPS ?? 0;
                     const towerDPS = level.TowerDPS ?? 0;
@@ -1362,6 +1330,7 @@ class CalculatedManager {
         this.#add('LaserDPS', skinData);
         this.#add('FireTime', skinData);
         this.#add('TowerDPS', skinData);
+        this.#add('UnitDPS', skinData);
         this.#add('ThornsDPS', skinData);
         this.#add('RepositionDPS', skinData);
         this.#add('HeatwaveDPS', skinData);
@@ -1371,7 +1340,6 @@ class CalculatedManager {
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
-        this.#add('UnitDPS', skinData);
         this.#add('GlobalMaxDPS', skinData);
         this.#add("DPS Rate", skinData);
         this.#add('TimeForMaxStacks', skinData);
