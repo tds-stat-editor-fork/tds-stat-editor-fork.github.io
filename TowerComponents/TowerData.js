@@ -2465,7 +2465,7 @@ export default {
       },
       Upgrades: [
         {
-          Image: 0,
+          Image: 116572141213630,
           Stats: {
             Cooldown: 0.5,
             Range: 14,
@@ -2477,7 +2477,7 @@ export default {
           Cost: 600,
         },
         {
-          Image: 0,
+          Image: 84772480553742,
           Stats: {
             Damage: 6,
             Detections: { Hidden: true },
@@ -2492,7 +2492,7 @@ export default {
           Cost: 1250,
         },
         {
-          Image: 0,
+          Image: 73779458293742,
           Stats: {
             Damage: 20,
             Range: 15,
@@ -2507,7 +2507,7 @@ export default {
           Cost: 7500,
         },
         {
-          Image: 0,
+          Image: 71327152036764,
           Stats: {
             Range: 16,
             Cooldown: 0.3,
@@ -2522,7 +2522,7 @@ export default {
           Cost: 22000,
         },
         {
-          Image: 0,
+          Image: 78547724037844,
           Stats: {
             Range: 18.5,
             Cooldown: 0.1,
@@ -2558,7 +2558,7 @@ export default {
       },
       Upgrades: [
         {
-          Image: 0,
+          Image: 116572141213630,
           Stats: {
             Cooldown: 0.5,
             Range: 14,
@@ -2570,7 +2570,7 @@ export default {
           Cost: 600,
         },
         {
-          Image: 0,
+          Image: 84772480553742,
           Stats: {
             Damage: 6,
             Detections: { Hidden: true },
@@ -2585,7 +2585,7 @@ export default {
           Cost: 1250,
         },
         {
-          Image: 0,
+          Image: 73779458293742,
           Stats: {
             Damage: 20,
             Range: 15,
@@ -2600,7 +2600,7 @@ export default {
           Cost: 7500,
         },
         {
-          Image: 0,
+          Image: 71327152036764,
           Stats: {
             Range: 16,
             Cooldown: 0.3,
@@ -2615,7 +2615,7 @@ export default {
           Cost: 22000,
         },
         {
-          Image: 0,
+          Image: 105579078081734,
           Stats: {
             Range: 21,
             Damage: 18,
