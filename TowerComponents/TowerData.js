@@ -2404,10 +2404,10 @@ export default {
           Stats: {
             Extras: ["Warrior's Call"],
             Attributes: {
-              WarriorsCall: true,
-              WarriorsCallBuff: 35,
-              WarriorsCallCooldown: 30,
-              WarriorsCallLength: 15,
+              "Warrior's Call": true,
+              "Warrior's Call Buff": 35,
+              "Warrior's Call Cooldown": 30,
+              "Warrior's Call Length": 15,
             },
             Damage: 10,
           },
@@ -2436,7 +2436,7 @@ export default {
       ],
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
-        Attributes: { MaxHits: 3, WarriorsCall: false, WarriorsCallBuff: 0, WarriorsCallCooldown: 0, WarriorsCallLength: 0, ParryCooldown: 5, ParryLength: 1.25 },
+        Attributes: { MaxHits: 3, "Warrior's Call": false, "Warrior's Call Buff": 0, "Warrior's Call Cooldown": 0, "Warrior's Call Length": 0, ParryCooldown: 5, ParryLength: 1.25 },
         Price: 300,
         Range: 5,
         Cooldown: 1,

@@ -115,19 +115,6 @@ class CalculatedManager {
                     return unitData.attributes.DPS + ramDPS;
                 },
             },
-            Engi: {
-                Requires: ['UnitToSend'],
-                Value: (level) => {
-                    this.unitManager.load();
-
-                    const unitName = level.UnitToSend;
-                    if (!this.unitManager.hasUnit(unitName)) return 0;
-
-                    const unitData = this.unitManager.unitData[unitName];
-
-                    return unitData.attributes.DPS;
-                },
-            },
             Elementalist: {
                 For: ['Elementalist'],
                 Requires: ['TurretCooldown'],
@@ -693,6 +680,15 @@ class CalculatedManager {
                     if (level.DPS == 0 || isNaN(level.DPS)) return 0;
 
                     return level.NetCost / level.DPS;
+                },
+            },
+            Summoners: {
+                For: ['Military Base', 'Mecha Base'],
+                Requires: ['NetCost', 'UnitDPS'],
+                Value: (level) => {
+                    if (level.UnitDPS == 0 || isNaN(level.UnitDPS)) return 0;
+
+                    return level.NetCost / level.UnitDPS;
                 },
             },
             Swarmer: {

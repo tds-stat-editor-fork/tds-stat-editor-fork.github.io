@@ -16,6 +16,8 @@ export default class PropertyViewer {
             'Coverage',
             'BossPotential',
             'LimitBossPotential',
+            'DamagePerBurst',
+            'Uptime %',  
         ];
         this.baseProperties = [
             'Damage',
