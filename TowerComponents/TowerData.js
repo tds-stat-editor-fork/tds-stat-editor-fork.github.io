@@ -867,7 +867,7 @@ export default {
         Income: 35,
         Detections: { Flying: false, Hidden: false, Lead: false },
         Range: 14,
-        Limit: 12,
+        Limit: 10,
         Price: 600,
         Attributes: { CashShot: 6, SpinDuration: 1.5 },
         Cooldown: 1,
