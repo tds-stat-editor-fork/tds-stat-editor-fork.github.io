@@ -616,6 +616,7 @@ class CalculatedManager {
         SplashDPS: {
             Default: {
                 Requires: ['ExplosionDamage', 'Cooldown'],
+                Exclude: ['Necromancer'],
                 Value: (level) => level.ExplosionDamage / level.Cooldown,
             },
             Missile: {
