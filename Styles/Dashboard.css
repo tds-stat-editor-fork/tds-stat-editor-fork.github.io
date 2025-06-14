@@ -86,7 +86,12 @@ main > header {
 .i-hate-my-life{
     color: #fff;
     background-color: rgb(45, 50, 55);
-    border: none;
+    border-width: 1px;
+}
+
+.i-have-no-idea-what-im-doing{
+  margin: auto;
+  width: 50%;
 }
 
 .table-cell-input-md {
