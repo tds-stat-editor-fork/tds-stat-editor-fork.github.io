@@ -89,11 +89,6 @@ main > header {
     border-width: 1px;
 }
 
-.i-have-no-idea-what-im-doing{
-  margin: auto;
-  width: 50%;
-}
-
 .table-cell-input-md {
     min-width: 8em;
 }
