@@ -83,6 +83,12 @@ main > header {
     width: 100%;
 }
 
+.i-hate-my-life{
+    color: #fff;
+    background-color: rgb(45, 50, 55);
+    border: none;
+}
+
 .table-cell-input-md {
     min-width: 8em;
 }
@@ -210,6 +216,10 @@ main > header {
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
     color: inherit;
+}
+
+i-hate-my-life {
+
 }
 
 .sidebar-heading {
