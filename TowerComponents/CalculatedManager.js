@@ -211,7 +211,7 @@ class CalculatedManager {
                 Value: (level) => level.Overcharge / level.LaserDPS,
             },
             Burst: {
-                For: ['Soldier', 'Freezer', 'Commando', 'Elementalist', 'Toxic Gunner'],
+                For: ['Soldier', 'Freezer', 'Elementalist', 'Toxic Gunner'],
                 Requires: ['BurstCooldown', 'Cooldown', 'Burst'],
                 Value: (level) => (level.Cooldown * level.Burst),
             },
