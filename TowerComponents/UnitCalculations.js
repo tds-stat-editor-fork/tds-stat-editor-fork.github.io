@@ -82,19 +82,15 @@ class UnitCalculations {
                 Requires: ['DPS', 'SpawnTime'],
                 Value: (level) => {
                     let damage = 0;
-                    let remainingTime = 60;
+                    let spawnsPerMinute = 60 / level.SpawnTime;
 
                     if (level.SpawnTime <= 0.1) {
-                        return Infinity;
+                        return 0;
                     }
 
-                    while (remainingTime > 0) {
-                        damage += level.DPS * remainingTime;
+                    damage = level.DPS * spawnsPerMinute;
 
-                        remainingTime -= level.SpawnTime;
-                    }
-
-                    return damage / 60;
+                    return damage;
                 },
             },
         },
