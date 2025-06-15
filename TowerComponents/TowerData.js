@@ -778,6 +778,7 @@ export default {
             Income: 100,
             Cooldown: 0.25,
             Damage: 8,
+            Range: 20,
           },
           Title: "Double Tap",
           Cost: 3000,
