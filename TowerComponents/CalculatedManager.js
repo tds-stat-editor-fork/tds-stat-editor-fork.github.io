@@ -226,7 +226,7 @@ class CalculatedManager {
                 Value: (level) => (level.Cooldown * (level.CritSwing - 1)) + level.ComboCooldown,         
             },
         },
-        "Uptime %": {
+        Uptime: {
             Default: {
                 For: ['Accelerator'],
                 Requires: ['BurstTime', 'LaserCooldown', 'ChargeTime'],
@@ -992,14 +992,14 @@ class CalculatedManager {
                 }
             },
         },
-        "Thorns Uptime %": {
+        ThornsUptime: {
             Default: {
                 For: ['Harvester'],
                 Requires: ['ThornsDuration', 'ThornsCooldown'],
                 Value: (level) => (level.ThornsDuration / level.ThornsCooldown) * 100,
             },
         },
-        "Stall Uptime %": {
+        StallUptime: {
             Default: {
                 Requires: ['StunLength', 'Cooldown'],
                 Value: (level) => (level.StunLength / level.Cooldown) * 100,
@@ -1219,7 +1219,7 @@ class CalculatedManager {
                 Value: (damage) => {
                     const { damageBuff } = window.state.boosts.tower; // prettier-ignore
 
-                    return damage * (damageBuff + 1);
+                    return Math.floor(damage * (damageBuff + 1));
                 },
             },
         },
@@ -1256,8 +1256,8 @@ class CalculatedManager {
                     const { discount } = window.state.boosts.tower; // prettier-ignore
 
                     return level.Level == 0 && discount > 0
-                        ? cost
-                        : cost * (-discount + 1);
+                        ? Math.floor(cost)
+                        : Math.floor(cost * (-discount + 1));
                 },
             },
         },
@@ -1333,7 +1333,7 @@ class CalculatedManager {
         this.#add('HeatwaveDPS', skinData);
         this.#add('DamagePerBurst', skinData);
         this.#add('BurstTime', skinData);
-        this.#add('Uptime %', skinData);
+        this.#add('Uptime', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
         this.#add('MaxDPS', skinData);
@@ -1359,8 +1359,8 @@ class CalculatedManager {
         this.#add('SpikeCostEfficiency', skinData);
         this.#add('LandmineCostEfficiency', skinData);
         this.#add('BearTrapCostEfficiency', skinData);
-        this.#add('Stall Uptime %', skinData);
-        this.#add('Thorns Uptime %', skinData);
+        this.#add('StallUptime', skinData);
+        this.#add('ThornsUptime', skinData);
         this.#add('SunflowerMaxDPS', skinData);
         this.#add('IvyMaxDPS', skinData);
         this.#add('NightshadeMaxDPS', skinData);

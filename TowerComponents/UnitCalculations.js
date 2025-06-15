@@ -197,7 +197,7 @@ class UnitCalculations {
                 Value: (health) => {
                     const { healthBuff } = window?.state?.boosts?.unit ?? 0 // prettier-ignore
 
-                    return health * (healthBuff + 1);
+                    return Math.floor(health * (healthBuff + 1));
                 },
             },
         },

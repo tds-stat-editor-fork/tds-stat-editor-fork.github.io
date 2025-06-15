@@ -107,6 +107,10 @@ class Levels {
                 return `$${cell.toFixed(0)}`;
             default:
                 break;
+            case 'StallUptime':
+            case 'ThornsUptime':
+            case 'Uptime':
+                return `${cell.toFixed(0)}%`;
         }
 
         switch (typeof cell) {

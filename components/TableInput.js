@@ -196,6 +196,11 @@ export default class TableInput {
             case 'Income':
             case 'LimitNetCost':
                 return `$${Intl.NumberFormat().format(value)}`;
+            case 'StallUptime':
+            case 'ThornsUptime':
+            case 'Uptime':
+                return `${Intl.NumberFormat().format(value)}%`;
+            
         }
 
         if (+value < 1) {
@@ -265,7 +270,8 @@ export default class TableInput {
         'BurstTime',
         'SpikeCostEfficiency',
         'LandmineCostEfficiency',
-        'BearTrapCostEfficiency'
+        'BearTrapCostEfficiency',
+        'SpawnTime',
     ];
 
     #getDelta(cellData, deltaData, input) {
