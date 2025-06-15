@@ -372,7 +372,7 @@ class CalculatedManager {
             Slasher: {
                 For: ['Slasher', 'Warden'],
                 Value: (level) =>
-                ((level.Damage * (level.CritSwing - 1)) + (level.Damage * level.CritMultiplier)) / (level.Cooldown * level.CritSwing),
+                Math.ceil(((level.Damage * (level.CritSwing - 1)) + (level.Damage * level.CritMultiplier))) / (level.Cooldown * level.CritSwing),
             },
             Mortar: {
                 For: ['Mortar'],
