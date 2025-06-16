@@ -494,6 +494,16 @@ class CalculatedManager {
                     return dps + missileDPS;
                 },
             },
+            Necromancer: {
+                For: ['Necromancer'],
+                Value: (level) => {
+                    const beams = level.Beams == true;
+
+                    if (beams) return (level.MaxHits * level.Damage) / level.Cooldown;
+
+                    return level.Damage / level.Cooldown;
+                },
+            },
             Rocketeer: {
                 For: ['Rocketeer'],
                 Requires: ['Damage', 'RocketCount', 'Cooldown'],
@@ -703,9 +713,11 @@ class CalculatedManager {
             Necromancer: {
                 For: ['Necromancer'],
                 Value: (level) => {
-                    var maxLevel = level.Level == 4;
+                    const beams = level.Beams == true;
 
-                    if (maxLevel) return level.NetCost / level.MaxDPS; else return level.NetCost / level.DPS;
+                    if (level.Beams == true) return level.NetCost / level.MaxDPS;
+                    
+                    return level.NetCost / level.DPS;
                 },
             }
         },
