@@ -2531,7 +2531,6 @@ export default {
             Attributes: {
               MaxHits: 4,
               EV: 0.9,
-              Slowdown: 15,
             },
           },
           Title: "Overclock",
