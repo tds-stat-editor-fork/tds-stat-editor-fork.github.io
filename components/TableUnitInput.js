@@ -228,7 +228,6 @@ export default class TableUnitInput {
         'Speed',
         'TimeBetweenMissiles',
         'BurstCooldown',
-        
     ];
 
     #getDelta(cellData, deltaData, input) {
