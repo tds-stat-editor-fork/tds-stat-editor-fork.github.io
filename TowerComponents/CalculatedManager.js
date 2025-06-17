@@ -110,7 +110,8 @@ class CalculatedManager {
 
                     const unitData = this.unitManager.unitData[unitName];
 
-                    const ramDPS = unitData.attributes.Health / level.SpawnTime;
+                    let ramDPS = unitData.attributes.Health / level.SpawnTime;
+                    if (level.SpawnTime == 0 | isNaN(level.SpawnTime)) ramDPS = unitData.attributes.Health / unitData.attributes.SpawnTime;
 
                     return unitData.attributes.DPS + ramDPS;
                 },
@@ -284,7 +285,7 @@ class CalculatedManager {
                 },
             },
             Burn: {
-                For: ['Archer', 'Pyromancer', 'Elementalist', 'Trapper'],
+                For: ['Archer', 'Pyromancer', 'Elementalist', 'Trapper', 'Hallow Punk'],
                 Requires: ['BurnTime', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     if (level.BurnTick == 0 || !level.BurnTick == true) return 0;

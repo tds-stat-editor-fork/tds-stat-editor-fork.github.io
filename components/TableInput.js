@@ -191,16 +191,90 @@ export default class TableInput {
 
     #formatNumber(value) {
         switch (this.attribute) {
+            case 'Income':
             case 'Cost':
             case 'NetCost':
-            case 'Income':
+            case 'IncomePerSecond':
             case 'LimitNetCost':
-                return `$${Intl.NumberFormat().format(Math.round(value))}`;
+            case 'SupportCaravanCost':
+            case 'AirDropCost':
+                return `$${Intl.NumberFormat().format(value.toFixed(0))}`;
+            case "MaxDefenseMelt":
+            case "DefenseMelt":
+            case "Slowdown":
+            case "DamageBuff":
+            case "RangeBuff":
+            case "DiscountBuff":
+            case "FirerateBuff":
+            case "CallToArmsBuff":
             case 'StallUptime':
             case 'ThornsUptime':
             case 'Uptime':
-                return `${Intl.NumberFormat().format(Math.round(value))}%`;
-            
+            case 'ChillPercent':
+            case 'SlowPerTower':
+            case 'MaxSlow':
+            case 'MaxChill':
+            case 'DefenseMeltPerTower':
+            case "Warrior's Call Buff":
+                return `${Intl.NumberFormat().format(value.toFixed(2))}%`;
+            case 'Cooldown':
+            case 'ChargeTime':
+            case 'LaserCooldown':
+            case 'BurstTime':
+            case 'ReverseCooldown':
+            case 'BombTime':
+            case 'BurnTime':
+            case 'BurnTick':
+            case 'StunLength':
+            case 'ComboCooldown':
+            case 'KnockbackCooldown':
+            case 'RepositionCooldown':
+            case 'CallToArmsCooldown':
+            case 'SupportCaravanCooldown':
+            case 'MissileLifespan':
+            case 'MissileStun':
+            case 'ReloadTime':
+            case 'BurstCooldown':
+            case 'MissileCooldown':
+            case 'SpinDuration':
+            case 'BackupCallTime':
+            case 'ChillLength':
+            case 'FreezeTime':
+            case 'AimTime':
+            case 'MinStun':
+            case 'MaxStun':
+            case 'TurretCooldown':
+            case 'TickRate':
+            case 'SpawnTime':
+            case 'BuildTime':
+            case 'BuffDuration':
+            case 'FireTime':
+            case "Warrior's Call Length":
+            case "Warrior's Call Length":
+            case 'ParryCooldown':
+            case 'ParryLength':
+            case 'ThornsCooldown':
+            case 'ThornsDuration':
+            case 'ThornsTick':
+            case 'EquipTime':
+            case 'SlowDuration':
+            case 'PoisonPuddleLifespan':
+            case 'ConfusionDuration':
+            case 'ConfusionCooldown':
+            case 'AirDropCooldown':
+            case 'RevTime':
+            case 'BuildDelay':
+            case 'SummonDelay':
+            case 'SummonDebounce':
+            case 'PatrolCooldown':
+            case 'MissileCooldown':
+            case 'TimeForMaxStacks':
+            case 'GrenadeCooldown':
+            case 'LandmineCooldown':
+            case 'SpikeCooldown':
+            case 'BearTrapCooldown':
+            case 'HologramLifetime':
+                return `${Intl.NumberFormat().format(value.toFixed(2))}s`;
         }
 
         if (+value < 1) {
