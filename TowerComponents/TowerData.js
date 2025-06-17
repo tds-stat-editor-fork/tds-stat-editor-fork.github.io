@@ -4180,6 +4180,7 @@ export default {
           RangeAssist: false,
           RangeBuff: 0,
           BuffRange: 0,
+          BuffDuration: 0,
         },
       },
     },
