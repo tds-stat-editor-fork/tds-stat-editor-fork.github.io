@@ -107,19 +107,19 @@ class Levels {
                 return `$${cell.toFixed(0)}`;
             case 'NetCost':
                 return `$${cell.toFixed(0)}`;
-            default:
-                break;
             case 'StallUptime':
                 return `${cell.toFixed(2)}%`;
             case 'ThornsUptime':
                 return `${cell.toFixed(2)}%`;
             case 'Uptime':
                 return `${cell.toFixed(2)}%`;
+            default:
+                break;
         }
 
         switch (typeof cell) {
             case 'number':
-                return Number.parseFloat(cell.toFixed(2)).toString();
+                return Number.parseFloat(cell.toFixed(3)).toString();
             default:
                 return cell;
         }
