@@ -440,13 +440,13 @@ export default {
         Attributes: {
             SendTime: 1.25,
             ScrapCost: 16,
-            Lifetime: 30,
+            Lifespan: 30,
         },
     },
     RifleSentry: {
         Range: 20,
         Health: 40,
-        Lifetime: 30,
+        Lifespan: 30,
         Cooldown: 0.3,
         Damage: 2,
         Detections: {
@@ -457,13 +457,13 @@ export default {
         Attributes: {
             SendTime: 1.5,
             ScrapCost: 36,
-            Lifetime: 30,
+            Lifespan: 30,
         },
     },
     MinigunSentry: {
         Range: 20,
         Health: 60,
-        Lifetime: 45,
+        Lifespan: 45,
         Cooldown: 0.16,
         Damage: 5,
         Detections: {
@@ -474,7 +474,7 @@ export default {
         Attributes: {
             SendTime: 1.75,
             ScrapCost: 120,
-            Lifetime: 45,
+            Lifespan: 45,
         },
     },
     WarMachineSentry: {
@@ -483,7 +483,7 @@ export default {
         MissileAmount: 2,
         Range: 24,
         Health: 250,
-        Lifetime: 60,
+        Lifespan: 60,
         Cooldown: 0.12,
         Damage: 8,
         Detections: {
@@ -494,7 +494,7 @@ export default {
         Attributes: {
             SendTime: 1.75,
             ScrapCost: 250,
-            Lifetime: 60,
+            Lifespan: 60,
         },
     },
     Humvee: {

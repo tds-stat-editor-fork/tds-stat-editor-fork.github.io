@@ -207,6 +207,24 @@ export default class TableUnitInput {
             case 'NetCost':
             case 'Income':
                 return `$${Intl.NumberFormat().format(number)}`;
+            case 'SlowPercent':
+            case 'MaxSlow':
+            case 'Slowdown':
+                return `${Intl.NumberFormat().format(number)}%`;
+            case 'Cooldown':
+            case 'AimTime':
+            case 'SpawnTime':
+            case 'BurstCooldown':
+            case 'Lifespan':
+            case 'Tick':
+            case 'ChargeTime':
+            case 'DebuffLength':
+            case 'FreezeTime':
+            case 'SendTime':
+            case 'PoisonTick':
+            case 'PoisonTime':
+            case 'ConfusionTime':
+            case 'ConfusionCooldown':
         }
         return +(+number).toFixed(2);
     }
