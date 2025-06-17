@@ -102,17 +102,17 @@ class Levels {
     #format(cell, header) {
         switch (header) {
             case 'Income':
-                return `$${Math.round(cell).toFixed(0)}`;
+                return `$${cell.toFixed(2)}`;
             case 'Cost':
-                return `$${Math.round(cell).toFixed(0)}`;
+                return `$${cell.toFixed(2)}`;
             case 'NetCost':
-                return `$${Math.round(cell).toFixed(0)}`;
+                return `$${cell.toFixed(2)}`;
             case 'StallUptime':
-                return `${Math.round(cell).toFixed(0)}%`;
+                return `${cell.toFixed(2)}%`;
             case 'ThornsUptime':
-                return `${Math.round(cell).toFixed(0)}%`;
+                return `${cell.toFixed(2)}%`;
             case 'Uptime':
-                return `${Math.round(cell).toFixed(0)}%`;
+                return `${cell.toFixed(2)}%`;
             default:
                 break;
         }
