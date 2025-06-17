@@ -184,6 +184,7 @@ class Levels {
             case 'SpikeCooldown':
             case 'BearTrapCooldown':
             case 'HologramLifetime':
+            case 'BleedTick':
                 return `${cell.toFixed(2)}s`;
         }
 

@@ -274,6 +274,7 @@ export default class TableInput {
             case 'SpikeCooldown':
             case 'BearTrapCooldown':
             case 'HologramLifetime':
+            case 'BleedTick':
                 return `${Intl.NumberFormat().format(value.toFixed(2))}s`;
         }
 
