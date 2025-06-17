@@ -119,7 +119,7 @@ class Levels {
 
         switch (typeof cell) {
             case 'number':
-                return Number.parseFloat(cell.toFixed(3)).toString();
+                return Number.parseFloat(cell.toFixed(2)).toString();
             default:
                 return cell;
         }
