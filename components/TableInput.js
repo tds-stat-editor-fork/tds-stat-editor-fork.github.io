@@ -347,6 +347,7 @@ export default class TableInput {
         'LandmineCostEfficiency',
         'BearTrapCostEfficiency',
         'SpawnTime',
+        'BleedTick',
     ];
 
     #getDelta(cellData, deltaData, input) {
