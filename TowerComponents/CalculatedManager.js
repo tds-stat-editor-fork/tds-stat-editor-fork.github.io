@@ -1175,6 +1175,30 @@ class CalculatedManager {
                 },
             },
         },
+        BleedTickDamage: {
+            Default: {
+                For: ['Slasher'],
+                Value: (level) => {
+                    const { damageBuff } = window.state.boosts.tower;
+                    
+                    let bleedDamage = level.BaseBleedDamage * (damageBuff + 1);
+
+                    return Math.floor(((bleedDamage * (1 ** 0.9)) * (level.EnemyHP ** level.EV)) * (damageBuff + 1));
+                },
+            },
+        },
+        BleedCollapseDamage: {
+            Default: {
+                For: ['Slasher'],
+                Value: (level) => {
+                    const { damageBuff } = window.state.boosts.tower;
+                    
+                    let bleedDamage = level.BaseBleedDamage * (damageBuff + 1);
+
+                    return Math.floor(((bleedDamage * (level.MaxStacks ** 0.9)) * (level.EnemyHP ** level.EV)) * (damageBuff + 1));
+                },
+            },
+        },
         Cooldown: {
             Type: 'Override',
 
@@ -1349,6 +1373,8 @@ class CalculatedManager {
         this.#add('Uptime', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
+        this.#add('BleedTickDamage', skinData);
+        this.#add('BleedCollapseDamage', skinData);
         this.#add('MaxDPS', skinData);
         this.#add('GlobalMaxDPS', skinData);
         this.#add("DPS Rate", skinData);
