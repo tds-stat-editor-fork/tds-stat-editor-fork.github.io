@@ -732,7 +732,8 @@ export default {
           Missiles: false,
           MissileLifespan: 0,
           MissileStun: 0,
-          
+          MissileCooldown: 0,
+          MissileLifespan: 0,
         },
       },
     },
