@@ -250,7 +250,7 @@ export default class TableInput {
             case 'BuffDuration':
             case 'FireTime':
             case "Warrior's Call Length":
-            case "Warrior's Call Length":
+            case "Warrior's Call Cooldown":
             case 'ParryCooldown':
             case 'ParryLength':
             case 'ThornsCooldown':
