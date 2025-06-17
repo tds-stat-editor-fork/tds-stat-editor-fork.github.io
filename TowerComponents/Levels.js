@@ -102,11 +102,11 @@ class Levels {
     #format(cell, header) {
         switch (header) {
             case 'Income':
-                return `$${cell.toFixed(2)}`;
+                return `$${cell.toFixed(0)}`;
             case 'Cost':
-                return `$${cell.toFixed(2)}`;
+                return `$${cell.toFixed(0)}`;
             case 'NetCost':
-                return `$${cell.toFixed(2)}`;
+                return `$${cell.toFixed(0)}`;
             case 'StallUptime':
                 return `${cell.toFixed(2)}%`;
             case 'ThornsUptime':
