@@ -195,11 +195,11 @@ export default class TableInput {
             case 'NetCost':
             case 'Income':
             case 'LimitNetCost':
-                return `$${Intl.NumberFormat().format(value)}`;
+                return `$${Intl.NumberFormat().format(Math.round(value))}`;
             case 'StallUptime':
             case 'ThornsUptime':
             case 'Uptime':
-                return `${Intl.NumberFormat().format(value)}%`;
+                return `${Intl.NumberFormat().format(Math.round(value))}%`;
             
         }
 
