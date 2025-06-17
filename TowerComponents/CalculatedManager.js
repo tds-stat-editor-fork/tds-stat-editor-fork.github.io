@@ -943,6 +943,13 @@ class CalculatedManager {
                 Value: (level) => (level.BeeDamage / level.TickRate) * level.BeeStacks,
             },
         },
+        MaxBeeDPS: {
+            Default: {
+                For: ['Swarmer'],
+                Requires: ['StingTime', 'BeeDamage', 'TickRate'],
+                Value: (level) => (level.BeeDamage / level.TickRate) * level.MaxBeeStacks,
+            },
+        },
         GrenadeDPS: {
             Default: {
                 For: ['Swarmer'],
@@ -1393,6 +1400,7 @@ class CalculatedManager {
         this.#add('PoisonDPS', skinData);
         this.#add('LimitDPS', skinData);
         this.#add('BeeDPS', skinData);
+        this.#add('MaxBeeDPS', skinData);
         this.#add('GrenadeDPS', skinData);
         this.#add('MissileDPS', skinData);
         this.#add('SpikeCostEfficiency', skinData);

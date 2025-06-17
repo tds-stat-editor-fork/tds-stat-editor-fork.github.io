@@ -348,6 +348,7 @@ export default class TableInput {
         'BearTrapCostEfficiency',
         'SpawnTime',
         'BleedTick',
+        'TimeForMaxStacks',
     ];
 
     #getDelta(cellData, deltaData, input) {
