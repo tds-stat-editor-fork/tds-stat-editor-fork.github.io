@@ -218,6 +218,7 @@ export default class TableInput {
             case "Warrior's Call Buff":
             case "PoisonDefenseMelt":
             case "ThornPower":
+            case "ThornsSlow":
                 return `${Intl.NumberFormat().format(value.toFixed(2))}%`;
             case 'Cooldown':
             case 'ChargeTime':
@@ -278,6 +279,7 @@ export default class TableInput {
             case 'HologramLifetime':
             case 'BleedTick':
             case 'IceTick':
+            case 'ThornsCooldown':
                 return `${Intl.NumberFormat().format(value.toFixed(2))}s`;
         }
 
@@ -356,7 +358,8 @@ export default class TableInput {
         'FireCostEfficiency',
         'IceCostEfficiency',
         'PoisonCostEfficiency',
-        'ConfusionCostEfficiency'
+        'ConfusionCostEfficiency',
+        'ThornsCooldown'
     ];
 
     #getDelta(cellData, deltaData, input) {
