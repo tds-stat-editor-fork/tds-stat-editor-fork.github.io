@@ -1180,7 +1180,7 @@ class CalculatedManager {
             Default: {
                 For: ['Jester'],
                 Value: (level) => {
-                    if (level.Confusion) return 0;
+                    if (level.Confusion == false) return 0;
 
                     const dps = Math.ceil((level.Damage * level.ConfusionDamageMult)) / level.Cooldown;
                     
