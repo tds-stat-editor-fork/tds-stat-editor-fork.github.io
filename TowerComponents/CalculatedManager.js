@@ -330,7 +330,7 @@ class CalculatedManager {
                 For: ['Jester'],
                 Requires: ['PoisonPuddleLifespan', 'Damage', 'PoisonTick'],
                 Value: (level) =>
-                    (level.PoisonPuddleLifespan * (level.Damage * level.BurnDamageMult)) / level.BurnTick,
+                    (level.PoisonPuddleLifespan * (level.Damage * level.PoisonDamageMult)) / level.PoisonTick,
             },
         },
         DPS: {
