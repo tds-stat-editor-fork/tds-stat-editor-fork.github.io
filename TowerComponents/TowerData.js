@@ -2697,7 +2697,7 @@ export default {
   "Hallow Punk": {
     Default: {
       Defaults: {
-        Detections: { Flying: false, Hidden: false, Lead: true},
+        Detections: { Flying: false, Hidden: false, Lead: true },
         Damage: 3,
         Cooldown: 5,
         Range: 18,
@@ -2710,7 +2710,7 @@ export default {
           BurnTick: 0,
           BurnTime: 0,
         },
-        Cost: 300,
+        Price: 300,
       },
       Upgrades: [
         {
