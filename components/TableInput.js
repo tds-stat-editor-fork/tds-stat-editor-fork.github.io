@@ -351,6 +351,10 @@ export default class TableInput {
         'BleedTick',
         'TimeForMaxStacks',
         'IceTick',
+        'FireCostEfficiency',
+        'IceCostEfficiency',
+        'PoisonCostEfficiency',
+        'ConfusionCostEfficiency'
     ];
 
     #getDelta(cellData, deltaData, input) {
