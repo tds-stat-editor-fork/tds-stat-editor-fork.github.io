@@ -2702,6 +2702,7 @@ export default {
         Cooldown: 5,
         Range: 18,
         Limit: 12,
+        Price: 300,
         Attributes: {
           ExplosionRadius: 3.5,
           KnockbackForce: 10,
@@ -2710,7 +2711,6 @@ export default {
           BurnTick: 0,
           BurnTime: 0,
         },
-        Price: 300,
       },
       Upgrades: [
         {
@@ -2727,10 +2727,12 @@ export default {
           Image: 103271630916907,
           Stats: {
             Damage: 25,
-            RocketSpeed: 25,
             Range: 22.5,
-            KnockbackForce: 12.5,
-            ExplosionRadius: 5,
+            Attributes: {
+              RocketSpeed: 25,
+              KnockbackForce: 12.5,
+              ExplosionRadius: 5,
+            }
           },
           Title: "Bigger Boom",
           Cost: 2750,
@@ -2740,13 +2742,14 @@ export default {
           Stats: {
             Detections: {Flying: true},
             Damage: 60,
-            RocketSpeed: 25,
             Range: 26,
-            KnockbackForce: 17.5,
-            ExplosionRadius: 5.5,
-            BurnTime: 16,
-            BurnDamage: 3,
-            BurnTick: 0.25,
+            Attributes: {
+              KnockbackForce: 17.5,
+              ExplosionRadius: 5.5,
+              BurnTime: 16,
+              BurnDamage: 3,
+              BurnTick: 0.25,
+            },
           },
           Title: "Vengeful Missiles",
           Cost: 5000,
