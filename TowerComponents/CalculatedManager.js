@@ -403,9 +403,11 @@ class CalculatedManager {
                 For: ['Ace Pilot'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const bombDps = level.BombDropping
+                    let bombDps = level.BombDropping
                         ? level.BombDamage / level.BombTime
                         : 0;
+
+                    if (!isFinite(bombDps)) return 0;
 
                     return dps + bombDps;
                 },
@@ -444,7 +446,9 @@ class CalculatedManager {
                 Requires: ['Damage', 'Cooldown', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const burnDPS = (level.BurnDamage / level.BurnTick) ?? 0;
+                    let burnDPS = (level.BurnDamage / level.BurnTick);
+
+                    if (!isFinite(burnDPS)) burnDPS = 0;
 
                     return dps + burnDPS;
                 },
@@ -649,7 +653,11 @@ class CalculatedManager {
             Ace: {
                 For: ['Ace Pilot'],
                 Requires: ['BombDropping', 'BombDamage', 'BombTime'],
-                Value: (level) => level.BombDropping ? level.BombDamage / level.BombTime : 0,
+                Value: (level) => {
+                    if (level.BombDropping != true || !isFinite(level.BombTime) || level.BombTime == 0) return 0;
+                    
+                    return level.BombDamage / level.BombTime;
+                },
             },
         },
         ClusterDPS: {
@@ -673,7 +681,9 @@ class CalculatedManager {
                 For: ['Hallow Punk'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
-                    const burnDPS = level.BurnDamage / level.BurnTick;
+                    let burnDPS = level.BurnDamage / level.BurnTick;
+
+                    if (!isFinite(burnDPS)) burnDPS = 0;
 
                     return (dps * level.Limit) + burnDPS;
                 },

@@ -217,6 +217,7 @@ export default class TableInput {
             case 'DefenseMeltPerTower':
             case "Warrior's Call Buff":
             case "PoisonDefenseMelt":
+            case "ThornPower":
                 return `${Intl.NumberFormat().format(value.toFixed(2))}%`;
             case 'Cooldown':
             case 'ChargeTime':
@@ -276,6 +277,7 @@ export default class TableInput {
             case 'BearTrapCooldown':
             case 'HologramLifetime':
             case 'BleedTick':
+            case 'IceTick':
                 return `${Intl.NumberFormat().format(value.toFixed(2))}s`;
         }
 
