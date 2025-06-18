@@ -821,10 +821,9 @@ class CalculatedManager {
                 Requires: ['GlobalMaxStacks'],
                 For: ['Swarmer'],
                 Value: (level) => {
-                    const dps = level.Damage / level.Cooldown;
                     const beeDPS = (level.BeeDamage / level.TickRate) * level.GlobalMaxStacks;
 
-                    return dps + beeDPS;
+                    return beeDPS;
                 },
             },
         },
