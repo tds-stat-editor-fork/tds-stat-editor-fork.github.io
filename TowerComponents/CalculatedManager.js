@@ -322,15 +322,15 @@ class CalculatedManager {
                 For: ['Jester'],
                 Requires: ['BurnTime', 'Damage', 'BurnTick'],
                 Value: (level) =>
-                    (level.BurnTime * (level.Damage * level.BurnDamageMult)) / level.BurnTick,
+                    (level.BurnTime * Math.ceil((level.Damage * level.BurnDamageMult))) / level.BurnTick,
             },
         },
         TotalPoisonDamage: {
             Default: {
                 For: ['Jester'],
-                Requires: ['PoisonLength', 'Damage', 'PoisonTick'],
+                Requires: ['PoisonPuddleLifespan', 'Damage', 'PoisonTick'],
                 Value: (level) =>
-                    (level.BurnTime * (level.Damage * level.BurnDamageMult)) / level.BurnTick,
+                    (level.PoisonPuddleLifespan * (level.Damage * level.BurnDamageMult)) / level.BurnTick,
             },
         },
         DPS: {
@@ -688,6 +688,7 @@ class CalculatedManager {
         CostEfficiency: {
             Default: {
                 Requires: ['NetCost', 'DPS'],
+                Exclude: ['Jester'],
                 Value: (level) => {
                     if (level.DPS == 0 || isNaN(level.DPS)) return 0;
 
@@ -725,6 +726,7 @@ class CalculatedManager {
         MaxCostEfficiency: {
             Default: {
                 Requires: ['NetCost', 'MaxDPS'],
+                Exclude: ['Jester'],
                 Value: (level) => {
                     if (level.MaxDPS == 0 || isNaN(level.MaxDPS)) return 0;
 
@@ -976,7 +978,7 @@ class CalculatedManager {
             Jetser: {
                 For: ['Jester'],
                 Requires: ['BurnTick', 'BurnDamageMult'],
-                Value: (level) => (level.Damage * level.BurnDamageMult) / level.BurnTick,
+                Value: (level) => Math.ceil((level.Damage * level.BurnDamageMult)) / level.BurnTick,
             }
         },
         ChillDPS: {
@@ -996,7 +998,7 @@ class CalculatedManager {
                 Value: (level) => {
                     if (level.Poison == false) return 0;
 
-                    return (level.Damage * level.PoisonDamageMult) / level.PoisonTick;
+                    return Math.ceil((level.Damage * level.PoisonDamageMult)) / level.PoisonTick;
                 }
             }
         },
@@ -1132,6 +1134,55 @@ class CalculatedManager {
                     if (level.BearTraps == false) return 0;
 
                     const dps = level.BearTrapDamage / level.BearTrapCooldown;
+                    
+                    return level.NetCost / dps;
+                },
+            },
+        },
+        FireCostEfficiency: {
+            Default: {
+                For: ['Jester'],
+                Value: (level) => {
+                    if (level.Fire == false || level.BurnTick == 0 || isNaN(level.BurnTick)) return 0;
+
+                    const dps = level.Damage / level.Cooldown;
+                    const burnDPS = Math.ceil((level.Damage * level.BurnDamageMult)) / level.BurnTick
+                    
+                    return level.NetCost / (dps + burnDPS);
+                },
+            },
+        },
+        IceCostEfficiency: {
+            Default: {
+                For: ['Jester'],
+                Value: (level) => {
+                    if (level.Ice == false) return 0;
+
+                    const dps = Math.ceil(level.Damage * level.IceDamageMult) / level.Cooldown;
+                    
+                    return level.NetCost / dps + burnDPS;
+                },
+            },
+        },
+        PoisonCostEfficiency: {
+            Default: {
+                For: ['Jester'],
+                Value: (level) => {
+                    if (level.Poison == false || level.PoisonTick == 0 || isNaN(level.PoisonTick)) return 0;
+
+                    const poisonDPS = Math.ceil((level.Damage * level.PoisonDamageMult)) / level.PoisonTick;
+                    
+                    return level.NetCost / poisonDPS;
+                },
+            },
+        },
+        ConfusionCostEfficiency: {
+            Default: {
+                For: ['Jester'],
+                Value: (level) => {
+                    if (level.Confusion) return 0;
+
+                    const dps = Math.ceil((level.Damage * level.ConfusionDamageMult)) / level.Cooldown;
                     
                     return level.NetCost / dps;
                 },
@@ -1407,11 +1458,17 @@ class CalculatedManager {
         this.#add('BearTrapCostEfficiency', skinData);
         this.#add('StallUptime', skinData);
         this.#add('ThornsUptime', skinData);
+        this.#add('TotalFireDamage', skinData);
+        this.#add('TotalPoisonDamage', skinData);
         this.#add('SunflowerMaxDPS', skinData);
         this.#add('IvyMaxDPS', skinData);
         this.#add('NightshadeMaxDPS', skinData);
         this.#add('NetCost', skinData);
         this.#add('LimitNetCost', skinData);
+        this.#add('FireCostEfficiency', skinData);
+        this.#add('IceCostEfficiency', skinData);
+        this.#add('PoisonCostEfficiency', skinData);
+        this.#add('ConfusionCostEfficiency', skinData);
         this.#add('CostEfficiency', skinData);
         this.#add('MaxCostEfficiency', skinData);
         this.#add('Coverage', skinData);
