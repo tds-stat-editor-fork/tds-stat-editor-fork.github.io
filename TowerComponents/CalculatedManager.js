@@ -321,16 +321,22 @@ class CalculatedManager {
             Default: {
                 For: ['Jester'],
                 Requires: ['BurnTime', 'Damage', 'BurnTick'],
-                Value: (level) =>
-                    (level.BurnTime * Math.ceil((level.Damage * level.BurnDamageMult))) / level.BurnTick,
+                Value: (level) => {
+                    if (level.Fire == false) return 0;
+
+                    return (level.BurnTime * Math.ceil((level.Damage * level.BurnDamageMult))) / level.BurnTick;
+                }
             },
         },
         TotalPoisonDamage: {
             Default: {
                 For: ['Jester'],
                 Requires: ['PoisonPuddleLifespan', 'Damage', 'PoisonTick'],
-                Value: (level) =>
-                    (level.PoisonPuddleLifespan * (level.Damage * level.PoisonDamageMult)) / level.PoisonTick,
+                Value: (level) => {
+                    if (level.Poison == false) return 0;
+
+                    return (level.PoisonPuddleLifespan * (level.Damage * level.PoisonDamageMult)) / level.PoisonTick;
+                }
             },
         },
         DPS: {
