@@ -3336,7 +3336,15 @@ export default {
         },
       ],
       Defaults: {
-        Attributes: { SpawnTime: 50, UnitToSend: "Humvee" },
+        Attributes: { 
+          SpawnTime: 50, 
+          UnitToSend: "Humvee",
+          AirstrikeDamage: 0, 
+          AirstrikeBombs: 0, 
+          AirstrikeRadius: 0, 
+          AirstrikeCooldown: 0, 
+          AirstrikeCost: 0
+        },
         Price: 400,
         Limit: 5,
       },
