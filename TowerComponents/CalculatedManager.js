@@ -981,7 +981,13 @@ class CalculatedManager {
         BurnDPS: {
             Default: {
                 Requires: ['BurnDamage', 'BurnTick'],
-                Value: (level) => level.BurnDamage / level.BurnTick,
+                Value: (level) => {
+                    let burnDPS = level.BurnDamage / level.BurnTick
+
+                    if (!isFinite(burnDPS)) return 0;
+
+                    return burnDPS;
+                }
             },
             Crapper: {
                 For: ['Trapper'],
