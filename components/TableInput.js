@@ -349,6 +349,7 @@ export default class TableInput {
         'SpawnTime',
         'BleedTick',
         'TimeForMaxStacks',
+        'IceTick',
     ];
 
     #getDelta(cellData, deltaData, input) {

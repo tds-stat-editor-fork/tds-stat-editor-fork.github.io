@@ -1160,7 +1160,7 @@ class CalculatedManager {
 
                     const dps = Math.ceil(level.Damage * level.IceDamageMult) / level.Cooldown;
                     
-                    return level.NetCost / dps + burnDPS;
+                    return level.NetCost / dps;
                 },
             },
         },
