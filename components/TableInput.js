@@ -216,6 +216,7 @@ export default class TableInput {
             case 'MaxChill':
             case 'DefenseMeltPerTower':
             case "Warrior's Call Buff":
+            case "PoisonDefenseMelt":
                 return `${Intl.NumberFormat().format(value.toFixed(2))}%`;
             case 'Cooldown':
             case 'ChargeTime':
