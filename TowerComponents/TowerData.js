@@ -1495,7 +1495,7 @@ export default {
       Defaults: {
         Price: 2000,
         Damage: 3,
-        Range: 13,
+        Range: 12,
         Cooldown: 0.2,
         Limit: 5,
         Attributes: {
