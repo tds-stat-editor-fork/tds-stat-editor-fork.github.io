@@ -733,7 +733,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const beams = level.Beams == true;
 
-                    if (level.Beams == true) return level.NetCost / level.MaxDPS;
+                    if (beams) return level.NetCost / level.MaxDPS;
                     
                     return level.NetCost / level.DPS;
                 },
@@ -832,6 +832,16 @@ class CalculatedManager {
                 Requires: ['Damage', 'Cooldown', 'MaxHitsPerTick', 'MaxBounce'],
                 For: ['Executioner'],
                 Value: (level) => (level.Damage * (level.MaxHitsPerTick * level.MaxBounce)) / level.Cooldown,
+            },
+            Necromancer: {
+                For: ['Necromancer'],
+                Value: (level) => {
+                    const beams = level.Beams == true;
+
+                    if (beams) return level.DPS;
+
+                    return level.DPS * level.MaxHits;
+                },
             },
         },
         GlobalMaxDPS: {
