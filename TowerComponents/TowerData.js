@@ -3414,7 +3414,7 @@ export default {
             Damage: 4,
           },
           Title: "Improved Handling",
-          Cost: 800,
+          Cost: 900,
         },
         {
           Image: 15184753514,
@@ -3426,7 +3426,7 @@ export default {
             Damage: 5,
           },
           Title: "Thermal Vision",
-          Cost: 2400,
+          Cost: 2000,
         },
         {
           Image: 15184753289,
