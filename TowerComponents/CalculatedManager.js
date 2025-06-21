@@ -755,6 +755,11 @@ class CalculatedManager {
                 Requires: ['Range'],
                 Value: (level) => {
                     let x = level.Range;
+
+                    if (x > 50){
+                        x = 50;
+                    }
+
                     const a = -0.00229008361916565;
                     const b = 0.165383660474954;
                     const c = 0.234910819904625;
@@ -811,13 +816,51 @@ class CalculatedManager {
             },
             Ordinary: { // remember to make this the new default when youre done
                 Requires: ['Coverage', 'DPS'],
-                For: ['Scout', 'Sniper', 'Paintballer', 'Demoman', 'Hunter', 'Soldier', 'Militant', 'Medic', 'Freezer', 'Turret', 'Gatling Gun', 'Ranger', 'Cowboy', 'Warden', 'Commander', 'Electroshocker', 'Hacker', 'Gladiator', 'Commando', 'Slasher', 'Brawler', 'Frost Blaster', 'Toxic Gunner', 'Sledger', 'Executioner', 'Harvester'],
+                For: ['Accelerator', 'Scout', 'Sniper', 'Paintballer', 'Demoman', 'Hunter', 'Soldier', 'Militant', 'Medic', 'Freezer', 'Turret', 'Gatling Gun', 'Cowboy', 'Warden', 'Commander', 'Electroshocker', 'Hacker', 'Gladiator', 'Commando', 'Slasher', 'Brawler', 'Frost Blaster', 'Toxic Gunner', 'Sledger', 'Executioner', 'Harvester'],
                 Value: (level) => {
                     let totalDamage = level.Coverage * level.DPS;
 
                     let totalShots = Math.floor(totalDamage / level.Damage);
 
                     return totalShots * level.Damage;
+                },
+            },
+            Archer: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Archer'],
+                Value: (level) => {
+                    if (level.ArrowType == 'Flame'){
+                        let totalDamage = level.Coverage * level.DPS;
+
+                        let totalShots = Math.floor(totalDamage / level.Damage);
+
+                        return (totalShots * level.Damage) + level.TotalElapsedDamage;
+                    }
+                    else if (level.ArrowType == 'Explosive'){
+                        let totalDamage = level.Coverage * level.DPS;
+
+                        let totalShots = Math.floor(totalDamage / level.Damage);
+
+                        return (totalShots * (level.Damage + level.ExplosionDamage));
+                    }
+                    else {
+                        let totalDamage = level.Coverage * level.DPS;
+
+                        let totalShots = Math.floor(totalDamage / level.Damage);
+
+                        return totalShots * level.Damage;
+                    }
+                },
+            },
+            Splash: {
+                Requires: ['Coverage', 'DPS', 'ExplosionDamage'],
+                For: ['Ranger'],
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+
+                    let totalShots = Math.floor(totalDamage / level.Damage);
+
+                    return totalShots * (level.Damage + level.ExplosionDamage);
                 },
             },
         },
