@@ -790,9 +790,23 @@ class CalculatedManager {
                 Requires: ['Coverage', 'MaxDPS'],
                 For: ['Necromancer'],
                 Value: (level) => {
-                    var maxLevel = level.Level == 4;
+                    let maxLevel = level.Level == 4;
 
                     if (maxLevel) return level.Coverage * level.MaxDPS; else return level.Coverage * level.DPS;
+                },
+            },
+            Minigunner: {
+                Requires: ['Coverage', 'DPS', 'RevTime'],
+                For: ['Minigunner'],
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+                    let wastedDamage = level.DPS * level.RevTime;
+
+                    totalDamage -= wastedDamage;
+
+                    let totalShots = Math.floor(totalDamage / level.Damage);
+
+                    return totalShots * level.Damage;
                 },
             },
         },
