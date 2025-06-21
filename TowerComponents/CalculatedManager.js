@@ -809,6 +809,17 @@ class CalculatedManager {
                     return totalShots * level.Damage;
                 },
             },
+            Ordinary: { // remember to make this the new default when youre done
+                Requires: ['Coverage', 'DPS'],
+                For: ['Scout', 'Sniper', 'Paintballer', 'Demoman', 'Hunter', 'Soldier', 'Militant', 'Medic', 'Freezer', 'Turret', 'Gatling Gun', 'Ranger', 'Cowboy', 'Warden', 'Commander', 'Electroshocker', 'Hacker', 'Gladiator', 'Commando', 'Slasher', 'Brawler', 'Frost Blaster', 'Toxic Gunner', 'Sledger', 'Executioner', 'Harvester'],
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+
+                    let totalShots = Math.floor(totalDamage / level.Damage);
+
+                    return totalShots * level.Damage;
+                },
+            },
         },
         LimitBossPotential: {
             Default: {
