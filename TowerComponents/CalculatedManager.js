@@ -936,6 +936,8 @@ class CalculatedManager {
 
                     let totalShots = Math.floor(totalDamage / level.Damage);
 
+                    if (!isFinite(totalChillTicks)) totalChillTicks = 0;
+
                     return (totalShots * level.Damage) + Math.floor(totalChillTicks * level.ChillDamage);
                 },  
             },
@@ -947,9 +949,13 @@ class CalculatedManager {
 
                     const skin = level.levels.skinData.name;
 
-                    let totalTowerDamage = level.TowerDPS * level.Coverage;
+                    let totalTowerDamage = 0;
                     let pistolGoonTotal = 0;
                     let tommyGoonTotal = 0;
+
+                    let totalShots = Math.floor(level.Coverage / level.Cooldown);
+
+                    totalTowerDamage = totalShots * level.Damage;
 
                     if (level.PistolCrooks == true){
                         const goldText = skin == 'Golden' ? 'Golden' : '';
@@ -1018,8 +1024,12 @@ class CalculatedManager {
                 Value: (level) => {
                     this.unitManager.load();
 
-                    let totalTowerDamage = level.TowerDPS;
+                    let totalTowerDamage = 0;
                     let sentryTotal = 0;
+
+                    let totalShots = Math.floor(level.Coverage / level.Cooldown);
+
+                    totalTowerDamage = totalShots * level.Damage;
 
                     const sentry = this.unitManager.unitData[level.UnitToSend];
                     let sentryRange = sentry.attributes.Range;
