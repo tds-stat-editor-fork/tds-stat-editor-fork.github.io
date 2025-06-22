@@ -778,8 +778,8 @@ class CalculatedManager {
                     const c = 0.234910819904625;
                     const d = 2.62040766713282;
 
-                    if (x > 45) {
-                        x = 45;
+                    if (x > 50) {
+                        x = 50;
                     }
 
                     return a * x ** 3 + b * x ** 2 + c * x + d;
@@ -816,7 +816,7 @@ class CalculatedManager {
             },
             Ordinary: { // remember to make this the new default when youre done
                 Requires: ['Coverage', 'DPS'],
-                For: ['Accelerator', 'Scout', 'Sniper', 'Paintballer', 'Demoman', 'Hunter', 'Soldier', 'Militant', 'Medic', 'Freezer', 'Turret', 'Gatling Gun', 'Cowboy', 'Warden', 'Commander', 'Electroshocker', 'Hacker', 'Gladiator', 'Commando', 'Slasher', 'Brawler', 'Frost Blaster', 'Toxic Gunner', 'Sledger', 'Executioner', 'Harvester'],
+                For: ['Accelerator', 'Scout', 'Sniper', 'Paintballer', 'Demoman', 'Hunter', 'Soldier', 'Militant', 'Medic', 'Freezer', 'Turret', 'Gatling Gun', 'Cowboy', 'Commander', 'Electroshocker', 'Hacker', 'Gladiator', 'Commando', 'Frost Blaster', 'Toxic Gunner', 'Sledger', 'Executioner', 'Harvester'],
                 Value: (level) => {
                     let totalDamage = level.Coverage * level.DPS;
 
@@ -831,10 +831,11 @@ class CalculatedManager {
                 Value: (level) => {
                     if (level.ArrowType == 'Flame'){
                         let totalDamage = level.Coverage * level.DPS;
+                        let totalBurnTime = level.BurnTime + level.Coverage;
 
                         let totalShots = Math.floor(totalDamage / level.Damage);
 
-                        return (totalShots * level.Damage) + level.TotalElapsedDamage;
+                        return (totalShots * level.Damage) + (totalBurnTime * level.BurnDPS);
                     }
                     else if (level.ArrowType == 'Explosive'){
                         let totalDamage = level.Coverage * level.DPS;
@@ -858,9 +859,127 @@ class CalculatedManager {
                 Value: (level) => {
                     let totalDamage = level.Coverage * level.DPS;
 
-                    let totalShots = Math.floor(totalDamage / level.Damage);
+                    let totalShots = Math.floor(totalDamage / (level.Damage * level.ExplosionDamage));
 
                     return totalShots * (level.Damage + level.ExplosionDamage);
+                },
+            },
+            Shotgunner: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Shotgunner'],  
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+
+                    let totalShots = Math.floor(totalDamage / (level.Damage * level.ShotSize));
+
+                    return totalShots * (level.Damage * level.ShotSize);
+                },
+            },
+            Rocketeer: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Rocketeer'],  
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+
+                    let totalShots = Math.floor(totalDamage / (level.Damage * level.RocketCount));
+
+                    return totalShots * (level.Damage * level.RocketCount);
+                },
+            },
+            Ace: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Ace Pilot'],     
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+                    let totalBombs = Math.floor(level.Coverage / level.BombTime)
+
+                    let totalShots = Math.floor(totalDamage / level.Damage);
+                    let totalBombDamage = totalBombs * level.BombDamage;
+
+                    return (totalShots * level.Damage) + totalBombDamage;
+                },       
+            },
+            Pyro: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Pyromancer', 'Hallow Punk'],
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+                    let totalBurnTime = level.BurnTime + level.Coverage;
+
+                    let totalShots = Math.floor(totalDamage / level.Damage);
+
+                    return (totalShots * level.Damage) + (totalBurnTime * level.BurnDPS);
+                },  
+            },
+            Crook: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Crook Boss'],
+                Value: (level) => {
+                    this.unitManager.load();
+
+                    let totalTowerDamage = level.TowerDPS * level.Coverage;
+                    let pistolGoonTotal = 0;
+                    let tommyGoonTotal = 0;
+
+                    if (level.PistolCrooks == true){
+                        const goldText = skin == 'Golden' ? 'Golden' : '';
+                        const goon1 = this.unitManager.unitData[`${goldText}Goon1`];
+
+                        let goon1DPS = goon1.attributes.DPS;
+                        if (level.DoublePistolCrooks) goon1DPS *= 2;
+
+                        let goon1Range = goon1.attributes.Range;
+                        let goon1Coverage = -0.00229008361916565 * (goon1Range / 2) ^ 3 + 0.165383660474954 * (goon1Range / 2) ^ 2 + 0.234910819904625 * (goon1Range / 2) + 2.62040766713282;
+
+                        pistolGoonTotal = goon1DPS * goon1Coverage;
+
+                        pistolGoonTotal += level.DoublePistolCrooks ? (goon1.attributes.Health * 2) : goon1.attributes.Health;
+                    }
+                    if (level.TommyCrooks == true){
+                        const goldText = skin == 'Golden' ? 'Golden' : '';
+                        const goon2 = this.unitManager.unitData[`${goldText}Goon2`];
+                        const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
+
+                        let goon2DPS = goon2.attributes.DPS;
+                        if (level.UpgradedTommyGoons) goon2DPS = goon3.attributes.DPS;
+
+                        let goon2Range = level.UpgradedTommyGoons ? goon3.attributes.Range : goon2.attributes.Range;
+                        let goon2Coverage = -0.00229008361916565 * (goon2Range / 2) ^ 3 + 0.165383660474954 * (goon2Range / 2) ^ 2 + 0.234910819904625 * (goon2Range / 2) + 2.62040766713282;
+
+                        tommyGoonTotal = goon2DPS * goon2Coverage;
+
+                        tommyGoonTotal += level.UpgradedTommyGoons ? goon3.attributes.Health : goon2.attributes.Health;
+                    }
+
+                    return totalTowerDamage + pistolGoonTotal + tommyGoonTotal;
+                },
+            },
+            CriticalShit: {
+                For: ['Warden', 'Slasher'],
+                Requires: ['Coverage', 'DPS'],
+                Value: (level) => {
+                    let totalKritz = Math.floor(level.Coverage / (level.Cooldown * level.CritSwing));
+                    let totalHits = (Math.floor(level.Coverage / level.Cooldown)) - totalKritz;
+
+                    let totalCritDamage = totalKritz * (level.Damage * level.CritMultiplier);
+                    let totalDamage = totalHits * level.Damage;
+
+                    return totalCritDamage + totalDamage;
+                },
+            },
+            Brawlhalla: {
+                For: ['Brawler'],
+                Requires: ['Coverage', 'DPS'],
+                Value: (level) => {
+                    if (level.CritSwing == 1) return Math.floor((level.Coverage * level.DPS) / level.Damage) * level.Damage;
+
+                    let totalKritz = Math.floor(level.Coverage / ((level.Cooldown * (level.CritSwing - 1)) + level.ComboCooldown));
+                    let totalHits = (Math.floor(level.Coverage / (level.Cooldown * (level.CritSwing / (level.CritSwing - 1))))) - totalKritz;
+
+                    let totalCritDamage = totalKritz * level.FinalHitDamage;
+                    let totalDamage = totalHits * level.Damage;
+
+                    return totalCritDamage + totalDamage;
                 },
             },
         },
@@ -873,7 +992,6 @@ class CalculatedManager {
         MaxDPS: {
             Default: {
                 Requires: ['DPS', 'MaxHits'],
-                Exclude: ['Executioner'],
                 Value: (level) => level.DPS * level.MaxHits,
             },
             Pierce: {
