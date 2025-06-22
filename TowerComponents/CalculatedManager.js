@@ -816,8 +816,10 @@ class CalculatedManager {
             },
             Ordinary: { // remember to make this the new default when youre done
                 Requires: ['Coverage', 'DPS'],
-                For: ['Accelerator', 'Scout', 'Sniper', 'Paintballer', 'Demoman', 'Hunter', 'Soldier', 'Militant', 'Medic', 'Freezer', 'Turret', 'Gatling Gun', 'Cowboy', 'Commander', 'Electroshocker', 'Hacker', 'Gladiator', 'Commando', 'Frost Blaster', 'Toxic Gunner', 'Sledger', 'Executioner', 'Harvester'],
+                For: ['Accelerator', 'Scout', 'Sniper', 'Paintballer', 'Demoman', 'Hunter', 'Soldier', 'Militant', 'Medic', 'Freezer', 'Turret', 'Gatling Gun', 'Cowboy', 'Commander', 'Electroshocker', 'Hacker', 'Gladiator', 'Commando', 'Frost Blaster', 'Sledger', 'Executioner', 'Harvester'],
                 Value: (level) => {
+                    if (level.Damage == 0 || isNaN(level.Damage) || level.Damage == Infinity) return 0;
+
                     let totalDamage = level.Coverage * level.DPS;
 
                     let totalShots = Math.floor(totalDamage / level.Damage);
@@ -831,11 +833,11 @@ class CalculatedManager {
                 Value: (level) => {
                     if (level.ArrowType == 'Flame'){
                         let totalDamage = level.Coverage * level.DPS;
-                        let totalBurnTime = level.BurnTime + level.Coverage;
+                        let totalBurnTicks = Math.floor((level.BurnTime + level.Coverage) / level.BurnTick);
 
                         let totalShots = Math.floor(totalDamage / level.Damage);
 
-                        return (totalShots * level.Damage) + (totalBurnTime * level.BurnDPS);
+                        return (totalShots * level.Damage) + Math.floor(totalBurnTicks * level.BurnDamage);
                     }
                     else if (level.ArrowType == 'Explosive'){
                         let totalDamage = level.Coverage * level.DPS;
@@ -893,6 +895,8 @@ class CalculatedManager {
                     let totalDamage = level.Coverage * level.DPS;
                     let totalBombs = Math.floor(level.Coverage / level.BombTime)
 
+                    if (totalBombs == Infinity || isNaN(totalBombs)) totalBombs = 0;
+
                     let totalShots = Math.floor(totalDamage / level.Damage);
                     let totalBombDamage = totalBombs * level.BombDamage;
 
@@ -904,11 +908,35 @@ class CalculatedManager {
                 For: ['Pyromancer', 'Hallow Punk'],
                 Value: (level) => {
                     let totalDamage = level.Coverage * level.DPS;
-                    let totalBurnTime = level.BurnTime + level.Coverage;
+                    let totalBurnTicks = Math.floor((level.BurnTime + level.Coverage) / level.BurnTick);
 
                     let totalShots = Math.floor(totalDamage / level.Damage);
 
-                    return (totalShots * level.Damage) + (totalBurnTime * level.BurnDPS);
+                    return (totalShots * level.Damage) + Math.floor(totalBurnTicks * level.BurnDamage);
+                },  
+            },
+            Toyjick: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Toxic Gunner'],
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+                    let totalPoisonTicks = Math.floor((level.PoisonLength + level.Coverage) / level.PoisonTick);
+
+                    let totalShots = Math.floor(totalDamage / level.Damage);
+
+                    return (totalShots * level.Damage) + Math.floor(totalPoisonTicks * level.PoisonDamage);
+                },  
+            },
+            CryingCuzOfDepressionAndInstability: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Cryomancer'],
+                Value: (level) => {
+                    let totalDamage = level.Coverage * level.DPS;
+                    let totalChillTicks = Math.floor((level.ChillLength + level.Coverage) / level.TickRate);
+
+                    let totalShots = Math.floor(totalDamage / level.Damage);
+
+                    return (totalShots * level.Damage) + Math.floor(totalChillTicks * level.ChillDamage);
                 },  
             },
             Crook: {
@@ -916,6 +944,8 @@ class CalculatedManager {
                 For: ['Crook Boss'],
                 Value: (level) => {
                     this.unitManager.load();
+
+                    const skin = level.levels.skinData.name;
 
                     let totalTowerDamage = level.TowerDPS * level.Coverage;
                     let pistolGoonTotal = 0;
@@ -944,7 +974,7 @@ class CalculatedManager {
                         if (level.UpgradedTommyGoons) goon2DPS = goon3.attributes.DPS;
 
                         let goon2Range = level.UpgradedTommyGoons ? goon3.attributes.Range : goon2.attributes.Range;
-                        let goon2Coverage = -0.00229008361916565 * (goon2Range / 2) ^ 3 + 0.165383660474954 * (goon2Range / 2) ^ 2 + 0.234910819904625 * (goon2Range / 2) + 2.62040766713282;
+                        let goon2Coverage = -0.00229008361916565 * (goon2Range / 2) ** 3 + 0.165383660474954 * (goon2Range / 2) ** 2 + 0.234910819904625 * (goon2Range / 2) + 2.62040766713282;
 
                         tommyGoonTotal = goon2DPS * goon2Coverage;
 
@@ -974,12 +1004,31 @@ class CalculatedManager {
                     if (level.CritSwing == 1) return Math.floor((level.Coverage * level.DPS) / level.Damage) * level.Damage;
 
                     let totalKritz = Math.floor(level.Coverage / ((level.Cooldown * (level.CritSwing - 1)) + level.ComboCooldown));
-                    let totalHits = (Math.floor(level.Coverage / (level.Cooldown * (level.CritSwing / (level.CritSwing - 1))))) - totalKritz;
+                    let totalHits = (Math.floor(level.Coverage / (level.Cooldown * (level.CritSwing / (level.CritSwing - 1)))));
 
                     let totalCritDamage = totalKritz * level.FinalHitDamage;
                     let totalDamage = totalHits * level.Damage;
 
                     return totalCritDamage + totalDamage;
+                },
+            },
+            Poopineer: {
+                For: ['Engineer'],
+                Requires: ['Coverage', 'DPS'],
+                Value: (level) => {
+                    this.unitManager.load();
+
+                    let totalTowerDamage = level.TowerDPS;
+                    let sentryTotal = 0;
+
+                    const sentry = this.unitManager.unitData[level.UnitToSend];
+                    let sentryRange = sentry.attributes.Range;
+
+                    let sentryCoverage = -0.00229008361916565 * sentryRange ** 3 + 0.165383660474954 * sentryRange ** 2 + 0.234910819904625 * sentryRange + 2.62040766713282;
+
+                    sentryTotal = (sentryCoverage * sentry.attributes.DPS) * level.MaxUnits;
+
+                    return totalTowerDamage + sentryTotal;
                 },
             },
         },
