@@ -127,7 +127,7 @@ class CalculatedManager {
 
                     const unitData = this.unitManager.unitData[unitName];
                     
-                    return (unitData.attributes.DPS) * (unitData.attributes.Lifespan / level.TurretCooldown);
+                    return unitData.attributes.DPS;
                 },
             },
             Engineer: {
@@ -792,12 +792,16 @@ class CalculatedManager {
                 Value: (level) => level.Coverage * level.DPS,
             },
             Necromancer: {
-                Requires: ['Coverage', 'MaxDPS'],
+                Requires: ['Coverage', 'DPS'],
                 For: ['Necromancer'],
                 Value: (level) => {
-                    let maxLevel = level.Level == 4;
+                    const beams = level.Beams == true;
 
-                    if (maxLevel) return level.Coverage * level.MaxDPS; else return level.Coverage * level.DPS;
+                    let totalShots = Math.floor(level.Coverage / level.Cooldown);
+
+                    if (beams) return totalShots * (level.Damage * level.MaxHits);
+
+                    return totalShots * level.Damage;
                 },
             },
             Minigunner: {
@@ -861,7 +865,7 @@ class CalculatedManager {
                 Value: (level) => {
                     let totalDamage = level.Coverage * level.DPS;
 
-                    let totalShots = Math.floor(totalDamage / (level.Damage * level.ExplosionDamage));
+                    let totalShots = Math.floor(totalDamage / (level.Damage + level.ExplosionDamage));
 
                     return totalShots * (level.Damage + level.ExplosionDamage);
                 },
@@ -1036,9 +1040,47 @@ class CalculatedManager {
 
                     let sentryCoverage = -0.00229008361916565 * sentryRange ** 3 + 0.165383660474954 * sentryRange ** 2 + 0.234910819904625 * sentryRange + 2.62040766713282;
 
+                    let totalSentryShots = Math.floor(sentryCoverage / sentry.attributes.Cooldown);
+                    let totalRockets = Math.floor((sentryCoverage / sentry.TimeBetweenMissiles) * sentry.MissileAmount);
+
+                    if(!isFinite(totalRockets)) totalRockets = 0;
+
+                    let totalRocketDamage = totalRockets * sentry.ExplosionDamage;
+
                     sentryTotal = (sentryCoverage * sentry.attributes.DPS) * level.MaxUnits;
 
-                    return totalTowerDamage + sentryTotal;
+                    return totalTowerDamage + sentryTotal + totalRocketDamage;
+                },
+            },
+            MoltenMode: {
+                For: ['Elementalist'],
+                Requires: ['Coverage', 'DPS'],
+                Value: (level) => {
+                    this.unitManager.load();
+                    
+                    let totalTowerDamage = 0;
+                    let totalTurretDamage = 0;
+                    let totalBurnDamage = 0;
+
+                    const skin = level.levels.skinData.name;
+
+                    let totalShots = Math.floor(level.Coverage / (level.Cooldown * (level.Uptime / 100)));
+                    
+                    totalTowerDamage = totalShots * level.Damage;
+
+                    if (skin == 'Frost Mode'){
+                        const unitName = "IceTurret" + (level.Level - 1);
+                        const unitData = this.unitManager.unitData[unitName];
+                        let turretRange = unitData.attributes.Range;
+
+                        let turretCoverage = -0.00229008361916565 * turretRange ** 3 + 0.165383660474954 * turretRange ** 2 + 0.234910819904625 * turretRange + 2.62040766713282;
+
+                        let totalTurretShots = Math.floor(turretCoverage / unitData.attributes.Cooldown);
+
+                        totalTurretDamage = totalTurretDamage * unitData.Damage;
+
+                        return totalTowerDamage + totalTurretDamage;
+                    }
                 },
             },
         },
