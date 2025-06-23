@@ -965,7 +965,7 @@ class CalculatedManager {
                         if (level.DoublePistolCrooks) goon1DPS *= 2;
 
                         let goon1Range = goon1.attributes.Range;
-                        let goon1Coverage = -0.00229008361916565 * (goon1Range / 2) ^ 3 + 0.165383660474954 * (goon1Range / 2) ^ 2 + 0.234910819904625 * (goon1Range / 2) + 2.62040766713282;
+                        let goon1Coverage = -0.00229008361916565 * (goon1Range / 2) ** 3 + 0.165383660474954 * (goon1Range / 2) ** 2 + 0.234910819904625 * (goon1Range / 2) + 2.62040766713282;
 
                         pistolGoonTotal = goon1DPS * goon1Coverage;
 
