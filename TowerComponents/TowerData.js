@@ -2763,17 +2763,7 @@ export default {
         {
           Image: 3839040358,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: {
-              Flying: true,
-              Hidden: false,
-              Lead: false,
-            },
             Cooldown: 1.75,
-            Range: 18,
-            Damage: 8,
-            Limit: 12,
           },
           Title: "Hunter’s Instincts",
           Cost: 200,
@@ -2781,13 +2771,9 @@ export default {
         {
           Image: 3839041547,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: true, Hidden: true, Lead: false },
-            Cooldown: 1.75,
+            Detections: {Hidden: true},
             Range: 22,
             Damage: 14,
-            Limit: 12,
           },
           Title: "Longshot",
           Cost: 800,
@@ -2795,13 +2781,9 @@ export default {
         {
           Image: 3839042767,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: true, Hidden: true, Lead: false },
             Cooldown: 1.6,
             Range: 25,
             Damage: 36,
-            Limit: 12,
           },
           Title: "Survivor’s Kit",
           Cost: 3250,
@@ -2809,13 +2791,9 @@ export default {
         {
           Image: 3839043838,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: true, Hidden: true, Lead: false },
             Cooldown: 2,
             Range: 28,
             Damage: 120,
-            Limit: 12,
           },
           Title: "Greatest Huntsman",
           Cost: 9400,
@@ -2956,18 +2934,9 @@ export default {
         {
           Image: 4119547116,
           Stats: {
-            Extras: [],
             Attributes: {
               UnitToSend: "Mark1Rocket",
             },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 0.5,
-            Range: 3,
-            Damage: 0,
           },
           Title: "Mechanics",
           Cost: 400,
@@ -2975,16 +2944,7 @@ export default {
         {
           Image: 4119547593,
           Stats: {
-            Extras: [],
             Attributes: { UnitToSend: "Mark2" },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 0.5,
-            Range: 3,
-            Damage: 0,
           },
           Title: "Missile Launcher",
           Cost: 900,
@@ -2992,16 +2952,7 @@ export default {
         {
           Image: 4119548000,
           Stats: {
-            Extras: [],
             Attributes: { UnitToSend: "Mark3" },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 0.5,
-            Range: 3,
-            Damage: 0,
           },
           Title: "Minigun Mech",
           Cost: 2400,
@@ -3009,16 +2960,7 @@ export default {
         {
           Image: 4119548431,
           Stats: {
-            Extras: [],
             Attributes: { UnitToSend: "Mark4" },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 0.5,
-            Range: 3,
-            Damage: 0,
           },
           Title: "Destroyer Mech",
           Cost: 4500,
@@ -3026,16 +2968,7 @@ export default {
         {
           Image: 4119548907,
           Stats: {
-            Extras: [],
             Attributes: { UnitToSend: "Mark5" },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 0.5,
-            Range: 3,
-            Damage: 0,
           },
           Title: "Void Walker",
           Cost: 6500,
@@ -3044,10 +2977,10 @@ export default {
       Defaults: {
         Limit: 4,
         Detections: { Flying: false, Hidden: false, Lead: false },
-        Range: 3,
+        Range: 0,
         Price: 5000,
         Attributes: { UnitToSend: "Mark1" },
-        Cooldown: 0.5,
+        Cooldown: 0,
         Damage: 0,
       },
     },

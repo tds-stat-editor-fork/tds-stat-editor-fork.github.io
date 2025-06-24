@@ -281,7 +281,7 @@ class CalculatedManager {
                 Requires: ['StingTime', 'BeeDamage', 'TickRate'],
                 Value: (level) => {
                     if (level.TickRate == 0) return 0;
-                    return (level.StingTime * level.BeeDamage) / level.TickRate;
+                    return Math.floor((level.StingTime * level.BeeDamage) / level.TickRate);
                 },
             },
             Burn: {
@@ -289,7 +289,7 @@ class CalculatedManager {
                 Requires: ['BurnTime', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     if (level.BurnTick == 0 || !level.BurnTick == true) return 0;
-                    return (level.BurnTime * level.BurnDamage) / level.BurnTick;
+                    return Math.floor((level.BurnTime * level.BurnDamage) / level.BurnTick);
                 }
             },
             Cryo: {
@@ -297,7 +297,7 @@ class CalculatedManager {
                 Requires: ['TickRate', 'ChillDamage', 'ChillLength'],
                 Value: (level) => {
                     if (level.TickRate == 0) return 0;
-                    return (level.ChillLength * level.ChillDamage) / level.TickRate;
+                    return Math.floor((level.ChillLength * level.ChillDamage) / level.TickRate);
                 },
             },
             Harv: {
@@ -305,7 +305,7 @@ class CalculatedManager {
                 Requires: ['ThornsDamage', 'ThornsTick', 'ThornsDuration'],
                 Value: (level) => {
                     if (level.ThornsTick == 0) return 0;
-                    return (level.ThornsDuration * level.ThornsDamage) / level.ThornsTick;
+                    return Math.floor((level.ThornsDuration * level.ThornsDamage) / level.ThornsTick);
                 },
             },
             Poison: {
@@ -313,7 +313,7 @@ class CalculatedManager {
                 Requires: ['PoisonTick', 'PoisonDamage', 'PoisonLength'],
                 Value: (level) => {
                     if (level.PoisonTick == 0) return 0;
-                    return (level.PoisonLength * level.PoisonDamage) / level.PoisonTick;
+                    return Math.floor((level.PoisonLength * level.PoisonDamage) / level.PoisonTick);
                 },
             },
         },
@@ -324,7 +324,7 @@ class CalculatedManager {
                 Value: (level) => {
                     if (level.Fire == false) return 0;
 
-                    return (level.BurnTime * Math.ceil((level.Damage * level.BurnDamageMult))) / level.BurnTick;
+                    return Math.floor((level.BurnTime * Math.ceil((level.Damage * level.BurnDamageMult))) / level.BurnTick);
                 }
             },
         },
@@ -335,7 +335,7 @@ class CalculatedManager {
                 Value: (level) => {
                     if (level.Poison == false) return 0;
 
-                    return (level.PoisonPuddleLifespan * (level.Damage * level.PoisonDamageMult)) / level.PoisonTick;
+                    return Math.floor((level.PoisonPuddleLifespan * (level.Damage * level.PoisonDamageMult)) / level.PoisonTick);
                 }
             },
         },
@@ -971,7 +971,9 @@ class CalculatedManager {
                         let goon1Range = goon1.attributes.Range;
                         let goon1Coverage = -0.00229008361916565 * (goon1Range / 2) ** 3 + 0.165383660474954 * (goon1Range / 2) ** 2 + 0.234910819904625 * (goon1Range / 2) + 2.62040766713282;
 
-                        pistolGoonTotal = goon1DPS * goon1Coverage;
+                        let pistolGoonShots = Math.floor(goon1Coverage / goon1.attributes.Cooldown);
+
+                        pistolGoonTotal = goon1.attributes.Damage * pistolGoonShots;
 
                         pistolGoonTotal += level.DoublePistolCrooks ? (goon1.attributes.Health * 2) : goon1.attributes.Health;
                     }
@@ -983,10 +985,15 @@ class CalculatedManager {
                         let goon2DPS = goon2.attributes.DPS;
                         if (level.UpgradedTommyGoons) goon2DPS = goon3.attributes.DPS;
 
-                        let goon2Range = level.UpgradedTommyGoons ? goon3.attributes.Range : goon2.attributes.Range;
+                        let goon2Range = goon2.attributes.Range;
+                        let goon3Range = goon3.attributes.Range;
                         let goon2Coverage = -0.00229008361916565 * (goon2Range / 2) ** 3 + 0.165383660474954 * (goon2Range / 2) ** 2 + 0.234910819904625 * (goon2Range / 2) + 2.62040766713282;
+                        let goon3Coverage = -0.00229008361916565 * (goon3Range / 2) ** 3 + 0.165383660474954 * (goon3Range / 2) ** 2 + 0.234910819904625 * (goon3Range / 2) + 2.62040766713282;
 
-                        tommyGoonTotal = goon2DPS * goon2Coverage;
+                        let tommyGoonShots = Math.floor(goon2Coverage / goon2.attributes.Cooldown);
+                        let bodyGuardShots = Math.floor(goon3Coverage / goon3.attributes.Cooldown);
+
+                        tommyGoonTotal = level.UpgradedTommyGoons ? bodyGuardShots * goon3.attributes.Damage : tommyGoonShots * goon2.attributes.Damage;
 
                         tommyGoonTotal += level.UpgradedTommyGoons ? goon3.attributes.Health : goon2.attributes.Health;
                     }
@@ -1030,6 +1037,7 @@ class CalculatedManager {
 
                     let totalTowerDamage = 0;
                     let sentryTotal = 0;
+                    let totalRocketDamage = 0;
 
                     let totalShots = Math.floor(level.Coverage / level.Cooldown);
 
@@ -1045,9 +1053,11 @@ class CalculatedManager {
 
                     if(!isFinite(totalRockets)) totalRockets = 0;
 
-                    let totalRocketDamage = totalRockets * sentry.ExplosionDamage;
+                    totalRocketDamage = totalRockets * sentry.ExplosionDamage;
 
-                    sentryTotal = (sentryCoverage * sentry.attributes.DPS) * level.MaxUnits;
+                    if(!isFinite(totalRocketDamage)) totalRocketDamage = 0;
+
+                    sentryTotal = (totalSentryShots * sentry.attributes.DPS) * level.MaxUnits;
 
                     return totalTowerDamage + sentryTotal + totalRocketDamage;
                 },
@@ -1070,17 +1080,18 @@ class CalculatedManager {
 
                     if (skin == 'Frost Mode'){
                         const unitName = "IceTurret" + (level.Level - 1);
-                        const unitData = this.unitManager.unitData[unitName];
-                        let turretRange = unitData.attributes.Range;
+                        if (this.unitManager.hasUnit(unitName)){
+                            const unitData = this.unitManager.unitData[unitName];
+                            let turretRange = unitData.attributes.Range;
 
-                        let turretCoverage = -0.00229008361916565 * turretRange ** 3 + 0.165383660474954 * turretRange ** 2 + 0.234910819904625 * turretRange + 2.62040766713282;
+                            let turretCoverage = -0.00229008361916565 * turretRange ** 3 + 0.165383660474954 * turretRange ** 2 + 0.234910819904625 * turretRange + 2.62040766713282;
 
-                        let totalTurretShots = Math.floor(turretCoverage / unitData.attributes.Cooldown);
+                            let totalTurretShots = Math.floor(turretCoverage / unitData.attributes.Cooldown);
 
-                        totalTurretDamage = totalTurretDamage * unitData.Damage;
-
-                        return totalTowerDamage + totalTurretDamage;
+                            totalTurretDamage = totalTurretShots * unitData.Damage;
+                        }
                     }
+                    return totalTowerDamage + totalTurretDamage;
                 },
             },
         },
