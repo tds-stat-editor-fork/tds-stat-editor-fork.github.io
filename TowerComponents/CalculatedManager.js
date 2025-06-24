@@ -982,7 +982,6 @@ class CalculatedManager {
                         const goon2 = this.unitManager.unitData[`${goldText}Goon2`];
                         const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
 
-                        let goon2DPS = goon2.attributes.DPS;
                         if (level.UpgradedTommyGoons) goon2DPS = goon3.attributes.DPS;
 
                         let goon2Range = goon2.attributes.Range;
@@ -1057,7 +1056,7 @@ class CalculatedManager {
 
                     if(!isFinite(totalRocketDamage)) totalRocketDamage = 0;
 
-                    sentryTotal = (totalSentryShots * sentry.attributes.DPS) * level.MaxUnits;
+                    sentryTotal = (totalSentryShots * sentry.attributes.Damage) * level.MaxUnits;
 
                     return totalTowerDamage + sentryTotal + totalRocketDamage;
                 },
@@ -1074,14 +1073,14 @@ class CalculatedManager {
 
                     const skin = level.levels.skinData.name;
 
-                    let totalShots = Math.floor(level.Coverage / (level.Cooldown * (level.Uptime / 100)));
+                    let totalShots = Math.floor(level.Coverage / (level.Cooldown / (level.Uptime / 100)));
                     
                     totalTowerDamage = totalShots * level.Damage;
 
                     if (skin == 'Frost Mode'){
                         const unitName = "IceTurret" + (level.Level - 1);
                         if (this.unitManager.hasUnit(unitName)){
-                            const unitData = this.unitManager.unitData[unitName];
+                            let unitData = this.unitManager.unitData[unitName];
                             let turretRange = unitData.attributes.Range;
 
                             let turretCoverage = -0.00229008361916565 * turretRange ** 3 + 0.165383660474954 * turretRange ** 2 + 0.234910819904625 * turretRange + 2.62040766713282;
@@ -1091,7 +1090,7 @@ class CalculatedManager {
                             totalTurretDamage = totalTurretShots * unitData.Damage;
                         }
                     }
-                    return totalTowerDamage + totalTurretDamage;
+                    return totalTowerDamage + totalTurretDamage + totalBurnDamage;
                 },
             },
         },
