@@ -982,6 +982,8 @@ class CalculatedManager {
                         const goon2 = this.unitManager.unitData[`${goldText}Goon2`];
                         const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
 
+                        let goon2DPS = goon2.attributes.DPS;
+
                         if (level.UpgradedTommyGoons) goon2DPS = goon3.attributes.DPS;
 
                         let goon2Range = goon2.attributes.Range;
