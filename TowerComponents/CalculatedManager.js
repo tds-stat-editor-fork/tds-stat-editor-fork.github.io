@@ -1089,7 +1089,7 @@ class CalculatedManager {
 
                             let totalTurretShots = Math.floor(turretCoverage / unitData.attributes.Cooldown);
 
-                            totalTurretDamage = totalTurretShots * unitData.Damage;
+                            totalTurretDamage = totalTurretShots * unitData.attributes.Damage;
                         }
                     }
                     return totalTowerDamage + totalTurretDamage + totalBurnDamage;
