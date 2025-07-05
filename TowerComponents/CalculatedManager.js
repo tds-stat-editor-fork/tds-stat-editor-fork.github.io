@@ -837,7 +837,8 @@ class CalculatedManager {
                 Value: (level) => {
                     if (level.ArrowType == 'Flame'){
                         let totalDamage = level.Coverage * level.DPS;
-                        let totalBurnTicks = Math.floor((level.BurnTime + level.Coverage) / level.BurnTick);
+                        let totalBurnTime = (Math.floor((level.Coverage + level.BurnTime) / level.BurnTime)) * level.BurnTime;
+                        let totalBurnTicks = Math.floor(totalBurnTime / level.BurnTick);
 
                         let totalShots = Math.floor(totalDamage / level.Damage);
 
@@ -912,6 +913,7 @@ class CalculatedManager {
                 For: ['Pyromancer', 'Hallow Punk'],
                 Value: (level) => {
                     let totalDamage = level.Coverage * level.DPS;
+                    totalb 
                     let totalBurnTicks = Math.floor((level.BurnTime + level.Coverage) / level.BurnTick);
 
                     let totalShots = Math.floor(totalDamage / level.Damage);
@@ -1091,6 +1093,12 @@ class CalculatedManager {
 
                             totalTurretDamage = totalTurretShots * unitData.attributes.Damage;
                         }
+                    }
+                    if (skin == 'Fire Mode'){
+                        let totalBurnTime = (Math.floor((level.Coverage + level.BurnTime) / level.BurnTime)) * level.BurnTime;
+                        let totalBurnTicks = Math.floor(totalBurnTime / level.BurnTick);
+
+                        totalBurnDamage = level.BurnDamage * level.BurnTick;
                     }
                     return totalTowerDamage + totalTurretDamage + totalBurnDamage;
                 },
