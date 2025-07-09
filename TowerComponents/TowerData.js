@@ -4183,6 +4183,7 @@ export default {
             Range: 24,
             Damage: 65,
             RocketCount: 4,
+            Cooldown: 2.75,
             Attributes: { ExplosionRadius: 5, RocketCount: 4, Accuracy: 0.5, SpreadAngle: 60},       
           },
           Title: "Missile Maelstrom",
