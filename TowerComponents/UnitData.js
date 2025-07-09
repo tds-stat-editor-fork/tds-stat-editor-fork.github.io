@@ -498,7 +498,7 @@ export default {
         },
     },
     Humvee: {
-        Health: 30,
+        Health: 50,
         Damage: 0,
         ExplosionDamage: 0,
         TimeBetweenMissiles: 0,
@@ -511,7 +511,7 @@ export default {
         },
     },
     ['Humvee 2']: {
-        Health: 60,
+        Health: 80,
         Damage: 0,
         Cooldown: 0.2,
         Range: 5,
@@ -522,8 +522,8 @@ export default {
         },
     },
     ['Humvee 3']: {
-        Health: 90,
-        Damage: 3,
+        Health: 100,
+        Damage: 4,
         Cooldown: 0.2,
         Range: 30,
         Detections: {
@@ -538,7 +538,7 @@ export default {
         Cooldown: 0.2,
         Range: 30,
         ExplosionDamage: 40,
-        TimeBetweenMissiles: 3,
+        TimeBetweenMissiles: 2,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -546,8 +546,8 @@ export default {
         },
     },
     ['Railgun Tank']: {
-        Health: 1500,
-        Damage: 24,
+        Health: 1600,
+        Damage: 25,
         Cooldown: 0.15,
         Range: 30,
         ExplosionDamage: 80,

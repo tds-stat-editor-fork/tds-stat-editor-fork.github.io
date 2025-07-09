@@ -871,6 +871,22 @@ class CalculatedManager {
                     return totalShots * (level.Damage + level.ExplosionDamage);
                 },
             },
+            Mortar: {
+                Requires: ['Coverage', 'DPS'],
+                For: ['Mortar'],
+                Value: (level) => {
+                    let totalCluster = 0;
+                    let totalDamage = 0;
+
+                    totalDamage = level.Coverage * level.BaseDPS;
+                    let totalShots = Math.floor(totalDamage / level.Damage);
+
+                    totalCluster = ((level.ClusterCount * level.ClusterDamage) * level.ClusterDamageMult) * totalShots;
+                    totalDamage = totalShots * level.Damage;
+
+                    return totalCluster + totalDamage;
+                },
+            },
             Shotgunner: {
                 Requires: ['Coverage', 'DPS'],
                 For: ['Shotgunner'],  
@@ -1098,7 +1114,7 @@ class CalculatedManager {
                         let totalBurnTime = (Math.floor((level.Coverage + level.BurnTime) / level.BurnTime)) * level.BurnTime;
                         let totalBurnTicks = Math.floor(totalBurnTime / level.BurnTick);
 
-                        totalBurnDamage = level.BurnDamage * level.BurnTick;
+                        totalBurnDamage = level.BurnDamage * totalBurnTicks;
                     }
                     return totalTowerDamage + totalTurretDamage + totalBurnDamage;
                 },
