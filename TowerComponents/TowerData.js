@@ -4322,7 +4322,7 @@ export default {
           Image: 5587697884,
           Stats: {
             Extras: ["10 Shots", "Tighter Spread"],
-            Attributes: { Spread: 40, ShotSize: 8 },
+            Attributes: { Spread: 40, ShotSize: 10 },
             Detections: { Hidden: true, Lead: true },
             Cooldown: 1.2,
             Range: 9,
