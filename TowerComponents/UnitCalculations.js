@@ -11,7 +11,9 @@ class UnitCalculations {
                 Value: (level) => {
                    if (level.Cooldown == 0) return 0;
 
-                   return level.Damage / level.Cooldown;
+                   let spawnCount = level.SpawnCount ?? 0;
+
+                   return (level.Damage / level.Cooldown) * spawnCount;
                 },
             },
             ExecutionerSkeleton: {
@@ -52,6 +54,21 @@ class UnitCalculations {
                     const totalDamage = damage * burstAmount;
                     const totalTime = cooldown * burstAmount + burstCooldown + unit.AimTime;
                     return totalDamage / totalTime;
+                },
+            },
+            BurstAgain: {
+                For: ['GunnerElf'],
+                Requires: ['Damage', 'Cooldown', 'BurstAmount', 'SpawnCount'],
+                Value: (unit) => {
+                    const damage = unit.Damage;
+                    const burstAmount = unit.BurstAmount;
+
+                    const cooldown = unit.Cooldown;
+                    const burstCooldown = unit.BurstCooldown;
+
+                    const totalDamage = damage * burstAmount;
+                    const totalTime = cooldown * burstAmount + burstCooldown;
+                    return (totalDamage / totalTime) * unit.SpawnCount;
                 },
             },
             MissileAPC: {
@@ -100,8 +117,20 @@ class UnitCalculations {
                 Value: (level) => {
                     const defense = level.Defense ?? 0;
 
+                    if (level.SpawnTime == 0 || isNaN(level.SpawnTime)) return 0;
+ 
                     return (level.Health * (1 + defense)) / level.SpawnTime;
                 },
+            },
+            DoubleUp: {
+                Requires: ['Health', 'SpawnTime', 'SpawnCount'],
+                Value: (level) => {
+                    const defense = level.Defense ?? 0;
+
+                    if (level.SpawnTime == 0 || isNaN(level.SpawnTime)) return 0;
+ 
+                    return ((level.Health * (1 + defense)) / level.SpawnTime) * level.SpawnCount;
+                },   
             },
         },
         HealPerSecond: {

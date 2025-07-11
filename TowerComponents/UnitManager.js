@@ -112,6 +112,17 @@ const register = {
             "IceTurret3"
         ],
     },
+    'Elf Camp': {
+        Default: [
+            'Elf',
+            'SnowballElf',
+            'BomberElf',
+            'GuardianElf',
+            'CannoneerElf',
+            'RippedElf',
+            'GunnerElf',
+        ],
+    },
 };
 
 export default class UnitManager {
