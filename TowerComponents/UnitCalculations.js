@@ -11,7 +11,7 @@ class UnitCalculations {
                 Value: (level) => {
                    if (level.Cooldown == 0) return 0;
 
-                   let spawnCount = level.SpawnCount ?? 0;
+                   let spawnCount = level.SpawnCount ?? 1;
 
                    return (level.Damage / level.Cooldown) * spawnCount;
                 },
@@ -58,7 +58,7 @@ class UnitCalculations {
             },
             BurstAgain: {
                 For: ['GunnerElf'],
-                Requires: ['Damage', 'Cooldown', 'BurstAmount', 'SpawnCount'],
+                Requires: ['Damage', 'Cooldown', 'BurstCount', 'SpawnCount'],
                 Value: (unit) => {
                     const damage = unit.Damage;
                     const burstAmount = unit.BurstAmount;
@@ -132,6 +132,16 @@ class UnitCalculations {
                     return ((level.Health * (1 + defense)) / level.SpawnTime) * level.SpawnCount;
                 },   
             },
+            Bomb: {
+                For: ['BomberElf'],
+                Value: (level) => {
+                    const defense = level.Defense ?? 0;
+
+                    if (level.SpawnTime == 0 || isNaN(level.SpawnTime)) return 0;
+ 
+                    return ((level.Health * (1 + defense) + level.Damage) / level.SpawnTime) * level.SpawnCount;
+                },   
+            },            
         },
         HealPerSecond: {
             Default: {
