@@ -61,7 +61,7 @@ class UnitCalculations {
                 Requires: ['Damage', 'Cooldown', 'BurstCount', 'SpawnCount'],
                 Value: (unit) => {
                     const damage = unit.Damage;
-                    const burstAmount = unit.BurstAmount;
+                    const burstAmount = unit.BurstCount;
 
                     const cooldown = unit.Cooldown;
                     const burstCooldown = unit.BurstCooldown;
