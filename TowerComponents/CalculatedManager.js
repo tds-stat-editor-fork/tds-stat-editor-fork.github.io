@@ -1381,6 +1381,7 @@ class CalculatedManager {
             },
             Shock: {
                 Requires: ['MinStun', 'Cooldown'],
+                For: ['Electroshocker', 'Archer'],
                 Value: (level) => (level.MinStun / level.Cooldown) * 100,
             },
             Mando: {
