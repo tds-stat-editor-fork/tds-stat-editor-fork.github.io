@@ -238,7 +238,6 @@ export default {
           BurnTick: 0.5,
           BurnTime: 0,
           ArrowType: "Normal",
-          StunLength: 0,
         },
         Price: 400,
         Range: 18,
@@ -287,7 +286,8 @@ export default {
             Attributes: {
               MaxHits: 3,
               ArrowType: "Shock",
-              StunLength: 0.25,
+              MinStun: 0.25,
+              MaxStun: 0.25,
             },
             Range: 23,
             Damage: 16,
@@ -300,7 +300,8 @@ export default {
           Stats: {
             Extras: ["Max Hits: 3 > 5", "Stronger Shock Arrows"],
             Attributes: {
-              StunLength: 0.3,
+              MinStun: 0.3,
+              MaxStun: 0.3,
               MaxHits: 5,
             },
             Cooldown: 1.25,
@@ -317,7 +318,8 @@ export default {
           MaxHits: 2,
           ArrowType: "Normal",
           BurnTime: 0,
-          StunLength: 0,
+          MinStun: 0,
+          MaxStun: 0,
         },
         Limit: 15,
         Price: 400,

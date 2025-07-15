@@ -1379,6 +1379,10 @@ class CalculatedManager {
                 Requires: ['StunLength', 'Cooldown'],
                 Value: (level) => (level.StunLength / level.Cooldown) * 100,
             },
+            Shock: {
+                Requires: ['MinStun', 'Cooldown'],
+                Value: (level) => (level.MinStun / level.Cooldown) * 100,
+            },
             Mando: {
                 For: ['Commando'],
                 Requires: ['MissileStun', 'MissileCooldown'],
