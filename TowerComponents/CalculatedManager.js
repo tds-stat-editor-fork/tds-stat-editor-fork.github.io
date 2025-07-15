@@ -929,7 +929,6 @@ class CalculatedManager {
                 For: ['Pyromancer', 'Hallow Punk'],
                 Value: (level) => {
                     let totalDamage = level.Coverage * level.DPS;
-                    totalb 
                     let totalBurnTicks = Math.floor((level.BurnTime + level.Coverage) / level.BurnTick);
 
                     let totalShots = Math.floor(totalDamage / level.Damage);
