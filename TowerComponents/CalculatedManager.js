@@ -1056,6 +1056,7 @@ class CalculatedManager {
                     let totalTowerDamage = 0;
                     let sentryTotal = 0;
                     let totalRocketDamage = 0;
+                    let totalRockets = 0;
 
                     let totalShots = Math.floor(level.Coverage / level.Cooldown);
 
@@ -1067,13 +1068,16 @@ class CalculatedManager {
                     let sentryCoverage = -0.00229008361916565 * sentryRange ** 3 + 0.165383660474954 * sentryRange ** 2 + 0.234910819904625 * sentryRange + 2.62040766713282;
 
                     let totalSentryShots = Math.floor(sentryCoverage / sentry.attributes.Cooldown);
-                    let totalRockets = Math.floor((sentryCoverage / sentry.TimeBetweenMissiles) * sentry.MissileAmount);
 
-                    if(!isFinite(totalRockets)) totalRockets = 0;
+                    if(sentry.TimeBetweenMissiles != 0) {
+                        totalRockets = Math.floor((sentryCoverage / sentry.TimeBetweenMissiles)) * sentry.MissileAmount;
 
-                    totalRocketDamage = totalRockets * sentry.ExplosionDamage;
+                        if(!isFinite(totalRockets)) totalRockets = 0;
 
-                    if(!isFinite(totalRocketDamage)) totalRocketDamage = 0;
+                        totalRocketDamage = totalRockets * sentry.ExplosionDamage;
+
+                        if(!isFinite(totalRocketDamage)) totalRocketDamage = 0;
+                    }
 
                     sentryTotal = (totalSentryShots * sentry.attributes.Damage) * level.MaxUnits;
 
