@@ -219,6 +219,7 @@ export default class TableInput {
             case "PoisonDefenseMelt":
             case "ThornPower":
             case "ThornsSlow":
+            case 'TowerCloningCost':
                 return `${Intl.NumberFormat().format(value.toFixed(2))}%`;
             case 'Cooldown':
             case 'ChargeTime':
@@ -359,7 +360,8 @@ export default class TableInput {
         'IceCostEfficiency',
         'PoisonCostEfficiency',
         'ConfusionCostEfficiency',
-        'ThornsCooldown'
+        'ThornsCooldown',
+        'TowerCloningCost',
     ];
 
     #getDelta(cellData, deltaData, input) {

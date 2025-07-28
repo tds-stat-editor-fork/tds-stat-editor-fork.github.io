@@ -2346,7 +2346,7 @@ export default {
           EnemyCashMult: 1,
           HologramCooldown: 0,
           HologramLifetime: 0,
-          TowerCloningCostMult: 0,
+          TowerCloningCost: 0,
         },
         Limit: 2,
         Price: 1400,
@@ -2388,7 +2388,7 @@ export default {
             Damage: 20,
             Range: 15,
             Attributes: {
-              TowerCloningCostMult: 0.9,
+              TowerCloningCost: 90,
               HologramLifetime: 60,
               EV: 0.725,
               HologramCooldown: 60,
@@ -2438,7 +2438,7 @@ export default {
           EnemyCashMult: 1,
           HologramCooldown: 0,
           HologramLifetime: 0,
-          TowerCloningCostMult: 0,
+          TowerCloningCost: 0,
         },
         Limit: 2,
         Price: 1400,
@@ -2480,7 +2480,7 @@ export default {
             Damage: 20,
             Range: 15,
             Attributes: {
-              TowerCloningCostMult: 0.9,
+              TowerCloningCost: 90,
               HologramLifetime: 60,
               EV: 0.725,
               HologramCooldown: 60,
@@ -2513,7 +2513,195 @@ export default {
               MaxHits: 3,
               HologramLifetime: 120,
               Slowdown: 25,
-              TowerCloningCostMult: 0.65,
+              TowerCloningCost: 65,
+              EnemyCashMult: 1.2,
+            },
+          },
+          Title: "Rug Pull",
+          Cost: 48000,
+        },
+      ],
+    },
+    "Top Path (PVP)": {
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Attributes: {
+          MaxHits: 1,
+          Slowdown: 0,
+          EV: 0.6,
+          EnemyCashMult: 1,
+          HologramCooldown: 0,
+          HologramLifetime: 0,
+          TowerCloningCost: 0,
+        },
+        Limit: 2,
+        Price: 1400,
+        Range: 11,
+        Cooldown: 0.8,
+        Damage: 4,
+      },
+      Upgrades: [
+        {
+          Image: 116572141213630,
+          Stats: {
+            Cooldown: 0.5,
+            Range: 14,
+            Attributes: {
+              EnemyCashMult: 1.075,
+            },
+          },
+          Title: "Upgraded Rig",
+          Cost: 600,
+        },
+        {
+          Image: 84772480553742,
+          Stats: {
+            Damage: 6,
+            Detections: { Hidden: true },
+            Attributes: {
+              MaxHits: 2,
+              Slowdown: 15,
+              EnemyCashMult: 1.1,
+              EV: 0.65,
+            },
+          },
+          Title: "Shady Business",
+          Cost: 1250,
+        },
+        {
+          Image: 73779458293742,
+          Stats: {
+            Damage: 20,
+            Range: 15,
+            Attributes: {
+              TowerCloningCost: 35,
+              HologramLifetime: 60,
+              EV: 0.725,
+              HologramCooldown: 60,
+            },
+          },
+          Title: "Teleportation Tech",
+          Cost: 7500,
+        },
+        {
+          Image: 71327152036764,
+          Stats: {
+            Range: 16,
+            Cooldown: 0.3,
+            Attributes: {
+              EnemyCashMult: 1.125,
+              TowerCloningCost: 30,
+              Slowdown: 20,
+              EV: 0.825,
+              HologramLifetime: 75,
+            },
+          },
+          Title: "5th Gen I9 3260590327",
+          Cost: 22000,
+        },
+        {
+          Image: 78547724037844,
+          Stats: {
+            Range: 18.5,
+            Cooldown: 0.1,
+            Damage: 15,
+            Attributes: {
+              MaxHits: 4,
+              EV: 0.9,
+            },
+          },
+          Title: "Overclock",
+          Cost: 63500,
+        },
+      ],
+    },
+    "Bottom Path": {
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Attributes: {
+          MaxHits: 1,
+          Slowdown: 0,
+          EV: 0.6,
+          EnemyCashMult: 1,
+          HologramCooldown: 0,
+          HologramLifetime: 0,
+          TowerCloningCost: 0,
+        },
+        Limit: 2,
+        Price: 1400,
+        Range: 11,
+        Cooldown: 0.8,
+        Damage: 4,
+      },
+      Upgrades: [
+        {
+          Image: 116572141213630,
+          Stats: {
+            Cooldown: 0.5,
+            Range: 14,
+            Attributes: {
+              EnemyCashMult: 1.075,
+            },
+          },
+          Title: "Upgraded Rig",
+          Cost: 600,
+        },
+        {
+          Image: 84772480553742,
+          Stats: {
+            Damage: 6,
+            Detections: { Hidden: true },
+            Attributes: {
+              MaxHits: 2,
+              Slowdown: 15,
+              EnemyCashMult: 1.1,
+              EV: 0.65,
+            },
+          },
+          Title: "Shady Business",
+          Cost: 1250,
+        },
+        {
+          Image: 73779458293742,
+          Stats: {
+            Damage: 20,
+            Range: 15,
+            Attributes: {
+              TowerCloningCost: 35,
+              HologramLifetime: 60,
+              EV: 0.725,
+              HologramCooldown: 60,
+            },
+          },
+          Title: "Teleportation Tech",
+          Cost: 7500,
+        },
+        {
+          Image: 71327152036764,
+          Stats: {
+            Range: 16,
+            Cooldown: 0.3,
+            Attributes: {
+              EnemyCashMult: 1.125,
+              TowerCloningCost: 30,
+              Slowdown: 20,
+              EV: 0.825,
+              HologramLifetime: 75,
+            },
+          },
+          Title: "5th Gen I9 3260590327",
+          Cost: 22000,
+        },
+        {
+          Image: 105579078081734,
+          Stats: {
+            Range: 21,
+            Damage: 18,
+            Attributes: {
+              MaxHits: 3,
+              HologramLifetime: 120,
+              Slowdown: 25,
+              TowerCloningCost: 25,
               EnemyCashMult: 1.2,
             },
           },
@@ -3530,6 +3718,115 @@ export default {
         Damage: 10,
       },
     },
+      PVP: {
+      Upgrades: [
+        {
+          Stats: {
+            Extras: ["Soul Meter: 50 > 60", "Max Hits: 1 > 2", "Max Graves: 2 > 4"],
+            Attributes: { MaxGraves: 4, MaxHits: 2, SoulMeter: 60 },
+            Damage: 12,
+            Cooldown: 1.2
+          },
+          Image: 15332519996,
+          Title: "Spirit Tuning",
+          Cost: 750,
+        },
+        {
+          Stats: {
+            Extras: [
+              "Soul Meter: 60 > 96",
+              "Gravestone Spawn Count: 2 > 3",
+              "Max Graves: 4 > 6",
+              "Spawns Sword Skeletons",
+            ],
+            Attributes: { SpawnCount: 3, MaxGraves: 6, SoulMeter: 96},
+            Range: 24,
+            Detections: { Hidden: true },
+          },
+          Image: 15332520691,
+          Title: "Soul Forge",
+          Cost: 1750,
+        },
+        {
+          Stats: {
+            Extras: [
+              "Soul Meter: 96 > 450",
+              "Max Graves: 6 > 7",
+              "Unlocks lv. 2 gravestone",
+              "Spawns Giant Skeletons",
+              "Spawns Skeleton Knights",
+            ],
+            Attributes: {
+              MaxGraveLevel: 2,
+              SoulMeter: 450,
+            },
+            Range: 26,
+            Damage: 30,
+            Cooldown: 0.8,
+          },
+          Image: 15332520335,
+          Title: "Skull Centrifuge",
+          Cost: 7500,
+        },
+        {
+          Stats: {
+            Attributes: {
+              MaxGraveLevel: 3,
+              MaxHits: 3,
+              MaxGraves: 9,
+              SoulMeter: 1440,
+              ProjectileSpeed: 0,
+              Beams: true,
+              GraveExplosions: true,
+              ExplosionDamage: 500,
+              ExplosionRadius: 4,
+            },
+            Cooldown: 0.4,
+            Range: 32,
+            Extras: [
+              "Soul Meter: 450 > 1440", 
+              "Max Hits: 2 > 3",
+              "Projectiles replaced with hitscan beam",
+              "Beam can stack on enemies if not enough are in range",
+              "Unlocks lv. 3 gravestone",
+              "Spawns Executioner Skeletons",
+              "Spawns Hallow Guards",
+              "Gravestone Explosions",
+            ],
+            Damage: 20,
+          },
+          Image: 15332519505,
+          Title: "Apostle of Hades",
+          Cost: 30000,
+        },
+      ],
+      Defaults: {
+        Range: 21,
+        Detections: { Flying: true, Hidden: false, Lead: false },
+        Limit: 3,
+        Price: 1100,
+        Attributes: {
+          MaxGraves: 2,
+          SpawnCount: 2,
+          MaxHits: 1,
+          SummonDelay: 0.4,
+          BuildTime: 0.8,
+          Buildzone: 6.5,
+          BuildDelay: 0.4,
+          AimTime: 0.4,
+          SummonDebounce: 0.1,
+          Beams: false,
+          ProjectileSpeed: 50,
+          SoulMeter: 50,
+          MaxGraveLevel: 1,
+          GraveExplosions: false,
+          ExplosionDamage: 0,
+          ExplosionRadius: 0,
+        },
+        Cooldown: 1.5,
+        Damage: 10,
+      },
+    },
   },
   Paintballer: {
     Default: {
@@ -3538,7 +3835,6 @@ export default {
           Image: 3280081327,
           Stats: {
             Detections: { Hidden: true },
-            Cooldown: 1.6,
             Range: 8,
             Damage: 3,
           },
@@ -3593,6 +3889,72 @@ export default {
         Attributes: { ExplosionRadius: 3, MaxHits: 5 },
         Price: 400,
         Range: 7,
+        Cooldown: 1.6,
+        Damage: 2,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 3280081327,
+          Stats: {
+            Detections: { Hidden: true },
+            Range: 9.5,
+            Damage: 3,
+          },
+          Title: "Paintball Gear",
+          Cost: 125,
+        },
+        {
+          Image: 3319083300,
+          Stats: {
+            Extras: ["Explosion Radius = 3.5"],
+            Attributes: { ExplosionRadius: 3.5 },
+            Damage: 6,
+            Cooldown: 1.3,
+          },
+          Title: "Shoulder Pads",
+          Cost: 500,
+        },
+        {
+          Image: 3280082028,
+          Stats: {
+            Cooldown: 0.9,
+            Damage: 8,
+          },
+          Title: "Double Barrel Gun",
+          Cost: 800,
+        },
+        {
+          Image: 3319084508,
+          Stats: {
+            Extras: ["Explosion Radius = 4"],
+            Attributes: { ExplosionRadius: 4 },
+            Cooldown: 0.75,
+            Range: 11,
+            Damage: 12,
+          },
+          Title: "Competitive Gear",
+          Cost: 1500,
+        },
+        {
+          Image: 3319085582,
+          Stats: {
+            Extras: ["Explosion Radius = 4.5"],
+            Attributes: { ExplosionRadius: 4.5 },
+            Cooldown: 0.6,
+            Range: 13,
+            Damage: 18,
+          },
+          Title: "Paintball Champion",
+          Cost: 3000,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Attributes: { ExplosionRadius: 3, MaxHits: 5 },
+        Price: 200,
+        Range: 9,
         Cooldown: 1.6,
         Damage: 2,
       },
@@ -4305,6 +4667,60 @@ export default {
         Damage: 1,
       },
     },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 5587697635,
+          Stats: {
+            Cooldown: 1.4,
+          },
+          Title: "Faster Reloading",
+          Cost: 150,
+        },
+        {
+          Image: 5587697884,
+          Stats: {
+            Extras: ["10 Shots", "Tighter Spread"],
+            Attributes: { Spread: 40, ShotSize: 10 },
+            Detections: { Hidden: true, Lead: true },
+            Range: 9,
+            Damage: 2,
+          },
+          Title: "Shotgun Knowledge",
+          Cost: 1000,
+        },
+        {
+          Image: 5587698104,
+          Stats: {
+            Cooldown: 1.1,
+            Range: 9.5,
+            Damage: 4,
+          },
+          Title: "O'Block Training",
+          Cost: 2750,
+        },
+        {
+          Image: 5587698246,
+          Stats: {
+            Extras: ["10 Pellets", "Tighter Spread"],
+            Attributes: { Spread: 30, ShotSize: 12 },
+            Cooldown: 0.95,
+            Range: 11,
+            Damage: 6,
+          },
+          Title: "Tactical Blowback",
+          Cost: 7000,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Attributes: { Spread: 45, ShotSize: 8, Pierce: 2.5,},
+        Price: 300,
+        Range: 7.5,
+        Cooldown: 2,
+        Damage: 1,
+      },
+    },
   },
   Slasher: {
     Default: {
@@ -4557,6 +4973,7 @@ export default {
       Upgrades: [
         {
           Stats: {
+           Damage: 5,
            Cooldown: 2.5,
            Attributes: {
             ChillPercent: 20,
@@ -4570,7 +4987,7 @@ export default {
         },
         {
           Stats: {
-           Damage: 8,
+           Damage: 10,
            Range: 14,
            Attributes: {
             ChillPercent: 30,
@@ -4591,7 +5008,7 @@ export default {
             MaxHits: 4,
            },
            Cooldown: 2,
-           Damage: 20,
+           Damage: 25,
            Range: 18,
           },
           Cost: 1850,
@@ -5087,17 +5504,10 @@ export default {
         {
           Image: 149177741,
           Stats: {
-            Extras: [],
-            Attributes: {},
             Detections: {
-              Flying: false,
               Hidden: true,
-              Lead: false,
             },
-            Cooldown: 0.3,
             Range: 20,
-            Damage: 10,
-            Limit: 3,
           },
           Title: "Radar",
           Cost: 1000,
@@ -5105,13 +5515,8 @@ export default {
         {
           Image: 149177741,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: false, Hidden: true, Lead: true },
-            Cooldown: 0.3,
-            Range: 20,
+            Detections: { Lead: true },
             Damage: 15,
-            Limit: 3,
           },
           Title: "Stronger Ammunition",
           Cost: 4250,
@@ -5119,13 +5524,8 @@ export default {
         {
           Image: 3584258139,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: false, Hidden: true, Lead: true },
             Cooldown: 0.15,
             Range: 22,
-            Damage: 15,
-            Limit: 3,
           },
           Title: "Dual Turret",
           Cost: 12000,
@@ -5133,13 +5533,8 @@ export default {
         {
           Image: 3584280869,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: false, Hidden: true, Lead: true },
-            Cooldown: 0.15,
             Range: 24,
             Damage: 32,
-            Limit: 3,
           },
           Title: "Even Heavier Ammo",
           Cost: 26000,
@@ -5147,13 +5542,9 @@ export default {
         {
           Image: 3584258608,
           Stats: {
-            Extras: [],
-            Attributes: {},
-            Detections: { Flying: false, Hidden: true, Lead: true },
             Cooldown: 0.12,
             Range: 26,
             Damage: 55,
-            Limit: 3,
           },
           Title: "XR-200 Turret",
           Cost: 56250,
@@ -5165,6 +5556,67 @@ export default {
         Price: 6000,
         Range: 15,
         Cooldown: 0.3,
+        Damage: 10,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 149177741,
+          Stats: {
+            Detections: {
+              Hidden: true,
+            },
+            Cooldown: 0.3,
+            Range: 21,
+          },
+          Title: "Radar",
+          Cost: 1000,
+        },
+        {
+          Image: 149177741,
+          Stats: {
+            Detections: { Lead: true },
+            Damage: 15,
+          },
+          Title: "Stronger Ammunition",
+          Cost: 2750,
+        },
+        {
+          Image: 3584258139,
+          Stats: {
+            Cooldown: 0.15,
+            Range: 23,
+          },
+          Title: "Dual Turret",
+          Cost: 9000,
+        },
+        {
+          Image: 3584280869,
+          Stats: {
+            Range: 24.5,
+            Damage: 32,
+          },
+          Title: "Even Heavier Ammo",
+          Cost: 20000,
+        },
+        {
+          Image: 3584258608,
+          Stats: {
+            Cooldown: 0.12,
+            Range: 26.5,
+            Damage: 55,
+          },
+          Title: "XR-200 Turret",
+          Cost: 42500,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Limit: 5,
+        Price: 4000,
+        Range: 16.5,
+        Cooldown: 0.35,
         Damage: 10,
       },
     },
@@ -5338,6 +5790,80 @@ export default {
         Price: 1000,
         Range: 5,
         Cooldown: 0.55,
+        Damage: 6,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 11415010529,
+          Stats: {
+            Extras: [],
+            Detections: {
+              Hidden: true,
+            },
+            Damage: 8,
+          },
+          Title: "Night Shift",
+          Cost: 350,
+        },
+        {
+          Image: 11415012702,
+          Stats: {
+            Extras: ["Stun Time: 1 > 2"],
+            Attributes: {
+              StunLength: 1.25,
+            },
+            Damage: 16,
+            Range: 7,
+          },
+          Title: "Heavier Stick",
+          Cost: 1250,
+        },
+        {
+          Image: 11415014676,
+          Stats: {
+            Extras: ["Stuns Enemies Every Hit"],
+            Attributes: {
+              StunEveryHit: true,
+            },
+            Detections: { Lead: true},
+            Damage: 35,
+          },
+          Title: "Stunning Blows",
+          Cost: 4500,
+        },
+        {
+          Image: 11415015418,
+          Stats: {
+            Extras: ["Riot Shield: Block Stuns", "Stun Time: 2 > 2.5"],
+            Attributes: {
+              CanBlock: true,
+              StunLength: 1.75,
+            },
+            Cooldown: 0.5,
+            Range: 7.5,
+            Damage: 85,
+          },
+          Title: "Class Foxtrot Defense Level",
+          Cost: 17500,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Attributes: {
+          StunLength: 0.65,
+          StunEveryHit: false,
+          CritMultiplier: 1.5,
+          CritSwing: 3,
+          CanBlock: false,
+          ParryLength: 1.25,
+          ParryCooldown: 0.25,
+        },
+        Limit: 15,
+        Price: 800,
+        Range: 6,
+        Cooldown: 0.6,
         Damage: 6,
       },
     },
