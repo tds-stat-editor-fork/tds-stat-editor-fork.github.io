@@ -60,6 +60,66 @@ export default {
         Damage: 10,
       },
     },
+    PVP: {
+      Upgrades: [
+        {
+          Stats: { Detections: { Hidden: true }, Damage: 15 },
+          Image: 11821094308,
+          Title: "Extra Juice",
+          Cost: 750,
+        },
+        {
+          Stats: {
+            Extras: ["Overcharge: 300 > 600"],
+            Range: 20,
+            Attributes: { Overcharge: 600 },
+          },
+          Image: 11821094198,
+          Title: "Second Energy Canister",
+          Cost: 2125,
+        },
+        {
+          Stats: {
+            Damage: 35,
+          },
+          Image: 11821093989,
+          Title: "Powerhouse Armor",
+          Cost: 3250,
+        },
+        {
+          Stats: {
+            Cooldown: 0.15,
+            Extras: ["Overcharge: 600 > 1280", "Faster Charge"],
+            Range: 22.5,
+            Attributes: { ChargeTime: 1.5, Overcharge: 1280},
+          },
+          Image: 11821093828,
+          Title: "Supercharger",
+          Cost: 8250,
+        },
+        {
+          Stats: {
+            Cooldown: 0.1,
+            Attributes: {Overcharge: 2400},
+            Range: 25,
+            Extras: ["Overcharge: 1050 > 4800", "Faster Charge"],
+            Damage: 90,
+          },
+          Image: 11821093672,
+          Title: "Vessel Of Infinite Destruction",
+          Cost: 3000,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: true },
+        Limit: 8,
+        Cooldown: 0.2,
+        Price: 3000,
+        Attributes: { ChargeTime: 2.5, LaserCooldown: 2, Overcharge: 300},
+        Range: 18,
+        Damage: 10,
+      },
+    },
   },
   "Ace Pilot": {
     Default: {
@@ -571,6 +631,107 @@ export default {
         Range: 6,
         Cooldown: 0.6,
         Damage: 6,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 0,
+          Stats: {
+            Cooldown: 0.75,
+          },
+          Title: "Swift Strikes",
+          Cost: 300,
+        },
+        {
+          Image: 17522564142,
+          Stats: {
+            Extras: ["Attack Combo", "Combo Count: 3", "Combo Cooldown: 0.75", "Final Hit Damage: 24", "Knockback Force: 17.5"],
+            Attributes: {
+              FinalHitDamage: 24,
+              ComboCooldown: 0.75,
+              CritSwing: 3,
+              KnockbackForce: 17.5,
+              KnockbackCooldown: 2.5,
+            },
+            Cooldown: 0.6,
+            Damage: 12,
+          },
+          Title: "Combo Crusher",
+          Cost: 950,
+        },
+        {
+          Image: 17522564023,
+          Stats: {
+            Extras: ["Unlocks Reposition (deals no damage)", "Final Hit Damage: 40", "Combo Cooldown: 0.75 > 0.65"],
+            Detections: {Hidden: true},
+            Attributes: {
+              Reposition: true,
+              RepositionDamage: 20,
+              RepositionCooldown: 20,
+              FinalHitDamage: 40,
+              ComboCooldown: 0.65,
+              KnockbackForce: 20,
+            },
+            Damage: 20,
+          },
+          Title: "Pack-a-Punch",
+          Cost: 2250,
+        },
+        {
+          Image: 17522564307,
+          Stats: {
+            Extras: ["Final Hit Damage: 80", "Combo Cooldown: 0.65 > 0.5", "Reposition Damage: 100"],
+            Attributes: {
+              FinalHitDamage: 70,
+              RepositionDamage: 50,
+              KnockbackForce: 24,
+              ComboCooldown: 0.5,
+              RepositionKnockbackForce: 25,
+              RepositionRadius: 10,
+            },
+            Cooldown: 0.5,
+            Range: 6.5,
+            Damage: 40,
+          },
+          Title: "Prototype Frame",
+          Cost: 6000,
+        },
+        {
+          Image: 17522563932,
+          Stats: {
+            Extras: ["Final Hit Damage: 170", "Reposition Damage: 200"],
+            Attributes: {
+              FinalHitDamage: 150,
+              RepositionDamage: 100,
+              KnockbackForce: 30,
+            },
+            Damage: 75,
+            Range: 7,
+          },
+          Title: "Hydraulic Havoc",
+          Cost: 12000,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: true },
+        Attributes: {
+          Reposition: false,
+          FinalHitDamage: 0,
+          RepositionDamage: 0,
+          ComboCooldown: 0,
+          CritSwing: 1,
+          KnockbackForce: 0,
+          KnockbackCooldown: 0,
+          RepositionCooldown: 0,
+          RepositionRadius: 0,
+          RepositionKnockbackForce: 0,
+        },
+        Limit: 6,
+        Price: 600,
+        Range: 6,
+        Cooldown: 1,
+        Damage: 10,
       },
     },
   },
@@ -1192,6 +1353,69 @@ export default {
         },
       ],
     },
+    PVP: {
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: true },
+        Attributes: {
+          Velocity: 30,
+          ExplosionRadius: 4.5,
+          AimTime: 1,
+          MustAim: true,
+        },
+        Price: 575,
+        Cooldown: 1.75,
+        Range: 9,
+        Damage: 6,
+      },
+      Upgrades: [
+        {
+          Stats: {
+            Range: 11,
+            Cooldown: 1.5,
+          },
+          Image: 0,
+          Title: "Further Throwing",
+          Cost: 150,
+        },
+        {
+          Stats: {
+            Attributes: { ExplosionRadius: 5.5 },
+            Damage: 10,
+          },
+          Image: 5523227714,
+          Title: "Steil Grenade",
+          Cost: 500,
+        },
+        {
+          Stats: {
+            Cooldown: 1.75,
+            Attributes: {
+              Velocity: 20,
+              MustAim: false,
+              AimTime: 0,
+            },
+            Extras: ["Faster Projectile", "No Aim Time"],
+            Range: 14,
+            Cooldown: 1.35,
+            Damage: 15,
+          },
+          Image: 5523228733,
+          Title: "Chinalake",
+          Cost: 1500,
+        },
+        {
+          Stats: {
+            Extras: ["Bigger Explosion"],
+            Cooldown: 1,
+            Range: 16,
+            Damage: 35,
+          },
+          Image: 5523229364,
+          Title: "Collateral Damage",
+          Cost: 6000,
+        },
+      ],
+    },
   },
   "DJ Booth": {
     Default: {
@@ -1771,6 +1995,104 @@ export default {
         Damage: 4,
       },
     },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 4517035597,
+          Stats: {
+            Range: 15,
+            Damage: 6,
+          },
+          Title: "Precise Calculations",
+          Cost: 250,
+        },
+        {
+          Image: 149177741,
+          Stats: {
+            Extras: ["2 Max Units"],
+            Attributes: {
+              MaxUnits: 2,
+            },
+            Detections: { Flying: true, Hidden: true},
+            Cooldown: 1.2,
+            Range: 17,
+          },
+          Title: "Makeshift Radar",
+          Cost: 400,
+        },
+        {
+          Image: 8998290803,
+          Stats: {
+            Extras: ["Rifle Sentry"],
+            Attributes: {
+              UnitToSend: "RifleSentry (PVP)",
+            },
+            Damage: 16,
+          },
+          Title: "Auto Converter",
+          Cost: 1800,
+        },
+        {
+          Image: 31857714,
+          Stats: {
+            Extras: ["3 Max Units", "Sentry Shield"],
+            Attributes: {
+              SentryShield: true,
+            },
+            Cooldown: 0.75,
+            Range: 20,
+            Damage: 22,
+          },
+          Title: "Improved Blueprints",
+          Cost: 2600,
+        },
+        {
+          Image: 155526941,
+          Stats: {
+            Extras: ["Minigun Sentry", "Sentry Shield"],
+            Attributes: {
+              MaxUnits: 3,
+              UnitToSend: "MinigunSentry (PVP)",
+            },
+            Damage: 30,
+          },
+          Title: "Heavy Construction",
+          Cost: 11500,
+        },
+        {
+          Image: 7852911857,
+          Stats: {
+            Extras: ["War Machine Sentry", "4 Max Units"],
+            Attributes: {
+              UnitToSend: "WarMachineSentry (PVP)",
+              Deadzone: 0.5,
+            },
+            Cooldown: 0.6,
+            Range: 22,
+            Damage: 50,
+          },
+          Title: "Illegal Gun Parts",
+          Cost: 27500,
+        },
+      ],
+      Defaults: {
+        Limit: 5,
+        Detections: { Flying: false, Hidden: false, Lead: true },
+        Range: 13,
+        Price: 700,
+        Attributes: {
+          BuildTime: 2,
+          MaxUnits: 1,
+          UnitToSend: "Sentry (PVP)",
+          SpawnTime: 1,
+          SentryShield: false,
+          Buildzone: 4,
+          Deadzone: 1,
+        },
+        Cooldown: 1.2,
+        Damage: 4,
+      },
+    },
   },
   Executioner: {
     Default: {
@@ -2084,6 +2406,106 @@ export default {
         Damage: 1,
       },
     },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 15686418975,
+          Stats: {
+            Extras: ["Max Slowness: 50% > 60%", "Chill Slowness: 10% > 15%"],
+            Attributes: {
+              MaxChill: 40,
+            },
+            Damage: 2,
+          },
+          Title: "Expedition Gear",
+          Cost: 225,
+        },
+        {
+          Image: 15686418835,
+          Stats: {
+            Extras: ["Freezes enemies on max chill", "🧊Freeze Time: 0 > 2", "Chill Slowness: 15% > 20%"],
+            Attributes: {
+              FreezeTime: 2,
+              ChillPercent: 20,
+              CanFreeze: true,
+            },
+            Detections: {
+              Hidden: true,
+            },
+            Range: 14,
+          },
+          Title: "Bundled Up!",
+          Cost: 650,
+        },
+        {
+          Image: 15686418748,
+          Stats: {
+            Extras: [
+              "Burst: 1 > 3",
+              "Burst Cooldown: 0.75",
+              "Max Slowness: 60% > 75%",
+              "Chill Slowness: 20% > 25%",
+              "Freeze Time: 2 > 2.5",
+              "Defense Melt: 10",
+            ],
+            Attributes: {
+              Burst: 3,
+              DefenseMelt: 10,
+              BurstCooldown: 0.8,
+              ChillPercent: 20,
+              MaxChill: 60,
+              FreezeTime: 2.5,
+            },
+            Cooldown: 0.15,
+            Damage: 3,
+          },
+          Title: "Arctic Soldier",
+          Cost: 2000,
+        },
+        {
+          Image: 15686418571,
+          Stats: {
+            Extras: [
+              "Burst: 3 > 6",
+              "Frost Grenade Ability",
+            ],
+            Attributes: {
+              Burst: 6,
+              FreezeTime: 3,
+              FrostGrenade: true,
+              FrostGrenadeFreezeTime: 6,
+              FrostGrenadeCooldown: 15,
+              FrostGrenadeMaxHits: 5,
+              FrostGrenadeRadius: 6,
+            },
+            Range: 16,
+            Damage: 5,
+          },
+          Title: "Frost Bite!",
+          Cost: 4500,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Attributes: {
+          DefenseMelt: 0,
+          MaxDefenseMelt: 33,
+          FreezeTime: 0,
+          Burst: 1,
+          BurstCooldown: 0,
+          CanFreeze: false,
+          ChillPercent: 10,
+          MaxChill: 30,
+          TickRate: 0.25,
+          FrostGrenade: false,
+          ChillLength: 5,
+        },
+        Price: 425,
+        Range: 12,
+        Cooldown: 0.5,
+        Damage: 1,
+      },
+    },
   },
   "Frost Blaster": {
     Default: {
@@ -2259,6 +2681,116 @@ export default {
             },
             Cooldown: 0.09,
             Damage: 85,
+            Extras: ["Ammo: 400 > 600", "Wider Angle"],
+          },
+          Image: 139181863986914,
+          Title: "Destruction-Oriented Output Machine",
+          Cost: 100000,
+        },
+      ],
+    },
+    PVP: {
+      Defaults: {
+        Detections: { Flying: true },
+        Price: 4500,
+        Range: 25,
+        Attributes: {
+          ReloadTime: 2.5,
+          Angle: 40,
+          Recoil: 0.08,
+          Spread: 10,
+          Pierce: 2.5,
+          MaxAmmo: 50,
+        },
+        Limit: 1,
+        Cooldown: 0.15,
+        Damage: 5,
+      },
+      Upgrades: [
+        {
+          Stats: {
+            Range: 30,
+            Damage: 8,
+          },
+          Image: 70569444235865,
+          Title: "Heavier Bullets",
+          Cost: 2500,
+        },
+        {
+          Stats: {
+            Attributes: {
+              Spread: 9,
+              Angle: 45,
+              ReloadTime: 2,
+              MaxAmmo: 100,
+            },
+            Cooldown: 0.15,
+            Damage: 15,
+            Extras: ["Ammo: 50 > 100", "Faster Reload", "Tighter Spread", "Wider Angle"],
+          },
+          Image: 104227180979769,
+          Title: "Bigger Magazine",
+          Cost: 7500,
+        },
+        {
+          Stats: {
+            Attributes: {
+              Angle: 55,
+              Spread: 7.5,
+              MaxAmmo: 200,
+            },
+            Range: 35,
+            Cooldown: 0.12,
+            Damage: 20,
+            Extras: ["Ammo: 100 > 200", "Wider Angle", "Tighter Spread"],
+            Detections: { Hidden: true },
+          },
+          Image: 71764582498505,
+          Title: "Double Trouble",
+          Cost: 15000,
+        },
+        {
+          Stats: {
+            Attributes: {
+              Spread: 6.5,
+              Angle: 55,
+              Deadzone: 1.25,
+              Recoil: 0.06,
+            },
+            Cooldown: 0.09,
+            Range: 45,
+            Damage: 30,
+            Extras: ["Wider Angle", "Tighter Spread", "Less Recoil"],
+          },
+          Image: 128136625170591,
+          Title: "Minigun Barrel",
+          Cost: 32500,
+        },
+        {
+          Stats: {
+            Attributes: {
+              Angle: 65,
+              Deadzone: 2,
+              ReloadTime: 6,
+              Recoil: 0.03,
+              MaxAmmo: 400,
+            },
+            Range: 50,
+            Damage: 50,
+            Extras: ["Ammo: 200 > 400", "Wider Angle", "Less Recoil", "Slower Reload Time"],
+          },
+          Image: 125372339735512,
+          Title: "Impenetrable Fortress",
+          Cost: 42000,
+        },
+        {
+          Stats: {
+            Attributes: {
+              MaxAmmo: 600,
+              Angle: 70,
+            },
+            Cooldown: 0.09,
+            Damage: 100,
             Extras: ["Ammo: 400 > 600", "Wider Angle"],
           },
           Image: 139181863986914,
@@ -2615,7 +3147,7 @@ export default {
         },
       ],
     },
-    "Bottom Path": {
+    "Bottom Path (PVP)": {
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Attributes: {
@@ -2920,6 +3452,54 @@ export default {
         Cooldown: 2.25,
         Damage: 8,
         Limit: 12,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 3839040358,
+          Stats: {
+            Cooldown: 1.5,
+            Range: 22.5,
+          },
+          Title: "Hunter’s Instincts",
+          Cost: 650,
+        },
+        {
+          Image: 3839041547,
+          Stats: {
+            Detections: {Hidden: true},
+            Range: 25,
+            Damage: 35,
+          },
+          Title: "Longshot",
+          Cost: 2000,
+        },
+        {
+          Image: 3839042767,
+          Stats: {
+            Damage: 100,
+          },
+          Title: "Survivor’s Kit",
+          Cost: 8000,
+        },
+        {
+          Image: 3839043838,
+          Stats: {
+            Range: 30,
+            Damage: 225,
+          },
+          Title: "Greatest Huntsman",
+          Cost: 16500,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: true, Hidden: false, Lead: false },
+        Price: 1750,
+        Range: 20,
+        Cooldown: 2,
+        Damage: 20,
+        Limit: 10,
       },
     },
   },
@@ -3318,6 +3898,53 @@ export default {
         Damage: 1,
       },
     },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 5523212631,
+          Stats: {
+            Detections: { Flying: true, Hidden: true },
+            Cooldown: 0.15,
+            Range: 18,
+          },
+          Title: "Radio Comms",
+          Cost: 700,
+        },
+        {
+          Image: 5523215135,
+          Stats: {
+            Damage: 3,
+          },
+          Title: "Bigger Rifle",
+          Cost: 1000,
+        },
+        {
+          Image: 5523216332,
+          Stats: {
+            Cooldown: 0.1,
+            Range: 20,
+            Damage: 4,
+          },
+          Title: "Upskill",
+          Cost: 3500,
+        },
+        {
+          Image: 5523217773,
+          Stats: {
+            Damage: 10,
+          },
+          Title: "Stealth Mercenary",
+          Cost: 10000,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Price: 1600,
+        Range: 16,
+        Cooldown: 0.2,
+        Damage: 2,
+      },
+    },
   },
   "Military Base": {
     Default: {
@@ -3386,6 +4013,85 @@ export default {
         Attributes: { 
           SpawnTime: 45, 
           UnitToSend: "Humvee",
+          AirstrikeDamage: 0, 
+          AirstrikeBombs: 0, 
+          AirstrikeRadius: 0, 
+          AirstrikeCooldown: 0, 
+          AirstrikeCost: 0
+        },
+        Price: 400,
+        Limit: 5,
+        Damage: 0,
+        Cooldown: 0,
+        Range: 0,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 3877874591,
+          Stats: {
+            Extras: [],
+            Attributes: { SpawnTime: 25 },
+          },
+          Title: "Mechanics",
+          Cost: 200,
+        },
+        {
+          Image: 3877875003,
+          Stats: {
+            Extras: ["Health: 50 > 80"],
+            Attributes: { UnitToSend: "Humvee 2 (PVP)" },
+          },
+          Title: "Barbed Wire",
+          Cost: 400,
+        },
+        {
+          Image: 3877873543,
+          Stats: {
+            Extras: ["Mounted gunner", "Health: 80 > 90"],
+            Attributes: { UnitToSend: "Humvee 3 (PVP)" },
+          },
+          Title: "Mounted Gunner",
+          Cost: 1750,
+        },
+        {
+          Image: 3444568329,
+          Stats: {
+            Extras: [
+              "Health: 90 > 500",
+              "Explosive Damage: 50",
+              "Airstrike ability",
+              "Airstrike damage: 450",
+            ],
+            Attributes: { UnitToSend: "Tank", AirstrikeDamage: 75, AirstrikeBombs: 6, AirstrikeRadius: 8, AirstrikeCooldown: 45, AirstrikeCost: 250},
+          },
+          Title: "Tank",
+          Cost: 7500,
+        },
+        {
+          Image: 3444568580,
+          Stats: {
+            Extras: [
+              "Health: 500 > 1500",
+              "Explosive damage: 50 > 80",
+              "Airstrike damage: 450 > 750",
+              "Airstrike explosion range: 8 > 12",
+            ],
+            Attributes: {
+              UnitToSend: "Railgun Tank (PVP)",
+              AirstrikeDamage: 125,
+              AirstrikeRadius: 12,
+            },
+          },
+          Title: "Railgun Tank",
+          Cost: 25000,
+        },
+      ],
+      Defaults: {
+        Attributes: { 
+          SpawnTime: 40, 
+          UnitToSend: "Humvee (PVP)",
           AirstrikeDamage: 0, 
           AirstrikeBombs: 0, 
           AirstrikeRadius: 0, 
@@ -3513,15 +4219,70 @@ export default {
         Limit: 12,
       },
     },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 15184753790,
+          Stats: {
+            Extras: ["Rev Time: 1.4 > 1.2"],
+            Attributes: { RevTime: 1.2 },
+            Cooldown: 0.17,
+            Range: 17,
+            Damage: 4,
+          },
+          Title: "Improved Handling",
+          Cost: 850,
+        },
+        {
+          Image: 15184753514,
+          Stats: {
+            Range: 18.5,
+            Damage: 6,
+            Detections: { Hidden: true},
+          },
+          Title: "Specialized Tech",
+          Cost: 1550,
+        },
+        {
+          Image: 15184753289,
+          Stats: {
+            Extras: ["Rev Time: 1.2 > 1"],
+            Attributes: { RevTime: 1 },
+            Cooldown: 0.15,
+            Damage: 15,
+            Range: 19,
+          },
+          Title: "Geared Up",
+          Cost: 8500,
+        },
+        {
+          Image: 15184752970,
+          Stats: {
+            Cooldown: 0.1,
+            Range: 20,
+            Damage: 24,
+          },
+          Title: "Death Machine",
+          Cost: 18750,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Attributes: { RevTime: 1.4 },
+        Price: 2550,
+        Limit: 12,
+        Range: 16,
+        Cooldown: 0.18,
+        Damage: 3,
+      },
+    },
   },
   Mortar: {
     Default: {
       Upgrades: [
         {
           Stats: {
-            Extras: [],
             Cooldown: 3,
-            Damage: 12,
           },
           Image: 4538447265,
           Title: "Improved Handling",
@@ -3604,6 +4365,99 @@ export default {
         Price: 900,
         Detections: { Flying: true, Hidden: false, Lead: true },
         Cooldown: 4,
+        Damage: 12,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Stats: {
+            Cooldown: 3.25,
+            Damage: 15,
+            Range: 22,
+          },
+          Image: 4538447265,
+          Title: "Improved Handling",
+          Cost: 400,
+        },
+        {
+          Stats: {
+            Attributes: {
+              ExplosionRadius: 7.5,
+            },
+            Range: 25,
+            Extras: ["Explosion Radius: 6 > 7.5"],
+            Damage: 28,
+          },
+          Image: 4538447347,
+          Title: "Upgraded Armaments",
+          Cost: 1400,
+        },
+        {
+          Stats: {
+            Attributes: {
+              ExplosionRadius: 8.5,
+            },
+            Range: 30,
+            Extras: ["Explosion Radius: 7.5 > 8.5"],
+            Damage: 60,
+          },
+          Image: 4538447424,
+          Title: "Bigger Cannon",
+          Cost: 3000,
+        },
+        {
+          Stats: {
+            Attributes: {
+              CanCluster: true,
+              ClusterRadius: 5,
+              ClusterDamageMult: 0.4,
+              ClusterCount: 3,
+              ClusterDamage: 40,
+            },
+            Extras: ["Cluster Bombs (40 Damage)"],
+            Damage: 100,
+            Range: 32,
+          },
+          Image: 4538447493,
+          Title: "Loaded Warhead",
+          Cost: 10000,
+        },
+        {
+          Stats: {
+            Attributes: {
+              CanCluster: true,
+              ClusterCount: 6,
+              ClusterDamage: 50,
+              ExplosionRadius: 9,
+            },
+            Range: 35,
+            Extras: [
+              "Explosion Radius: 8.5 > 9",
+              "Stronger Cluster Bombs (50 Damage)",
+              "Mushroom Cloud",
+            ],
+            Damage: 150,
+          },
+          Image: 4538447579,
+          Title: "City Buster",
+          Cost: 20000,
+        },
+      ],
+      Defaults: {
+        Range: 20,
+        Attributes: {
+          CanCluster: false,
+          ClusterDamageMult: 0,
+          ClusterRadius: 0,
+          ExplosionRadius: 6,
+          ClusterCount: 0,
+          ClusterDamage: 0,
+        },
+        Limit: 5,
+        Price: 1000,
+        Detections: { Flying: true, Hidden: false, Lead: true },
+        Cooldown: 3.75,
         Damage: 12,
       },
     },
@@ -4445,6 +5299,75 @@ export default {
         },
       },
     },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 3280081327,
+          Stats: {
+            Cooldown: 2.5,
+          },
+          Title: "Quicker Reload",
+          Cost: 650,
+        },
+        {
+          Image: 3381734408,
+          Stats: {
+            Extras: [
+              "Nearby towers get a 15% range buff at the start of waves for 20 seconds",
+              "Buff Range: 12",
+            ],
+            Attributes: {
+              RangeAssist: true,
+              RangeBuff: 15,
+              BuffRange: 12,
+              BuffDuration: 120,
+            },
+            Damage: 75,
+          },
+          Title: "Intelligence Radio",
+          Cost: 3250,
+        },
+        {
+          Image: 3381735232,
+          Stats: {
+            Cooldown: 2,
+            Damage: 150,
+          },
+          Title: "Trained Outlaw",
+          Cost: 10000,
+        },
+        {
+          Image: 3381735846,
+          Stats: {
+            Extras: [
+              "Explosive Impact",
+              "150 Damage (Stacks w/ base damage)",
+            ],
+            Attributes: {
+              ExplosionDamage: 25,
+            },
+            Damage: 275,
+          },
+          Title: "Experimental Weapon of Destruction",
+          Cost: 20000,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: true, Hidden: false, Lead: true },
+        Limit: 8,
+        Price: 3000,
+        Range: 50,
+        Cooldown: 3,
+        Damage: 40,
+        Attributes: {
+          ExplosionDamage: 0,
+          RangeAssist: false,
+          RangeBuff: 0,
+          BuffRange: 0,
+          BuffDuration: 0,
+        },
+      },
+    },
   },
   Rocketeer: {
     Default: {
@@ -4607,6 +5530,58 @@ export default {
         Price: 300,
         Range: 14,
         Cooldown: 1,
+        Damage: 3,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 3278746120,
+          Stats: {
+            Damage: 4,
+            Range: 15,
+          },
+          Title: "Faster Reloading",
+          Cost: 100,
+        },
+        {
+          Image: 3278749117,
+          Stats: {
+            Detections: {
+              Hidden: true,
+            },
+            Range: 16,
+            Cooldown: 0.75,
+            Damage: 8,
+          },
+          Title: "Precise Aiming",
+          Cost: 650,
+        },
+        {
+          Image: 3278741672,
+          Stats: {
+            Cooldown: 0.5,
+            Damage: 12,
+            Range: 18,
+          },
+          Title: "Stronger Equipment",
+          Cost: 1600,
+        },
+        {
+          Image: 3279537687,
+          Stats: {
+            Cooldown: 0.3,
+            Damage: 16,
+          },
+          Title: "Akimbo Handguns",
+          Cost: 3250,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Price: 300,
+        Range: 14,
+        Cooldown: 0.9,
         Damage: 3,
       },
     },
@@ -4967,6 +5942,53 @@ export default {
         Damage: 4,
       },
     },
+    Default: {
+      Upgrades: [
+        {
+          Image: 3280081327,
+          Stats: {
+            Cooldown: 1.5,
+          },
+          Title: "Faster Reloading",
+          Cost: 350,
+        },
+        {
+          Image: 3280367022,
+          Stats: {
+            Detections: { Hidden: true },
+            Range: 30,
+            Damage: 20,
+          },
+          Title: "Geared Up",
+          Cost: 1500,
+        },
+        {
+          Image: 3280367963,
+          Stats: {
+            Detections: { Lead: true },
+            Cooldown: 0.7,
+          },
+          Title: "Frontlines Sniping",
+          Cost: 2750,
+        },
+        {
+          Image: 3280368786,
+          Stats: {
+            Range: 35,
+            Damage: 40,
+          },
+          Title: "Spec Ops",
+          Cost: 5500,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: true, Hidden: false, Lead: false },
+        Price: 500,
+        Range: 25,
+        Cooldown: 2.5,
+        Damage: 8,
+      },
+    },
   },
   Snowballer: {
     Default: {
@@ -5043,16 +6065,7 @@ export default {
         {
           Image: 5523192002,
           Stats: {
-            Extras: [],
-            Attributes: { Burst: 3, BurstCooldown: 1 },
-            Detections: {
-              Flying: false,
-              Hidden: false,
-              Lead: false,
-            },
-            Cooldown: 0.15,
             Range: 15,
-            Damage: 1,
           },
           Title: "Better Vision",
           Cost: 100,
@@ -5060,14 +6073,10 @@ export default {
         {
           Image: 5523193619,
           Stats: {
-            Extras: [],
-            Attributes: { Burst: 4, BurstCooldown: 1 },
+            Attributes: { Burst: 4 },
             Detections: {
-              Flying: false,
               Hidden: true,
-              Lead: false,
             },
-            Cooldown: 0.15,
             Range: 16,
             Damage: 2,
           },
@@ -5079,13 +6088,6 @@ export default {
           Stats: {
             Extras: ["Increased burst (5)"],
             Attributes: { Burst: 5, BurstCooldown: 0.8 },
-            Detections: {
-              Flying: false,
-              Hidden: true,
-              Lead: false,
-            },
-            Cooldown: 0.15,
-            Range: 16,
             Damage: 4,
           },
           Title: "Equipment Upgrades",
@@ -5095,12 +6097,7 @@ export default {
           Image: 5523196519,
           Stats: {
             Extras: ["Increased burst (7)"],
-            Attributes: { Burst: 7, BurstCooldown: 0.8 },
-            Detections: {
-              Flying: false,
-              Hidden: true,
-              Lead: false,
-            },
+            Attributes: { Burst: 7 },
             Cooldown: 0.12,
             Range: 18,
             Damage: 8,
@@ -5124,15 +6121,8 @@ export default {
           Image: 5523192002,
           Stats: {
             Extras: ["Decreased burst cooldown"],
-            Attributes: { Burst: 4, BurstCooldown: 0.6 },
-            Detections: {
-              Flying: true,
-              Hidden: false,
-              Lead: false,
-            },
+            Attributes: { BurstCooldown: 0.6 },
             Cooldown: 0.08,
-            Range: 14,
-            Damage: 1,
           },
           Title: "Trigger Finger",
           Cost: 150,
@@ -5140,10 +6130,7 @@ export default {
         {
           Image: 5523193619,
           Stats: {
-            Extras: [],
-            Attributes: { Burst: 4, BurstCooldown: 0.6 },
-            Detections: { Flying: true, Hidden: true, Lead: false },
-            Cooldown: 0.08,
+            Detections: { Hidden: true },
             Range: 17,
             Damage: 2,
           },
@@ -5155,9 +6142,6 @@ export default {
           Stats: {
             Extras: ["Increased Burst (20)", "Increased burst cooldown"],
             Attributes: { Burst: 20, BurstCooldown: 1.2 },
-            Detections: { Flying: true, Hidden: true, Lead: false },
-            Cooldown: 0.08,
-            Range: 17,
             Damage: 4,
           },
           Title: "Mag Dump",
@@ -5167,8 +6151,7 @@ export default {
           Image: 5523196519,
           Stats: {
             Extras: ["Increased Burst (30)"],
-            Attributes: { Burst: 30, BurstCooldown: 1.2 },
-            Detections: { Flying: true, Hidden: true, Lead: false },
+            Attributes: { Burst: 30 },
             Cooldown: 0.06,
             Range: 19,
             Damage: 10,
@@ -5183,6 +6166,62 @@ export default {
         Price: 500,
         Range: 14,
         Cooldown: 0.1,
+        Damage: 1,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 5523192002,
+          Stats: {
+            Attributes: { Burst: 6, BurstCooldown: 0.3 },
+            Cooldown: 0.12,
+            Damage: 1,
+          },
+          Title: "Better Vision",
+          Cost: 200,
+        },
+        {
+          Image: 5523193619,
+          Stats: {
+            Detections: {
+              Hidden: true,
+            },
+            Range: 19,
+            Damage: 2,
+          },
+          Title: "Better Aiming",
+          Cost: 800,
+        },
+        {
+          Image: 5523195646,
+          Stats: {
+            Extras: ["Increased burst (5)"],
+            Attributes: { Burst: 8 },
+            Range: 21,
+            Damage: 5,
+          },
+          Title: "Equipment Upgrades",
+          Cost: 3000,
+        },
+        {
+          Image: 5523196519,
+          Stats: {
+            Extras: ["Increased burst (7)"],
+            Attributes: { Burst: 10, BurstCooldown: 0.2 },
+            Cooldown: 0.1,
+            Damage: 10,
+          },
+          Title: "Deadliest Soldier",
+          Cost: 8000,
+        },
+      ],
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Attributes: { Burst: 4, BurstCooldown: 0.4 },
+        Price: 450,
+        Range: 17,
+        Cooldown: 0.15,
         Damage: 1,
       },
     },

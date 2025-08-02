@@ -446,7 +446,6 @@ export default {
     RifleSentry: {
         Range: 20,
         Health: 40,
-        Lifespan: 30,
         Cooldown: 0.3,
         Damage: 2,
         Detections: {
@@ -463,7 +462,6 @@ export default {
     MinigunSentry: {
         Range: 20,
         Health: 60,
-        Lifespan: 45,
         Cooldown: 0.16,
         Damage: 5,
         Detections: {
@@ -483,9 +481,78 @@ export default {
         MissileAmount: 2,
         Range: 24,
         Health: 250,
-        Lifespan: 60,
         Cooldown: 0.12,
         Damage: 8,
+        Detections: {
+            Hidden: true,
+            Flying: false,
+            Lead: false,
+        },
+        Attributes: {
+            SendTime: 1.75,
+            ScrapCost: 250,
+            Lifespan: 60,
+        },
+    },
+    ['Sentry (PVP)']: {
+        Range: 18,
+        Health: 20,
+        Cooldown: 0.45,
+        Damage: 2,
+        ExplosionDamage: 0,
+        TimeBetweenMissiles: 0,
+        MissileAmount: 0,
+        Detections: {
+            Hidden: false,
+            Flying: false,
+            Lead: false,
+        },
+        Attributes: {
+            SendTime: 1.25,
+            ScrapCost: 16,
+            Lifespan: 30,
+        },
+    },
+    ['RifleSentry (PVP)']: {
+        Range: 20,
+        Health: 40,
+        Cooldown: 0.2,
+        Damage: 2,
+        Detections: {
+            Hidden: false,
+            Flying: false,
+            Lead: false,
+        },
+        Attributes: {
+            SendTime: 1.5,
+            ScrapCost: 32,
+            Lifespan: 30,
+        },
+    },
+    ['MinigunSentry (PVP)']: {
+        Range: 20,
+        Health: 60,
+        Cooldown: 0.15,
+        Damage: 6,
+        Detections: {
+            Hidden: true,
+            Flying: false,
+            Lead: false,
+        },
+        Attributes: {
+            SendTime: 1.75,
+            ScrapCost: 120,
+            Lifespan: 45,
+        },
+    },
+    ['WarMachineSentry (PVP)']: {
+        ExplosionDamage: 60,
+        TimeBetweenMissiles: 4,
+        MissileAmount: 2,
+        Range: 24,
+        Health: 250,
+        Cooldown: 0.1,
+        Damage: 10,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -546,6 +613,67 @@ export default {
         },
     },
     ['Railgun Tank']: {
+        Health: 1600,
+        Damage: 25,
+        Cooldown: 0.15,
+        Range: 30,
+        ExplosionDamage: 80,
+        TimeBetweenMissiles: 3,
+        Detections: {
+            Hidden: true,
+            Flying: false,
+            Lead: false,
+        },
+    },
+    ['Humvee (PVP)']: {
+        Health: 60,
+        Damage: 0,
+        ExplosionDamage: 0,
+        TimeBetweenMissiles: 0,
+        Cooldown: 0.2,
+        Range: 5,
+        Detections: {
+            Hidden: false,
+            Flying: false,
+            Lead: false,
+        },
+    },
+    ['Humvee 2 (PVP)']: {
+        Health: 100,
+        Damage: 0,
+        Cooldown: 0.2,
+        Range: 5,
+        Detections: {
+            Hidden: false,
+            Flying: false,
+            Lead: false,
+        },
+    },
+    ['Humvee 3 (PVP)']: {
+        Health: 100,
+        Damage: 4,
+        Cooldown: 0.2,
+        Range: 30,
+        Detections: {
+            Hidden: true,
+            Flying: false,
+            Lead: false,
+        },
+    },
+    ['Tank (PVP)']: {
+        Health: 500,
+        Damage: 10,
+        Cooldown: 0.2,
+        Range: 30,
+        ExplosionDamage: 40,
+        TimeBetweenMissiles: 2,
+        Detections: {
+            Hidden: true,
+            Flying: false,
+            Lead: false,
+        },
+    },
+    ['Railgun Tank (PVP)']: {
         Health: 1600,
         Damage: 25,
         Cooldown: 0.15,
