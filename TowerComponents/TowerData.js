@@ -1045,6 +1045,77 @@ export default {
         Damage: 4,
       },
     },
+    PVP: {
+      Upgrades: [
+        {
+          Image: 4999425200,
+          Stats: {
+            Extras: ["Spin: 1.5 > 1.25 secs"],
+            Attributes: { SpinDuration: 1 },
+            Cooldown: 1,
+          },
+          Title: "Steady Hand",
+          Cost: 200,
+        },
+        {
+          Image: 5523233366,
+          Stats: {
+            Income: 55,
+            Range: 16,
+            Damage: 6,
+          },
+          Title: "Lucky Shot",
+          Cost: 500,
+        },
+        {
+          Image: 5523231844,
+          Stats: {
+            Attributes: { SpinDuration: 0.75 },
+            Extras: ["Spin: 1.25 > 1 secs"],
+            Detections: {
+              Hidden: true,
+            },
+            Cooldown: 0.6,
+            Range: 18,
+            Income: 65,
+            Damage: 10,
+          },
+          Title: "Faster Instincts",
+          Cost: 2000,
+        },
+        {
+          Image: 5523234030,
+          Stats: {
+            Attributes: { CashShot: 12 },
+            Income: 125,
+            Cooldown: 0.3,
+            Range: 20,
+          },
+          Title: "Double Tap",
+          Cost: 3825,
+        },
+        {
+          Image: 5523234990,
+          Stats: {
+            Income: 225,
+            Cooldown: 0.25,
+            Damage: 18,
+          },
+          Title: "Outlawed",
+          Cost: 7500,
+        },
+      ],
+      Defaults: {
+        Income: 45,
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Range: 14,
+        Price: 500,
+        Attributes: { CashShot: 6, SpinDuration: 1.25 },
+        Cooldown: 1.25,
+        Damage: 4,
+        Limit: 10,
+      },
+    },
   },
   "Crook Boss": {
     Default: {
@@ -1191,6 +1262,79 @@ export default {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Cooldown: 0.9,
         Damage: 4,
+      },
+    },
+    PVP: {
+      Upgrades: [
+        {
+          Stats: {
+            Cooldown: 0.6,
+            Damage: 6,
+          },
+          Image: 3032133716,
+          Title: "Quick Getaway",
+          Cost: 525,
+        },
+        {
+          Stats: {
+            Attributes: { DoublePistolCrooks: true },
+            Range: 15,
+            Detections: { Hidden: true, Flying: true },
+            Extras: ["2 Pistol Crooks spawn at a time."],
+            Damage: 10,
+          },
+          Image: 3444643559,
+          Title: "Double Trouble",
+          Cost: 1100,
+        },
+        {
+          Stats: {
+            Range: 16.5,
+            Attributes: {
+              TommyCrooks: true,
+            },
+            Extras: [
+              "Tommy Crooks (50s Spawn Time)",
+              "4 Damage, 0.2 Firerate",
+            ],
+            Cooldown: 0.2,
+          },
+          Image: 3838914605,
+          Title: "Tommy Goons",
+          Cost: 5000,
+        },
+        {
+          Stats: {
+            Attributes: {
+              UpgradedTommyGoons: true,
+            },
+            Range: 17.5,
+            Extras: [
+              "Upgraded Tommy Crooks",
+              "10 Damage, 0.12 Firerate",
+            ],
+            Cooldown: 0.12,
+            Damage: 18,
+          },
+          Image: 3444644903,
+          Title: "The Godfather",
+          Cost: 15250,
+        },
+      ],
+      Defaults: {
+        Range: 14,
+        Attributes: { 
+          BackupCallTime: 1.5,
+          PistolCrooks: true,
+          DoublePistolCrooks: false,
+          TommyCrooks: false,
+          UpgradedTommyGoons: false,
+        },
+        Limit: 5,
+        Price: 700,
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Cooldown: 0.9,
+        Damage: 5,
       },
     },
   },

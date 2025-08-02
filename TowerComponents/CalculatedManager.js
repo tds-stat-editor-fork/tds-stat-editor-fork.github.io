@@ -42,10 +42,11 @@ class CalculatedManager {
 
                     const skin = level.levels.skinData.name;
                     const goldText = skin == 'Golden' ? 'Golden' : '';
+                    const pvpText = skin == 'PVP' ? ' (PVP)' : '';
 
-                    const pistolData = this.unitManager.unitData[`${goldText}Goon1`];
-                    const tommyData = this.unitManager.unitData[`${goldText}Goon2`];
-                    const bodyData = this.unitManager.unitData[`${goldText}Goon3`];
+                    const pistolData = this.unitManager.unitData[`${goldText}Goon1${pvpText}`];
+                    const tommyData = this.unitManager.unitData[`${goldText}Goon2${pvpText}`];
+                    const bodyData = this.unitManager.unitData[`${goldText}Goon3${pvpText}`];
 
                     const pistolDelayPerMinute =
                         pistolData.attributes.SpawnTime > 0 && level.PistolCrooks == true
@@ -153,9 +154,10 @@ class CalculatedManager {
                     this.unitManager.load();
 
                     const goldText = skin == 'Golden' ? 'Golden' : '';
-                    const goon1 = this.unitManager.unitData[`${goldText}Goon1`];
-                    const goon2 = this.unitManager.unitData[`${goldText}Goon2`];
-                    const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
+                    const pvpText = skin == 'PVP' ? ' (PVP)' : '';
+                    const goon1 = this.unitManager.unitData[`${goldText}Goon1${pvpText}`];
+                    const goon2 = this.unitManager.unitData[`${goldText}Goon2${pvpText}`];
+                    const goon3 = this.unitManager.unitData[`${goldText}Goon3${pvpText}`];
 
                     let goon1DPS =
                         goon1.attributes.SpawnTime && goon1.attributes.DPS;
@@ -980,7 +982,8 @@ class CalculatedManager {
 
                     if (level.PistolCrooks == true){
                         const goldText = skin == 'Golden' ? 'Golden' : '';
-                        const goon1 = this.unitManager.unitData[`${goldText}Goon1`];
+                        const pvpText = skin == 'PVP' ? ' (PVP)' : '';
+                        const goon1 = this.unitManager.unitData[`${goldText}Goon1${pvpText}`];
 
                         let goon1DPS = goon1.attributes.DPS;
                         if (level.DoublePistolCrooks) goon1DPS *= 2;
@@ -996,8 +999,9 @@ class CalculatedManager {
                     }
                     if (level.TommyCrooks == true){
                         const goldText = skin == 'Golden' ? 'Golden' : '';
-                        const goon2 = this.unitManager.unitData[`${goldText}Goon2`];
-                        const goon3 = this.unitManager.unitData[`${goldText}Goon3`];
+                        const pvpText = skin == 'PVP' ? ' (PVP)' : '';
+                        const goon2 = this.unitManager.unitData[`${goldText}Goon2${pvpText}`];
+                        const goon3 = this.unitManager.unitData[`${goldText}Goon3${pvpText}`];
 
                         let goon2DPS = goon2.attributes.DPS;
 
