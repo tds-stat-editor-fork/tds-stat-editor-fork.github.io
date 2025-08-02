@@ -68,6 +68,7 @@ const register = {
     'Crook Boss': {
         Golden: ['GoldenGoon1', 'GoldenGoon2', 'GoldenGoon3'],
         Default: ['Goon1', 'Goon2', 'Goon3'],
+        PVP: ['Goon1 (PVP)', 'Goon2 (PVP)', 'Goon3 (PVP)'],
     },
     'Mercenary Base': {
         Default: [
