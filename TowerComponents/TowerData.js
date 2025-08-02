@@ -107,7 +107,7 @@ export default {
           },
           Image: 11821093672,
           Title: "Vessel Of Infinite Destruction",
-          Cost: 3000,
+          Cost: 30000,
         },
       ],
       Defaults: {
