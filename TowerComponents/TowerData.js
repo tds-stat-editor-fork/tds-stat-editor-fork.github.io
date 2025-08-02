@@ -4208,7 +4208,7 @@ export default {
               "Airstrike ability",
               "Airstrike damage: 450",
             ],
-            Attributes: { UnitToSend: "Tank", AirstrikeDamage: 75, AirstrikeBombs: 6, AirstrikeRadius: 8, AirstrikeCooldown: 45, AirstrikeCost: 250},
+            Attributes: { UnitToSend: "Tank (PVP)", AirstrikeDamage: 75, AirstrikeBombs: 6, AirstrikeRadius: 8, AirstrikeCooldown: 45, AirstrikeCost: 250},
           },
           Title: "Tank",
           Cost: 7500,
