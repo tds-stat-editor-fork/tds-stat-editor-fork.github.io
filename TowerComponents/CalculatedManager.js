@@ -694,6 +694,7 @@ class CalculatedManager {
         },
         NetCost: {
             Default: {
+                Exclude: ['PVP Sends'],
                 Value: (level) => (level.levels.levels.reduce(
 					(total, nextLevel) => nextLevel.Level > level.Level ? total : total + nextLevel.Cost, 0)), // prettier-ignore
             },

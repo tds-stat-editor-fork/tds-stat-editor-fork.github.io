@@ -134,7 +134,7 @@ export default class PropertyViewer {
             this.disabled = this.disabled.filter((v) => v !== property);
         }
     }
-
+    
     createButton(innerText) {
         const listElement = document.createElement('li');
         const button = document.createElement('button');

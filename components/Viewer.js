@@ -148,7 +148,7 @@ class Viewer {
             }
         } catch (e) {
             this.tower.importJSON(oldJSON);
-            const alert = new Alert('Unable to load that 🦊', {
+            const alert = new Alert('Unable to load that', {
                 alertStyle: 'alert-danger',
             });
             alert.timeBeforeShow = 0.1;
