@@ -64,6 +64,14 @@ const register = {
             'Hallow Guard',
             'Executioner Skeleton',
         ],
+        PVP: [
+            'Skeleton (PVP)',
+            'Sword Skeleton (PVP)',
+            'Skeleton Knight (PVP)',
+            'Giant Skeleton (PVP)',
+            'Hallow Guard (PVP)',
+            'Executioner Skeleton (PVP)',
+        ],
     },
     'Crook Boss': {
         Golden: ['GoldenGoon1', 'GoldenGoon2', 'GoldenGoon3'],
@@ -82,6 +90,18 @@ const register = {
             'RiotGuard2',
             'FieldMedic1',
             'FieldMedic2',
+        ],
+        PVP: [
+            'Rifleman1 (PVP)',
+            'Rifleman2 (PVP)',
+            'Rifleman3 (PVP)',
+            'Grenadier1 (PVP)',
+            'Grenadier2 (PVP)',
+            'Grenadier3 (PVP)',
+            'RiotGuard1 (PVP)',
+            'RiotGuard2 (PVP)',
+            'FieldMedic1 (PVP)',
+            'FieldMedic2 (PVP)',
         ],
     },
     'Biologist':

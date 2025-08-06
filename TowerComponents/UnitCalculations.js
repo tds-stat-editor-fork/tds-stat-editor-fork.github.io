@@ -42,7 +42,7 @@ class UnitCalculations {
                 },
             },
             Burst: {
-                For: ['Rifleman1', 'Rifleman2', 'Rifleman3'],
+                For: ['Rifleman1', 'Rifleman2', 'Rifleman3', 'Rifleman1 (PVP)', 'Rifleman2 (PVP)', 'Rifleman3 (PVP)'],
                 Requires: ['Damage', 'Cooldown', 'BurstAmount', 'AimTime'],
                 Value: (unit) => {
                     const damage = unit.Damage;
