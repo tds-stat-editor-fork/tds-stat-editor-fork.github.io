@@ -741,7 +741,11 @@ class CalculatedManager {
                     
                     return level.NetCost / level.DPS;
                 },
-            }
+            },
+            Sends: {
+                For: ['PVP Sends'],
+                Value: (level) => level.SendCost / level.EconomyBonus,
+            },
         },
         MaxCostEfficiency: {
             Default: {
@@ -1625,6 +1629,13 @@ class CalculatedManager {
                 },
             },
         },
+        EcoPerSecond: {
+            Default: {
+                For: ['PVP Sends'],
+                Requires: ['EconomyBonus', 'SpawnTimer'],
+                Value: (level) => level.EconomyBonus / level.SpawnTimer,
+            },
+        },
         Cooldown: {
             Type: 'Override',
 
@@ -1839,6 +1850,7 @@ class CalculatedManager {
         this.#add('PoisonCostEfficiency', skinData);
         this.#add('ConfusionCostEfficiency', skinData);
         this.#add('CostEfficiency', skinData);
+        this.#add('EcoPerSecond', skinData);
         this.#add('MaxCostEfficiency', skinData);
         this.#add('Coverage', skinData);
         this.#add('BossPotential', skinData);

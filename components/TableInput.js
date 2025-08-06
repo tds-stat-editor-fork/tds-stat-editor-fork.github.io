@@ -198,6 +198,8 @@ export default class TableInput {
             case 'LimitNetCost':
             case 'SupportCaravanCost':
             case 'AirDropCost':
+            case 'SendCost':
+            case 'EconomyBonus':
                 return `$${Intl.NumberFormat().format(value.toFixed(0))}`;
             case "MaxDefenseMelt":
             case "DefenseMelt":
@@ -281,6 +283,7 @@ export default class TableInput {
             case 'BleedTick':
             case 'IceTick':
             case 'ThornsCooldown':
+            case 'SpawnTimer':
                 return `${Intl.NumberFormat().format(value.toFixed(2))}s`;
         }
 
