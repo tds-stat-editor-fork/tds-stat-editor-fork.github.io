@@ -380,8 +380,8 @@ export default {
         Attributes: {
           BurnDamage: 0,
           MaxHits: 2,
-          BurnTick: 0.5,
-          BurnTime: 0,
+          MinStun: 0,
+          MaxStun: 0,
           ArrowType: "Normal",
         },
         Price: 600,
@@ -432,9 +432,7 @@ export default {
           Stats: {
             Extras: ["Max Hits: 3 > 4", "Stronger Flame Arrows"],
             Attributes: {
-              MinStun: 0.3,
-              MaxStun: 0.3,
-              MaxHits: 3,
+              MaxHits: 4,
             },
             Range: 23,
             Damage: 16,
@@ -463,10 +461,7 @@ export default {
       Defaults: {
         Detections: { Flying: true, Hidden: false, Lead: false },
         Attributes: {
-          BurnDamage: 0,
           MaxHits: 2,
-          BurnTick: 0.5,
-          BurnTime: 0,
           ArrowType: "Normal",
         },
         Price: 600,
