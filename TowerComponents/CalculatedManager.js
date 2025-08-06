@@ -744,7 +744,11 @@ class CalculatedManager {
             },
             Sends: {
                 For: ['PVP Sends'],
-                Value: (level) => level.SendCost / level.EconomyBonus,
+                Value: (level) => {
+                    if (level.EconomyBonus == 0) return 0;
+
+                    return level.SendCost / level.EconomyBonus;
+                },
             },
         },
         MaxCostEfficiency: {

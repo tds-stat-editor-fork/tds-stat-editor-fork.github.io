@@ -194,7 +194,6 @@ export default class TableInput {
             case 'Income':
             case 'Cost':
             case 'NetCost':
-            case 'IncomePerSecond':
             case 'LimitNetCost':
             case 'SupportCaravanCost':
             case 'AirDropCost':
