@@ -600,10 +600,21 @@ class CalculatedManager {
                     if(skin == 'Fire Mode') return burnDPS + towerDPS; else return towerDPS + unitDPS;
                 },
             },
+            AssSaved: {
+                For: ['Assassin'],
+                Value: (level) => {
+                    const baseDPS = level.Damage / level.Cooldown;
+                    const susiesIdea = level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0;
+                    const hitsToFan = Math.floor(level.FanOfKnivesThreshold / level.Damage)
+                    const shittyPun = level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (hitsToFan * level.Cooldown) : 0;
+
+                    return baseDPS + susiesIdea + shittyPun;
+                },
+            },
         },
         BaseDPS: {
             Default: {
-                For: ['Pyromancer', 'Ace Pilot', 'Mortar', 'Ranger', 'Archer', 'Swarmer', 'Jester', 'Hallow Punk', 'War Machine'],
+                For: ['Pyromancer', 'Ace Pilot', 'Mortar', 'Ranger', 'Archer', 'Swarmer', 'Jester', 'Hallow Punk', 'War Machine', 'Assassin'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (level) => level.Damage / level.Cooldown,
             },
@@ -635,6 +646,18 @@ class CalculatedManager {
                 For: ['Elementalist'],
                 Requires: ['Damage', 'Cooldown', 'BurstCooldown', 'Burst', 'BurnDamage'],
                 Value: (level) => (level.Damage * level.Burst) / ((level.Cooldown * (level.Burst - 1)) + level.BurstCooldown),
+            },
+        },
+        WhirlwindSlashDPS: {
+            Default: {
+                For: ['Assassin'],
+                Value: (level) => level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0,
+            },
+        },
+        KnifeThrowDPS: {
+            Default: {
+                For: ['Assassin'],
+                Value: (level) => level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (hitsToFan * level.Cooldown) : 0,
             },
         },
         SplashDPS: {
@@ -1824,6 +1847,8 @@ class CalculatedManager {
         this.#add('LandmineDPS', skinData);
         this.#add('BaseDPS', skinData);
         this.#add('SplashDPS', skinData);
+        this.#add('WhirlwindSlashDPS', skinData);
+        this.#add('KnifeThrowDPS', skinData);
         this.#add('ClusterDPS', skinData);
         this.#add('BurnDPS', skinData);
         this.#add('ChillDPS', skinData);
