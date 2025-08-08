@@ -32,11 +32,6 @@ export default class PropertyViewer {
         this.baseBtn = document.getElementById('property-base');
         this.extraBtn = document.getElementById('property-extra');
         this.calcBtn = document.getElementById('property-calc');
-
-        this.allBtn.addEventListener('click', this.toggleAll.bind(this));
-        this.baseBtn.addEventListener('click', this.toggleBase.bind(this));
-        this.extraBtn.addEventListener('click', this.toggleExtra.bind(this));
-        this.calcBtn.addEventListener('click', this.toggleCalc.bind(this));
     }
 
     getProperties() {
