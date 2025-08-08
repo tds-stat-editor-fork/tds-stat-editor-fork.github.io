@@ -5587,10 +5587,10 @@ export default {
         {
           Stats: {
             EnemyName: 'Slow Boss',
-            Health: 2500,
-            WaveUnlock: 22,
-            SendCost: 660,
-            EconomyBonus: -50,
+            Health: 2800,
+            WaveUnlock: 23,
+            SendCost: 750,
+            EconomyBonus: -10,
             MinSendNumber: 1,
             MaxSendNumber: 1,
             SpawnTimer: 3,
@@ -5599,10 +5599,10 @@ export default {
         {
           Stats: {
             EnemyName: 'Speedy Boss',
-            Health: 1800,
-            WaveUnlock: 24,
-            SendCost: 1000,
-            EconomyBonus: -100,
+            Health: 4000,
+            WaveUnlock: 26,
+            SendCost: 3000,
+            EconomyBonus: -25,
             MinSendNumber: 1,
             MaxSendNumber: 1,
             SpawnTimer: 4,

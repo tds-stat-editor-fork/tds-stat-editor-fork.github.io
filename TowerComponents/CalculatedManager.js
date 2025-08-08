@@ -647,6 +647,10 @@ class CalculatedManager {
                 Requires: ['Damage', 'Cooldown', 'BurstCooldown', 'Burst', 'BurnDamage'],
                 Value: (level) => (level.Damage * level.Burst) / ((level.Cooldown * (level.Burst - 1)) + level.BurstCooldown),
             },
+            AssSaved: {
+                For: ['Assassin'],
+                Value: (level) => level.WhirlwindSlash ? (level.Damage * 2) / (level.Cooldown * 3) : level.Damage / level.Cooldown,
+            },
         },
         WhirlwindSlashDPS: {
             Default: {

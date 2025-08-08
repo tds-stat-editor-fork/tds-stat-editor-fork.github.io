@@ -322,6 +322,8 @@ class Viewer {
         ];
 
         if (this.tower.name != 'Accelerator') this.propertyViewer.disabled.push('Uptime');
+        if (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base') this.propertyViewer.disabled.push('Damage');
+        if (this.tower.name == 'Farm' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'DJ Booth') this.propertyViewer.disabled.push('Cooldown');
 
         this.towerTable.root.parentElement.classList.remove('d-none');
 
