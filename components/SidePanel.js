@@ -9,7 +9,7 @@ export default class SidePanel {
         this.buttonSelection = new ButtonSelection(
             document.getElementById('side-selection-radio')
         );
-        this.buttons = ['Upgrades', 'Views', 'Boosts'];
+        this.buttons = ['Upgrades', 'Boosts'];
         this.buttonSelection.setButtons(this.buttons);
         this.buttonSelection.root.addEventListener(
             'submit',
