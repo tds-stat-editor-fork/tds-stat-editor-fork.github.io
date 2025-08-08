@@ -2,7 +2,6 @@ import ButtonSelection from './ButtonSelection.js';
 
 export default class SidePanel {
     constructor() {
-        this.sideViewPanel = document.getElementById('property-viewer-section');
         this.levelViewPanel = document.getElementById('level-view');
         this.boostsViewPanel = document.getElementById('boost-view');
 
@@ -24,9 +23,6 @@ export default class SidePanel {
     showPanel(panelName) {
         this.hideAll();
         switch (panelName) {
-            case 'Views':
-                this.sideViewPanel.classList.remove('d-none');
-                break;
             case 'Upgrades':
                 this.levelViewPanel.classList.remove('d-none');
                 break;
@@ -37,7 +33,6 @@ export default class SidePanel {
     }
 
     hideAll() {
-        this.sideViewPanel.classList.add('d-none');
         this.levelViewPanel.classList.add('d-none');
         this.boostsViewPanel.classList.add('d-none');
     }
