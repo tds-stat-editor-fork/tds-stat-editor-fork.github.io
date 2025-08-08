@@ -311,6 +311,18 @@ class Viewer {
             this.getActiveSkin().name
         );
 
+        this.PropertyViewer.disabled = [
+            'LimitDPS',
+            'LimitNetCost',
+            'Value',
+            'Coverage',
+            'BossPotential',
+            'LimitBossPotential',
+            'DamagePerBurst',
+        ];
+
+        if (this.tower.name != 'Accelerator') this.disabled.push('Uptime');
+
         this.towerTable.root.parentElement.classList.remove('d-none');
 
         const skinData = this.getActiveSkin();

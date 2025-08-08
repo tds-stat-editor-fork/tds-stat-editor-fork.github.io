@@ -378,7 +378,6 @@ export default {
       Defaults: {
         Detections: { Flying: true, Hidden: false, Lead: false },
         Attributes: {
-          BurnDamage: 0,
           MaxHits: 2,
           MinStun: 0,
           MaxStun: 0,
@@ -5612,10 +5611,10 @@ export default {
         {
           Stats: {
             EnemyName: 'Brute',
-            Health: 6000,
-            WaveUnlock: 26,
-            SendCost: 3000,
-            EconomyBonus: -200,
+            Health: 10000,
+            WaveUnlock: 30,
+            SendCost: 6000,
+            EconomyBonus: -50,
             MinSendNumber: 1,
             MaxSendNumber: 1,
             SpawnTimer: 5,
