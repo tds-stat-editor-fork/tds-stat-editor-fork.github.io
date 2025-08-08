@@ -311,7 +311,7 @@ class Viewer {
             this.getActiveSkin().name
         );
 
-        this.PropertyViewer.disabled = [
+        this.propertyViewer.disabled = [
             'LimitDPS',
             'LimitNetCost',
             'Value',
