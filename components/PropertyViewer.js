@@ -160,8 +160,6 @@ export default class PropertyViewer {
     }
 
     createButtons(attributes) {
-        this.root.innerHTML = '';
-
         attributes.forEach((attributeName) => {
             const button = this.createButton(attributeName);
             this.root.appendChild(button);
