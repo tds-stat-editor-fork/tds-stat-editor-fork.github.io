@@ -364,6 +364,7 @@ export default class TableInput {
         'ConfusionCostEfficiency',
         'ThornsCooldown',
         'TowerCloningCost',
+        "Warrior's Call Cooldown",
     ];
 
     #getDelta(cellData, deltaData, input) {
