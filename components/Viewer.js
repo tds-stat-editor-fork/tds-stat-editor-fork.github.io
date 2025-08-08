@@ -321,7 +321,7 @@ class Viewer {
             'DamagePerBurst',
         ];
 
-        if (this.tower.name != 'Accelerator') this.disabled.push('Uptime');
+        if (this.tower.name != 'Accelerator') this.propertyViewer.disabled.push('Uptime');
 
         this.towerTable.root.parentElement.classList.remove('d-none');
 
