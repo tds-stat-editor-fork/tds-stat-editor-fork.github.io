@@ -603,7 +603,7 @@ class CalculatedManager {
             AssSaved: {
                 For: ['Assassin'],
                 Value: (level) => {
-                    const baseDPS = level.Damage / level.Cooldown;
+                    const baseDPS = level.WhirlwindSlash ? (level.Damage * 2) / (level.Cooldown * 3) : level.Damage / level.Cooldown;
                     const susiesIdea = level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0;
                     const hitsToFan = Math.floor(level.FanOfKnivesThreshold / level.Damage)
                     const shittyPun = level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (hitsToFan * level.Cooldown) : 0;
