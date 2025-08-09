@@ -552,6 +552,85 @@ export default {
         },
       ],
     },
+    PVP: {
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Price: 300,
+        Range: 5.5,
+        Cooldown: 0.6,
+        Damage: 2,
+        Attributes: {
+            WhirlwindSlash: false,
+            WhirlwindSlashDamage: 0,
+            WhirlwindSlashRange: 0,
+            WhirlwindSlashSwing: 0,
+            FanOfKnives: false,
+            FanOfKnivesThreshold: 0,
+            KnifeDamage: 0,
+            KnifeCount: 0,
+            KnifeRange: 0,
+            KnifeMaxHits: 0,
+        },
+      },
+      Upgrades: [
+        {
+          Image: 0,
+          Stats: {
+            Damage: 3,
+            Range: 6.5,
+          },
+          Title: "CQC Training",
+          Cost: 150,
+        },
+        {
+          Image: 0,
+          Stats: {
+            Detections: { Hidden: true },
+            Damage: 8,
+            Range: 6.5,
+            Attributes: {
+              WhirlwindSlash: true,
+              WhirlwindSlashSwing: 3,
+              WhirlwindSlashDamage: 6,
+              WhirlwindSlashRange: 6, 
+            },
+          },
+          Title: "Advanced Hand to Hand Training",
+          Cost: 600,
+        },
+        {
+          Image: 0,
+          Stats: {
+            Damage: 14,
+            Attributes: {
+              WhirlwindSlashDamage: 14,
+            },
+          },
+          Title: "Upgraded Blades",
+          Cost: 1700,
+        },
+        {
+          Image: 0,
+          Stats: {
+            Damage: 25,
+            Cooldown: 0.5,
+            Range: 7,
+            Attributes: {
+              WhirlwindSlashDamage: 25,
+              WhirlwindSlashRange: 7,
+              FanOfKnives: true,
+              FanOfKnivesThreshold: 150,
+              KnifeDamage: 25,
+              KnifeCount: 3,
+              KnifeRange: 10,
+              KnifeMaxHits: 3,
+            },
+          },
+          Title: "Black Ops",
+          Cost: 4750,
+        },
+      ],
+    },
   },
   Biologist: {
     Default: {
