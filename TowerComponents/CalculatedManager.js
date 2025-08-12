@@ -1666,7 +1666,7 @@ class CalculatedManager {
             Default: {
                 For: ['PVP Sends'],
                 Requires: ['EconomyBonus', 'SpawnTimer'],
-                Value: (level) => level.EconomyBonus / level.SpawnTimer,
+                Value: (level) => level.EconomyBonus / (level.SpawnTimer * level.MinSendNumber),
             },
         },
         Cooldown: {
