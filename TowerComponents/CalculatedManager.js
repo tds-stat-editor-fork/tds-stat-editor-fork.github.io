@@ -614,7 +614,7 @@ class CalculatedManager {
         },
         BaseDPS: {
             Default: {
-                For: ['Pyromancer', 'Ace Pilot', 'Mortar', 'Ranger', 'Archer', 'Swarmer', 'Jester', 'Hallow Punk', 'War Machine', 'Assassin'],
+                For: ['Pyromancer', 'Ace Pilot', 'Mortar', 'Ranger', 'Archer', 'Swarmer', 'Jester', 'Hallow Punk', 'War Machine'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (level) => level.Damage / level.Cooldown,
             },
