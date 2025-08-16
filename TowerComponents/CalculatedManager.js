@@ -655,13 +655,13 @@ class CalculatedManager {
         WhirlwindSlashDPS: {
             Default: {
                 For: ['Assassin'],
-                Value: (level) => level.WhirlwindSlashSwing == 0 ? level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0 : 0,
+                Value: (level) => level.WhirlwindSlashSwing != 0 ? level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0 : 0,
             },
         },
         KnifeThrowDPS: {
             Default: {
                 For: ['Assassin'],
-                Value: (level) => level.FanOfKnivesThreshold == 0 ? level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (level.FanOfKnivesThreshold * level.Cooldown) : 0 : 0,
+                Value: (level) => level.FanOfKnivesThreshold != 0 ? level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (level.FanOfKnivesThreshold * level.Cooldown) : 0 : 0,
             },
         },
         SplashDPS: {
