@@ -296,6 +296,18 @@ class Viewer {
         }
     }
 
+    shouldHideDamage() {
+        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base');
+    }
+
+    shouldHideCooldown() {
+        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base');
+    }
+
+    shouldHideDetections() {
+        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base' || this.tower.name == 'DJ Booth');
+    }
+
     #loadName() {
         const towerName = this.tower.name;
         const activeVariant = this.towerVariants.getSelectedName();
@@ -313,7 +325,7 @@ class Viewer {
 
         if (shouldHideDamage() && !this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.push('Damage');
         if (shouldHideCooldown() && !this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.push('Cooldown');
-        if (shouldHideRange() && this.tower.name != 'Biologist' && !this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.push('Range');
+        if (shouldHideCooldown() && this.tower.name != 'Biologist' && !this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.push('Range');
         if (shouldHideDetections() && !this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.push('Hidden');
         if (shouldHideDetections() && !this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.push('Flying');
         if (shouldHideDetections() && !this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.push('Lead');
@@ -379,18 +391,6 @@ class Viewer {
             alertStyle: 'alert-success',
         });
         alert.fire();
-    }
-
-    shouldHideDamage() {
-        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base');
-    }
-
-    shouldHideCooldown() {
-        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base');
-    }
-
-    shouldHideDetections() {
-        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base' || this.tower.name == 'DJ Booth')
     }
 }
 
