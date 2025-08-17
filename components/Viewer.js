@@ -330,12 +330,12 @@ class Viewer {
         if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.push('Flying');
         if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.push('Lead');
 
-        if (!this.shouldHideDamage() && this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Damage"), this.propertyViewer.disabled.indexOf("Damage"));
-        if (!this.shouldHideCooldown() && this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Cooldown"), this.propertyViewer.disabled.indexOf("Cooldown"));
-        if (!this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Range"), this.propertyViewer.disabled.indexOf("Range"));
-        if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Hidden"), this.propertyViewer.disabled.indexOf("Hidden"));
-        if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Flying"), this.propertyViewer.disabled.indexOf("Flying"));
-        if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Lead"), this.propertyViewer.disabled.indexOf("Lead"));
+        if (!this.shouldHideDamage() && this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Damage"), 1);
+        if (!this.shouldHideCooldown() && this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Cooldown"), 1);
+        if (!this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Range"), 1);
+        if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Hidden"), 1);
+        if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Flying"), 1);
+        if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Lead"), 1);
 
         this.towerTable.root.parentElement.classList.remove('d-none');
 
