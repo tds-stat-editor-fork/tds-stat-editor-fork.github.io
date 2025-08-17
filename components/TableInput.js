@@ -365,6 +365,8 @@ export default class TableInput {
         'ThornsCooldown',
         'TowerCloningCost',
         "Warrior's Call Cooldown",
+        'FanOfKnivesThreshold',
+        'KnifeCooldown',
     ];
 
     #getDelta(cellData, deltaData, input) {
