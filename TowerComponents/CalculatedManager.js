@@ -603,10 +603,12 @@ class CalculatedManager {
             AssSaved: {
                 For: ['Assassin'],
                 Value: (level) => {
-                    const baseDPS = level.WhirlwindSlash ? (level.Damage * 2) / (level.Cooldown * 3) : level.Damage / level.Cooldown;
-                    const susiesIdea = level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0;
-                    const hitsToFan = Math.floor(level.FanOfKnivesThreshold / level.Damage)
-                    const shittyPun = level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (hitsToFan * level.Cooldown) : 0;
+                    //"realistically its only saved from being a buggy mess because its simple" - mentin
+                    //yeah simple to use not to calculate for FUCKS SAKE
+                    let baseDPS = level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSlashSwing - 1)) / (level.Cooldown * level.WhirlwindSlashSwing) : level.Damage / level.Cooldown;
+                    let susiesIdea = level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0;
+                    const hitsToFan = Math.floor(level.FanOfKnivesThreshold / level.Damage);
+                    const shittyPun = level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (hitsToFan * level.Cooldown + level.KnifeCooldown) : 0;
 
                     return baseDPS + susiesIdea + shittyPun;
                 },
@@ -649,7 +651,7 @@ class CalculatedManager {
             },
             AssSaved: {
                 For: ['Assassin'],
-                Value: (level) => level.WhirlwindSlash ? (level.Damage * 2) / (level.Cooldown * 3) : level.Damage / level.Cooldown,
+                Value: (level) => level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSlashSwing - 1)) / (level.Cooldown * level.WhirlwindSlashSwing) : level.Damage / level.Cooldown,
             },
         },
         WhirlwindSlashDPS: {
@@ -661,7 +663,7 @@ class CalculatedManager {
         KnifeThrowDPS: {
             Default: {
                 For: ['Assassin'],
-                Value: (level) => level.FanOfKnivesThreshold != 0 ? level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (level.FanOfKnivesThreshold * level.Cooldown) : 0 : 0,
+                Value: (level) => level.FanOfKnivesThreshold != 0 ? level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / ((level.FanOfKnivesThreshold / level.Damage) * level.Cooldown + level.KnifeCooldown) : 0 : 0,
             },
         },
         SplashDPS: {
