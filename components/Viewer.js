@@ -297,15 +297,15 @@ class Viewer {
     }
 
     shouldHideDamage() {
-        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base');
+        return this.tower.name ? (this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name === 'Mecha Base') : false;
     }
 
     shouldHideCooldown() {
-        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base');
+        return this.tower.name ? (this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name === 'Mecha Base') : false;
     }
 
     shouldHideDetections() {
-        return (this.tower.name == 'Farm' || this.tower.name == 'Trapper' || this.tower.name == 'Military Base' || this.tower.name == 'Mercenary Base' || this.tower.name == 'Elf Camp' || this.tower.name == 'Firework Technician' || this.tower.name == 'Biologist' || this.tower.name == 'Mecha Base' || this.tower.name == 'DJ Booth');
+        return this.tower.name ? (this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name == 'Mecha Base' || this.tower.name === 'DJ Booth') : false;
     }
 
     #loadName() {
