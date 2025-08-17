@@ -323,12 +323,12 @@ class Viewer {
             this.getActiveSkin().name
         );
 
-        if (shouldHideDamage() && !this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.push('Damage');
-        if (shouldHideCooldown() && !this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.push('Cooldown');
-        if (shouldHideCooldown() && this.tower.name != 'Biologist' && !this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.push('Range');
-        if (shouldHideDetections() && !this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.push('Hidden');
-        if (shouldHideDetections() && !this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.push('Flying');
-        if (shouldHideDetections() && !this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.push('Lead');
+        if (this.shouldHideDamage() && !this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.push('Damage');
+        if (this.shouldHideCooldown() && !this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.push('Cooldown');
+        if (this.shouldHideCooldown() && this.tower.name != 'Biologist' && !this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.push('Range');
+        if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.push('Hidden');
+        if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.push('Flying');
+        if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.push('Lead');
 
         this.towerTable.root.parentElement.classList.remove('d-none');
 
