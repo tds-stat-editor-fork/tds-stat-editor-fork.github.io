@@ -113,7 +113,7 @@ export default {
         Detections: { Flying: false, Hidden: false, Lead: true },
         Limit: 8,
         Cooldown: 0.2,
-        Price: 3000,
+        Price: 4250,
         Attributes: { ChargeTime: 2.5, LaserCooldown: 2, Overcharge: 300},
         Range: 18,
         Damage: 10,
