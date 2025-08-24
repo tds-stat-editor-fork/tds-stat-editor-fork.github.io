@@ -222,7 +222,7 @@ export default {
     "Fire Arrows": {
       Upgrades: [
         {
-          Image: 3280081327,
+          Image: 78487255054043,
           Stats: {
             Range: 19,
           },
@@ -230,7 +230,7 @@ export default {
           Cost: 100,
         },
         {
-          Image: 524302408,
+          Image: 118177062176518,
           Stats: {
             Extras: ["Max Hits: 2 > 3"],
             Detections: { Hidden: true},
@@ -242,7 +242,7 @@ export default {
           Cost: 400,
         },
         {
-          Image: 141745478,
+          Image: 83003777730604,
           Stats: {
             Extras: ["Flame Arrows"],
             Cooldown: 1.5,
@@ -259,7 +259,7 @@ export default {
           Cost: 1000,
         },
         {
-          Image: 456573844,
+          Image: 115104563492355,
           Stats: {
             Extras: ["Max Hits: 3 > 4", "Stronger Flame Arrows"],
             Attributes: {
@@ -271,10 +271,10 @@ export default {
             Damage: 16,
           },
           Title: "Mechanical Bow",
-          Cost: 2375,
+          Cost: 2750,
         },
         {
-          Image: 106341823,
+          Image: 73857609172576,
           Stats: {
             Extras: ["Max Hits: 4 > 6", "Stronger Flame Arrows"],
             Attributes: {
@@ -309,7 +309,7 @@ export default {
     "Shock Arrows": {
       Upgrades: [
         {
-          Image: 3280081327,
+          Image: 78487255054043,
           Stats: {
             Range: 19,
           },
@@ -317,7 +317,7 @@ export default {
           Cost: 100,
         },
         {
-          Image: 524302408,
+          Image: 118177062176518,
           Stats: {
             Extras: ["Max Hits: 2 > 3"],
             Detections: { Hidden: true},
@@ -329,7 +329,7 @@ export default {
           Cost: 400,
         },
         {
-          Image: 141745478,
+          Image: 83003777730604,
           Stats: {
             Extras: ["Flame Arrows"],
             Cooldown: 1.5,
@@ -343,7 +343,7 @@ export default {
           Cost: 1000,
         },
         {
-          Image: 456573844,
+          Image: 115104563492355,
           Stats: {
             Extras: ["Max Hits: 3 > 4", "Stronger Flame Arrows"],
             Attributes: {
@@ -356,10 +356,10 @@ export default {
             Damage: 16,
           },
           Title: "Mechanical Bow",
-          Cost: 2375,
+          Cost: 2750,
         },
         {
-          Image: 106341823,
+          Image: 73857609172576,
           Stats: {
             Extras: ["Max Hits: 4 > 6", "Stronger Flame Arrows"],
             Attributes: {
@@ -393,7 +393,7 @@ export default {
     "Explosive Arrows": {
       Upgrades: [
         {
-          Image: 3280081327,
+          Image: 78487255054043,
           Stats: {
             Range: 19,
           },
@@ -401,7 +401,7 @@ export default {
           Cost: 100,
         },
         {
-          Image: 524302408,
+          Image: 118177062176518,
           Stats: {
             Extras: ["Max Hits: 2 > 3"],
             Detections: { Hidden: true},
@@ -413,7 +413,7 @@ export default {
           Cost: 400,
         },
         {
-          Image: 141745478,
+          Image: 83003777730604,
           Stats: {
             Extras: ["Flame Arrows"],
             Cooldown: 1.5,
@@ -427,7 +427,7 @@ export default {
           Cost: 1000,
         },
         {
-          Image: 456573844,
+          Image: 115104563492355,
           Stats: {
             Extras: ["Max Hits: 3 > 4", "Stronger Flame Arrows"],
             Attributes: {
@@ -437,10 +437,10 @@ export default {
             Damage: 16,
           },
           Title: "Mechanical Bow",
-          Cost: 2375,
+          Cost: 2750,
         },
         {
-          Image: 106341823,
+          Image: 73857609172576,
           Stats: {
             Extras: ["Max Hits: 4 > 6", "Stronger Flame Arrows"],
             Attributes: {
@@ -475,9 +475,9 @@ export default {
     Default: {
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
-        Price: 300,
-        Range: 5.5,
-        Cooldown: 0.75,
+        Price: 200,
+        Range: 6,
+        Cooldown: 0.6,
         Damage: 2,
         Attributes: {
             WhirlwindSlash: false,
@@ -495,54 +495,52 @@ export default {
       },
       Upgrades: [
         {
-          Image: 0,
+          Image: 111493227843909,
           Stats: {
             Damage: 3,
-            Range: 6.5,
+            Cooldown: 0.5,
           },
           Title: "CQC Training",
-          Cost: 150,
+          Cost: 250,
         },
         {
-          Image: 0,
+          Image: 92894447316956,
           Stats: {
             Detections: { Hidden: true },
-            Damage: 8,
-            Cooldown: 0.6,
-            Range: 6.5,
+            Damage: 10,
             Attributes: {
               WhirlwindSlash: true,
               WhirlwindSlashSwing: 3,
-              WhirlwindSlashDamage: 8,
+              WhirlwindSlashDamage: 10,
               WhirlwindSlashRange: 6, 
             },
           },
           Title: "Advanced Hand to Hand Training",
-          Cost: 600,
+          Cost: 950,
         },
         {
-          Image: 0,
+          Image: 71356771597575,
           Stats: {
-            Damage: 18,
+            Damage: 25,
             Attributes: {
-              WhirlwindSlashDamage: 18,
+              WhirlwindSlashDamage: 25,
             },
           },
           Title: "Upgraded Blades",
-          Cost: 1500,
+          Cost: 2350,
         },
         {
-          Image: 0,
+          Image: 88526006090438,
           Stats: {
-            Damage: 30,
-            Cooldown: 0.5,
+            Damage: 50,
+            Cooldown: 0.4,
             Range: 7,
             Attributes: {
-              WhirlwindSlashDamage: 30,
+              WhirlwindSlashDamage: 50,
               WhirlwindSlashRange: 7,
               FanOfKnives: true,
-              FanOfKnivesThreshold: 150,
-              KnifeDamage: 25,
+              FanOfKnivesThreshold: 400,
+              KnifeDamage: 100,
               KnifeCooldown: 0.5,
               KnifeCount: 3,
               KnifeRange: 10,
@@ -550,7 +548,7 @@ export default {
             },
           },
           Title: "Black Ops",
-          Cost: 4250,
+          Cost: 7250,
         },
       ],
     },
@@ -3995,72 +3993,82 @@ export default {
     Default: {
       Upgrades: [
         {
-          Image: 4119547116,
+          Image: 117008581932706,
           Stats: {
-            Extras: [],
-            Cooldown: 0.75,
-            Range: 13,
+            Attributes: { MaxTargets: 2 },
           },
           Title: "Medical Precautions",
-          Cost: 200,
+          Cost: 300,
         },
         {
-          Image: 4119547593,
+          Image: 71546954858462,
           Stats: {
-            Extras: ["Increased healing"],
-            Attributes: { Healing: 10 },
-            Detections: {
-              Hidden: true,
+            Attributes: { 
+              OverhealLimit: 5,
+              MaxTargets: 3,
+              ShieldRechargeSpeed: 6,
             },
-            Damage: 5,
+            Range: 14,
           },
           Title: "Prescribed Vitamins",
-          Cost: 400,
+          Cost: 750,
         },
         {
-          Image: 4119548000,
+          Image: 130592941614779,
           Stats: {
-            Extras: [],
-            Cooldown: 0.65,
-            Range: 16,
-            Damage: 8,
+            Attributes: { 
+              OverhealLimit: 10,
+              Healing: 10,
+              MaxTargets: 3,
+              DamageBuff: 20,
+              UberchargeDuration: 7.5,
+              UberchargeCooldown: 60,
+            },
+            Range: 15,
           },
           Title: "BIG BRAIN",
-          Cost: 800,
+          Cost: 2700,
         },
         {
-          Image: 4119548431,
+          Image: 112504548905627,
           Stats: {
             Extras: ["Increased healing"],
-            Attributes: { Healing: 25 },
-            Cooldown: 0.5,
-            Damage: 12,
-          },
-          Title: "Medical Pack",
-          Cost: 1750,
-        },
-        {
-          Image: 4119548907,
-          Stats: {
-            Extras: ["Increased healing", "Cleansing Ability"],
-            Attributes: { Healing: 100 },
-            Detections: {
-              Flying: true,
+            Attributes: { 
+              Healing: 20,
+              OverhealLimit: 20,
+              MaxTargets: 4,
+              ShieldRechargeSpeed: 4.5,
+              UberchargeDuration: 10,
+              DamageBuff: 27.5,
             },
-            Cooldown: 0.3,
             Range: 18,
           },
-          Title: "Goddess of Healing",
-          Cost: 5000,
+          Title: "Medical Pack",
+          Cost: 6000,
+        },
+        {
+          Image: 112504548905627,
+          Stats: {
+            Extras: ["Increased healing", "Cleansing Ability"],
+            Attributes: { 
+              Healing: 25,
+              OverhealLimit: 50,
+              ShieldRechargeSpeed: 2,
+              MaxTargets: 5,
+              DamageBuff: 40,
+              UberchargeDuration: 15,
+            },
+            Range: 20,
+          },
+          Title: "PHD",
+          Cost: 16000,
         },
       ],
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: true },
-        Attributes: { Healing: 5, CleansingCooldown: 20,},
-        Price: 450,
+        Attributes: { Healing: 5, OverhealLimit: 0, FirerateBuff: 20, DamageBuff: 0, MaxTargets: 1, ShieldRechargeSpeed: 8, TowerSelectionCooldown: 0.5, UberchargeDuration: 0, UberchargeCooldown: 0,},
+        Price: 500,
         Range: 12,
-        Cooldown: 1,
-        Damage: 3,
       },
     },
   },
@@ -6977,12 +6985,12 @@ export default {
         {
           Stats: {
            Damage: 5,
-           Cooldown: 2.5,
+           Cooldown: 2,
            Attributes: {
             ChillPercent: 20,
             MaxChill: 40,
            },
-           Range: 11,    
+           Range: 13,    
           },
           Cost: 100,
           Title: "Snow Day",
@@ -6991,7 +6999,7 @@ export default {
         {
           Stats: {
            Damage: 10,
-           Range: 14,
+           Range: 15,
            Attributes: {
             ChillPercent: 30,
             MaxChill: 60,
@@ -7010,9 +7018,10 @@ export default {
             ExplosionRadius: 4,
             MaxHits: 4,
            },
-           Cooldown: 2,
+           Detections: {Flying: true},
+           Cooldown: 1.75,
            Damage: 25,
-           Range: 18,
+           Range: 19,
           },
           Cost: 1850,
           Title: "Snowball Cannon",
@@ -7024,7 +7033,7 @@ export default {
         Damage: 4,
         Range: 9.5,
         Cooldown: 3,
-        Detections: {Lead: false, Flying: false, Hidden: false},
+        Detections: {Lead: true, Flying: false, Hidden: false},
         Attributes: {
           CanFreeze: false,
           ChillPercent: 15,
@@ -7528,18 +7537,19 @@ export default {
               Hidden: true,
             },
             Range: 20,
+            Cooldown: 0.3,
           },
           Title: "Radar",
-          Cost: 1000,
+          Cost: 1250,
         },
         {
           Image: 149177741,
           Stats: {
             Detections: { Lead: true },
-            Damage: 15,
+            Damage: 20,
           },
           Title: "Stronger Ammunition",
-          Cost: 4250,
+          Cost: 7250,
         },
         {
           Image: 3584258139,
@@ -7548,34 +7558,33 @@ export default {
             Range: 22,
           },
           Title: "Dual Turret",
-          Cost: 12000,
+          Cost: 15000,
         },
         {
           Image: 3584280869,
           Stats: {
             Range: 24,
-            Damage: 32,
+            Damage: 40,
           },
           Title: "Even Heavier Ammo",
-          Cost: 26000,
+          Cost: 30000,
         },
         {
           Image: 3584258608,
           Stats: {
-            Cooldown: 0.12,
             Range: 26,
-            Damage: 55,
+            Damage: 75,
           },
           Title: "XR-200 Turret",
-          Cost: 56250,
+          Cost: 52500,
         },
       ],
       Defaults: {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Limit: 3,
-        Price: 6000,
+        Price: 5000,
         Range: 15,
-        Cooldown: 0.3,
+        Cooldown: 0.35,
         Damage: 10,
       },
     },
