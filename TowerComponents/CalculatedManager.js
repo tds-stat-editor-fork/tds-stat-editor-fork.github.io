@@ -356,6 +356,7 @@ class CalculatedManager {
                     'Mercenary Base',
                     'Military Base',
                     'PVP Sends',
+                    'Medic',
                 ],
                 Value: (level) => {
                     if (level.Cooldown == 0) return 0; 

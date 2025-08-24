@@ -283,6 +283,10 @@ export default class TableInput {
             case 'IceTick':
             case 'ThornsCooldown':
             case 'SpawnTimer':
+            case 'ShieldRechargeSpeed':
+            case 'UberchargeDuration':
+            case 'UberchargeCooldown':
+            case 'TowerSelectionCooldown':
                 return `${Intl.NumberFormat().format(value.toFixed(2))}s`;
         }
 
