@@ -633,7 +633,7 @@ class CalculatedManager {
             Pursuit: {
                 For: ['Pursuit'],
                 Requires: ['Damage', 'Ammo', 'ReloadTime', 'Cooldown'],
-                Value: (level) => (level.Damage * level.Ammo) / (level.ReloadTime + (level.Cooldown * level.Ammo)),
+                Value: (level) => (level.Damage * level.Ammo) / (level.ReloadTime + level.RevTime + (level.Cooldown * level.Ammo)),
             },
             Cryomancer: {
                 For: ['Cryomancer'],
