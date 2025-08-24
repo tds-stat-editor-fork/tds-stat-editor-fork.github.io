@@ -5140,12 +5140,12 @@ export default {
       Defaults: {
         Limit: 5,
         Detections: { Flying: true, Hidden: false, Lead: false },
-        Range: 8,
+        Range: 7,
         Price: 3000,
         Attributes: {
           PatrolCooldown: 20,
           Missiles: false,
-          Speed: 25,
+          Speed: 30,
           ReloadTime: 4,
           PatrolRange: 14,
           Ammo: 35,
@@ -5175,7 +5175,7 @@ export default {
           Image: 117186100008439,
           Stats: {
             Attributes: {
-              Speed: 25,
+              Speed: 30,
               PatrolRange: 16,
             },
             Range: 9.5,
@@ -5245,12 +5245,12 @@ export default {
       Defaults: {
         Limit: 5,
         Detections: { Flying: true, Hidden: false, Lead: false },
-        Range: 8,
+        Range: 7,
         Price: 3000,
         Attributes: {
           PatrolCooldown: 20,
           Missiles: false,
-          Speed: 25,
+          Speed: 30,
           ReloadTime: 4,
           PatrolRange: 14,
           Ammo: 35,
@@ -5279,7 +5279,7 @@ export default {
           Image: 117186100008439,
           Stats: {
             Attributes: {
-              Speed: 25,
+              Speed: 30,
               PatrolRange: 16,
             },
             Detections: { Flying: true, Hidden: false, Lead: true },
@@ -5352,12 +5352,12 @@ export default {
       Defaults: {
         Limit: 5,
         Detections: { Flying: true, Hidden: false, Lead: false },
-        Range: 8,
+        Range: 7,
         Price: 2500,
         Attributes: {
           PatrolCooldown: 20,
           Missiles: false,
-          Speed: 25,
+          Speed: 30,
           ReloadTime: 4,
           PatrolRange: 14,
           Ammo: 35,
@@ -5387,7 +5387,7 @@ export default {
           Image: 117186100008439,
           Stats: {
             Attributes: {
-              Speed: 25,
+              Speed: 30,
               PatrolRange: 16,
             },
             Range: 9.5,
@@ -5457,12 +5457,12 @@ export default {
       Defaults: {
         Limit: 5,
         Detections: { Flying: true, Hidden: false, Lead: false },
-        Range: 8,
+        Range: 7,
         Price: 2500,
         Attributes: {
           PatrolCooldown: 20,
           Missiles: false,
-          Speed: 25,
+          Speed: 30,
           ReloadTime: 4,
           PatrolRange: 14,
           Ammo: 35,
@@ -5491,7 +5491,7 @@ export default {
           Image: 117186100008439,
           Stats: {
             Attributes: {
-              Speed: 25,
+              Speed: 30,
               PatrolRange: 16,
             },
             Detections: { Flying: true, Hidden: false, Lead: true },
