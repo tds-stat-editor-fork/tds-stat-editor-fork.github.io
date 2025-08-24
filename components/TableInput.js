@@ -287,7 +287,7 @@ export default class TableInput {
             case 'UberchargeDuration':
             case 'UberchargeCooldown':
             case 'TowerSelectionCooldown':
-                return `${Intl.NumberFormat().format(value.toFixed(2))}s`;
+                return `${Intl.NumberFormat().format(value.toFixed(3))}s`;
         }
 
         if (+value < 1) {
@@ -371,6 +371,10 @@ export default class TableInput {
         "Warrior's Call Cooldown",
         'FanOfKnivesThreshold',
         'KnifeCooldown',
+        'ShieldRechargeSpeed',
+        'TowerSelectionCooldown',
+        'UberchargeDuration',
+        'UberchargeCooldown',
     ];
 
     #getDelta(cellData, deltaData, input) {
