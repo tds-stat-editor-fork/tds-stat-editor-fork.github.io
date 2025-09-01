@@ -608,10 +608,14 @@ class CalculatedManager {
                     //yeah simple to use not to calculate for FUCKS SAKE
                     let baseDPS = level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSlashSwing - 1)) / (level.Cooldown * level.WhirlwindSlashSwing) : level.Damage / level.Cooldown;
                     let susiesIdea = level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0;
-                    const hitsToFan = Math.floor(level.FanOfKnivesThreshold / level.Damage);
-                    const shittyPun = level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (hitsToFan * level.Cooldown + level.KnifeCooldown) : 0;
+                    const hitsToFan = (level.FanOfKnivesThreshold / level.Damage) + 1;
+                    if (level.FanOfKnives){
+                        let totalDamage = level.FanOfKnivesThreshold + (level.KnifeDamage * level.KnifeCount);
+                        let totalCooldown = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * 0.4 + 0.5);
+                        return totalDamage / totalCooldown;
+                    };
 
-                    return baseDPS + susiesIdea + shittyPun;
+                    return baseDPS + susiesIdea;
                 },
             },
         },
@@ -664,7 +668,7 @@ class CalculatedManager {
         KnifeThrowDPS: {
             Default: {
                 For: ['Assassin'],
-                Value: (level) => level.FanOfKnivesThreshold != 0 ? level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / ((level.FanOfKnivesThreshold / level.Damage) * level.Cooldown + level.KnifeCooldown) : 0 : 0,
+                Value: (level) => level.FanOfKnivesThreshold != 0 ? level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (((level.FanOfKnivesThreshold / level.Damage) + 1) * level.Cooldown + level.KnifeCooldown) : 0 : 0,
             },
         },
         SplashDPS: {
