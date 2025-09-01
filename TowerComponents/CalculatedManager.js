@@ -612,6 +612,7 @@ class CalculatedManager {
                     if (level.FanOfKnives){
                         let totalDamage = level.FanOfKnivesThreshold + (level.KnifeDamage * level.KnifeCount);
                         let totalCooldown = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * 0.4 + 0.5 + level.Cooldown);
+                        if (isNaN(totalDamage) || isNaN(totalCooldown) || totalCooldown == 0) return 0;
                         return totalDamage / totalCooldown;
                     };
 
