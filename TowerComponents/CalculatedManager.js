@@ -611,7 +611,7 @@ class CalculatedManager {
                     const hitsToFan = (level.FanOfKnivesThreshold / level.Damage) + 1;
                     if (level.FanOfKnives){
                         let totalDamage = level.FanOfKnivesThreshold + (level.KnifeDamage * level.KnifeCount);
-                        let totalCooldown = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * 0.4 + 0.5);
+                        let totalCooldown = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * 0.4 + 0.5 + level.Cooldown);
                         return totalDamage / totalCooldown;
                     };
 
