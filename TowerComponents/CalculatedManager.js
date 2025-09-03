@@ -610,7 +610,7 @@ class CalculatedManager {
                     let susiesIdea = level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0;
                     const hitsToFan = (level.FanOfKnivesThreshold / level.Damage) + 1;
                     if (level.FanOfKnives){
-                        let totalDamage = level.FanOfKnivesThreshold + (level.KnifeDamage * level.KnifeCount);
+                        let totalDamage = (level.FanOfKnivesThreshold + (level.KnifeDamage * level.KnifeCount));
                         let totalCooldown = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
                         if (isNaN(totalDamage) || isNaN(totalCooldown) || totalCooldown == 0) return 0;
                         return totalDamage / totalCooldown;
