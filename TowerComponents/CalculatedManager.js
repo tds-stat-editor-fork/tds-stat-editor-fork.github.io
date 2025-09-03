@@ -657,19 +657,34 @@ class CalculatedManager {
             },
             AssSaved: {
                 For: ['Assassin'],
-                Value: (level) => level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSlashSwing - 1)) / (level.Cooldown * level.WhirlwindSlashSwing) : level.Damage / level.Cooldown,
+                Value: (level) => {
+                    if (level.FanOfKnives){
+                        return level.WhirlwindSlash ? ((level.Damage * (level.WhirlwindSlashSwing - 1)) * (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1)) + level.WhirlwindSlashDamage))) / ((level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown)) : level.FanOfKnivesThreshold / ((level.FanOfKnivesThreshold / level.Damage) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
+                    };
+                    return level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSlashSwing - 1)) / (level.Cooldown * level.WhirlwindSlashSwing) : level.Damage / level.Cooldown;
+                },
             },
         },
         WhirlwindSlashDPS: {
             Default: {
                 For: ['Assassin'],
-                Value: (level) => level.WhirlwindSlashSwing != 0 ? level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0 : 0,
+                Value: (level) => {
+                    if (level.FanOfKnives) {
+                        return level.WhirlwindSlash ? (level.WhirlwindSlashDamage * (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1)) + level.WhirlwindSlashDamage))) / ((level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown)): 0;
+                    };
+                    return level.WhirlwindSlashSwing != 0 ? level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0 : 0;
+                },
             },
         },
         KnifeThrowDPS: {
             Default: {
                 For: ['Assassin'],
-                Value: (level) => level.FanOfKnivesThreshold != 0 ? level.FanOfKnives ? (level.KnifeDamage * level.KnifeCount) / (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown) : 0 : 0,
+                Value: (level) => {
+                    if (level.FanOfKnivesThreshold == 0 || !level.FanOfKnives) return 0;
+                    let totalDamage = (level.KnifeDamage * level.KnifeCount);
+                    let totalTime = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
+                    return totalDamage / totalTime;
+                },
             },
         },
         SplashDPS: {
