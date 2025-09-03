@@ -773,7 +773,7 @@ export default {
     Sentry: {
         Range: 18,
         Health: 20,
-        Cooldown: 0.45,
+        Cooldown: 0.6,
         Damage: 1,
         ExplosionDamage: 0,
         TimeBetweenMissiles: 0,
@@ -785,14 +785,14 @@ export default {
         },
         Attributes: {
             SendTime: 1.25,
-            ScrapCost: 16,
+            ScrapCost: 8,
             Lifespan: 30,
         },
     },
     RifleSentry: {
         Range: 20,
         Health: 40,
-        Cooldown: 0.3,
+        Cooldown: 0.25,
         Damage: 2,
         Detections: {
             Hidden: false,
@@ -801,15 +801,15 @@ export default {
         },
         Attributes: {
             SendTime: 1.5,
-            ScrapCost: 36,
+            ScrapCost: 45,
             Lifespan: 30,
         },
     },
     MinigunSentry: {
         Range: 20,
         Health: 60,
-        Cooldown: 0.16,
-        Damage: 5,
+        Cooldown: 0.1,
+        Damage: 3,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -817,18 +817,18 @@ export default {
         },
         Attributes: {
             SendTime: 1.75,
-            ScrapCost: 120,
+            ScrapCost: 180,
             Lifespan: 45,
         },
     },
     WarMachineSentry: {
-        ExplosionDamage: 35,
+        ExplosionDamage: 70,
         TimeBetweenMissiles: 4,
         MissileAmount: 2,
         Range: 24,
-        Health: 250,
-        Cooldown: 0.12,
-        Damage: 8,
+        Health: 300,
+        Cooldown: 0.1,
+        Damage: 3,
         Detections: {
             Hidden: true,
             Flying: false,
@@ -836,7 +836,7 @@ export default {
         },
         Attributes: {
             SendTime: 1.75,
-            ScrapCost: 250,
+            ScrapCost: 340,
             Lifespan: 60,
         },
     },

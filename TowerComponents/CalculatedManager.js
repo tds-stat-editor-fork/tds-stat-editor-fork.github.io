@@ -192,7 +192,7 @@ class CalculatedManager {
         },
         DamagePerBurst: {
             Default: {
-                For: ['Soldier', 'Freezer', 'Commando', 'Elementalist', 'Toxic Gunner'],
+                For: ['Soldier', 'Freezer', 'Elementalist', 'Toxic Gunner'],
                 Requires: ['BurstCooldown', 'Cooldown', 'Burst'],
                 Value: (level) => (level.Damage * level.Burst),
             },
@@ -248,9 +248,8 @@ class CalculatedManager {
                 For: ['Commando'],
                 Requires: ['ReloadTime', 'Ammo', 'BurstCooldown', 'Cooldown', 'Burst'],
                 Value: (level) => {
-                    const burstCount = Math.floor(level.Ammo / level.Burst);
                     const uptime = level.Ammo * level.Cooldown;
-                    const downtime = (burstCount * level.BurstCooldown) + level.ReloadTime;
+                    const downtime = level.ReloadTime;
 
                     return (uptime / (uptime + downtime)) * 100;
                 },
@@ -266,15 +265,6 @@ class CalculatedManager {
                 For: ['Gatling Gun'],
                 Requires: ['MaxAmmo', 'Cooldown'],
                 Value: (level) => level.MaxAmmo * level.Cooldown,
-            },
-            Mando: {
-                For: ['Commando'],
-                Requires: ['FireTime', 'Ammo'],
-                Value: (level) => {
-                    const burstCount = Math.floor(level.Ammo / level.Burst);
-
-                    return ((level.FireTime + level.BurstCooldown) * burstCount);
-                },
             },
         },
         TotalElapsedDamage: {
@@ -562,7 +552,7 @@ class CalculatedManager {
             },
             Commando: {
                 For: ['Commando'],
-                Value: (level) => (level.Ammo * level.Damage) / (level.Ammo * level.Cooldown + (level.Ammo / (level.Burst - 1)) * level.BurstCooldown + level.ReloadTime),
+                Value: (level) => (level.Ammo * level.Damage) / ((level.Ammo * level.Cooldown) + level.ReloadTime),
             },
             WarMachine: {
                 For: ['War Machine'],
@@ -1721,7 +1711,7 @@ class CalculatedManager {
 
             Default: {
                 Requires: ['BurstCooldown'],
-                For: ['Commando', 'Elementalist'],
+                For: ['Elementalist'],
                 Value: (cooldown) => {
                     const { extraCooldown, firerateBuff } = window.state.boosts.tower; // prettier-ignore
 
