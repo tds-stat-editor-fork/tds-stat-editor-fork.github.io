@@ -481,9 +481,9 @@ export default {
         Damage: 2,
         Attributes: {
             WhirlwindSlash: false,
-            WhirlwindSlashDamage: 0,
-            WhirlwindSlashRange: 0,
-            WhirlwindSlashSwing: 0,
+            WhirlwindDamage: 0,
+            WhirlwindRange: 0,
+            WhirlwindSwing: 0,
             FanOfKnives: false,
             FanOfKnivesThreshold: 0,
             KnifeDamage: 0,
@@ -511,9 +511,9 @@ export default {
             Cooldown: 0.6,
             Attributes: {
               WhirlwindSlash: true,
-              WhirlwindSlashSwing: 3,
-              WhirlwindSlashDamage: 6,
-              WhirlwindSlashRange: 6, 
+              WhirlwindSwing: 3,
+              WhirlwindDamage: 6,
+              WhirlwindRange: 6, 
             },
           },
           Title: "Advanced Hand to Hand Training",
@@ -524,7 +524,7 @@ export default {
           Stats: {
             Damage: 24,
             Attributes: {
-              WhirlwindSlashDamage: 18,
+              WhirlwindDamage: 18,
             },
           },
           Title: "Upgraded Blades",
@@ -537,8 +537,8 @@ export default {
             Cooldown: 0.5,
             Range: 7,
             Attributes: {
-              WhirlwindSlashDamage: 30,
-              WhirlwindSlashRange: 7,
+              WhirlwindDamage: 30,
+              WhirlwindRange: 7,
               FanOfKnives: true,
               FanOfKnivesThreshold: 500,
               KnifeDamage: 60,
@@ -562,9 +562,9 @@ export default {
         Damage: 2,
         Attributes: {
             WhirlwindSlash: false,
-            WhirlwindSlashDamage: 0,
-            WhirlwindSlashRange: 0,
-            WhirlwindSlashSwing: 0,
+            WhirlwindDamage: 0,
+            WhirlwindRange: 0,
+            WhirlwindSwing: 0,
             FanOfKnives: false,
             FanOfKnivesThreshold: 0,
             KnifeDamage: 0,
@@ -592,9 +592,9 @@ export default {
             Range: 6.5,
             Attributes: {
               WhirlwindSlash: true,
-              WhirlwindSlashSwing: 3,
-              WhirlwindSlashDamage: 6,
-              WhirlwindSlashRange: 6, 
+              WhirlwindSwing: 3,
+              WhirlwindDamage: 6,
+              WhirlwindRange: 6, 
             },
           },
           Title: "Advanced Hand to Hand Training",
@@ -605,7 +605,7 @@ export default {
           Stats: {
             Damage: 14,
             Attributes: {
-              WhirlwindSlashDamage: 14,
+              WhirlwindDamage: 14,
             },
           },
           Title: "Upgraded Blades",
@@ -618,8 +618,8 @@ export default {
             Cooldown: 0.5,
             Range: 7,
             Attributes: {
-              WhirlwindSlashDamage: 25,
-              WhirlwindSlashRange: 7,
+              WhirlwindDamage: 25,
+              WhirlwindRange: 7,
               FanOfKnives: true,
               FanOfKnivesThreshold: 150,
               KnifeDamage: 25,

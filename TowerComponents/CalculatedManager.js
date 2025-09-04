@@ -596,12 +596,12 @@ class CalculatedManager {
                 Value: (level) => {
                     //"realistically its only saved from being a buggy mess because its simple" - mentin
                     //yeah simple to use not to calculate for FUCKS SAKE
-                    let baseDPS = level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSlashSwing - 1)) / (level.Cooldown * level.WhirlwindSlashSwing) : level.Damage / level.Cooldown;
-                    let susiesIdea = level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0;
+                    let baseDPS = level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSwing - 1)) / (level.Cooldown * level.WhirlwindSwing) : level.Damage / level.Cooldown;
+                    let susiesIdea = level.WhirlwindSlash ? level.WhirlwindDamage / (level.WhirlwindSwing * level.Cooldown) : 0;
                     const hitsToFan = (level.FanOfKnivesThreshold / level.Damage) + 1;
                     if (level.FanOfKnives){
                         let totalDamage = (level.FanOfKnivesThreshold + (level.KnifeDamage * level.KnifeCount));
-                        let totalCooldown = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
+                        let totalCooldown = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSwing - 1) + level.WhirlwindDamage) / level.WhirlwindSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
                         if (isNaN(totalDamage) || isNaN(totalCooldown) || totalCooldown == 0) return 0;
                         return totalDamage / totalCooldown;
                     };
@@ -649,9 +649,9 @@ class CalculatedManager {
                 For: ['Assassin'],
                 Value: (level) => {
                     if (level.FanOfKnives){
-                        return level.WhirlwindSlash ? ((level.Damage * (level.WhirlwindSlashSwing - 1)) * (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1)) + level.WhirlwindSlashDamage))) / ((level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown)) : level.FanOfKnivesThreshold / ((level.FanOfKnivesThreshold / level.Damage) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
+                        return level.WhirlwindSlash ? ((level.Damage * (level.WhirlwindSlash - 1)) * (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlash - 1)) + level.WhirlwindDamage))) / ((level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSwing - 1) + level.WhirlwindDamage) / level.WhirlwindSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown)) : level.FanOfKnivesThreshold / ((level.FanOfKnivesThreshold / level.Damage) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
                     };
-                    return level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSlashSwing - 1)) / (level.Cooldown * level.WhirlwindSlashSwing) : level.Damage / level.Cooldown;
+                    return level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSwing - 1)) / (level.Cooldown * level.WhirlwindSwing) : level.Damage / level.Cooldown;
                 },
             },
         },
@@ -660,9 +660,9 @@ class CalculatedManager {
                 For: ['Assassin'],
                 Value: (level) => {
                     if (level.FanOfKnives) {
-                        return level.WhirlwindSlash ? (level.WhirlwindSlashDamage * (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1)) + level.WhirlwindSlashDamage))) / ((level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown)): 0;
+                        return level.WhirlwindSlash ? (level.WhirlwindDamage * (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSwing - 1)) + level.WhirlwindDamage))) / ((level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown)): 0;
                     };
-                    return level.WhirlwindSlashSwing != 0 ? level.WhirlwindSlash ? level.WhirlwindSlashDamage / (level.WhirlwindSlashSwing * level.Cooldown) : 0 : 0;
+                    return level.WhirlwindSlash != 0 ? level.WhirlwindSlash ? level.WhirlwindDamage / (level.WhirlwindSwing * level.Cooldown) : 0 : 0;
                 },
             },
         },
@@ -672,7 +672,7 @@ class CalculatedManager {
                 Value: (level) => {
                     if (level.FanOfKnivesThreshold == 0 || !level.FanOfKnives) return 0;
                     let totalDamage = (level.KnifeDamage * level.KnifeCount);
-                    let totalTime = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlashSwing - 1) + level.WhirlwindSlashDamage) / level.WhirlwindSlashSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
+                    let totalTime = (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSwing - 1) + level.WhirlwindDamage) / level.WhirlwindSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
                     return totalDamage / totalTime;
                 },
             },
