@@ -147,7 +147,7 @@ export default class PropertyViewer {
         toggleButton.element.addEventListener(
             'enabled',
             ((e) => {
-                this.viewer.buttonCheck = "getRidOfUptimeYouDumbFuck";
+                this.viewer.buttonCheck = "heyWaitWhyIsUptimeHere";
                 this.show(innerText);
                 this.viewer.reload();
             }).bind(this)
