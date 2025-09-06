@@ -109,6 +109,8 @@ class Viewer {
         this.removeAttributeForm = new RemoveAttributeForm(this);
 
         this.buttonCheck = "heyWaitWhyIsUptimeHere";
+
+        this.elementCheck = "";
     }
 
     /**
@@ -325,7 +327,7 @@ class Viewer {
             this.getActiveSkin().name
         );
 
-        if (this.buttonCheck == "getRidOfUptimeYouDumbFuck" && this.tower.name != 'Accelerator' && !this.propertyViewer.disabled.includes("Uptime")){
+        if (this.buttonCheck == "getRidOfUptimeYouDumbFuck" && this.tower.name != 'Accelerator' && !this.propertyViewer.disabled.includes("Uptime") && this.elementCheck == "Uptime"){
             this.propertyViewer.disabled.push('Uptime');
         }
 
@@ -345,7 +347,7 @@ class Viewer {
 
         this.towerTable.root.parentElement.classList.remove('d-none');
 
-        if (this.buttonCheck != "getRidOfUptimeYouDumbFuck" && this.propertyViewer.disabled.includes("Uptime")){
+        if (this.buttonCheck != "getRidOfUptimeYouDumbFuck" && this.propertyViewer.disabled.includes("Uptime") && this.elementCheck == "Uptime"){
             this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Uptime"), 1);
         }
 

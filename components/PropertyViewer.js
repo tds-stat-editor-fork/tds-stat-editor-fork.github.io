@@ -148,6 +148,7 @@ export default class PropertyViewer {
             'enabled',
             ((e) => {
                 this.viewer.buttonCheck = "heyWaitWhyIsUptimeHere";
+                this.viewer.elementCheck = toggleButton.element;
                 this.show(innerText);
                 this.viewer.reload();
             }).bind(this)
