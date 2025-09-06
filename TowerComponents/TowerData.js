@@ -4023,7 +4023,6 @@ export default {
         {
           Image: 112504548905627,
           Stats: {
-            Extras: ["Increased healing"],
             Attributes: { 
               Healing: 20,
               OverhealLimit: 20,
@@ -4040,7 +4039,6 @@ export default {
         {
           Image: 112504548905627,
           Stats: {
-            Extras: ["Increased healing", "Cleansing Ability"],
             Attributes: { 
               Healing: 25,
               OverhealLimit: 50,
@@ -4060,6 +4058,7 @@ export default {
         Attributes: { Healing: 5, OverhealLimit: 0, FirerateBuff: 20, DamageBuff: 0, MaxTargets: 1, ShieldRechargeSpeed: 8, TowerSelectionCooldown: 0.5, UberchargeDuration: 0, UberchargeCooldown: 0,},
         Price: 500,
         Range: 12,
+        Limit: 5,
       },
     },
   },
