@@ -147,11 +147,13 @@ export default class PropertyViewer {
         toggleButton.element.addEventListener(
             'enabled',
             ((e) => {
+                this.viewer.buttonCheck = "getRidOfUptimeYouDumbFuck";
                 this.show(innerText);
                 this.viewer.reload();
             }).bind(this)
         );
         toggleButton.element.addEventListener('disabled', ((e) => {
+            this.viewer.buttonCheck = "getRidOfUptimeYouDumbFuck";
 			this.hide(innerText);
 			this.viewer.reload();
 		}).bind(this)); // prettier-ignore

@@ -649,7 +649,7 @@ class CalculatedManager {
                 For: ['Assassin'],
                 Value: (level) => {
                     if (level.FanOfKnives){
-                        return level.WhirlwindSlash ? ((level.Damage * (level.WhirlwindSlash - 1)) * (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSlash - 1)) + level.WhirlwindDamage))) / ((level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSwing - 1) + level.WhirlwindDamage) / level.WhirlwindSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown)) : level.FanOfKnivesThreshold / ((level.FanOfKnivesThreshold / level.Damage) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
+                        return level.WhirlwindSlash ? ((level.Damage * (level.WhirlwindSwing - 1)) * (level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSwing - 1)) + level.WhirlwindDamage))) / ((level.FanOfKnivesThreshold / ((level.Damage * (level.WhirlwindSwing - 1) + level.WhirlwindDamage) / level.WhirlwindSwing) * level.Cooldown + level.KnifeCooldown + level.Cooldown)) : level.FanOfKnivesThreshold / ((level.FanOfKnivesThreshold / level.Damage) * level.Cooldown + level.KnifeCooldown + level.Cooldown);
                     };
                     return level.WhirlwindSlash ? (level.Damage * (level.WhirlwindSwing - 1)) / (level.Cooldown * level.WhirlwindSwing) : level.Damage / level.Cooldown;
                 },
