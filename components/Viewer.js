@@ -350,8 +350,9 @@ class Viewer {
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Hidden"), 1);
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Flying"), 1);
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Lead"), 1);
-        if (this.tower.name != "Accelerator" && !this.propertyViewer.disabled.includes("Uptime")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Uptime"), 1);
-        if (this.tower.name != "Accelerator" && !this.propertyViewer.disabled.includes("BurstTime")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("BurstTime"), 1);
+        
+        if (this.tower.name != "Accelerator" && this.propertyViewer.disabled.includes("Uptime") && this.buttonCheck != "getRidOfUptimeYouDumbFuck" && this.elementCheck == "Uptime") this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Uptime"), 1);
+        if (this.tower.name != "Accelerator" && this.propertyViewer.disabled.includes("BurstTime") && this.buttonCheck != "getRidOfUptimeYouDumbFuck" && this.elementCheck == "BurstTime") this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("BurstTime"), 1);
 
         this.towerTable.root.parentElement.classList.remove('d-none');
 
