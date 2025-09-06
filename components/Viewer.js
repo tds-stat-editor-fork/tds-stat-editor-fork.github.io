@@ -331,23 +331,35 @@ class Viewer {
             this.propertyViewer.disabled.push('Uptime');
         }
 
+        if (this.buttonCheck == "getRidOfUptimeYouDumbFuck" && this.tower.name != 'Accelerator' && !this.propertyViewer.disabled.includes("BurstTime") && this.elementCheck == "BurstTime"){
+            this.propertyViewer.disabled.push('BurstTime');
+        }
+
         if (this.shouldHideDamage() && !this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.push('Damage');
         if (this.shouldHideCooldown() && !this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.push('Cooldown');
         if (this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.tower.name != 'Medic' && !this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.push('Range');
         if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.push('Hidden');
         if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.push('Flying');
         if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.push('Lead');
+        if (this.tower.name != "Accelerator" && !this.propertyViewer.disabled.includes("Uptime")) this.propertyViewer.disabled.push('Uptime');
+        if (this.tower.name != "Accelerator" && !this.propertyViewer.disabled.includes("BurstTime")) this.propertyViewer.disabled.push('BurstTime');
 
         if (!this.shouldHideDamage() && this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Damage"), 1);
         if (!this.shouldHideCooldown() && this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Cooldown"), 1);
-        if (!this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Range"), 1);
+        if (!this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.tower.name != "Medic" && this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Range"), 1);
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Hidden"), 1);
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Flying"), 1);
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Lead"), 1);
+        if (this.tower.name != "Accelerator" && !this.propertyViewer.disabled.includes("Uptime")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Uptime"), 1);
+        if (this.tower.name != "Accelerator" && !this.propertyViewer.disabled.includes("BurstTime")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("BurstTime"), 1);
 
         this.towerTable.root.parentElement.classList.remove('d-none');
 
         if (this.buttonCheck != "getRidOfUptimeYouDumbFuck" && this.propertyViewer.disabled.includes("Uptime") && this.elementCheck == "Uptime"){
+            this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Uptime"), 1);
+        }
+
+        if (this.buttonCheck != "getRidOfUptimeYouDumbFuck" && this.propertyViewer.disabled.includes("BurstTime") && this.elementCheck == "BurstTime"){
             this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Uptime"), 1);
         }
 
