@@ -327,7 +327,7 @@ class Viewer {
             this.getActiveSkin().name
         );
 
-        if (this.buttonCheck == "getRidOfUptimeYouDumbFuck" && this.tower.name != 'Accelerator' && !this.propertyViewer.disabled.includes("Uptime") && this.elementCheck == "Uptime"){
+        if (this.buttonCheck == "aUptimeYouDumbFuck" && this.tower.name != 'Accelerator' && !this.propertyViewer.disabled.includes("Uptime") && this.elementCheck == "Uptime"){
             this.propertyViewer.disabled.push('Uptime');
         }
 
@@ -361,7 +361,7 @@ class Viewer {
         }
 
         if (this.buttonCheck != "getRidOfUptimeYouDumbFuck" && this.propertyViewer.disabled.includes("BurstTime") && this.elementCheck == "BurstTime"){
-            this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Uptime"), 1);
+            this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("BurstTime"), 1);
         }
 
         this.buttonCheck = "heyWaitWhyIsUptimeHere";
