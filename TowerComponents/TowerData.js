@@ -4779,7 +4779,7 @@ export default {
         {
           Stats: {
             Extras: ["Soul Meter: 50 > 60", "Max Hits: 1 > 2", "Max Graves: 2 > 4"],
-            Attributes: { MaxGraves: 4, MaxHits: 2, SoulMeter: 60 },
+            Attributes: { MaxGraves: 4, MaxHits: 2, SoulMeter: 60, BuildTime: 1 },
             Damage: 12,
             Cooldown: 1.2
           },
@@ -4815,6 +4815,7 @@ export default {
             Attributes: {
               MaxGraveLevel: 2,
               SoulMeter: 450,
+              BuildTime: 0.8,
             },
             Range: 26,
             Damage: 30,
@@ -4866,7 +4867,7 @@ export default {
           SpawnCount: 2,
           MaxHits: 1,
           SummonDelay: 0.4,
-          BuildTime: 0.8,
+          BuildTime: 1.5,
           Buildzone: 6.5,
           BuildDelay: 0.4,
           AimTime: 0.4,
