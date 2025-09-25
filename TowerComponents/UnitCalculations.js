@@ -22,7 +22,7 @@ class UnitCalculations {
                 Value: (level) => (level.Damage / level.Tick) / level.Cooldown,
             },
             Rocket: {
-                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5'],
+                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5', 'Tank (PVP)', 'Railgun Tank (PVP)'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (unit) => {
                     const damage = unit?.Damage ?? 0;
