@@ -987,6 +987,9 @@ class CalculatedManager {
 
                     if (isNaN(totalBurnTicks)) totalBurnTicks = 0;
 
+                    let burnDamage = level.BurnDamage;
+                    if (isNaN(burnDamage)) burnDamage = 0;
+
                     return (totalShots * level.Damage) + Math.floor(totalBurnTicks * level.BurnDamage);
                 },  
             },
