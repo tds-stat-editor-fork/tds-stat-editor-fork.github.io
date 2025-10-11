@@ -287,6 +287,10 @@ export default class TableInput {
             case 'UberchargeDuration':
             case 'UberchargeCooldown':
             case 'TowerSelectionCooldown':
+            case 'FrostGrenadeCooldown':
+            case 'FrostGrenadeFreezeTime':
+            case 'KnifeCooldown':
+            case 'TrapPlacementTime':
                 return `${Intl.NumberFormat().format(value.toFixed(3))}s`;
         }
 
@@ -375,6 +379,9 @@ export default class TableInput {
         'TowerSelectionCooldown',
         'UberchargeDuration',
         'UberchargeCooldown',
+        'FrostGrenadeCooldown',
+        'FrostGrenadeFreezeTime',
+        'TrapPlacementTime',
     ];
 
     #getDelta(cellData, deltaData, input) {

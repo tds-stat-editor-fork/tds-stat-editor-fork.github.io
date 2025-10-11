@@ -990,7 +990,7 @@ class CalculatedManager {
                     let burnDamage = level.BurnDamage;
                     if (isNaN(burnDamage)) burnDamage = 0;
 
-                    return (totalShots * level.Damage) + Math.floor(totalBurnTicks * level.BurnDamage);
+                    return (totalShots * level.Damage) + Math.floor(totalBurnTicks * burnDamage);
                 },  
             },
             Toyjick: {
@@ -1128,12 +1128,12 @@ class CalculatedManager {
 
                     let totalSentryShots = Math.floor(sentryCoverage / sentry.attributes.Cooldown);
 
-                    if(sentry.TimeBetweenMissiles != 0) {
-                        totalRockets = Math.floor((sentryCoverage / sentry.TimeBetweenMissiles)) * sentry.MissileAmount;
+                    if(sentry.attributes.TimeBetweenMissiles != 0) {
+                        totalRockets = Math.floor((sentryCoverage / sentry.attributes.TimeBetweenMissiles)) * sentry.attributes.MissileAmount;
 
                         if(!isFinite(totalRockets)) totalRockets = 0;
 
-                        totalRocketDamage = totalRockets * sentry.ExplosionDamage;
+                        totalRocketDamage = totalRockets * sentry.attributes.ExplosionDamage;
 
                         if(!isFinite(totalRocketDamage)) totalRocketDamage = 0;
                     }
@@ -1862,7 +1862,6 @@ class CalculatedManager {
         this.#add('BleedTickDamage', skinData);
         this.#add('BleedCollapseDamage', skinData);
         this.#add('MaxDPS', skinData);
-        this.#add('GlobalMaxDPS', skinData);
         this.#add("DPS Rate", skinData);
         this.#add('TimeForMaxStacks', skinData);
         this.#add('SpikeDPS', skinData);
@@ -1883,6 +1882,7 @@ class CalculatedManager {
         this.#add('BeeDPS', skinData);
         this.#add('MaxBeeDPS', skinData);
         this.#add('GrenadeDPS', skinData);
+        this.#add('GlobalMaxDPS', skinData);
         this.#add('MissileDPS', skinData);
         this.#add('SpikeCostEfficiency', skinData);
         this.#add('LandmineCostEfficiency', skinData);

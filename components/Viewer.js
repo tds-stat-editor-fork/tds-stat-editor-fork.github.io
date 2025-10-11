@@ -301,15 +301,15 @@ class Viewer {
     }
 
     shouldHideDamage() {
-        return this.tower.name ? (this.tower.name == 'Medic' || this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name === 'Mecha Base') : false;
+        return this.tower.name ? (this.tower.name == 'Medic' || this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name === 'Mecha Base' || this.tower.name === 'PVP Sends') : false;
     }
 
     shouldHideCooldown() {
-        return this.tower.name ? (this.tower.name == 'Medic' || this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name === 'Mecha Base') : false;
+        return this.tower.name ? (this.tower.name == 'Medic' || this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name === 'Mecha Base' || this.tower.name === 'PVP Sends') : false;
     }
 
     shouldHideDetections() {
-        return this.tower.name ? (this.tower.name == 'Medic' || this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name == 'Mecha Base' || this.tower.name === 'DJ Booth') : false;
+        return this.tower.name ? (this.tower.name == 'Medic' || this.tower.name === 'Farm' || this.tower.name === 'Trapper' || this.tower.name === 'Military Base' || this.tower.name === 'Mercenary Base' || this.tower.name === 'Elf Camp' || this.tower.name === 'Firework Technician' || this.tower.name === 'Biologist' || this.tower.name == 'Mecha Base' || this.tower.name === 'DJ Booth' || this.tower.name === 'PVP Sends') : false;
     }
 
     #loadName() {
@@ -327,7 +327,7 @@ class Viewer {
             this.getActiveSkin().name
         );
 
-        if (this.buttonCheck == "aUptimeYouDumbFuck" && this.tower.name != 'Accelerator' && !this.propertyViewer.disabled.includes("Uptime") && this.elementCheck == "Uptime"){
+        if (this.buttonCheck == "getRidOfUptimeYouDumbFuck" && this.tower.name != 'Accelerator' && !this.propertyViewer.disabled.includes("Uptime") && this.elementCheck == "Uptime"){
             this.propertyViewer.disabled.push('Uptime');
         }
 
