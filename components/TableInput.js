@@ -222,6 +222,17 @@ export default class TableInput {
             case "ThornsSlow":
             case 'TowerCloningCost':
                 return `${Intl.NumberFormat().format(value.toFixed(2))}%`;
+            case 'FlightSpeed':
+            case 'EnemyCash':
+            case 'BurnDamageMult':
+            case 'IceDamageMult':
+            case 'PoisonDamageMult':
+            case 'ConfusionDamageMult':
+            case 'ClusterDamageMult':
+            case 'CritMultiplier':
+            case 'FreezeBonusMult':
+            case 'AftershockMult':
+                return `${Intl.NumberFormat().format(value.toFixed(3))}x`;
             case 'Cooldown':
             case 'ChargeTime':
             case 'LaserCooldown':
@@ -291,6 +302,10 @@ export default class TableInput {
             case 'FrostGrenadeFreezeTime':
             case 'KnifeCooldown':
             case 'TrapPlacementTime':
+            case 'HologramCooldown':
+            case 'StingTime':
+            case 'PoisonLength':
+            case 'TrapLifespan':
                 return `${Intl.NumberFormat().format(value.toFixed(3))}s`;
         }
 

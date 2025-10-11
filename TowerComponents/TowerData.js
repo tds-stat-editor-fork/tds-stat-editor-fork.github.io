@@ -184,7 +184,7 @@ export default {
           Stats: {
             Extras: ["Speed increased by 35%", "Upgraded Bombs"],
             Attributes: {
-              FlightSpeedMult: 1.35,
+              FlightSpeed: 1.35,
               BombTime: 1.5,
               ExplosionRadius: 3,
               BombDamage: 40,
@@ -203,7 +203,7 @@ export default {
         Range: 7.5,
         Price: 550,
         Attributes: {
-          FlightSpeedMult: 1,
+          FlightSpeed: 1,
           BombDropping: false,
           BombDamage: 0,
           BombTime: 0,
@@ -2292,7 +2292,7 @@ export default {
           SpawnTime: 1,
           SentryShield: false,
           Buildzone: 4,
-          Deadzone: 1.25,
+          Deadzone: 1.5,
         },
         Cooldown: 1.2,
         Damage: 4,
@@ -2696,11 +2696,11 @@ export default {
           Burst: 1,
           BurstCooldown: 0,
           CanFreeze: false,
+          ChillLength: 5,
           ChillPercent: 10,
           MaxChill: 50,
           TickRate: 0.25,
           FrostGrenade: false,
-          ChillLength: 5,
         },
         Price: 425,
         Range: 12,
@@ -2946,7 +2946,6 @@ export default {
             Attributes: {
               Spread: 6.5,
               Angle: 55,
-              Deadzone: 1.25,
               Recoil: 0.06,
             },
             Cooldown: 0.09,
@@ -2962,7 +2961,6 @@ export default {
           Stats: {
             Attributes: {
               Angle: 65,
-              Deadzone: 2,
               ReloadTime: 6,
               Recoil: 0.03,
               MaxAmmo: 400,
@@ -3056,7 +3054,6 @@ export default {
             Attributes: {
               Spread: 6.5,
               Angle: 55,
-              Deadzone: 1.25,
               Recoil: 0.06,
             },
             Cooldown: 0.09,
@@ -3072,7 +3069,6 @@ export default {
           Stats: {
             Attributes: {
               Angle: 65,
-              Deadzone: 2,
               ReloadTime: 6,
               Recoil: 0.03,
               MaxAmmo: 400,
@@ -3177,7 +3173,7 @@ export default {
           MaxHits: 1,
           Slowdown: 0,
           EV: 0.6,
-          EnemyCashMult: 1,
+          EnemyCash: 1,
           HologramCooldown: 0,
           HologramLifetime: 0,
           TowerCloningCost: 0,
@@ -3195,7 +3191,7 @@ export default {
             Cooldown: 0.5,
             Range: 14,
             Attributes: {
-              EnemyCashMult: 1.075,
+              EnemyCash: 1.075,
             },
           },
           Title: "Upgraded Rig",
@@ -3209,7 +3205,7 @@ export default {
             Attributes: {
               MaxHits: 2,
               Slowdown: 15,
-              EnemyCashMult: 1.1,
+              EnemyCash: 1.1,
               EV: 0.65,
             },
           },
@@ -3237,7 +3233,7 @@ export default {
             Range: 16,
             Cooldown: 0.3,
             Attributes: {
-              EnemyCashMult: 1.125,
+              EnemyCash: 1.125,
               Slowdown: 20,
               EV: 0.825,
               HologramLifetime: 75,
@@ -3269,7 +3265,7 @@ export default {
           MaxHits: 1,
           Slowdown: 0,
           EV: 0.6,
-          EnemyCashMult: 1,
+          EnemyCash: 1,
           HologramCooldown: 0,
           HologramLifetime: 0,
           TowerCloningCost: 0,
@@ -3287,7 +3283,7 @@ export default {
             Cooldown: 0.5,
             Range: 14,
             Attributes: {
-              EnemyCashMult: 1.075,
+              EnemyCash: 1.075,
             },
           },
           Title: "Upgraded Rig",
@@ -3301,7 +3297,7 @@ export default {
             Attributes: {
               MaxHits: 2,
               Slowdown: 15,
-              EnemyCashMult: 1.1,
+              EnemyCash: 1.1,
               EV: 0.65,
             },
           },
@@ -3329,7 +3325,7 @@ export default {
             Range: 16,
             Cooldown: 0.3,
             Attributes: {
-              EnemyCashMult: 1.125,
+              EnemyCash: 1.125,
               Slowdown: 20,
               EV: 0.825,
               HologramLifetime: 75,
@@ -3348,7 +3344,7 @@ export default {
               HologramLifetime: 120,
               Slowdown: 25,
               TowerCloningCost: 65,
-              EnemyCashMult: 1.2,
+              EnemyCash: 1.2,
             },
           },
           Title: "Rug Pull",
@@ -3363,7 +3359,7 @@ export default {
           MaxHits: 1,
           Slowdown: 0,
           EV: 0.6,
-          EnemyCashMult: 1,
+          EnemyCash: 1,
           HologramCooldown: 0,
           HologramLifetime: 0,
           TowerCloningCost: 0,
@@ -3381,7 +3377,7 @@ export default {
             Cooldown: 0.5,
             Range: 14,
             Attributes: {
-              EnemyCashMult: 1.075,
+              EnemyCash: 1.075,
             },
           },
           Title: "Upgraded Rig",
@@ -3395,7 +3391,7 @@ export default {
             Attributes: {
               MaxHits: 2,
               Slowdown: 15,
-              EnemyCashMult: 1.1,
+              EnemyCash: 1.1,
               EV: 0.65,
             },
           },
@@ -3423,7 +3419,7 @@ export default {
             Range: 16,
             Cooldown: 0.3,
             Attributes: {
-              EnemyCashMult: 1.125,
+              EnemyCash: 1.125,
               TowerCloningCost: 30,
               Slowdown: 20,
               EV: 0.825,
@@ -3456,7 +3452,7 @@ export default {
           MaxHits: 1,
           Slowdown: 0,
           EV: 0.6,
-          EnemyCashMult: 1,
+          EnemyCash: 1,
           HologramCooldown: 0,
           HologramLifetime: 0,
           TowerCloningCost: 0,
@@ -3474,7 +3470,7 @@ export default {
             Cooldown: 0.5,
             Range: 14,
             Attributes: {
-              EnemyCashMult: 1.075,
+              EnemyCash: 1.075,
             },
           },
           Title: "Upgraded Rig",
@@ -3488,7 +3484,7 @@ export default {
             Attributes: {
               MaxHits: 2,
               Slowdown: 15,
-              EnemyCashMult: 1.1,
+              EnemyCash: 1.1,
               EV: 0.65,
             },
           },
@@ -3516,7 +3512,7 @@ export default {
             Range: 16,
             Cooldown: 0.3,
             Attributes: {
-              EnemyCashMult: 1.125,
+              EnemyCash: 1.125,
               TowerCloningCost: 30,
               Slowdown: 20,
               EV: 0.825,
@@ -3536,7 +3532,7 @@ export default {
               HologramLifetime: 120,
               Slowdown: 25,
               TowerCloningCost: 25,
-              EnemyCashMult: 1.2,
+              EnemyCash: 1.2,
             },
           },
           Title: "Rug Pull",
@@ -7411,6 +7407,7 @@ export default {
         Attributes: {
           MaxTraps: 4,
           TrapPlacementTime: 0.5,
+          TrapLifespan: 75,
           SpikeDamage: 10,
           SpikeHealth: 10,
           SpikeCooldown: 5.25,
