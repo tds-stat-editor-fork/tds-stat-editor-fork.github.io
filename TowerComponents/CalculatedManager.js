@@ -985,13 +985,13 @@ class CalculatedManager {
 
                     let totalShots = Math.floor(totalDamage / level.Damage);
 
-                    if (isNaN(totalBurnTicks)) totalBurnTicks = 0;
+                    if (!isFinite(totalBurnTicks)) totalBurnTicks = 0;
 
                     let burnDamage = level.BurnDamage;
-                    if (isNaN(burnDamage)) burnDamage = 0;
+                    if (!isFinite(burnDamage)) burnDamage = 0;
 
                     return (totalShots * level.Damage) + Math.floor(totalBurnTicks * burnDamage);
-                },  
+                },
             },
             Toyjick: {
                 Requires: ['Coverage', 'DPS'],
