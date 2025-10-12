@@ -225,7 +225,6 @@ export default class TableUnitInput {
             case 'PoisonTime':
             case 'ConfusionTime':
             case 'ConfusionCooldown':
-                return `${Intl.NumberFormat().format(value.toFixed(3))}s`
         }
         return +(+number).toFixed(2);
     }
