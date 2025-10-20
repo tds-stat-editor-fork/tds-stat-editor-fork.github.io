@@ -612,7 +612,7 @@ class CalculatedManager {
         },
         BaseDPS: {
             Default: {
-                For: ['Pyromancer', 'Ace Pilot', 'Mortar', 'Ranger', 'Archer', 'Swarmer', 'Jester', 'Hallow Punk', 'War Machine'],
+                For: ['Pyromancer', 'Ace Pilot', 'Mortar', 'Ranger', 'Archer', 'Jester', 'Hallow Punk', 'War Machine'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (level) => level.Damage / level.Cooldown,
             },
@@ -1355,13 +1355,6 @@ class CalculatedManager {
                 Value: (level) => (level.BeeDamage / level.TickRate) * level.BeeStacks,
             },
         },
-        MaxBeeDPS: {
-            Default: {
-                For: ['Swarmer'],
-                Requires: ['StingTime', 'BeeDamage', 'TickRate'],
-                Value: (level) => (level.BeeDamage / level.TickRate) * level.MaxBeeStacks,
-            },
-        },
         GrenadeDPS: {
             Default: {
                 For: ['Swarmer'],
@@ -1861,6 +1854,7 @@ class CalculatedManager {
         this.#add('DPS', skinData);
         this.#add('BleedTickDamage', skinData);
         this.#add('BleedCollapseDamage', skinData);
+        this.#add('BeeDPS', skinData);
         this.#add('MaxDPS', skinData);
         this.#add("DPS Rate", skinData);
         this.#add('TimeForMaxStacks', skinData);
@@ -1879,8 +1873,6 @@ class CalculatedManager {
         this.#add('BearTrapPileDamage', skinData);
         this.#add('PoisonDPS', skinData);
         this.#add('LimitDPS', skinData);
-        this.#add('BeeDPS', skinData);
-        this.#add('MaxBeeDPS', skinData);
         this.#add('GrenadeDPS', skinData);
         this.#add('GlobalMaxDPS', skinData);
         this.#add('MissileDPS', skinData);
