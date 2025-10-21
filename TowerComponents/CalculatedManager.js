@@ -1014,7 +1014,7 @@ class CalculatedManager {
 
                     let totalShots = Math.floor(totalDamage / level.Damage);
 
-                    if (!isFinite(totalChillTicks)) totalChillTicks = 0;
+                    if (!isFinite(totalChillTicks) || isNaN(totalChillTicks)) totalChillTicks = 0;
 
                     return (totalShots * level.Damage) + Math.floor(totalChillTicks * level.ChillDamage);
                 },  
