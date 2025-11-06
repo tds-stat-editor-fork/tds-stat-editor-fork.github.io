@@ -144,6 +144,16 @@ const register = {
             'GunnerElf',
         ],
     },
+    'Archer': {
+        Default: [
+            'Flame - Level 3',
+            'Flame - Level 4',
+            'Flame - Level 5',
+            'Shock - Level 4',
+            'Shock - Level 5',
+            'Explosive - Level 5',
+        ],
+    }
 };
 
 export default class UnitManager {
