@@ -93,6 +93,7 @@ class UnitCalculations {
                     return dps + poisonDPS;
                 },
             },
+
         },
         AggregateDPS: {
             Default: {
@@ -154,7 +155,7 @@ class UnitCalculations {
         },
         BaseDPS: {
             Default: {
-                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5', 'Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
+                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5', 'Ivy1', 'Ivy2', 'Ivy3', 'Ivy4', 'Flame - Level 3', 'Flame - Level 4', 'Flame - Level 5', 'Explosive - Level 5'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (level) => {
                     return level.Damage / level.Cooldown;
@@ -163,7 +164,7 @@ class UnitCalculations {
         },
         MissileDPS: {
             Default: {
-                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5'],
+                For: ['WarMachineSentry', 'Tank', 'Railgun Tank', 'Mark1Rocket', 'Mark2', 'Mark3', 'Mark4', 'Mark5', 'Explosive - Level 5'],
                 Requires: ['Damage', 'Cooldown'],
                 Value: (unit) => {
                     const missileAmount = unit?.MissileAmount ?? 1;
@@ -184,6 +185,14 @@ class UnitCalculations {
                 For: ['Ivy1', 'Ivy2', 'Ivy3', 'Ivy4'],
                 Value: (unit) => {
                     return unit.PoisonDamage / unit.PoisonTick;
+                },
+            }, 
+        },
+        BurnDPS: {
+            Default: {
+                For: ['Flame - Level 3', 'Flame - Level 4', 'Flame - Level 5'],
+                Value: (unit) => {
+                    return unit.BurnDamage / unit.BurnTick;
                 },
             }, 
         },
@@ -299,6 +308,7 @@ class UnitCalculations {
         this.#add('BaseDPS', unitData);
         this.#add('MissileDPS', unitData);
         this.#add('PoisonDPS', unitData);
+        this.#add('BurnDPS', unitData);
         this.#add('AggregateDPS', unitData);
         this.#add('RamDPS', unitData);
 

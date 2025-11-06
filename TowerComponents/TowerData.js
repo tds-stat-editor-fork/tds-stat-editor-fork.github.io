@@ -7770,9 +7770,9 @@ export default {
               MeleeDamage: 150,
               MeleeRange: 7.5,
             },
-            Title: "Forbidden Arts",
-            Cost: 6800,
           },
+          Title: "Forbidden Arts",
+          Cost: 6800,
         },
         {
           Stats: {
@@ -7783,9 +7783,9 @@ export default {
               MeleeDamage: 250,
               MeleeCooldown: 1.8,
             },
-            Title: "Pact of the Blade",
-            Cost: 12000,
           },
+          Title: "Pact of the Blade",
+          Cost: 12000,
         },
         {
           Stats: {
@@ -7803,9 +7803,9 @@ export default {
               MeleeRange: 8,
               MeleeMaxHits: 3,
             },
-            Title: "Eldritch Knight",
-            Cost: 18500,
           },
+          Title: "Eldritch Knight",
+          Cost: 18500,
         },
         {
           Stats: {
@@ -7819,9 +7819,9 @@ export default {
               MeleeRange: 9,
               BleedStack: 6,
             },
-            Title: "Abyss Walker",
-            Cost: 28000,
           },
+          Title: "Abyss Walker",
+          Cost: 28000,
         },
       ],
     }

@@ -448,22 +448,6 @@ class CalculatedManager {
                     return dps + burnDPS;
                 },
             },
-            Archer: {
-                For: ['Archer'],
-                Value: (level) => {
-                    switch(level.ArrowType){
-                        case "Flame":
-                         const dps = level.Damage / level.Cooldown;
-                         const burnDPS = level.BurnDamage / level.BurnTick;
-        
-                         return dps + burnDPS; 
-                        case "Explosive":
-                         return (level.Damage + level.ExplosionDamage) / level.Cooldown;
-                        default:
-                         return level.Damage / level.Cooldown;
-                    };
-                },
-            },
             Gatling: {
                 For: ['Gatling Gun'],
                 Requires: [
@@ -1279,7 +1263,7 @@ class CalculatedManager {
                     if (!this.unitManager.hasUnit(unit) || level.FlameArrows == false) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
-                    let burnDPS = unit.attributes.BurnDamage / unit.attributes.BurnTick;
+                    let burnDPS = unitData.attributes.BurnDPS;
 
                     return baseDPS + burnDPS;
                 },
@@ -1290,7 +1274,7 @@ class CalculatedManager {
             Default: {
                 Requires: ['Damage', 'Cooldown'],
                 For: ['Archer'],
-                Value: (level) => level.Damage / level.Cooldown,
+                Value: (level) => level.ShockArrows ? level.Damage / level.Cooldown : 0,
             },
         },
         ExplosiveArrowDPS: {
@@ -1305,7 +1289,7 @@ class CalculatedManager {
                     if (!this.unitManager.hasUnit(unit) || level.ExplosiveArrows == false) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
-                    let splashDPS = unit.attributes.ExplosionDamage / level.Firerate;
+                    let splashDPS = unitData.attributes.ExplosionDamage / level.Firerate;
 
                     return baseDPS + splashDPS;
                 },
