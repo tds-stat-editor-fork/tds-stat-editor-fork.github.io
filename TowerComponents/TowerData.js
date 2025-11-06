@@ -6590,11 +6590,11 @@ export default {
           CritSwing: 3,
           Bleed: false,
           BleedTick: 0,
-          EnemyHP: 0,
-          BaseBleedDamage: 0,
-          EV: 0,
           BleedStacks: 0,
           MaxStacks: 0,
+          BaseBleedDamage: 0,
+          EV: 0,
+          EnemyHP: 0,
         },
         Price: 1500,
         Limit: 8,
@@ -7723,4 +7723,107 @@ export default {
       },
     },
   },
+  Warlock: {
+    Default: {
+      Defaults: {
+        Detections: { Flying: false, Hidden: false, Lead: false },
+        Limit: 4,
+        Price: 4200,
+        Range: 19,
+        Cooldown: 1.1,
+        Damage: 25,
+        Attributes: {
+          KnockbackForce: 0,
+          KnockbackCooldown: 3,
+          MeleeDamage: 50,
+          MeleeCooldown: 2,
+          Bleed: false,
+          BaseBleedDamage: 0,
+          BleedStack: 0,
+          EV: 0,
+          MaxStacks: 40,
+          EnemyHP: 5000,
+          MeleeRange: 9,
+          MeleeMaxHits: 2,
+        },
+      },
+      Upgrades: [
+        {
+          Stats: {
+            Damage: 40,
+            Range: 20,
+            Attributes: {
+              MeleeDamage: 85,
+            }
+          },
+          Title: "Acolyte",
+          Cost: 2500,
+        },
+        {
+          Stats: {
+            Detections: {Hidden: true},
+            Damage: 60,
+            Cooldown: 0.8,
+            Range: 23,
+            Attributes: {
+              KnockbackForce: 20,
+              MeleeDamage: 150,
+              MeleeRange: 7.5,
+            },
+            Title: "Forbidden Arts",
+            Cost: 6800,
+          },
+        },
+        {
+          Stats: {
+            Detections: {Hidden: true},
+            Damage: 115,
+            Attributes: {
+              KnockbackForce: 22.5,
+              MeleeDamage: 250,
+              MeleeCooldown: 1.8,
+            },
+            Title: "Pact of the Blade",
+            Cost: 12000,
+          },
+        },
+        {
+          Stats: {
+            Detections: {Hidden: true},
+            Damage: 200,
+            Cooldown: 0.75,
+            Range: 24,
+            Attributes: {
+              KnockbackForce: 30,
+              MeleeDamage: 400,
+              Bleed: true,
+              BleedStack: 3,
+              BaseBleedDamage: 2,
+              EV: 0.28,
+              MeleeRange: 8,
+              MeleeMaxHits: 3,
+            },
+            Title: "Eldritch Knight",
+            Cost: 18500,
+          },
+        },
+        {
+          Stats: {
+            Detections: {Hidden: true},
+            Damage: 260,
+            Cooldown: 0.6,
+            Range: 26,
+            Attributes: {
+              KnockbackForce: 37.5,
+              MeleeDamage: 750,
+              MeleeRange: 9,
+              BleedStack: 6,
+            },
+            Title: "Abyss Walker",
+            Cost: 28000,
+          },
+        },
+      ],
+    }
+  }
 };

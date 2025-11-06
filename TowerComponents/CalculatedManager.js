@@ -656,6 +656,18 @@ class CalculatedManager {
                 },
             },
         },
+        MeleeDPS: {
+            Default: {
+                For: ['Warlock'],
+                Value: (level) => (level.Damage + level.MeleeDamage) / level.MeleeCooldown,
+            },
+        },
+        MeleeMaxDPS: {
+            Default: {
+                For: ['Warlock'],
+                Value: (level) => ((level.Damage * level.MeleeMaxHits) + level.MeleeDamage) / level.MeleeCooldown,
+            },
+        },
         WhirlwindSlashDPS: {
             Default: {
                 For: ['Assassin'],
@@ -1702,7 +1714,7 @@ class CalculatedManager {
         },
         BleedTickDamage: {
             Default: {
-                For: ['Slasher'],
+                For: ['Slasher', 'Warlock'],
                 Value: (level) => {
                     const { damageBuff } = window.state.boosts.tower;
                     
@@ -1714,7 +1726,7 @@ class CalculatedManager {
         },
         BleedCollapseDamage: {
             Default: {
-                For: ['Slasher'],
+                For: ['Slasher', 'Warlock'],
                 Value: (level) => {
                     const { damageBuff } = window.state.boosts.tower;
                     
@@ -1905,6 +1917,8 @@ class CalculatedManager {
         this.#add('Uptime', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
+        this.#add('MeleeDPS', skinData);
+        this.#add('MeleeMaxDPS', skinData);
         this.#add('ArrowDPS', skinData);
         this.#add('FlameArrowDPS', skinData);
         this.#add('ShockArrowDPS', skinData);
