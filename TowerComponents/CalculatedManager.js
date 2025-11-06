@@ -347,6 +347,7 @@ class CalculatedManager {
                     'Military Base',
                     'PVP Sends',
                     'Medic',
+                    'Archer',
                 ],
                 Value: (level) => {
                     if (level.Cooldown == 0) return 0; 
@@ -677,7 +678,7 @@ class CalculatedManager {
                 },
             },
         },
-        SplashDPS: {
+        ExplosiveDPS: {
             Default: {
                 Requires: ['ExplosionDamage', 'Cooldown'],
                 Exclude: ['Necromancer'],
@@ -1245,6 +1246,58 @@ class CalculatedManager {
                 Requires: ['Cooldown'],
                 For: ['Swarmer'],
                 Value: (level) => (level.BeeDamage / level.TickRate) / level.Cooldown,
+            },
+        },
+        ArrowDPS: {
+            Default: {
+                Requires: ['Damage', 'Cooldown'],
+                For: ['Archer'],
+                Value: (level) => level.Damage / level.Cooldown,
+            },
+        },
+        FlameArrowDPS: {
+            Default: {
+                Requires: ['Damage', 'Cooldown'],
+                For: ['Archer'],
+                Value: (level) => {
+                    this.unitManager.load();
+
+                    let baseDPS = level.Damage / level.Cooldown;
+                    var unit = "Flame - Level " + level.Level;
+                    if (!this.unitManager.hasUnit(unit) || level.FlameArrows == false) return 0;
+
+                    const unitData = this.unitManager.unitData[unit];
+                    let burnDPS = unit.attributes.BurnDamage / unit.attributes.BurnTick;
+
+                    return baseDPS + burnDPS;
+                },
+
+            },
+        },
+        ShockArrowDPS: {
+            Default: {
+                Requires: ['Damage', 'Cooldown'],
+                For: ['Archer'],
+                Value: (level) => level.Damage / level.Cooldown,
+            },
+        },
+        ExplosiveArrowDPS: {
+            Default: {
+                Requires: ['Damage', 'Cooldown'],
+                For: ['Archer'],
+                Value: (level) => {
+                    this.unitManager.load();
+
+                    let baseDPS = level.Damage / level.Cooldown;
+                    var unit = "Explosive - Level " + level.Level;
+                    if (!this.unitManager.hasUnit(unit) || level.ExplosiveArrows == false) return 0;
+
+                    const unitData = this.unitManager.unitData[unit];
+                    let splashDPS = unit.attributes.ExplosionDamage / level.Firerate;
+
+                    return baseDPS + splashDPS;
+                },
+
             },
         },
         TimeForMaxStacks: {
@@ -1852,6 +1905,10 @@ class CalculatedManager {
         this.#add('Uptime', skinData);
         this.#add('TotalElapsedDamage', skinData);
         this.#add('DPS', skinData);
+        this.#add('ArrowDPS', skinData);
+        this.#add('FlameArrowDPS', skinData);
+        this.#add('ShockArrowDPS', skinData);
+        this.#add('ExplosiveArrowDPS', skinData);
         this.#add('BleedTickDamage', skinData);
         this.#add('BleedCollapseDamage', skinData);
         this.#add('BeeDPS', skinData);
@@ -1861,7 +1918,7 @@ class CalculatedManager {
         this.#add('SpikeDPS', skinData);
         this.#add('LandmineDPS', skinData);
         this.#add('BaseDPS', skinData);
-        this.#add('SplashDPS', skinData);
+        this.#add('ExplosiveDPS', skinData);
         this.#add('WhirlwindSlashDPS', skinData);
         this.#add('KnifeThrowDPS', skinData);
         this.#add('ClusterDPS', skinData);

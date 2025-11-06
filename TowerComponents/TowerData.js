@@ -219,7 +219,7 @@ export default {
     },
   },
   Archer: {
-    "Fire Arrows": {
+    Default: {
       Upgrades: [
         {
           Image: 78487255054043,
@@ -249,10 +249,7 @@ export default {
             Damage: 8,
             Range: 22,
             Attributes: {
-              MaxHits: 3,
-              ArrowType: "Flame",
-              BurnDamage: 1,
-              BurnTime: 2,
+              FlameArrows: true,
             },
           },
           Title: "Flame-tipped Arrows",
@@ -262,13 +259,11 @@ export default {
           Image: 115104563492355,
           Stats: {
             Extras: ["Max Hits: 3 > 4", "Stronger Flame Arrows"],
-            Attributes: {
-              BurnDamage: 3,
-              MaxHits: 4,
-              BurnTime: 3,
-            },
             Range: 23,
             Damage: 16,
+            Attributes: {
+              ShockArrows: true,
+            },
           },
           Title: "Mechanical Bow",
           Cost: 2750,
@@ -277,99 +272,12 @@ export default {
           Image: 73857609172576,
           Stats: {
             Extras: ["Max Hits: 4 > 6", "Stronger Flame Arrows"],
-            Attributes: {
-              BurnDamage: 6,
-              MaxHits: 6,
-              BurnTime: 4,
-            },
             Cooldown: 1.25,
             Range: 24,
             Damage: 35,
-          },
-          Title: "Shot of the Century",
-          Cost: 8575,
-        },
-      ],
-      Defaults: {
-        Detections: { Flying: false, Hidden: false, Lead: false },
-        Attributes: {
-          BurnDamage: 0,
-          MaxHits: 2,
-          BurnTick: 0.5,
-          BurnTime: 0,
-          ArrowType: "Normal",
-        },
-        Price: 600,
-        Range: 16,
-        Cooldown: 1.7,
-        Limit: 15,
-        Damage: 4,
-      },
-    },
-    "Shock Arrows": {
-      Upgrades: [
-        {
-          Image: 78487255054043,
-          Stats: {
-            Range: 19,
-          },
-          Title: "Eagle Eye",
-          Cost: 100,
-        },
-        {
-          Image: 118177062176518,
-          Stats: {
-            Extras: ["Max Hits: 2 > 3"],
-            Detections: { Hidden: true},
-            Cooldown: 1.6,
-            Damage: 6,
-            Attributes: {MaxHits: 2},
-          },
-          Title: "Deadshot",
-          Cost: 400,
-        },
-        {
-          Image: 83003777730604,
-          Stats: {
-            Extras: ["Flame Arrows"],
-            Cooldown: 1.5,
-            Damage: 8,
-            Range: 22,
             Attributes: {
-              MaxHits: 3,
+              ExplosiveArrows: true,
             },
-          },
-          Title: "Flame-tipped Arrows",
-          Cost: 1000,
-        },
-        {
-          Image: 115104563492355,
-          Stats: {
-            Extras: ["Max Hits: 3 > 4", "Stronger Flame Arrows"],
-            Attributes: {
-              MinStun: 0.3,
-              MaxStun: 0.3,
-              MaxHits: 2,
-              ArrowType: "Shock",
-            },
-            Range: 23,
-            Damage: 16,
-          },
-          Title: "Mechanical Bow",
-          Cost: 2750,
-        },
-        {
-          Image: 73857609172576,
-          Stats: {
-            Extras: ["Max Hits: 4 > 6", "Stronger Flame Arrows"],
-            Attributes: {
-              MinStun: 0.45,
-              MaxStun: 0.45,
-              MaxHits: 3,
-            },
-            Cooldown: 1.25,
-            Range: 24,
-            Damage: 35,
           },
           Title: "Shot of the Century",
           Cost: 8575,
@@ -379,89 +287,9 @@ export default {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Attributes: {
           MaxHits: 2,
-          MinStun: 0,
-          MaxStun: 0,
-          ArrowType: "Normal",
-        },
-        Price: 600,
-        Range: 16,
-        Cooldown: 1.7,
-        Limit: 15,
-        Damage: 4,
-      },
-    },
-    "Explosive Arrows": {
-      Upgrades: [
-        {
-          Image: 78487255054043,
-          Stats: {
-            Range: 19,
-          },
-          Title: "Eagle Eye",
-          Cost: 100,
-        },
-        {
-          Image: 118177062176518,
-          Stats: {
-            Extras: ["Max Hits: 2 > 3"],
-            Detections: { Hidden: true},
-            Cooldown: 1.6,
-            Damage: 6,
-            Attributes: {MaxHits: 2},
-          },
-          Title: "Deadshot",
-          Cost: 400,
-        },
-        {
-          Image: 83003777730604,
-          Stats: {
-            Extras: ["Flame Arrows"],
-            Cooldown: 1.5,
-            Damage: 8,
-            Range: 22,
-            Attributes: {
-              MaxHits: 3,
-            },
-          },
-          Title: "Flame-tipped Arrows",
-          Cost: 1000,
-        },
-        {
-          Image: 115104563492355,
-          Stats: {
-            Extras: ["Max Hits: 3 > 4", "Stronger Flame Arrows"],
-            Attributes: {
-              MaxHits: 4,
-            },
-            Range: 23,
-            Damage: 16,
-          },
-          Title: "Mechanical Bow",
-          Cost: 2750,
-        },
-        {
-          Image: 73857609172576,
-          Stats: {
-            Extras: ["Max Hits: 4 > 6", "Stronger Flame Arrows"],
-            Attributes: {
-              ExplosionDamage: 35,
-              ExplosionRadius: 5,
-              MaxHits: 1,
-              ArrowType: "Explosive",
-            },
-            Cooldown: 1.25,
-            Range: 24,
-            Damage: 35,
-          },
-          Title: "Shot of the Century",
-          Cost: 8575,
-        },
-      ],
-      Defaults: {
-        Detections: { Flying: false, Hidden: false, Lead: false },
-        Attributes: {
-          MaxHits: 2,
-          ArrowType: "Normal",
+          FlameArrows: false,
+          ShockArrows: false,
+          ExplosiveArrows: false,
         },
         Price: 600,
         Range: 16,
