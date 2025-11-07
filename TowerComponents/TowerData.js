@@ -6580,7 +6580,7 @@ export default {
             Range: 8.5,
           },
           Title: "Absolute Bloodshed",
-          Cost: 20000,
+          Cost: 25000,
         },
       ],
       Defaults: {
