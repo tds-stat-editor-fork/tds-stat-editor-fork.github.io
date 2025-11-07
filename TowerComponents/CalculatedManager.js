@@ -1289,7 +1289,7 @@ class CalculatedManager {
                     if (!this.unitManager.hasUnit(unit) || level.ExplosiveArrows == false) return 0;
 
                     const unitData = this.unitManager.unitData[unit];
-                    let splashDPS = unitData.attributes.ExplosionDamage / level.Firerate;
+                    let splashDPS = unitData.attributes.ExplosionDamage / level.Cooldown;
 
                     return baseDPS + splashDPS;
                 },
