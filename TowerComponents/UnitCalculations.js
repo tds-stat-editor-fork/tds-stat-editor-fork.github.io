@@ -310,7 +310,6 @@ class UnitCalculations {
         this.#add('MissileDPS', unitData);
         this.#add('PoisonDPS', unitData);
         this.#add('BurnDPS', unitData);
-        this.#add('SplashDPS', unitData);
         this.#add('AggregateDPS', unitData);
         this.#add('RamDPS', unitData);
 
