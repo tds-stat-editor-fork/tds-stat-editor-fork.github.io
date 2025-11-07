@@ -51,6 +51,7 @@ const calculated = {
                 return baseDPS + missileDPS;
         }
     },
+    ExplosionDamage: (unit) => unit.ExplosionDamage,
     DPSRampPerMinute: (unit) => {},
 };
 
