@@ -788,7 +788,7 @@ class CalculatedManager {
                 },
             },
         },
-        MaxCostEfficiency: {
+        MaxCE: {
             Default: {
                 Requires: ['NetCost', 'MaxDPS'],
                 Exclude: ['Jester'],
@@ -1562,7 +1562,7 @@ class CalculatedManager {
                 Value: (level) => level.BearTrapDamage * level.MaxTraps,
             },
         },
-        SpikeCostEfficiency: {
+        SpikeCE: {
             Default: {
                 For: ['Trapper'],
                 Value: (level) => {
@@ -1576,7 +1576,7 @@ class CalculatedManager {
                 },
             },
         },
-        LandmineCostEfficiency: {
+        LandmineCE: {
             Default: {
                 For: ['Trapper'],
                 Value: (level) => {
@@ -1591,7 +1591,7 @@ class CalculatedManager {
                 },
             },
         },
-        BearTrapCostEfficiency: {
+        BearTrapCE: {
             Default: {
                 For: ['Trapper'],
                 Value: (level) => {
@@ -1603,7 +1603,7 @@ class CalculatedManager {
                 },
             },
         },
-        FireCostEfficiency: {
+        FireCE: {
             Default: {
                 For: ['Jester'],
                 Value: (level) => {
@@ -1616,7 +1616,7 @@ class CalculatedManager {
                 },
             },
         },
-        IceCostEfficiency: {
+        IceCE: {
             Default: {
                 For: ['Jester'],
                 Value: (level) => {
@@ -1628,7 +1628,7 @@ class CalculatedManager {
                 },
             },
         },
-        PoisonCostEfficiency: {
+        PoisonCE: {
             Default: {
                 For: ['Jester'],
                 Value: (level) => {
@@ -1640,7 +1640,7 @@ class CalculatedManager {
                 },
             },
         },
-        ConfusionCostEfficiency: {
+        ConfusionCE: {
             Default: {
                 For: ['Jester'],
                 Value: (level) => {
@@ -1725,6 +1725,41 @@ class CalculatedManager {
                 For: ['PVP Sends'],
                 Requires: ['EconomyBonus', 'SpawnTimer'],
                 Value: (level) => level.EconomyBonus / (level.SpawnTimer * level.MinSendNumber),
+            },
+        },
+        FlameArrowCE: {
+            Default: {
+                For: ['Archer'],
+                Requires: ['FlameArrowDPS', 'NetCost'],
+                Value: (level) =>  level.FlameArrows ? level.NetCost / level.FlameArrowDPS : 0,
+            },
+        },
+        ShockArrowCE: {
+            Default: {
+                For: ['Archer'],
+                Requires: ['ShockArrowDPS', 'NetCost'],
+                Value: (level) =>  level.ShockArrows ? level.NetCost / level.ShockArrowDPS : 0,
+            },
+        },
+        ExplosiveArrowCE: {
+            Default: {
+                For: ['Archer'],
+                Requires: ['ExplosiveArrowDPS', 'NetCost'],
+                Value: (level) =>  level.ExplosiveArrows ? level.NetCost / level.ExplosiveArrowDPS : 0,
+            },
+        },
+        FlameArrowMaxCE: {
+            Default: {
+                For: ['Archer'],
+                Requires: ['FlameArrowDPS', 'NetCost', 'MaxHits'],
+                Value: (level) =>  level.FlameArrows ? level.NetCost / (level.FlameArrowDPS * level.MaxHits) : 0,
+            },
+        },
+        ShockArrowMaxCE: {
+            Default: {
+                For: ['Archer'],
+                Requires: ['ShockArrowDPS', 'NetCost', 'MaxHits'],
+                Value: (level) =>  level.ShockArrows ? level.NetCost / (level.ShockArrowDPS * level.MaxHits) : 0,
             },
         },
         Cooldown: {
@@ -1931,9 +1966,9 @@ class CalculatedManager {
         this.#add('GrenadeDPS', skinData);
         this.#add('GlobalMaxDPS', skinData);
         this.#add('MissileDPS', skinData);
-        this.#add('SpikeCostEfficiency', skinData);
-        this.#add('LandmineCostEfficiency', skinData);
-        this.#add('BearTrapCostEfficiency', skinData);
+        this.#add('SpikeCE', skinData);
+        this.#add('LandmineCE', skinData);
+        this.#add('BearTrapCE', skinData);
         this.#add('StallUptime', skinData);
         this.#add('ThornsUptime', skinData);
         this.#add('TotalFireDamage', skinData);
@@ -1943,13 +1978,19 @@ class CalculatedManager {
         this.#add('NightshadeMaxDPS', skinData);
         this.#add('NetCost', skinData);
         this.#add('LimitNetCost', skinData);
-        this.#add('FireCostEfficiency', skinData);
-        this.#add('IceCostEfficiency', skinData);
-        this.#add('PoisonCostEfficiency', skinData);
-        this.#add('ConfusionCostEfficiency', skinData);
+        this.#add('FireCE', skinData);
+        this.#add('IceCE', skinData);
+        this.#add('PoisonCE', skinData);
+        this.#add('ConfusionCE', skinData);
+        this.#add('FlameArrowCE', skinData);
+        this.#add('ShockArrowCE', skinData);
+        this.#add('ExplosiveArrowCE', skinData);
+        this.#add('FlameArrowMaxCE', skinData);
+        this.#add('ShockArrowMaxCE', skinData);
+        this.#add('ConfusionCE', skinData);
         this.#add('CostEfficiency', skinData);
         this.#add('EcoPerSecond', skinData);
-        this.#add('MaxCostEfficiency', skinData);
+        this.#add('MaxCE', skinData);
         this.#add('Coverage', skinData);
         this.#add('BossPotential', skinData);
         this.#add('LimitBossPotential', skinData);
