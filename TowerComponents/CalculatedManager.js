@@ -1987,7 +1987,6 @@ class CalculatedManager {
         this.#add('ExplosiveArrowCE', skinData);
         this.#add('FlameArrowMaxCE', skinData);
         this.#add('ShockArrowMaxCE', skinData);
-        this.#add('ConfusionCE', skinData);
         this.#add('CostEfficiency', skinData);
         this.#add('EcoPerSecond', skinData);
         this.#add('MaxCE', skinData);
