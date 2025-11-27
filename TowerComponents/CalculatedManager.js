@@ -1752,14 +1752,30 @@ class CalculatedManager {
             Default: {
                 For: ['Archer'],
                 Requires: ['FlameArrowDPS', 'NetCost', 'MaxHits'],
-                Value: (level) =>  level.FlameArrows ? level.NetCost / (level.FlameArrowDPS * level.MaxHits) : 0,
+                Value: (level) => {
+                    this.unitManager.load();
+                    let baseDPS = level.FlameArrows ? level.NetCost / level.FlameArrowDPS : 0;
+
+                    var unit = "Flame - Level " + level.Level;
+                    if (!this.unitManager.hasUnit(unit) || level.FlameArrows == false) return 0;
+
+                    return baseDPS * unit.attributes.MaxHits;
+                },
             },
         },
         ShockArrowMaxCE: {
             Default: {
                 For: ['Archer'],
                 Requires: ['ShockArrowDPS', 'NetCost', 'MaxHits'],
-                Value: (level) =>  level.ShockArrows ? level.NetCost / (level.ShockArrowDPS * level.MaxHits) : 0,
+                Value: (level) => {      
+                    this.unitManager.load();
+                    let baseDPS = level.FlameArrows ? level.NetCost / level.FlameArrowDPS : 0;
+
+                    var unit = "Shock - Level " + level.Level;
+                    if (!this.unitManager.hasUnit(unit) || level.ShockArrows == false) return 0;
+
+                    return baseDPS * unit.attributes.MaxHits;
+                },
             },
         },
         Cooldown: {

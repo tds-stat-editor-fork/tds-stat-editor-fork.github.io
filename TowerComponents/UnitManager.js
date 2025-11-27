@@ -52,6 +52,7 @@ const calculated = {
         }
     },
     ExplosionDamage: (unit) => unit.ExplosionDamage,
+    MaxHits: (unit) => unit.ExplosionDamage,
     DPSRampPerMinute: (unit) => {},
 };
 
