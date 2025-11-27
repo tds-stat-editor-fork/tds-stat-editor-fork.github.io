@@ -1758,8 +1758,9 @@ class CalculatedManager {
 
                     var unit = "Flame - Level " + level.Level;
                     if (!this.unitManager.hasUnit(unit) || level.FlameArrows == false) return 0;
+                    const unitData = this.unitManager.unitData[unit];
 
-                    return baseDPS * unit.attributes.MaxHits;
+                    return baseDPS * unitData.attributes.MaxHits;
                 },
             },
         },
@@ -1773,8 +1774,9 @@ class CalculatedManager {
 
                     var unit = "Shock - Level " + level.Level;
                     if (!this.unitManager.hasUnit(unit) || level.ShockArrows == false) return 0;
+                    const unitData = this.unitManager.unitData[unit];
 
-                    return baseDPS * unit.attributes.MaxHits;
+                    return baseDPS * unitData.attributes.MaxHits;
                 },
             },
         },
