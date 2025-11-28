@@ -1760,7 +1760,7 @@ class CalculatedManager {
                     if (!this.unitManager.hasUnit(unit) || level.FlameArrows == false) return 0;
                     const unitData = this.unitManager.unitData[unit];
 
-                    return baseDPS * unitData.attributes.MaxHits;
+                    return baseDPS / unitData.attributes.MaxHits;
                 },
             },
         },
@@ -1776,7 +1776,7 @@ class CalculatedManager {
                     if (!this.unitManager.hasUnit(unit) || level.ShockArrows == false) return 0;
                     const unitData = this.unitManager.unitData[unit];
 
-                    return baseDPS * unitData.attributes.MaxHits;
+                    return baseDPS / unitData.attributes.MaxHits;
                 },
             },
         },
