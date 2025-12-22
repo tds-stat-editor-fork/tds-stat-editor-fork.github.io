@@ -931,7 +931,7 @@ export default {
     },
     ['Humvee 3']: {
         Health: 100,
-        Damage: 4,
+        Damage: 3,
         Cooldown: 0.2,
         Range: 30,
         Detections: {
@@ -942,7 +942,7 @@ export default {
     },
     Tank: {
         Health: 500,
-        Damage: 10,
+        Damage: 8,
         Cooldown: 0.2,
         Range: 30,
         ExplosionDamage: 40,
@@ -955,10 +955,10 @@ export default {
     },
     ['Railgun Tank']: {
         Health: 1600,
-        Damage: 25,
+        Damage: 22,
         Cooldown: 0.15,
         Range: 30,
-        ExplosionDamage: 80,
+        ExplosionDamage: 100,
         TimeBetweenMissiles: 3,
         Detections: {
             Hidden: true,
