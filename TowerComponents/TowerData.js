@@ -4158,7 +4158,7 @@ export default {
       ],
       Defaults: {
         Attributes: { 
-          SpawnTime: 45, 
+          SpawnTime: 50, 
           UnitToSend: "Humvee",
           AirstrikeDamage: 0, 
           AirstrikeBombs: 0, 
