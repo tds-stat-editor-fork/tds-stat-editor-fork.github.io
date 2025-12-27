@@ -1588,6 +1588,7 @@ export default {
               MaxSlow: 35,
               BaseCash: 250,
               MaxCash: 600,
+              CashPerTower: 35,
               DefenseMelt: 5,
               DefenseMeltPerTower: 1,
               MaxDefenseMelt: 25,
