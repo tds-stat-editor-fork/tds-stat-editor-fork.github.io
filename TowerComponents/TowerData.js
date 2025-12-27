@@ -1590,6 +1590,7 @@ export default {
               MaxCash: 600,
               DefenseMelt: 5,
               DefenseMeltPerTower: 1,
+              MaxDefenseMelt: 25,
             },
             Extras: ["Drop the Beat Ability", "Upgraded Tracks"],
             Damage: 15,
