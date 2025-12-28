@@ -6244,7 +6244,7 @@ export default {
         Attributes: { ExplosionRadius: 3, Deadzone: 10, RocketCount: 1, SpreadAngle: 0, Accuracy: 1},
         Detections: { Flying: false, Hidden: false, Lead: true },
         Range: 20,
-        Price: 200,
+        Price: 2000,
         Limit: 8,
         Cooldown: 4,
         Damage: 30,
