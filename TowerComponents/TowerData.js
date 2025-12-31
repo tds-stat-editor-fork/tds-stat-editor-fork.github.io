@@ -2410,6 +2410,7 @@ export default {
               BuffDuration: 40,
               FireworkChanceCap: 1,
               BurnDamage: 7,
+              ExplosionRadius: 3,
             },
             Range: 10,
           },
