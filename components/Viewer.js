@@ -337,7 +337,7 @@ class Viewer {
 
         if (this.shouldHideDamage() && !this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.push('Damage');
         if (this.shouldHideCooldown() && !this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.push('Cooldown');
-        if (this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.tower.name != 'Medic' && !this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.push('Range');
+        if (this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.tower.name != 'Firework Technician' && this.tower.name != 'Medic' && !this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.push('Range');
         if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.push('Hidden');
         if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.push('Flying');
         if (this.shouldHideDetections() && !this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.push('Lead');
@@ -346,7 +346,7 @@ class Viewer {
 
         if (!this.shouldHideDamage() && this.propertyViewer.disabled.includes("Damage")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Damage"), 1);
         if (!this.shouldHideCooldown() && this.propertyViewer.disabled.includes("Cooldown")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Cooldown"), 1);
-        if (!this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.tower.name != "Medic" && this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Range"), 1);
+        if (!this.shouldHideCooldown() && this.tower.name != 'Biologist' && this.tower.name != 'Firework Technician' && this.tower.name != "Medic" && this.propertyViewer.disabled.includes("Range")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Range"), 1);
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Hidden")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Hidden"), 1);
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Flying")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Flying"), 1);
         if (!this.shouldHideDetections() && this.propertyViewer.disabled.includes("Lead")) this.propertyViewer.disabled.splice(this.propertyViewer.disabled.indexOf("Lead"), 1);
