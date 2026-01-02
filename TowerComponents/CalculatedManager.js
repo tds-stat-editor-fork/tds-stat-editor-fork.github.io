@@ -1727,6 +1727,13 @@ class CalculatedManager {
                 Value: (level) => level.EconomyBonus / (level.SpawnTimer * level.MinSendNumber),
             },
         },
+        ArrowCE: {
+            Default: {
+                For: ['Archer'],
+                Requires: ['Damage', 'Cooldown', 'NetCost'],
+                Value: (level) =>  (level.Damage / level.Cooldown) / level.NetCost,
+            },
+        },
         FlameArrowCE: {
             Default: {
                 For: ['Archer'],
@@ -2000,6 +2007,7 @@ class CalculatedManager {
         this.#add('IceCE', skinData);
         this.#add('PoisonCE', skinData);
         this.#add('ConfusionCE', skinData);
+        this.#add('ArrowCE', skinData);
         this.#add('FlameArrowCE', skinData);
         this.#add('ShockArrowCE', skinData);
         this.#add('ExplosiveArrowCE', skinData);
