@@ -1731,7 +1731,7 @@ class CalculatedManager {
             Default: {
                 For: ['Archer'],
                 Requires: ['Damage', 'Cooldown', 'NetCost'],
-                Value: (level) =>  (level.Damage / level.Cooldown) / level.NetCost,
+                Value: (level) =>  level.NetCost / (level.Damage / level.Cooldown),
             },
         },
         FlameArrowCE: {
