@@ -403,7 +403,8 @@ export default class TableInput {
         'FlameArrowMaxCE',
         'ShockArrowMaxCE',
         'PatrolCooldown',
-        'ReverseCooldown'
+        'ReverseCooldown',
+        'ArrowCE'
     ];
 
     #getDelta(cellData, deltaData, input) {
