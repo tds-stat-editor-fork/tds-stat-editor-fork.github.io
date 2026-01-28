@@ -120,7 +120,7 @@ class UnitCalculations {
 
                     if (level.SpawnTime == 0 || isNaN(level.SpawnTime)) return 0;
  
-                    return (level.Health * (1 + (defense * 100))) / level.SpawnTime;
+                    return (level.Health * (1 + (defense / 100))) / level.SpawnTime;
                 },
             },
             DoubleUp: {
