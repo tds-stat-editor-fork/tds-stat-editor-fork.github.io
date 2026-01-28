@@ -141,9 +141,11 @@ const register = {
             'SnowballElf',
             'BomberElf',
             'GuardianElf',
+            'UpgradedGuardianElf',
             'CannoneerElf',
             'RippedElf',
             'GunnerElf',
+            'UpgradedGunnerElf',
         ],
     },
     'Archer': {

@@ -437,13 +437,13 @@ class CalculatedManager {
                 },
             },
             BurnTower: {
-                For: ['Pyromancer', 'Hallow Punk'],
+                For: ['Pyromancer', 'Hallow Punk', 'Spotlight Tech'],
                 Requires: ['Damage', 'Cooldown', 'BurnDamage', 'BurnTick'],
                 Value: (level) => {
                     const dps = level.Damage / level.Cooldown;
                     let burnDPS = (level.BurnDamage / level.BurnTick);
 
-                    if (!isFinite(burnDPS)) burnDPS = 0;
+                    if (!isFinite(burnDPS) || level.BurnTick == 0) burnDPS = 0;
 
                     return dps + burnDPS;
                 },
