@@ -1807,7 +1807,7 @@ class CalculatedManager {
                 Value: (cooldown) => {
                     const { extraCooldown, firerateBuff } = window.state.boosts.tower; // prettier-ignore
 
-                    return cooldown / (firerateBuff + 1) + extraCooldown;
+                    return ((Math.ceil((cooldown / (firerateBuff + 1)) * 100)) / 100) + extraCooldown;
                 },
             },
         },
