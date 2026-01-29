@@ -159,7 +159,7 @@ export default class UpgradeViewer {
     }
 
     async #fetchImage(imageId) {
-        const url = `https://tds-stat-editor-fork.github.io/?url=https://apis.roblox.com/asset-delivery-api/v1/assetId/${imageId}`;
+        const url = `https://apis.roblox.com/asset-delivery-api/v1/assetId/${imageId}`;
 
         const response = await fetch(url, {
             method: 'GET',
