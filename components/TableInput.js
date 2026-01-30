@@ -223,7 +223,6 @@ export default class TableInput {
             case 'TowerCloningCost':
                 return `${Intl.NumberFormat().format(value.toFixed(2))}%`;
             case 'FlightSpeed':
-            case 'EnemyCash':
             case 'BurnDamageMult':
             case 'IceDamageMult':
             case 'PoisonDamageMult':
@@ -307,6 +306,8 @@ export default class TableInput {
             case 'PoisonLength':
             case 'TrapLifespan':
                 return `${Intl.NumberFormat().format(value.toFixed(3))}s`;
+            case 'WireFraud':
+                return `${Intl.NumberFormat().format(value.toFixed(3))}%`;
         }
 
         if (+value < 1) {

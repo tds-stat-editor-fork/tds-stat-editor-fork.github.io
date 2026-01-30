@@ -476,9 +476,9 @@ class CalculatedManager {
                     'MissileCooldown',
                 ],
                 Value: (level) => {
-                    const dps = (level.Damage * level.Ammo) / (level.ReloadTime + (level.RevTime ?? 0) + (level.Cooldown * level.Ammo));
+                    const dps = (level.Damage * level.Ammo) / (level.ReloadTime + (level.Cooldown * level.Ammo));
                     const missileDPS = level.Missiles
-                        ? (level.ExplosionDamage * level.MissileCount) / (level.MissileCooldown + (level.BurstTime * level.MissileCount))
+                        ? (level.ExplosionDamage * level.MissileCount) / (level.TimeBetweenMissiles + (level.BurstTime * level.MissileCount))
                         : 0;
 
                     return dps + missileDPS;
@@ -650,6 +650,18 @@ class CalculatedManager {
             Default: {
                 For: ['Warlock'],
                 Value: (level) => ((level.Damage * level.MeleeMaxHits) + level.MeleeDamage) / level.MeleeCooldown,
+            },
+        },
+        MeleeCE: {
+            Default: {
+                For: ['Warlock'],
+                Value: (level) => level.NetCost / level.MeleeCE,
+            },
+        },
+        MeleeMaxCE: {
+            Default: {
+                For: ['Warlock'],
+                Value: (level) => level.NetCost / level.MeleeMaxCE,
             },
         },
         WhirlwindSlashDPS: {
@@ -1188,6 +1200,7 @@ class CalculatedManager {
         MaxDPS: {
             Default: {
                 Requires: ['DPS', 'MaxHits'],
+                Exclude: ['Ranger', 'Necromancer'],
                 Value: (level) => level.DPS * level.MaxHits,
             },
             Pierce: {
@@ -1214,16 +1227,6 @@ class CalculatedManager {
                 Requires: ['Damage', 'Cooldown', 'MaxHitsPerTick', 'MaxBounce'],
                 For: ['Executioner'],
                 Value: (level) => (level.Damage * (level.MaxHitsPerTick * level.MaxBounce)) / level.Cooldown,
-            },
-            Necromancer: {
-                For: ['Necromancer'],
-                Value: (level) => {
-                    const beams = level.Beams == true;
-
-                    if (beams) return level.DPS;
-
-                    return level.DPS * level.MaxHits;
-                },
             },
         },
         GlobalMaxDPS: {
@@ -2014,8 +2017,10 @@ class CalculatedManager {
         this.#add('FlameArrowMaxCE', skinData);
         this.#add('ShockArrowMaxCE', skinData);
         this.#add('CostEfficiency', skinData);
+        this.#add('MeleeCE', skinData);
         this.#add('EcoPerSecond', skinData);
         this.#add('MaxCE', skinData);
+        this.#add('MeleeMaxCE', skinData);
         this.#add('Coverage', skinData);
         this.#add('BossPotential', skinData);
         this.#add('LimitBossPotential', skinData);
