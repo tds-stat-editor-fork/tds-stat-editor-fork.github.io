@@ -478,7 +478,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const dps = (level.Damage * level.Ammo) / (level.ReloadTime + (level.Cooldown * level.Ammo));
                     const missileDPS = level.Missiles
-                        ? (level.ExplosionDamage * level.MissileCount) / (level.TimeBetweenMissiles + (level.BurstTime * level.MissileCount))
+                        ? (level.ExplosionDamage * level.MissileCount) / (level.MissileCooldown + (level.TimeBetweenMissiles * level.MissileCount))
                         : 0;
 
                     return dps + missileDPS;
@@ -655,13 +655,13 @@ class CalculatedManager {
         MeleeCE: {
             Default: {
                 For: ['Warlock'],
-                Value: (level) => level.NetCost / level.MeleeCE,
+                Value: (level) => level.NetCost / level.MeleeDPS,
             },
         },
         MeleeMaxCE: {
             Default: {
                 For: ['Warlock'],
-                Value: (level) => level.NetCost / level.MeleeMaxCE,
+                Value: (level) => level.NetCost / level.MeleeMaxDPS,
             },
         },
         WhirlwindSlashDPS: {
@@ -694,8 +694,8 @@ class CalculatedManager {
             },
             Missile: {
                 For: ['Pursuit'],
-                Requires: ['Missiles', 'MissileCooldown', 'BurstTime', 'ExplosionDamage', 'MissileCount'],
-                Value: (level) => level.Missiles ? (level.ExplosionDamage * level.MissileCount) / (level.MissileCooldown + (level.BurstTime * level.MissileCount)) : 0,
+                Requires: ['Missiles', 'MissileCooldown', 'TimeBetweenMissiles', 'ExplosionDamage', 'MissileCount'],
+                Value: (level) => level.Missiles ? (level.ExplosionDamage * level.MissileCount) / (level.MissileCooldown + (level.TimeBetweenMissiles * level.MissileCount)) : 0,
             },
             WM: {
                 For: ['War Machine'],

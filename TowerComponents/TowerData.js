@@ -6684,6 +6684,7 @@ export default {
           MaxChill: 45,
           TickRate: 0.25,
           Aftershock: false,
+          AftershockMult: 0,
         },
         Detections: { Flying: false, Hidden: false, Lead: true },
         Range: 6.5,
