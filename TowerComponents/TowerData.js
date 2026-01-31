@@ -602,7 +602,7 @@ export default {
           Stats: {
             Extras: ["Final Hit Damage: 170", "Reposition Damage: 200"],
             Attributes: {
-              FinalHitDamage: 99,
+              FinalHitDamage: 100,
               RepositionDamage: 60,
               KnockbackForce: 35,
               ComboCooldown: 0.4,
