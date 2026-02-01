@@ -2671,9 +2671,6 @@ export default {
           Image: 15686412400,
           Stats: {
             Extras: ["Freeze Time: 0.75 > 1", "Max Hits: 4 > 5"],
-            Attributes: {
-              MaxHits: 5,
-            },
             Range: 17.5,
             Cooldown: 0.25,
           },
