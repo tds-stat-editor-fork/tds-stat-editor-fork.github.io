@@ -4023,9 +4023,7 @@ export default {
         {
           Image: 5523216332,
           Stats: {
-            Cooldown: 0.15,
-            Range: 18,
-            Damage: 4,
+            Damage: 5,
           },
           Title: "Guerrilla Tactics",
           Cost: 3125,
@@ -4033,11 +4031,11 @@ export default {
         {
           Image: 5523217773,
           Stats: {
-            Range: 21,
-            Damage: 12,
+            Range: 19,
+            Damage: 10,
           },
           Title: "Stealth Mercenary",
-          Cost: 9000,
+          Cost: 5750,
         },
       ],
       Defaults: {
