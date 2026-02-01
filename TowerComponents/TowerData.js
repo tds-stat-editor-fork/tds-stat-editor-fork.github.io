@@ -6965,8 +6965,8 @@ export default {
       ],
       Defaults: {
         Detections: { Flying: true, Hidden: false, Lead: false },
-        Attributes: { Burst: 4, BurstCooldown: 0.75 },
-        Price: 500,
+        Attributes: { Burst: 2, BurstCooldown: 0.33 },
+        Price: 459,
         Range: 17,
         Cooldown: 0.1,
         Damage: 1,
