@@ -2706,7 +2706,7 @@ export default {
         Attributes: { DefenseMelt: 0, MaxDefenseMelt: 33, MaxHits: 2, ChillPercent: 5, MaxChill: 20, ChillDuration: 3, TickRate: 0.25},
         Price: 750,
         Range: 12,
-        Cooldown: 1.2,
+        Cooldown: 0.9,
         Damage: 5,
         Limit: 14,
       },
