@@ -2347,7 +2347,7 @@ export default {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Attributes: { ThornPower: 50 },
         Range: 5,
-        Price: 250,
+        Price: 300,
         Limit: 12,
         Cooldown: 0,
         Damage: 0,
