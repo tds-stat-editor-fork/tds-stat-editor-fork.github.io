@@ -2041,7 +2041,6 @@ export default {
           Image: 149177741,
           Stats: {
             Detections: { Hidden: true},
-            Cooldown: 1.2,
             Damage: 8,
             Range: 18,
             Attributes: {
