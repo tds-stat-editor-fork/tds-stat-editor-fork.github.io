@@ -5998,7 +5998,6 @@ export default {
             Extras: ["Max Hits: 6 > 10", "More Burn Damage", "Longer Burn Time", "Bigger Flames"],
             Attributes: {
               BurnDamage: 40,
-              BurnTime: 20,
               Width: 2.5,
               MaxHits: 12,
               DefenseMelt: 15,
