@@ -4692,7 +4692,7 @@ export default {
           },
           Image: 15332519505,
           Title: "Apostle of Hades",
-          Cost: 44000,
+          Cost: 65000,
         },
       ],
       Defaults: {
