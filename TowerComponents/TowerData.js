@@ -3188,7 +3188,7 @@ export default {
             },
           },
           Title: "Rug Pull",
-          Cost: 55320,
+          Cost: 53200,
         },
       ],
     },
