@@ -1034,7 +1034,7 @@ export default {
         Detections: { Flying: false, Hidden: false, Lead: false },
         Range: 15,
         Limit: 6,
-        Price: 5500,
+        Price: 550,
         Attributes: { CashShot: 6, SpinDuration: 1.75 },
         Cooldown: 0.35,
         Damage: 2,
