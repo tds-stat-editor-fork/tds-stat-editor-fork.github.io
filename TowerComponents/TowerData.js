@@ -1011,7 +1011,7 @@ export default {
           Stats: {
             Attributes: { CashShot: 12 },
             Extras: ["Cash Shot: 6 > 12"],
-            Income: 150,
+            Income: 175,
             Range: 21,
             Cooldown: 0.25,
           },
