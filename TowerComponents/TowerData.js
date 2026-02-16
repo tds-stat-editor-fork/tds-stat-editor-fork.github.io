@@ -4468,7 +4468,7 @@ export default {
             Attributes: {
               CanCluster: true,
               ClusterRadius: 5,
-              ClusterDamageMult: 0.4,
+              ClusterDamageMult: 0.35,
               ClusterCount: 4,
               ClusterDamage: 30,
             },
