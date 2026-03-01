@@ -786,7 +786,7 @@ class CalculatedManager {
                 Value: (level) => {
                     const beams = level.Beams == true;
 
-                    if (beams) return level.NetCost / level.MaxDPS;
+                    if (beams) return level.NetCost / (level.DPS * level.MaxHits);
                     
                     return level.NetCost / level.DPS;
                 },
